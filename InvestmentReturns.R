@@ -27,4 +27,25 @@ bin_counts <- sp_500 %>%
 bin_counts <- bin_counts %>% 
   mutate(count_percent = return_count/sum(return_count))
 
+bin_counts <- bin_counts %>% 
+  mutate(cum_percent = cumsum(count_percent))
 
+for (i in 1:dim(bin_counts)[1]){
+  if (i==1) {
+    bin_counts$left[i] <- 0.000
+  } else if (i > 1) {
+    bin_counts$left[i] <- round(bin_counts[i-1,"cum_percent"][[1]],4) + 0.0001
+  }
+}
+
+bin_counts$left
+
+for (i in 1:dim(bin_counts)[1]){
+  if (i==dim(bin_counts)[1]) {
+    bin_counts$right[i] <- 1.000
+  } else {
+    bin_counts$right[i] <- round(bin_counts[i,"cum_percent"][[1]],4)
+  }
+}
+
+bin_counts$right
