@@ -218,3 +218,4 @@ for (i in 1:num_years) {
 
 withdrawals
 net_worth
+
