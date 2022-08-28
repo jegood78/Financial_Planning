@@ -179,7 +179,7 @@ contr2_years <- 5
 
 withdrawal_start_year <- 2031
 
-withdrawal_percent <- 0.03
+withdrawal_anount <- 30000
 
 years <- seq(1,num_years,1)
 contributions <- seq(1,num_years,1)
@@ -207,7 +207,7 @@ for (i in 1:num_years) {
   } else {
     years[i] <- years[i-1]+1
     if (years[i] >= withdrawal_start_year) {
-      withdrawals[i] <- net_worth[i-1]*withdrawal_percent
+      withdrawals[i] <- 30000
     } else {
       withdrawals[i] <- 0
     }
