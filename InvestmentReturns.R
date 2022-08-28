@@ -163,3 +163,5 @@ sim_out <- single_year_sim(46,475000,28000,4,30000,5,0.035)
 sim_out[1][[1]]
 sim_out[2][[1]]
 sim_out[3][[1]]
+
+mean(sim_out[1][[1]])
