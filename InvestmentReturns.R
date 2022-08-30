@@ -118,7 +118,7 @@ rand_return <- function(x){
 # build everything into a function
 
 single_year_sim <- function(num_years,net_worth_start,contribution1,contribution1_years,contribution2,
-                            contribution2_years,withdrawal_percent) {
+                            contribution2_years,withdrawal_percent,max_withdrawal_amount) {
   
   years <- seq(1,num_years,1)
   contributions <- seq(1,num_years,1)
@@ -149,7 +149,7 @@ single_year_sim <- function(num_years,net_worth_start,contribution1,contribution
         withdrawals[i] <- 0
         net_worth[i] <- (net_worth[i-1] + contributions[i])*(1+sim_returns[i])
       } else {
-        withdrawals[i] <- max(net_worth[i-1] * withdrawal_percent,0)
+        withdrawals[i] <- min(max(net_worth[i-1] * withdrawal_percent,0),max_withdrawal_amount)
         net_worth[i] <- (net_worth[i-1] - withdrawals[i])*(1+sim_returns[i])
       }
       
@@ -159,7 +159,7 @@ single_year_sim <- function(num_years,net_worth_start,contribution1,contribution
   return(list(sim_returns,withdrawals,net_worth))
 } # end function
 
-sim_out <- single_year_sim(46,475000,28000,4,30000,5,0.035)
+sim_out <- single_year_sim(46,450000,28000,4,0,0,0.035,25000)
 sim_out[1][[1]]
 sim_out[2][[1]]
 sim_out[3][[1]]
