@@ -165,3 +165,61 @@ sim_out[2][[1]]
 sim_out[3][[1]]
 
 mean(sim_out[1][[1]])
+
+#build the monte carlo
+num_years <- 46
+net_worth_start <- 450000
+contribution1 <- 28000
+contribution1_years <- 4
+contribution2 <- 80000
+contribution2_years <- 5
+withdrawal_percent <- 0.035
+max_withdrawal_amount <- 25000
+
+sim_years <- seq(year(Sys.Date()),length.out = num_years, by = 1)
+
+num_iterations <- 100
+
+names <- seq(1:num_iterations)
+
+for (i in 1:num_iterations) {
+  names[i] <- paste0("run_",i)
+}
+
+temp_df <- data.frame(matrix(ncol=num_iterations,nrow=num_years))
+colnames(temp_df) <- names
+
+returns_df <- data.frame(sim_years,temp_df)
+
+withdrawals_df <- data.frame(sim_years,temp_df)
+
+net_worth_df <- data.frame(sim_years,temp_df)
+
+for (k in 1:num_iterations){
+  
+  if (k%%100 == 0){
+    print(k)
+  } #end if
+  
+  sim_out <- single_year_sim(num_years,net_worth_start,contribution1,contribution1_years,contribution2,
+                             contribution2_years,withdrawal_percent,max_withdrawal_amount)
+  
+  returns_df[k+1] <- sim_out[1][[1]]
+  withdrawals_df[k+1] <- sim_out[2][[1]]
+  net_worth_df[k+1] <- sim_out[3][[1]]
+  
+} #end for k 
+
+gathered_runs <- gather(net_worth_df[,1:(num_iterations+1)], run, avg_net_worth, -sim_years)
+
+last_row <- net_worth_df %>% filter(sim_years == max(sim_years)) %>% select(-sim_years)
+
+last_row <- as.numeric(last_row)
+
+percentiles <- quantile(last_row,probs = c(0.01,0.05,0.25,0.5,0.75,0.95,0.99))
+
+percentiles
+
+
+
+
