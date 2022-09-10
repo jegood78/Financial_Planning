@@ -45,16 +45,16 @@ ggplot() +
 
 monthly_expenses_by_type <- expenses %>%
   group_by(month,category) %>%
-  summarise(monthly_amount = sum(amount)*-1)
+  summarise(monthly_amount = sum(amount)*-1) %>%
+  arrange(desc(monthly_amount))
 
-ggplot(data = monthly_expenses_by_type, aes(x=category,
+ggplot(data = monthly_expenses_by_type, aes(x=reorder(category, -desc(monthly_amount)),
                                             y=monthly_amount,
-                                            fill = category,
-                                            label = paste0(category,"~$",monthly_amount))) +
+                                            fill = category)) +
   geom_bar(stat = "identity") +
   facet_wrap(~month) +
   geom_text(aes(y=2, 
-                label = paste0(category,"~$",monthly_amount),
+                label = paste0(category," $",monthly_amount),
                 group = category),
             hjust = 0) + coord_flip()+
   ggtitle("Monthly Expenses by Category") +
@@ -90,11 +90,10 @@ ggplot(data= combined,aes(x=type, y=monthly_amount, fill = type)) +
   theme_bw() +
   facet_wrap(~month) +
   geom_text(aes(x=type,
-                y=monthly_amount, 
+                y=2, 
                 label = paste0(toupper(type),"\n$",monthly_amount),
                 group = type), 
-            vjust = 0.5,
-            position=position_dodge2(width=0.9)) +
+            hjust = 0) + coord_flip() +
   labs(title = "Cash Flow Summary by Month", x = NULL, y = NULL) +
   theme(legend.position = "none",
         axis.text = element_blank(),
