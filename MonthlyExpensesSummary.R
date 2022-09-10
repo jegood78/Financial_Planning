@@ -2,7 +2,6 @@
 library(tidyverse)
 library(lubridate)
 library(readxl)
-library(scales)
 
 #read in files
 bank <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/Expenses.xlsx", 
@@ -31,12 +30,33 @@ expenses <- bank %>%
 #plot expenses by month
 monthly_expenses <- expenses %>% 
   group_by(month) %>% 
-  summarise(monthly_amount = sum(amount)*-1)%>% mutate(type = "expense")
+  summarise(monthly_amount = sum(amount)*-1) %>% 
+  mutate(type = "expense")
 
 ggplot() +
   geom_col(data = monthly_expenses,aes(x=month,y=monthly_amount), fill = "red") +
   theme_minimal() +
   geom_text(data = monthly_expenses,aes(x=month,y=monthly_amount, label = paste0("$",monthly_amount)), vjust = -0.5) +
+  labs(title = "Expenses by Month", x = NULL, y = NULL) +
+  theme(axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
+        axis.line = element_line(colour = "black", 
+                                 size = 1, linetype = "solid"))
+
+monthly_expenses_by_type <- expenses %>%
+  group_by(month,category) %>%
+  summarise(monthly_amount = sum(amount)*-1)
+
+ggplot() +
+  geom_col(data = monthly_expenses_by_type,aes(x=month,y=monthly_amount, fill = category),position = "dodge") +
+  theme_minimal() +
+  geom_text(data = monthly_expenses_by_type,
+            aes(x=month,
+                y=monthly_amount,
+                label = paste0("$",monthly_amount),
+                group = category), 
+            vjust = -0.5,
+            position=position_dodge2(width=0.9)) +
   labs(title = "Expenses by Month", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
         axis.ticks = element_blank(),
