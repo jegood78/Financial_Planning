@@ -90,19 +90,20 @@ ggplot() +
 #combine the plots
 combined <- rbind(monthly_expenses,monthly_income)
 
-ggplot(data= combined,aes(x=month,y=monthly_amount, fill = type)) +
+ggplot(data= combined,aes(x=type, y=monthly_amount, fill = type)) +
   geom_col(position = "dodge") +
-  theme_minimal() +
-  geom_text(aes(x=month,
+  theme_bw() +
+  facet_wrap(~month) +
+  geom_text(aes(x=type,
                 y=monthly_amount, 
-                label = paste0("$",monthly_amount),
+                label = paste0(toupper(type),"\n$",monthly_amount),
                 group = type), 
-            vjust = -0.5,
+            vjust = 0.5,
             position=position_dodge2(width=0.9)) +
   labs(title = "Cash Flow Summary by Month", x = NULL, y = NULL) +
-  theme(axis.text.y = element_blank(),
-        axis.text.x = element_text(face="bold"),
+  theme(legend.position = "none",
+        axis.text = element_blank(),
         axis.ticks = element_blank(),
-        axis.line = element_line(colour = "black", 
-                                 size = 1, linetype = "solid"),
-        legend.position = "bottom")
+        axis.title = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank()) 
