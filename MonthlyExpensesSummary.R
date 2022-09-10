@@ -47,11 +47,6 @@ monthly_expenses_by_type <- expenses %>%
   group_by(month,category) %>%
   summarise(monthly_amount = sum(amount)*-1)
 
-# ggplot(aes(x=`Person of Interest`,
-#            y=Proportion,
-#            fill=`Person of Interest`,
-#            label = paste0(`Person of Interest`, "~", scales::percent(Proportion))))+
-
 ggplot(data = monthly_expenses_by_type, aes(x=category,
                                             y=monthly_amount,
                                             fill = category,
