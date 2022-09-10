@@ -47,22 +47,59 @@ monthly_expenses_by_type <- expenses %>%
   group_by(month,category) %>%
   summarise(monthly_amount = sum(amount)*-1)
 
-ggplot() +
-  geom_col(data = monthly_expenses_by_type,aes(x=month,y=monthly_amount, fill = category),position = "dodge") +
-  theme_minimal() +
-  geom_text(data = monthly_expenses_by_type,
-            aes(x=month,
-                y=monthly_amount,
+# ggplot(aes(x=`Person of Interest`,
+#            y=Proportion,
+#            fill=`Person of Interest`,
+#            label = paste0(`Person of Interest`, "~", scales::percent(Proportion))))+
+#   geom_bar(stat = 'identity')+
+#   geom_text(aes(y=0.13),
+#             size = 4.5,
+#             colour = "white",
+#             fontface = "bold")+coord_flip()+
+#   scale_y_continuous(labels = scales::percent, 
+#                      limits = c(0, 1.01), 
+#                      expand = c(0, 0)) +
+#   ggthemes::theme_economist(horizontal = F) + 
+#   scale_fill_manual(values = alpha(c("black", "#002D62"), .5)) +
+#   ggtitle("Lack of Skill") + 
+#   theme(title = element_text("Lack of Skill"),
+#         plot.title = element_text(hjust = 0.5, face = "italic"),
+#         axis.title.y = element_blank(),
+#         axis.text.y = element_blank(),
+#         axis.ticks.y = element_blank(),
+#         axis.title.x = element_blank(),
+#         axis.text.x = element_text(hjust = 0.25),
+#         legend.position="none",
+#         aspect.ratio = 1/3)
+
+ggplot(data = monthly_expenses_by_type) +
+  geom_col(aes(x=monthly_amount,
+               y=category, 
+               fill = category)) +
+  facet_wrap(~month) +
+  theme_bw() +
+  geom_text(aes(x=monthly_amount,
+                y=category, 
                 label = paste0("$",monthly_amount),
                 group = category), 
-            vjust = -0.5,
-            position=position_dodge2(width=0.9)) +
-  labs(title = "Expenses by Month", x = NULL, y = NULL) +
-  theme(axis.text.y = element_blank(),
+            hjust = 0.6,
+            position=position_dodge(width=0.9)) +
+  theme(legend.position = "none",
+        axis.text.y = element_text(vjust = 0.5, 
+                                   hjust=1),
+        axis.text.x = element_blank(),
         axis.ticks = element_blank(),
-        axis.line = element_line(colour = "black", 
-                                 size = 1, linetype = "solid"))
+        axis.title = element_blank(),
+        #panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        axis.line.x = element_line(colour = "black", 
+                                 size = 1, 
+                                 linetype = "solid"),
+        axis.line.y = element_line(colour = "black", 
+                                   size = 1,
+                                   linetype = "solid")) 
 
+        
 #plot income by month
 monthly_income <- income %>% 
   group_by(month) %>% 
