@@ -40,7 +40,7 @@ ggplot() +
   labs(title = "Expenses by Month", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
         axis.ticks = element_blank(),
-        axis.line = element_line(colour = "black", 
+        axis.line = element_line(colour = "grey", 
                                  size = 1, linetype = "solid"))
 
 monthly_expenses_by_type <- expenses %>%
@@ -79,7 +79,7 @@ ggplot() +
   labs(title = "Expenses by Month", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
         axis.ticks = element_blank(),
-        axis.line = element_line(colour = "black", 
+        axis.line = element_line(colour = "grey", 
                                  size = 1, linetype = "solid"))
 
 #combine the plots

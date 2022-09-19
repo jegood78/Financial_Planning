@@ -36,7 +36,12 @@ ggplot(data = nw1,mapping= aes(x=Date,y=Total_Value,color=Fund_Type, label = sca
   geom_line() +
   geom_point() +
   theme_minimal() +
-  theme(legend.position = "bottom") +
+  theme(legend.position = "bottom",
+        axis.line = element_line(colour = "grey", 
+                                 size = 1, linetype = "solid"),
+        
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank()) +
   geom_text(color = "black", nudge_y = 15000, size = 3) +
   expand_limits(y = c(0,y_upper_nw1)) +
   scale_y_continuous(labels = scales::dollar,breaks = seq(0,y_upper_nw1,50000)) +
@@ -51,7 +56,12 @@ ggplot(data = nw0, mapping = aes(x=Date, y=Value, color = Fund_Type, label = sca
   geom_point() +
   #facet_grid(Fund_Type~) +
   theme_minimal() +
-  theme(legend.position = "bottom") +
+  theme(legend.position = "bottom",
+        axis.line = element_line(colour = "grey", 
+                                 size = 1, linetype = "solid"),
+        
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank()) +
   geom_text(color = "black", nudge_y = 10000,size = 3) +
   expand_limits(y = c(0,y_upper_nw0)) +
   scale_y_continuous(labels = scales::dollar, breaks = seq(0,y_upper_nw0,50000)) +
