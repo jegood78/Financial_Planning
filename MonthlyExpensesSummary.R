@@ -76,7 +76,7 @@ ggplot() +
   geom_col(data = monthly_income,aes(x=month,y=monthly_amount), fill = "green") +
   theme_minimal() +
   geom_text(data = monthly_income,aes(x=month,y=monthly_amount, label = paste0("$",monthly_amount)), vjust = -0.5) +
-  labs(title = "Expenses by Month", x = NULL, y = NULL) +
+  labs(title = "Income by Month", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
         axis.ticks = element_blank(),
         axis.line = element_line(colour = "grey", 
@@ -101,3 +101,4 @@ ggplot(data= combined,aes(x=type, y=monthly_amount, fill = type)) +
         axis.title = element_blank(),
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank()) 
+
