@@ -13,23 +13,67 @@ names(bank) <- tolower(names(bank))
 #change date from date-time to date
 bank$date <- as.Date(bank$date)
 
+#rename category to subcategory and shift to lower case
+bank <- bank %>%
+  rename(subcategory = category)
+
+bank$subcategory <- tolower(bank$subcategory)
+
 #add month column
 bank$month <- format(bank$date, "%Y-%m")
+
+#add higher level category
+bank <- bank %>%
+  mutate(category = ifelse(subcategory %in% c("groceries",
+                                              "restaurants"), "food",
+                           ifelse(subcategory %in% c("auto_maintenance",
+                                                     "gas_fuel"), "transportation",
+                                  ifelse(subcategory %in% c("home_decor",
+                                                            "household_appliances",
+                                                            "home_maintenance",
+                                                            "utilities",
+                                                            "cleaning_supplies"), "housing",
+                                         ifelse(subcategory %in% c("clothes_shoes"), "clothing",
+                                                ifelse(subcategory %in% c("chase_cc_payment",
+                                                                          "usaa_cc_payment"), "credit_cards",
+                                                       ifelse(subcategory %in% c("jeff_pay",
+                                                                                 "miscellaneous_income"), "income", 
+                                                              ifelse(subcategory %in% c("investment_account"), "investment","miscellaneous"))))))))
+
+
+#keep only the month, category, subcategory, and amount columns
+bank <- bank %>%
+  select("month",
+         "category",
+         "subcategory",
+         "amount")
+
+#group by month
+monthly_by_category <- bank %>%
+  group_by(month, category) %>%
+  summarise(monthly_amount = sum(amount))
+
+#initial plot
+ggplot(data = monthly_by_category,
+       mapping = aes(x = category,
+                     y = monthly_amount,
+                     fill = category)) +
+  geom_col() +
+  facet_grid(~month)
 
 #subset the data into pay, expenses, and investments
 categories <- distinct(bank, category)
 categories$category
 
 income <- bank %>%
-  filter(category %in% c("Jeff_Pay", "Miscellaneous_Income"))
+  filter(category %in% c("income"))
 
 investments <- bank %>%
-  filter(category %in% c("Investment_Account"))
+  filter(category %in% c("investment"))
 
 expenses <- bank %>%
-  filter(!category %in% c("Jeff_Pay",
-                          "Miscellaneous_Income",
-                          "Investment_Account"))
+  filter(!category %in% c("income",
+                          "investment"))
 
 #plot expenses by month
 monthly_expenses <- expenses %>%
