@@ -38,7 +38,7 @@ ggplot(data = nw1,mapping= aes(x=Date,y=Total_Value,color=Fund_Type, label = sca
   theme_minimal() +
   theme(legend.position = "bottom",
         axis.line = element_line(colour = "grey", 
-                                 size = 1, linetype = "solid"),
+                                 linewidth = 1, linetype = "solid"),
         
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank()) +
@@ -58,7 +58,7 @@ ggplot(data = nw0, mapping = aes(x=Date, y=Value, color = Fund_Type, label = sca
   theme_minimal() +
   theme(legend.position = "bottom",
         axis.line = element_line(colour = "grey", 
-                                 size = 1, linetype = "solid"),
+                                 linewidth = 1, linetype = "solid"),
         
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank()) +
