@@ -95,7 +95,7 @@ ggplot() +
   theme(axis.text.y = element_blank(),
         axis.ticks = element_blank(),
         axis.line = element_line(colour = "grey",
-                                 size = 1,
+                                 linewidth = 1,
                                  linetype = "solid"))
 
 monthly_expenses_by_type <- expenses %>%
@@ -143,7 +143,7 @@ ggplot() +
   theme(axis.text.y = element_blank(),
         axis.ticks = element_blank(),
         axis.line = element_line(colour = "grey",
-                                 size = 1,
+                                 linewidth = 1,
                                  linetype = "solid"))
 
 #combine the plots
