@@ -15,7 +15,8 @@ bank$date <- as.Date(bank$date)
 
 #rename category to subcategory and shift to lower case
 bank <- bank %>%
-  rename(subcategory = category)
+  mutate(subcategory = category) %>%
+  select(!category)
 
 bank$subcategory <- tolower(bank$subcategory)
 
@@ -37,6 +38,7 @@ bank <- bank %>%
                                                 ifelse(subcategory %in% c("chase_cc_payment",
                                                                           "usaa_cc_payment"), "credit_cards",
                                                        ifelse(subcategory %in% c("jeff_pay",
+                                                                                 "elaina_pay",
                                                                                  "miscellaneous_income"), "income", 
                                                               ifelse(subcategory %in% c("investment_account"), "investment","miscellaneous"))))))))
 
