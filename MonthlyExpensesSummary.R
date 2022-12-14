@@ -24,23 +24,26 @@ bank$subcategory <- tolower(bank$subcategory)
 bank$month <- format(bank$date, "%Y-%m")
 
 #add higher level category
+bank %>% distinct(subcategory)
 bank <- bank %>%
   mutate(category = ifelse(subcategory %in% c("groceries",
-                                              "restaurants"), "food",
-                           ifelse(subcategory %in% c("auto_maintenance",
-                                                     "gas_fuel"), "transportation",
-                                  ifelse(subcategory %in% c("home_decor",
-                                                            "household_appliances",
-                                                            "home_maintenance",
-                                                            "utilities",
-                                                            "cleaning_supplies"), "housing",
-                                         ifelse(subcategory %in% c("clothes_shoes"), "clothing",
+                                              "restaurant"),
+                           "food",
+                           ifelse(subcategory %in% c("transportation"),
+                                  "transportation",
+                                  ifelse(subcategory %in% c("home_office_phone_internet",
+                                                            "housing"),
+                                         "housing",
                                                 ifelse(subcategory %in% c("chase_cc_payment",
-                                                                          "usaa_cc_payment"), "credit_cards",
+                                                                          "usaa_cc_payment"),
+                                                       "credit_cards",
                                                        ifelse(subcategory %in% c("jeff_pay",
                                                                                  "elaina_pay",
-                                                                                 "miscellaneous_income"), "income", 
-                                                              ifelse(subcategory %in% c("investment_account"), "investment","miscellaneous"))))))))
+                                                                                 "miscellaneous_income"),
+                                                              "income", 
+                                                              ifelse(subcategory %in% c("investment"),
+                                                                     "investment",
+                                                                     "miscellaneous")))))))
 
 
 #keep only the month, category, subcategory, and amount columns
