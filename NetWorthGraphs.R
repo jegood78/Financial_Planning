@@ -1,6 +1,7 @@
 library(tidyverse)
 library(tidyr)
 library(plyr)
+library(scales)
 
 nw <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/NetWorth.csv")#,col_select = "Date":"School_Loan_Elaina")
 
@@ -27,12 +28,19 @@ nw1 <- nw[,c("Date","Retirement_Funds","Nonretirement_Funds","Net_Worth")]
 
 nw1 <- pivot_longer(nw1,!Date, names_to = "Fund_Type", values_to = "Total_Value")
 
-nw1 <- nw1 %>% mutate(Fund_Type = fct_relevel(Fund_Type))
+nw1 <- nw1 %>% mutate(Fund_Type = fct_relevel(Fund_Type),
+                      label = if_else(Date == max(Date),
+                                      paste0("$",round(Total_Value/1000),"K"),
+                                      NULL))
 
 top_nw1 <- max(nw1$Total_Value)
 y_upper_nw1 <- plyr::round_any(top_nw1 + 50000,50000,f=ceiling)
 
-ggplot(data = nw1,mapping= aes(x=Date,y=Total_Value,color=Fund_Type, label = scales::dollar(Total_Value))) +
+ggplot(data = nw1,
+       mapping= aes(x=Date,
+                    y=Total_Value,
+                    color=Fund_Type,
+                    label = label)) +
   geom_line() +
   geom_point() +
   theme_minimal() +
@@ -42,7 +50,10 @@ ggplot(data = nw1,mapping= aes(x=Date,y=Total_Value,color=Fund_Type, label = sca
         
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank()) +
-  geom_text(color = "black", nudge_y = 15000, size = 3) +
+  geom_text(aes(label = label),
+             color = "black",
+             nudge_y = 15000,
+             size = 3) +
   expand_limits(y = c(0,y_upper_nw1)) +
   scale_y_continuous(labels = scales::dollar,breaks = seq(0,y_upper_nw1,50000)) +
   labs(title = "Good Family Net Worth", x = NULL, y = NULL)
@@ -50,7 +61,16 @@ ggplot(data = nw1,mapping= aes(x=Date,y=Total_Value,color=Fund_Type, label = sca
 top_nw0 <- max(nw0$Value)
 y_upper_nw0 <- plyr::round_any(top_nw0 + 50000,50000,f=ceiling)
 
-ggplot(data = nw0, mapping = aes(x=Date, y=Value, color = Fund_Type, label = scales::dollar(Value))) +
+nw0 <- nw0 %>%
+  mutate(label = if_else(Date == max(Date),
+                                 paste0("$",round(Value/1000),"K"),
+                                 NULL))
+
+ggplot(data = nw0,
+       mapping = aes(x=Date,
+                     y=Value,
+                     color = Fund_Type,
+                     label = label)) +
   #geom_col(position = "dodge") +
   geom_line() +
   geom_point() +
@@ -62,7 +82,9 @@ ggplot(data = nw0, mapping = aes(x=Date, y=Value, color = Fund_Type, label = sca
         
         panel.grid.major = element_blank(), 
         panel.grid.minor = element_blank()) +
-  geom_text(color = "black", nudge_y = 10000,size = 3) +
+  geom_text(color = "black",
+            nudge_y = 10000,
+            size = 3) +
   expand_limits(y = c(0,y_upper_nw0)) +
   scale_y_continuous(labels = scales::dollar, breaks = seq(0,y_upper_nw0,50000)) +
   labs(title = "Good Family Investment Accounts", x = NULL, y = NULL)
