@@ -2,6 +2,7 @@
 library(tidyverse)
 library(lubridate)
 library(readxl)
+library(scales)
 
 #read in files
 bank <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/Expenses.xlsx",
@@ -89,14 +90,17 @@ monthly_expenses <- expenses %>%
 ggplot(data = monthly_expenses,
        aes(x = month, y = monthly_amount),
        fill = "red") +
-  #geom_hline(aes(y = mean(monthly)))
+  geom_hline(aes(yintercept = mean(monthly_amount))) +
   geom_col(fill = "red") +
   theme_minimal() +
-  geom_text(data = monthly_expenses,
-            aes(x = month,
+  geom_text(aes(x = month,
                 y = monthly_amount,
-                label = paste0("$", monthly_amount)),
+                label = scales::dollar(monthly_amount)),
+                #label = paste0("$", monthly_amount)),
             vjust = -0.5) +
+  geom_text(aes(x = max(month),
+                y = 8000,
+                label = paste0("Average: \n",scales::dollar(mean(monthly_amount))))) +
   labs(title = "Expenses by Month", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
         axis.ticks = element_blank(),
@@ -135,16 +139,18 @@ monthly_income <- income %>%
   summarise(monthly_amount = sum(amount)) %>%
   mutate(type = "income")
 
-ggplot() +
-  geom_col(data = monthly_income,
-           aes(x = month, y = monthly_amount),
+ggplot(data = monthly_income) +
+  geom_hline(aes(yintercept = mean(monthly_amount))) +
+  geom_col(aes(x = month, y = monthly_amount),
            fill = "green") +
   theme_minimal() +
-  geom_text(data = monthly_income,
-            aes(x = month,
+  geom_text(aes(x = month,
                 y = monthly_amount,
                 label = paste0("$", monthly_amount)),
             vjust = -0.5) +
+  geom_text(aes(x = max(month),
+                y = 10000,
+                label = paste0("Average: \n",scales::dollar(mean(monthly_amount))))) +
   labs(title = "Income by Month", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
         axis.ticks = element_blank(),
