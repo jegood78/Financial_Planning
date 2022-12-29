@@ -86,10 +86,11 @@ monthly_expenses <- expenses %>%
   summarise(monthly_amount = sum(amount) * -1) %>%
   mutate(type = "expense")
 
-ggplot() +
-  geom_col(data = monthly_expenses,
-           aes(x = month, y = monthly_amount),
-           fill = "red") +
+ggplot(data = monthly_expenses,
+       aes(x = month, y = monthly_amount),
+       fill = "red") +
+  #geom_hline(aes(y = mean(monthly)))
+  geom_col(fill = "red") +
   theme_minimal() +
   geom_text(data = monthly_expenses,
             aes(x = month,
