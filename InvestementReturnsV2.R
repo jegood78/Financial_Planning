@@ -40,17 +40,20 @@ sp500 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/
 
 #build a loop to calculate returns for the total number of years beginning each 
 #year of the historical data that allows for the total number of years
-start_year <- min(sp500$year)
+start_years <- sp500$year[1:(length(sp500$year) - years)]
 
-end_year <- max(sp500$year) - years
+df_names <- seq(1:length(start_years))
 
-yr <- start_year
-while (yr <= end_year) {
-  for (i in 1:years) {
-    print(paste0(yr,"-",i))
-  } #end for loop
-  yr = yr + 1
-} #end while loop
+for (i in 1:length(start_years)) {
+  df_names[i] <- paste0("start_",start_years[i])
+}
+
+for (i in 1:length(start_years)) {
+  
+  for (j in i:(i+years)) {
+    print(paste0("year:",sp500$year[j]," return:",sp500$annual_return[j]))
+  } #end for j
+} #end for i
 
 ##############################################################################
 #Include tsp and automatic monthly contributions while in the navy
