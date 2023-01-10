@@ -44,7 +44,9 @@ bank <- bank %>%
                                                               "income", 
                                                               ifelse(subcategory %in% c("investment"),
                                                                      "investment",
-                                                                     "miscellaneous")))))))
+                                                                     if_else(subcategory %in% c("pets"),
+                                                                             "pets",
+                                                                             "miscellaneous"))))))))
 
 
 #keep only the month, category, subcategory, and amount columns
@@ -179,3 +181,4 @@ ggplot(data = combined,
         axis.title = element_blank(),
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank())
+
