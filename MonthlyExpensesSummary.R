@@ -62,12 +62,12 @@ monthly_by_category <- bank %>%
   summarise(monthly_amount = sum(amount))
 
 #initial plot
-ggplot(data = monthly_by_category,
-       mapping = aes(x = category,
-                     y = monthly_amount,
-                     fill = category)) +
-  geom_col() +
-  facet_grid(~month)
+# ggplot(data = monthly_by_category,
+#        mapping = aes(x = category,
+#                      y = monthly_amount,
+#                      fill = category)) +
+#   geom_col() +
+#   facet_grid(~month)
 
 #subset the data into pay, expenses, and investments
 categories <- distinct(bank, category)
