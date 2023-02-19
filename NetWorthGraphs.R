@@ -1,11 +1,5 @@
-library(tidyverse)
-library(tidyr)
-library(plyr)
-library(scales)
-
-nw <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/NetWorth.csv")#,col_select = "Date":"School_Loan_Elaina")
-
-nw <- mutate(nw, Date = as.Date(Date,format = "%m/%d/%y"))
+#convert date field from character to date
+nw <- mutate(net_worth, Date = as.Date(Date,format = "%m/%d/%y"))
 
 nw0 <- pivot_longer(nw,!Date, names_to = "Fund_Type", values_to = "Value")
 
