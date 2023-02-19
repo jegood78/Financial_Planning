@@ -28,13 +28,13 @@ nonretirement_funds <- c("Vanguard_Brokerage",
                          "School_Loan_Elaina")
 
 #sum the retirement funds accounts for each entry
-net_worth$Retirement_Funds <- rowSums(nw[,retirement_funds])
+net_worth$Retirement_Funds <- rowSums(net_worth[,retirement_funds])
 
 #sum the nonretirement fund accounts for each entry
-net_worth$Nonretirement_Funds <- rowSums(nw[,nonretirement_funds])
+net_worth$Nonretirement_Funds <- rowSums(net_worth[,nonretirement_funds])
 
 #calculate total net worth
-net_worth$Net_Worth <- rowSums(nw[,c("Retirement_Funds","Nonretirement_Funds")])
+net_worth$Net_Worth <- rowSums(net_worth[,c("Retirement_Funds","Nonretirement_Funds")])
 
 #keep only the date and calculated fields
 net_worth_sums <- net_worth[,c("Date","Retirement_Funds","Nonretirement_Funds","Net_Worth")]
@@ -75,7 +75,7 @@ ggplot(data = net_worth_sums_long,
              nudge_y = 15000,
              size = 3) +
   expand_limits(y = c(0, y_max)) +
-  scale_y_continuous(labels = scales::dollar,breaks = seq(0, y_upper_nw1, 50000)) +
+  scale_y_continuous(labels = scales::dollar,breaks = seq(0, y_max, 50000)) +
   labs(title = "Good Family Net Worth", x = NULL, y = NULL)
 
 #find the max value for the investment accounts
@@ -111,6 +111,6 @@ ggplot(data = investment_accounts,
             nudge_y = 10000,
             size = 3) +
   expand_limits(y = c(0, y_max2)) +
-  scale_y_continuous(labels = scales::dollar, breaks = seq(0, y_upper_nw0, 50000)) +
+  scale_y_continuous(labels = scales::dollar, breaks = seq(0, y_max2, 50000)) +
   labs(title = "Good Family Investment Accounts", x = NULL, y = NULL)
                 
