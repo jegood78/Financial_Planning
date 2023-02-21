@@ -1,13 +1,3 @@
-#libraries
-library(tidyverse)
-library(lubridate)
-library(readxl)
-library(scales)
-
-#read in files
-bank <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/Expenses.xlsx",
-                   sheet = "Transactions")
-
 #change all of the names to lower case
 names(bank) <- tolower(names(bank))
 
