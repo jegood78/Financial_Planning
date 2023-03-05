@@ -25,7 +25,8 @@ nonretirement_funds <- c("Vanguard_Brokerage",
                          "USAA_Checking",
                          "USAA_Visa",
                          "Chase_CC",
-                         "School_Loan_Elaina")
+                         "School_Loan_Elaina",
+                         "Fixed_Rate_Loan")
 
 #sum the retirement funds accounts for each entry
 net_worth$Retirement_Funds <- rowSums(net_worth[,retirement_funds])
