@@ -36,7 +36,9 @@ bank <- bank %>%
                                                                      "investment",
                                                                      if_else(subcategory %in% c("pets"),
                                                                              "pets",
-                                                                             "miscellaneous"))))))))
+                                                                             if_else(subcategory %in% c("loan_repayment"),
+                                                                                     "loan_repayment",
+                                                                                     "miscellaneous")))))))))
 
 
 #keep only the month, category, subcategory, and amount columns
@@ -71,7 +73,8 @@ investments <- bank %>%
 
 expenses <- bank %>%
   filter(!category %in% c("income",
-                          "investment"))
+                          "investment",
+                          "loan_repayment"))
 
 #plot expenses by month
 monthly_expenses <- expenses %>%
