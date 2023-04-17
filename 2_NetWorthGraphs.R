@@ -48,7 +48,7 @@ net_worth_sums_long <- net_worth_sums_long %>%
   mutate(Fund_Type = fct_relevel(Fund_Type),
          label = if_else(Date == max(Date),
                                       paste0("$",round(Total_Value/1000),"K"),
-                                      NULL))
+                                      NA))
 
 #calculate the max net worth
 max_net_worth <- max(net_worth_sums_long$Total_Value)
@@ -89,7 +89,7 @@ y_max2 <- plyr::round_any(max_value + 50000, 50000, f=ceiling)
 investment_accounts <- investment_accounts %>%
   mutate(label = if_else(Date == max(Date),
                                  paste0("$",round(Value/1000),"K"),
-                                 NULL))
+                                 NA))
 
 #plot the investment accounts
 ggplot(data = investment_accounts,
