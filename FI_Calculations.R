@@ -482,3 +482,24 @@ while (sim_invest_value < pension_fi) {
 }
 
 pension_fi_tsp_inc_count
+
+
+###############################################################################
+# Run some estimates on post navy retirement pay
+
+# assume elaina's pay based on cy 2022 pay for Spring Heath (2 months)
+
+cy22_pay <- 6500
+
+est_monthly_pay_elaina <- cy22_pay/2
+
+est_annual_pay_elaina <- est_monthly_pay_elaina *12
+
+#estimate family's annual gross income based on est elaina pay and gross pension
+est_annual_gross_family_income <- round(est_annual_pension + est_annual_pay_elaina)
+
+#calculate estimated net family income
+est_annual_net_family_income <- calculate_net_income(est_annual_gross_family_income)
+
+#calculate the delta between estimated family income and expenses
+est_annual_net_family_income-est_annual_expenses
