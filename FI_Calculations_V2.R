@@ -55,6 +55,12 @@ est_retire_date <- as.Date(mdy("09-1-2026"))
 #create a 12 month list
 rolling_months <- format(seq(today()-365, today() %m-% months(1), by = 'month'), "%Y-%m")
 
+#current age
+c_age <- 44
+
+#estimated EOL
+est_eol_age <- 90
+
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 #functions
 #function to calculate federal taxes based on 2023 married filing jointly tax brackets
@@ -514,3 +520,79 @@ ggplot() +
                          " of income invested"),
        x = "Percent of Net Income Invested",
        y = "Years to Financial Independence")
+
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+#future net worth value based on historical simulation
+
+#calculate the number of years to simulate
+sim_years <- est_eol_age - c_age
+
+#calculate number of years remaining in the Navy
+navy_years <- ceiling(interval(today(),est_retire_date)/years(1))
+
+# calculate the number of sim_year periods in historical S&P 500 return data
+num_runs <- length(sp_500$year)-sim_years
+
+###########################################################
+#calculate navie values given no contributions and no withdrawals
+naive_sim <- seq(1:num_runs)
+for (k in 1:num_runs){
+  begin_year <- sp_500$year[k]
+  output_values <- seq(1:sim_years)
+  for (i in 1:sim_years){
+    if (i == 1){
+      c_returns = sp_500[sp_500$year == begin_year+(i-1),]$annual_return/100
+      c_return_value = investment_value * (1 + c_returns)
+      output_values[i] <- c_return_value
+    } else {
+      c_returns = sp_500[sp_500$year == begin_year+(i-1),]$annual_return/100
+      c_return_value = output_values[i-1] * (1 + c_returns)
+      output_values[i] <- c_return_value
+    }
+    
+  }
+  naive_sim[k] <- output_values[46]
+}
+
+#look at the outputs
+naive_sim
+
+#calculate quantiels
+quantile(naive_sim, probs = c(0.05,0.5))
+
+###########################################################
+#calculate navy values given current contributions through rest of navy career and no withdrawals
+navy_sim <- seq(1:num_runs)
+for (k in 1:num_runs){
+  begin_year <- sp_500$year[k]
+  output_values <- seq(1:sim_years)
+  for (i in 1:sim_years){
+    if (i == 1){
+      c_returns = sp_500[sp_500$year == begin_year+(i-1),]$annual_return/100
+      contribution = total_annual_invest
+      c_return_value = investment_value * (1 + c_returns) + contribution
+      output_values[i] <- c_return_value
+    } else if (i > 1 & i <= navy_years) {
+      c_returns = sp_500[sp_500$year == begin_year+(i-1),]$annual_return/100
+      contribution = total_annual_invest
+      c_return_value = output_values[i-1] * (1 + c_returns) + contribution
+      output_values[i] <- c_return_value
+    } else {
+      c_returns = sp_500[sp_500$year == begin_year+(i-1),]$annual_return/100
+      contribution = 0
+      c_return_value = output_values[i-1] * (1 + c_returns) + contribution
+      output_values[i] <- c_return_value
+    }
+    print(contribution)
+    
+  }
+  navy_sim[k] <- output_values[46]
+  print(paste0("RUN_",k))
+}
+
+#look at the outputs
+navy_sim
+
+#calculate quantiels
+quantile(navy_sim, probs = c(0.05,0.5))
