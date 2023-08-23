@@ -8,7 +8,7 @@
 #   estimated retirement
 # Calculate average expenses for last 12 months
 # Calculate average income for last 12 months
-# Calculate average investments for last 12 months
+# Calculate average investments savings and loan repayment for last 12 months
 # Calculate current net worth
 # Calculate FU numbers:
 #   Naive
@@ -419,7 +419,7 @@ ggplot(data = income_last_12_grouped) +
                                  linetype = "solid"))
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
-# Calculate average investments and savings and loan repayement for last 12 months
+# Calculate average investments and savings and loan repayment for last 12 months
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
 #take a look at the distinct categories
@@ -537,3 +537,7 @@ ggplot(data = loan_last_12_grouped) +
         axis.line = element_line(colour = "grey",
                                  linewidth = 1,
                                  linetype = "solid"))
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+# Calculate current net worth
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
