@@ -40,6 +40,7 @@ bank <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning
 pChart2023 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2023_Officer_Pay.csv")
 pChart2022 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2022_Officer_Pay.csv")
 pChart2021 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2021_Officer_Pay.csv")
+pChart2020 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2020_Officer_Pay.csv")
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Set user inputs
@@ -201,15 +202,338 @@ historical_36_months <- format(seq(today()-(365 * 3), today() %m-% months(1), by
 #calculate historical years of service
 historical_yos <- round(time_length(difftime(as.Date(ym(historical_36_months)),pebd),"years"),digits = 2)
 
+#calculate average monthly pay for historical 36 months
+hist_monthly_pay <- seq(1:36)
 hist_year <- seq(1:36)
 hist_yoe <- seq(1:36)
 hist_rank <- seq(1:36)
 for (i in 1:36) {
+  
   if (historical_36_months[i] < format(c_dor, "%Y-%m")) {
     hist_rank[i] <- paste0("O",as.numeric(str_sub(c_rank,2,2)) - 1)
   } else {
     hist_rank[i] <- c_rank
   }
+  
   hist_yoe[i] <- calculate_yoe(historical_yos[i])
   hist_year[i] <- str_sub(historical_36_months[i],1,4)
+  
+  if (hist_year[i] == "2020") {
+    temp_val <- pChart2020 %>% filter(YOE == hist_yoe[i]) %>% select(hist_rank[i])
+    hist_monthly_pay[i] <- temp_val[[1]]
+  } else if (hist_year[i] == "2021") {
+    temp_val <- pChart2021 %>% filter(YOE == hist_yoe[i]) %>% select(hist_rank[i])
+    hist_monthly_pay[i] <- temp_val[[1]]
+  } else if (hist_year[i] == "2022") {
+    temp_val <- pChart2022 %>% filter(YOE == hist_yoe[i]) %>% select(hist_rank[i])
+    hist_monthly_pay[i] <- temp_val[[1]]
+  } else if (hist_year[i] == "2023") {
+    temp_val <- pChart2023 %>% filter(YOE == hist_yoe[i]) %>% select(hist_rank[i])
+    hist_monthly_pay[i] <- temp_val[[1]]
+  } else {
+    hist_monthly_pay[i] <- "ERROR"
+  }
 }
+
+hist_avg_monthly <- round(mean(hist_monthly_pay),digits = 2)
+
+#calculate monthly pension based on pension percentage and historical average monthly pay
+c_monthly_gross_pension <- round(c_pension_percentage * hist_avg_monthly, digits = 2)
+
+#calculate annual pension
+c_annual_gross_pension <- c_monthly_gross_pension * 12
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+# Calculate pensions:
+#   estimated retirement 
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+
+# create vector of 36 months based on estimated retirement date
+final_36_months <- seq(as.Date(est_retire_date)%m-% months(36),as.Date(est_retire_date), by = "month")
+
+#calculate years of service based on 36 month vector
+est_yos <- round(time_length(difftime(final_36_months,pebd),"years"), digits = 2)
+
+#calculate pension percentage from estimated years of service
+est_pension_percentage <- round(max(est_yos) * 0.025, digits = 3)
+
+#estimate rank, years of experience, and monthly base pay for the 36 months based on current 
+#rank and estimated promotion date
+est_monthly_pay <- seq(1:36)
+est_year <- seq(1:36)
+est_yoe <- seq(1:36)
+est_rank <- seq(1:36)
+for (i in 1:36) {
+  
+  if (final_36_months[i] >= est_promotion) {
+    est_rank[i] <- paste0("O",as.numeric(str_sub(c_rank,2,2)) + 1)
+  } else {
+    est_rank[i] <- c_rank
+  }
+  
+  est_yoe[i] <- calculate_yoe(est_yos[i])
+  est_year[i] <- str_sub(final_36_months[i],1,4)
+  
+  if (est_year[i] == "2020") {
+    temp_val <- pChart2020 %>% filter(YOE == est_yoe[i]) %>% select(est_rank[i])
+    est_monthly_pay[i] <- temp_val[[1]]
+  } else if (est_year[i] == "2021") {
+    temp_val <- pChart2021 %>% filter(YOE == est_yoe[i]) %>% select(est_rank[i])
+    est_monthly_pay[i] <- temp_val[[1]]
+  } else if (est_year[i] == "2022") {
+    temp_val <- pChart2022 %>% filter(YOE == est_yoe[i]) %>% select(est_rank[i])
+    est_monthly_pay[i] <- temp_val[[1]]
+  } else if (est_year[i] >= "2023") {
+    temp_val <- pChart2023 %>% filter(YOE == est_yoe[i]) %>% select(est_rank[i])
+    est_monthly_pay[i] <- temp_val[[1]]
+  } else {
+    est_monthly_pay[i] <- "ERROR"
+  }
+}
+
+est_avg_monthly <- round(mean(est_monthly_pay),digits = 2)
+
+#calculate monthly pension based on pension percentage and historical average monthly pay
+est_monthly_gross_pension <- round(est_pension_percentage * est_avg_monthly, digits = 2)
+
+#calculate annual pension
+est_annual_gross_pension <- est_monthly_gross_pension * 12
+
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+# Calculate average expenses for last 12 months
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+
+#make everything lower case
+names(bank) <- tolower(names(bank))
+
+bank$category <- tolower(bank$category)
+
+#take a look at the distinct categories
+unique(bank$category)
+
+#keep only the categories that are expenses
+expense_categories <- c("recreation",
+                        "groceries",
+                        "insurance",
+                        "bank_transaction",
+                        "eleanor_school",
+                        "pets",
+                        "taxes",
+                        "health_care",
+                        "miscellaneous",
+                        "restaurant",
+                        "transportation",
+                        "professional_expenses",
+                        "housing",
+                        "personal_contributions_gifts",
+                        "home_office_phone_internet",
+                        "chase_cc_payment")
+
+expenses <- bank %>% filter(category %in% expense_categories)
+
+#change the date to month format
+expenses$date <- format(expenses$date, "%Y-%m")
+
+
+#keep only the last 12 months worth of expenses
+expenses_last_12 <- expenses %>%
+  filter(date %in% rolling_12_months)
+
+#calculate average monthly expenses for last 12 months
+expenses_last_12_grouped <- expenses_last_12 %>%
+  group_by(date) %>%
+  summarise(monthly_amount = sum(amount))
+
+avg_monthly_expenses <- round(mean(expenses_last_12_grouped$monthly_amount), digits = 2)
+
+#plot it
+ggplot(data = expenses_last_12_grouped %>% mutate(monthly_amount = monthly_amount * -1),
+       aes(x = date, y = monthly_amount),
+       fill = "red") +
+  geom_hline(aes(yintercept = (avg_monthly_expenses*-1))) +
+  geom_col(fill = "red") +
+  theme_minimal() +
+  geom_text(aes(x = date,
+                y = monthly_amount,
+                label = scales::dollar(monthly_amount)),
+            #label = paste0("$", monthly_amount)),
+            vjust = -0.5) +
+  geom_text(aes(x = max(date),
+                y = max(monthly_amount),
+                label = paste0("Average: \n",scales::dollar((avg_monthly_expenses*-1))))) +
+  labs(title = "Expenses by Month",subtitle = "Last 12 Months", x = NULL, y = NULL) +
+  theme(axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
+        axis.line = element_line(colour = "grey",
+                                 linewidth = 1,
+                                 linetype = "solid"))
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+# Calculate average income for last 12 months
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+
+#take a look at the distinct categories
+unique(bank$category)
+
+#keep only the categories that are expenses
+income_categories <- c("jeff_pay",
+                       "miscellaneous_income",
+                       "elaina_pay")
+
+income <- bank %>% filter(category %in% income_categories)
+
+#change the date to month format
+income$date <- format(income$date, "%Y-%m")
+
+
+#keep only the last 12 months worth of expenses
+income_last_12 <- income %>%
+  filter(date %in% rolling_12_months)
+
+#calculate average monthly expenses for last 12 months
+income_last_12_grouped <- income_last_12 %>%
+  group_by(date) %>%
+  summarise(monthly_amount = sum(amount))
+
+avg_monthly_income <- round(mean(income_last_12_grouped$monthly_amount), digits = 2)
+
+#plot it
+ggplot(data = income_last_12_grouped) +
+  geom_hline(aes(yintercept = avg_monthly_income)) +
+  geom_col(aes(x = date, y = monthly_amount),
+           fill = "green") +
+  theme_minimal() +
+  geom_text(aes(x = date,
+                y = monthly_amount,
+                label = paste0("$", monthly_amount)),
+            vjust = -0.5) +
+  geom_text(aes(x = max(date),
+                y = max(monthly_amount),
+                label = paste0("Average: \n",scales::dollar(avg_monthly_income)))) +
+  labs(title = "Income by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
+  theme(axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
+        axis.line = element_line(colour = "grey",
+                                 linewidth = 1,
+                                 linetype = "solid"))
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+# Calculate average investments and savings and loan repayement for last 12 months
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+
+#take a look at the distinct categories
+unique(bank$category)
+
+#keep only the categories that are investments
+investments <- bank %>% filter(category %in% c("investment"))
+
+#change the date to month format
+investments$date <- format(investments$date, "%Y-%m")
+
+
+#keep only the last 12 months worth of expenses
+investments_last_12 <- investments %>%
+  filter(date %in% rolling_12_months)
+
+#calculate average monthly expenses for last 12 months
+investments_last_12_grouped <- investments_last_12 %>%
+  group_by(date) %>%
+  summarise(monthly_amount = sum(amount) * -1)
+
+avg_monthly_investments <- round(mean(investments_last_12_grouped$monthly_amount), digits = 2)
+
+#plot it
+ggplot(data = investments_last_12_grouped) +
+  geom_hline(aes(yintercept = avg_monthly_investments)) +
+  geom_col(aes(x = date, y = monthly_amount),
+           fill = "purple") +
+  theme_minimal() +
+  geom_text(aes(x = date,
+                y = monthly_amount,
+                label = paste0("$", monthly_amount)),
+            vjust = -0.5) +
+  geom_text(aes(x = max(date),
+                y = max(monthly_amount),
+                label = paste0("Average: \n",scales::dollar(avg_monthly_investments)))) +
+  labs(title = "Investments by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
+  theme(axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
+        axis.line = element_line(colour = "grey",
+                                 linewidth = 1,
+                                 linetype = "solid"))
+
+#keep only the categories that are savings
+savings <- bank %>% filter(source %in% ("USAA_Savings") & category %in% c("savings"))
+
+#change the date to month format
+savings$date <- format(savings$date, "%Y-%m")
+
+#keep only the last 12 months worth of expenses
+savings_last_12 <- savings %>%
+  filter(date %in% rolling_12_months)
+
+#calculate average monthly expenses for last 12 months
+savings_last_12_grouped <- savings_last_12 %>%
+  group_by(date) %>%
+  summarise(monthly_amount = sum(amount))
+
+avg_monthly_savings <- round(mean(savings_last_12_grouped$monthly_amount), digits = 2)
+
+#plot it
+ggplot(data = savings_last_12_grouped) +
+  geom_hline(aes(yintercept = avg_monthly_savings)) +
+  geom_col(aes(x = date, y = monthly_amount),
+           fill = "blue") +
+  theme_minimal() +
+  geom_text(aes(x = date,
+                y = monthly_amount,
+                label = paste0("$", monthly_amount)),
+            vjust = -0.5) +
+  geom_text(aes(x = max(date),
+                y = max(monthly_amount),
+                label = paste0("Average: \n",scales::dollar(avg_monthly_savings)))) +
+  labs(title = "Savings by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
+  theme(axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
+        axis.line = element_line(colour = "grey",
+                                 linewidth = 1,
+                                 linetype = "solid"))
+
+
+#keep only the categories that are loan repayment
+loan <- bank %>% filter(category %in% c("loan_repayment"))
+
+#change the date to month format
+loan$date <- format(loan$date, "%Y-%m")
+
+#keep only the last 12 months worth of expenses
+loan_last_12 <- loan %>%
+  filter(date %in% rolling_12_months)
+
+#calculate average monthly expenses for last 12 months
+loan_last_12_grouped <- loan_last_12 %>%
+  group_by(date) %>%
+  summarise(monthly_amount = sum(amount) * -1)
+
+avg_monthly_loan_repayment <- round(mean(loan_last_12_grouped$monthly_amount), digits = 2)
+
+#plot it
+ggplot(data = loan_last_12_grouped) +
+  geom_hline(aes(yintercept = avg_monthly_loan_repayment)) +
+  geom_col(aes(x = date, y = monthly_amount),
+           fill = "orange") +
+  theme_minimal() +
+  geom_text(aes(x = date,
+                y = monthly_amount,
+                label = paste0("$", monthly_amount)),
+            vjust = -0.5) +
+  geom_text(aes(x = max(date),
+                y = max(monthly_amount),
+                label = paste0("Average: \n",scales::dollar(avg_monthly_loan_repayment)))) +
+  labs(title = "Loan Repayment by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
+  theme(axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
+        axis.line = element_line(colour = "grey",
+                                 linewidth = 1,
+                                 linetype = "solid"))
