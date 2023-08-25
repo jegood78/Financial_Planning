@@ -82,6 +82,9 @@ c_age <- 44
 #estimated EOL
 est_eol_age <- 90
 
+#calculate average annual return for S&P 500
+avg_annual_returns <- floor(mean(sp_500$annual_return))/100
+
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Define functions
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
@@ -93,7 +96,7 @@ calculate_net_income <- function(x){
   } 
   else if (x > 22000 & x <= 89450) {
     net_pay <- 22000*(1-0.10) + 
-      (22000)*(1-0.12) 
+      (x-22000)*(1-0.12) 
   } 
   else if (x > 89450 & x <= 190750) {
     net_pay <- 22000*(1-0.10) + 
@@ -304,9 +307,6 @@ est_annual_gross_pension <- est_monthly_gross_pension * 12
 # Calculate average expenses for last 12 months
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
-#make everything lower case
-names(bank) <- tolower(names(bank))
-
 bank$category <- tolower(bank$category)
 
 #take a look at the distinct categories
@@ -373,9 +373,6 @@ ggplot(data = expenses_last_12_grouped %>% mutate(monthly_amount = monthly_amoun
 # Calculate average income for last 12 months
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
-#take a look at the distinct categories
-unique(bank$category)
-
 #keep only the categories that are expenses
 income_categories <- c("jeff_pay",
                        "miscellaneous_income",
@@ -421,9 +418,6 @@ ggplot(data = income_last_12_grouped) +
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average investments and savings and loan repayment for last 12 months
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
-
-#take a look at the distinct categories
-unique(bank$category)
 
 #keep only the categories that are investments
 investments <- bank %>% filter(category %in% c("investment"))
@@ -541,3 +535,144 @@ ggplot(data = loan_last_12_grouped) +
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate current net worth
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+
+#make all the names lower case
+names(net_worth) <- tolower(names(net_worth))
+
+#change date format
+net_worth$date <- as.Date(mdy(net_worth$date))
+
+#keep only the last year of data
+net_worth_redux <- net_worth %>% filter(date >= (today() - 365))
+
+#separate accounts into retirement, non-retirement, liabilities
+retirement_funds <- net_worth_redux %>% select(date,
+                                               tsp,
+                                               vanguard_ira_jeff,
+                                               vanguard_ira_elaina)
+
+non_retirement_funds <- net_worth_redux %>% select(date,
+                                                   vanguard_brokerage,
+                                                   usaa_savings,
+                                                   usaa_checking)
+
+liabilities <- net_worth_redux %>% select(date,
+                                          usaa_visa,
+                                          chase_cc,
+                                          school_loan_elaina,
+                                          fixed_rate_loan_nissan)
+
+#create a single value per date for each fund type
+retirement_funds <- retirement_funds %>%
+  mutate(retirement_total = tsp + vanguard_ira_jeff + vanguard_ira_elaina)
+
+non_retirement_funds <- non_retirement_funds %>%
+  mutate(non_retirement_total = vanguard_brokerage + usaa_savings + usaa_checking)
+
+liabilities <- liabilities %>%
+  mutate(liabilities_total = usaa_visa + chase_cc + school_loan_elaina + fixed_rate_loan_nissan)
+
+#merge the totals together into a single data table
+net_worth_merged <- retirement_funds %>% select(date, retirement_total) %>%
+  left_join(non_retirement_funds %>% select(date, non_retirement_total), by = "date") %>%
+  left_join(liabilities %>% select(date, liabilities_total), by = "date")
+
+#calculate net worth total
+net_worth_merged <- net_worth_merged %>%
+  mutate(net_worth_total = retirement_total + non_retirement_total + liabilities_total)
+
+#use max net worth to calculate a max value for the y access
+y_max <- plyr::round_any(max(net_worth_merged$net_worth_total) + 50000, 50000, f=ceiling)
+
+first_net_worth <- net_worth_merged %>% filter(date == min(date)) %>% select(net_worth_total)
+current_net_worth <- net_worth_merged %>% filter(date == max(date)) %>% select(net_worth_total)
+
+#plot the net worth
+ggplot(data = net_worth_merged,
+       mapping= aes(x=date,
+                    y=net_worth_total)) +
+  geom_line() +
+  geom_point() +
+  theme_minimal() +
+  geom_text(aes(x = min(date),
+                y = first_net_worth[[1]],
+                label = paste0("$", round(first_net_worth[[1]]/1000),"K")),
+            vjust = -1) +
+  geom_text(aes(x = max(date),
+                y = current_net_worth[[1]],
+                label = paste0("$", round(current_net_worth[[1]]/1000),"K")),
+            vjust = -1) +
+  theme(axis.line = element_line(colour = "grey", 
+                                 linewidth = 1,
+                                 linetype = "solid"),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank()) +
+  expand_limits(y = c(0, y_max)) +
+  scale_y_continuous(labels = scales::dollar,breaks = seq(0, y_max, 50000)) +
+  labs(title = "Net Worth", subtitle = "Last 12 Months", x = NULL, y = NULL)
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+# Calculate FU numbers:
+#   Naive
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+
+#calculate naive FI number based on current average monthly expenses and 
+#assumed safe withdrawal rate
+
+naive_fi <- (avg_monthly_expenses*-1)*12 * (1 / annual_safe_withdrawal)
+
+#calculate years to naive FI based on current net_worth assuming no additional investments
+naive_fi_years_no_invest <- 0
+sim_invest_value <- current_net_worth[[1]]
+
+while (sim_invest_value < naive_fi) {
+  sim_invest_value = sim_invest_value +
+    (sim_invest_value*avg_annual_returns) 
+  naive_fi_years_no_invest <- naive_fi_years_no_invest + 1
+}
+
+naive_fi_years_no_invest
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+# Calculate FU numbers:
+#   With retire today pension
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+
+#calculate naive FI number based on current average monthly expenses, 
+#assumed safe withdrawal rate, and pension if I retired today
+
+today_pension_fi <- ((avg_monthly_expenses*-1)*12 - (calculate_net_income(c_annual_gross_pension))) * (1 / annual_safe_withdrawal)
+
+#calculate years to naive FI based on current net_worth assuming no additional investments
+today_pension_fi_years_no_invest <- 0
+sim_invest_value <- current_net_worth[[1]]
+
+while (sim_invest_value < today_pension_fi) {
+  sim_invest_value = sim_invest_value +
+    (sim_invest_value*avg_annual_returns) 
+  today_pension_fi_years_no_invest <- today_pension_fi_years_no_invest + 1
+}
+
+today_pension_fi_years_no_invest
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+# Calculate FU numbers:
+#   With estimated retirement pension
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+
+#calculate naive FI number based on current average monthly expenses, 
+#assumed safe withdrawal rate, and estimated pension if I retired at O5
+
+est_pension_fi <- ((avg_monthly_expenses*-1)*12 - (calculate_net_income(est_annual_gross_pension))) * (1 / annual_safe_withdrawal)
+
+#calculate years to naive FI based on current net_worth assuming no additional investments
+est_pension_fi_years_no_invest <- 0
+sim_invest_value <- current_net_worth[[1]]
+
+while (sim_invest_value < est_pension_fi) {
+  sim_invest_value = sim_invest_value +
+    (sim_invest_value*avg_annual_returns) 
+  est_pension_fi_years_no_invest <- est_pension_fi_years_no_invest + 1
+}
+
+est_pension_fi_years_no_invest
