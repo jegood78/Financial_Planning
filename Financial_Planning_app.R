@@ -46,8 +46,8 @@ ui <- fluidPage(
             value = "2023-09-01",
             min = "1990-01-01"), #end dateInput est_promotion
   
-  dateInput(inputId = "est_retire_date",
-            label = "Estimated Retirement Date",
+  dateInput(inputId = "est_navy_retire_date",
+            label = "Estimated Navy Retirement Date",
             value = "2026-09-01",
             min = "1990-01-01"), #end dateInput est_retire_date
   

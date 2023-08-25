@@ -570,8 +570,12 @@ liabilities <- net_worth_redux %>% select(date,
 retirement_funds <- retirement_funds %>%
   mutate(retirement_total = tsp + vanguard_ira_jeff + vanguard_ira_elaina)
 
+c_retirement_total <- retirement_funds %>% filter(date == max(date)) %>% select(retirement_total)
+
 non_retirement_funds <- non_retirement_funds %>%
   mutate(non_retirement_total = vanguard_brokerage + usaa_savings + usaa_checking)
+
+c_non_retirement_total <- non_retirement_funds %>% filter(date == max(date)) %>% select(non_retirement_total)
 
 liabilities <- liabilities %>%
   mutate(liabilities_total = usaa_visa + chase_cc + school_loan_elaina + fixed_rate_loan_nissan)
@@ -692,3 +696,79 @@ est_pension_fi_years_no_invest
 # required minimum distributions
 # toggle inputs for post Navy pay
 # toggle inputs for post Navy investments
+
+#calculate effective tax rate based on pay scale
+#calculate current years of service and years of experience
+c_yos <- round(time_length(difftime(today(),pebd),"years"),digits = 2)
+c_yoe <- calculate_yoe(c_yos)
+
+#calculate jeff gross annual pay based on pay charts (ignore bah because we live in housing)
+jeff_monthly_pay_gross <- pChart2023 %>% filter(YOE == c_yoe) %>% select(all_of(c_rank))
+jeff_annual_pay_gross = jeff_monthly_pay_gross[[1]] * 12
+
+#calculate elaina annual pay based on historicals (1099 employee)
+elaina_annual_pay_gross <- bank %>%
+  filter(category == "elaina_pay" & date >= (today()-365)) %>%
+  summarise(elaina_annual_pay = sum(amount))
+
+#total annual gross
+total_annual_pay_gross <- jeff_annual_pay_gross + elaina_annual_pay_gross[[1]]
+
+#estimate effective tax rate based on calculated gross and average monthly income
+est_effective_tax_rate <- 1 - (avg_monthly_income *12) / total_annual_pay_gross
+
+#calculate annual investment percentage
+total_invest_last_12 <- sum(investments_last_12_grouped$monthly_amount) + tsp
+
+est_percent_invested <- round(total_invest_last_12/total_annual_pay_gross, digits = 2)
+
+
+#begin building simulation
+#naive simulation just from c_age to est_eol_age with just the current net_worth growing
+
+run_num <- seq(c_age:est_eol_age)
+sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
+sim_age <- seq(from = c_age, to = est_eol_age, by = 1)
+sim_net_worth_value <- run_num
+
+for (i in run_num) {
+  if (i == 1) {
+    sim_net_worth_value[i] = current_net_worth[[1]]
+  } else {
+    sim_net_worth_value[i] = sim_net_worth_value[i -1] * (1 + avg_annual_returns)
+  }
+}
+
+sim_out <- as_tibble(cbind(run_num,
+                           sim_year,
+                           sim_age,
+                           sim_net_worth_value))
+
+#naive simulation just from c_age to est_eol_age beginning separating out retirement and non-retirement accounts
+run_num <- seq(c_age:est_eol_age)
+sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
+sim_age <- seq(from = c_age, to = est_eol_age, by = 1)
+sim_net_worth_value_retire <- run_num
+sim_net_worth_value_non_retire <- run_num
+sim_net_worth_value_total <- run_num
+
+for (i in run_num) {
+  if (i == 1) {
+    sim_net_worth_value_retire[i] = c_retirement_total[[1]]
+    sim_net_worth_value_non_retire[i] = c_non_retirement_total[[1]]
+    sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+  } else {
+    sim_net_worth_value_retire[i] = sim_net_worth_value_retire[i -1] * (1 + avg_annual_returns)
+    sim_net_worth_value_non_retire[i] = sim_net_worth_value_non_retire[i -1] * (1 + avg_annual_returns)
+    sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+  }
+}
+
+sim_out <- as_tibble(cbind(run_num,
+                           sim_year,
+                           sim_age,
+                           sim_net_worth_value_retire,
+                           sim_net_worth_value_non_retire,
+                           sim_net_worth_value_total))
+
+sim_out
