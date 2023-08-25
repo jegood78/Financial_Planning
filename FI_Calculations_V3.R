@@ -14,6 +14,7 @@
 #   Naive
 #   With retire today pension
 #   With estimated retirement pension
+# Build FI simulation
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Load libraries
@@ -306,7 +307,10 @@ est_annual_gross_pension <- est_monthly_gross_pension * 12
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average expenses for last 12 months
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+#make all of the column names lower case
+names(bank) <- tolower(names(bank))
 
+#make category lower case
 bank$category <- tolower(bank$category)
 
 #take a look at the distinct categories
@@ -343,15 +347,15 @@ expenses_last_12 <- expenses %>%
 #calculate average monthly expenses for last 12 months
 expenses_last_12_grouped <- expenses_last_12 %>%
   group_by(date) %>%
-  summarise(monthly_amount = sum(amount))
+  summarise(monthly_amount = sum(amount)*-1)
 
 avg_monthly_expenses <- round(mean(expenses_last_12_grouped$monthly_amount), digits = 2)
 
 #plot it
-ggplot(data = expenses_last_12_grouped %>% mutate(monthly_amount = monthly_amount * -1),
+ggplot(data = expenses_last_12_grouped %>% mutate(monthly_amount = monthly_amount),
        aes(x = date, y = monthly_amount),
        fill = "red") +
-  geom_hline(aes(yintercept = (avg_monthly_expenses*-1))) +
+  geom_hline(aes(yintercept = (avg_monthly_expenses))) +
   geom_col(fill = "red") +
   theme_minimal() +
   geom_text(aes(x = date,
@@ -361,7 +365,7 @@ ggplot(data = expenses_last_12_grouped %>% mutate(monthly_amount = monthly_amoun
             vjust = -0.5) +
   geom_text(aes(x = max(date),
                 y = max(monthly_amount),
-                label = paste0("Average: \n",scales::dollar((avg_monthly_expenses*-1))))) +
+                label = paste0("Average: \n",scales::dollar((avg_monthly_expenses))))) +
   labs(title = "Expenses by Month",subtitle = "Last 12 Months", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
         axis.ticks = element_blank(),
@@ -616,10 +620,10 @@ ggplot(data = net_worth_merged,
 #   Naive
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
-#calculate naive FI number based on current average monthly expenses and 
+#calculate naive FI number based on current average monthly expenses + housing buffer and 
 #assumed safe withdrawal rate
 
-naive_fi <- (avg_monthly_expenses*-1)*12 * (1 / annual_safe_withdrawal)
+naive_fi <- (avg_monthly_expenses + housing_buffer)*12 * (1 / annual_safe_withdrawal)
 
 #calculate years to naive FI based on current net_worth assuming no additional investments
 naive_fi_years_no_invest <- 0
@@ -638,10 +642,10 @@ naive_fi_years_no_invest
 #   With retire today pension
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
-#calculate naive FI number based on current average monthly expenses, 
+#calculate naive FI number based on current average monthly expenses + housing buffer, 
 #assumed safe withdrawal rate, and pension if I retired today
 
-today_pension_fi <- ((avg_monthly_expenses*-1)*12 - (calculate_net_income(c_annual_gross_pension))) * (1 / annual_safe_withdrawal)
+today_pension_fi <- ((avg_monthly_expenses + housing_buffer)*12 - (calculate_net_income(c_annual_gross_pension))) * (1 / annual_safe_withdrawal)
 
 #calculate years to naive FI based on current net_worth assuming no additional investments
 today_pension_fi_years_no_invest <- 0
@@ -660,10 +664,10 @@ today_pension_fi_years_no_invest
 #   With estimated retirement pension
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
-#calculate naive FI number based on current average monthly expenses, 
+#calculate naive FI number based on current average monthly expenses + housing buffer, 
 #assumed safe withdrawal rate, and estimated pension if I retired at O5
 
-est_pension_fi <- ((avg_monthly_expenses*-1)*12 - (calculate_net_income(est_annual_gross_pension))) * (1 / annual_safe_withdrawal)
+est_pension_fi <- ((avg_monthly_expenses + housing_buffer)*12 - (calculate_net_income(est_annual_gross_pension))) * (1 / annual_safe_withdrawal)
 
 #calculate years to naive FI based on current net_worth assuming no additional investments
 est_pension_fi_years_no_invest <- 0
@@ -676,3 +680,15 @@ while (sim_invest_value < est_pension_fi) {
 }
 
 est_pension_fi_years_no_invest
+
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+# Build FI Simulation
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+
+#things to note:
+# current investment percent until Navy retirement
+# burn down retirement account first
+# required minimum distributions
+# toggle inputs for post Navy pay
+# toggle inputs for post Navy investments
