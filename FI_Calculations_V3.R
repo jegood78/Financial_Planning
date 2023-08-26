@@ -744,6 +744,8 @@ sim_out <- as_tibble(cbind(run_num,
                            sim_age,
                            sim_net_worth_value))
 
+tail(sim_out)
+
 #naive simulation just from c_age to est_eol_age beginning separating out retirement and non-retirement accounts
 run_num <- seq(c_age:est_eol_age)
 sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
@@ -771,4 +773,95 @@ sim_out <- as_tibble(cbind(run_num,
                            sim_net_worth_value_non_retire,
                            sim_net_worth_value_total))
 
-sim_out
+tail(sim_out)
+
+#add in TSP contributions until Navy retirement
+run_num <- seq(c_age:est_eol_age)
+sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
+sim_age <- seq(from = c_age, to = est_eol_age, by = 1)
+sim_net_worth_value_retire <- run_num
+sim_net_worth_value_non_retire <- run_num
+sim_net_worth_value_total <- run_num
+
+
+for (i in run_num) {
+  if (i == 1) {
+    if (sim_year[i] <= year(est_retire_date)) {
+      sim_net_worth_value_retire[i] = c_retirement_total[[1]] + (tsp * (1-month(today())/12))
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total[[1]]
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } else {
+      sim_net_worth_value_retire[i] = c_retirement_total[[1]]
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total[[1]]
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } #end if sim_year <= retire year
+
+  } else {
+    if (sim_year[i] <= year(est_retire_date)) {
+      sim_net_worth_value_retire[i] = (sim_net_worth_value_retire[i -1] + tsp) * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire[i] = sim_net_worth_value_non_retire[i -1] * (1 + avg_annual_returns)
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } else {
+      sim_net_worth_value_retire[i] = sim_net_worth_value_retire[i -1] * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire[i] = sim_net_worth_value_non_retire[i -1] * (1 + avg_annual_returns)
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } #end if sim_year >= retire year
+  } #end if i == 1
+} #end for loop
+
+sim_out <- as_tibble(cbind(run_num,
+                           sim_year,
+                           sim_age,
+                           sim_net_worth_value_retire,
+                           sim_net_worth_value_non_retire,
+                           sim_net_worth_value_total))
+
+tail(sim_out)
+
+#start subtracting estimated annual expenses from non_retirement funds.  When do we run out?
+#assume no post navy employment
+
+####### Change to a while loop for non-retire funds >= 0
+
+est_annual_expenses <- (avg_monthly_expenses + housing_buffer) * 12
+
+run_num <- seq(c_age:est_eol_age)
+sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
+sim_age <- seq(from = c_age, to = est_eol_age, by = 1)
+sim_net_worth_value_retire <- run_num
+sim_net_worth_value_non_retire <- run_num
+sim_net_worth_value_total <- run_num
+
+for (i in run_num) {
+  if (i == 1) {
+    if (sim_year[i] <= year(est_retire_date)) {
+      sim_net_worth_value_retire[i] = c_retirement_total[[1]] + (tsp * (1-month(today())/12))
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total[[1]]
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } else {
+      sim_net_worth_value_retire[i] = c_retirement_total[[1]]
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total[[1]] - est_annual_expenses
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } #end if sim_year <= retire year
+    
+  } else {
+    if (sim_year[i] <= year(est_retire_date)) {
+      sim_net_worth_value_retire[i] = (sim_net_worth_value_retire[i -1] + tsp) * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire[i] = sim_net_worth_value_non_retire[i -1] * (1 + avg_annual_returns)
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } else {
+      sim_net_worth_value_retire[i] = sim_net_worth_value_retire[i -1] * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire[i] = (sim_net_worth_value_non_retire[i -1] - est_annual_expenses) * (1 + avg_annual_returns)
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } #end if sim_year >= retire year
+  } #end if i == 1
+} #end for loop
+
+sim_out <- as_tibble(cbind(run_num,
+                           sim_year,
+                           sim_age,
+                           sim_net_worth_value_retire,
+                           sim_net_worth_value_non_retire,
+                           sim_net_worth_value_total))
+
+tail(sim_out)
