@@ -812,56 +812,203 @@ for (i in run_num) {
 sim_out <- as_tibble(cbind(run_num,
                            sim_year,
                            sim_age,
-                           sim_net_worth_value_retire,
-                           sim_net_worth_value_non_retire,
-                           sim_net_worth_value_total))
+                           scales::dollar(sim_net_worth_value_retire),
+                           scales::dollar(sim_net_worth_value_non_retire),
+                           scales::dollar(sim_net_worth_value_total)))
 
 tail(sim_out)
 
 #start subtracting estimated annual expenses from non_retirement funds.  When do we run out?
-#assume no post navy employment
-
-####### Change to a while loop for non-retire funds >= 0
+#assume no post navy employment and no additional investments
 
 est_annual_expenses <- (avg_monthly_expenses + housing_buffer) * 12
 
-run_num <- seq(c_age:est_eol_age)
-sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
-sim_age <- seq(from = c_age, to = est_eol_age, by = 1)
-sim_net_worth_value_retire <- run_num
-sim_net_worth_value_non_retire <- run_num
-sim_net_worth_value_total <- run_num
+sim_year <- year(today())
+sim_age <- c_age
+sim_net_worth_value_retire <- c_retirement_total[[1]]
+sim_net_worth_value_non_retire <- c_non_retirement_total[[1]]
+sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
 
-for (i in run_num) {
-  if (i == 1) {
-    if (sim_year[i] <= year(est_retire_date)) {
-      sim_net_worth_value_retire[i] = c_retirement_total[[1]] + (tsp * (1-month(today())/12))
-      sim_net_worth_value_non_retire[i] = c_non_retirement_total[[1]]
-      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
-    } else {
-      sim_net_worth_value_retire[i] = c_retirement_total[[1]]
-      sim_net_worth_value_non_retire[i] = c_non_retirement_total[[1]] - est_annual_expenses
-      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
-    } #end if sim_year <= retire year
-    
-  } else {
-    if (sim_year[i] <= year(est_retire_date)) {
-      sim_net_worth_value_retire[i] = (sim_net_worth_value_retire[i -1] + tsp) * (1 + avg_annual_returns)
-      sim_net_worth_value_non_retire[i] = sim_net_worth_value_non_retire[i -1] * (1 + avg_annual_returns)
-      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
-    } else {
-      sim_net_worth_value_retire[i] = sim_net_worth_value_retire[i -1] * (1 + avg_annual_returns)
-      sim_net_worth_value_non_retire[i] = (sim_net_worth_value_non_retire[i -1] - est_annual_expenses) * (1 + avg_annual_returns)
-      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
-    } #end if sim_year >= retire year
-  } #end if i == 1
-} #end for loop
+while (sim_net_worth_value_non_retire >= 0) {
+  if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
+    sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12))
+    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  } else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
+    sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
+    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire * (1 + avg_annual_returns)
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  } else if (sim_year != year(today()) & sim_year > year(est_retire_date)) {
+    sim_net_worth_value_retire = sim_net_worth_value_retire * (1 + avg_annual_returns)
+    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire - est_annual_expenses) * (1 + avg_annual_returns)
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  }
+}
 
-sim_out <- as_tibble(cbind(run_num,
-                           sim_year,
-                           sim_age,
-                           sim_net_worth_value_retire,
-                           sim_net_worth_value_non_retire,
-                           sim_net_worth_value_total))
+sim_year
+sim_age
+scales::dollar(sim_net_worth_value_retire)
+scales::dollar(sim_net_worth_value_non_retire)
+scales::dollar(sim_net_worth_value_total)
 
-tail(sim_out)
+
+#assume no post navy employment but now include continued investments until navy retirement
+
+est_annual_investments <- avg_monthly_investments * 12
+
+sim_year <- year(today())
+sim_age <- c_age
+sim_net_worth_value_retire <- c_retirement_total[[1]]
+sim_net_worth_value_non_retire <- c_non_retirement_total[[1]]
+sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+
+while (sim_net_worth_value_non_retire >= 0) {
+  if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
+    sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12)) 
+    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (est_annual_investments * (1-month(today())/12)) 
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  } else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
+    sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
+    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + est_annual_investments) * (1 + avg_annual_returns)
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  } else if (sim_year != year(today()) & sim_year > year(est_retire_date)) {
+    sim_net_worth_value_retire = sim_net_worth_value_retire * (1 + avg_annual_returns)
+    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire - est_annual_expenses) * (1 + avg_annual_returns)
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  }
+}
+
+sim_year
+sim_age
+scales::dollar(sim_net_worth_value_retire)
+scales::dollar(sim_net_worth_value_non_retire)
+scales::dollar(sim_net_worth_value_total)
+
+#what would happen if I shift TSP to non-retirement funds
+sim_year <- year(today())
+sim_age <- c_age
+sim_net_worth_value_retire <- c_retirement_total[[1]]
+sim_net_worth_value_non_retire <- c_non_retirement_total[[1]]
+sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+
+while (sim_net_worth_value_non_retire >= 0) {
+  if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
+    sim_net_worth_value_retire = sim_net_worth_value_retire 
+    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (est_annual_investments * (1-month(today())/12)) + (tsp * (1-month(today())/12)) 
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  } else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
+    sim_net_worth_value_retire = (sim_net_worth_value_retire ) * (1 + avg_annual_returns)
+    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + est_annual_investments + tsp) * (1 + avg_annual_returns)
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  } else if (sim_year != year(today()) & sim_year > year(est_retire_date)) {
+    sim_net_worth_value_retire = sim_net_worth_value_retire * (1 + avg_annual_returns)
+    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire - est_annual_expenses) * (1 + avg_annual_returns)
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  }
+}
+
+sim_year
+sim_age
+scales::dollar(sim_net_worth_value_retire)
+scales::dollar(sim_net_worth_value_non_retire)
+scales::dollar(sim_net_worth_value_total)
+
+# add in pension at estimated retirement date
+est_net_pension <- calculate_net_income(est_monthly_gross_pension*12)
+
+sim_year <- year(today())
+sim_age <- c_age
+sim_net_worth_value_retire <- c_retirement_total[[1]]
+sim_net_worth_value_non_retire <- c_non_retirement_total[[1]]
+sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+
+while (sim_net_worth_value_non_retire >= 0) {
+  if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
+    sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12)) 
+    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (est_annual_investments * (1-month(today())/12)) 
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  } else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
+    sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
+    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + est_annual_investments) * (1 + avg_annual_returns)
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  } else if (sim_year != year(today()) & sim_year > year(est_retire_date)) {
+    sim_net_worth_value_retire = sim_net_worth_value_retire * (1 + avg_annual_returns)
+    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire - est_annual_expenses + est_net_pension) * (1 + avg_annual_returns)
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  }
+}
+
+sim_year
+sim_age
+scales::dollar(sim_net_worth_value_retire)
+scales::dollar(sim_net_worth_value_non_retire)
+scales::dollar(sim_net_worth_value_total)
+
+#calculate estimated minimum income to make retirement funds last until 60 years of sim_age
+#tsp going to retirement funds
+
+ending_age <- c_age
+minimum_income <- 10000
+
+while (ending_age < 60) {
+  
+  sim_year <- year(today())
+  sim_age <- c_age
+  sim_net_worth_value_retire <- c_retirement_total[[1]]
+  sim_net_worth_value_non_retire <- c_non_retirement_total[[1]]
+  sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+  
+  while (sim_net_worth_value_non_retire >= 0 & sim_age <= 60) {
+    if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
+      sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12))
+      sim_net_worth_value_non_retire = sim_net_worth_value_non_retire
+      sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+      sim_year = sim_year + 1
+      sim_age = sim_age + 1
+    } else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
+      sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire = sim_net_worth_value_non_retire * (1 + avg_annual_returns)
+      sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+      sim_year = sim_year + 1
+      sim_age = sim_age + 1
+    } else if (sim_year != year(today()) & sim_year > year(est_retire_date)) {
+      sim_net_worth_value_retire = sim_net_worth_value_retire * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire - est_annual_expenses + est_net_pension + minimum_income) * (1 + avg_annual_returns)
+      sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+      sim_year = sim_year + 1
+      sim_age = sim_age + 1
+    }
+  }
+  ending_age <- sim_age
+  minimum_income <- minimum_income + 10000
+}
+
+ending_age
+scales::dollar(minimum_income)
+scales::dollar(sim_net_worth_value_retire)
+scales::dollar(sim_net_worth_value_non_retire)
+scales::dollar(sim_net_worth_value_total)
