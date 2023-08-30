@@ -78,7 +78,7 @@ est_retire_date <- as.Date(mdy("09-1-2026"))
 rolling_12_months <- format(seq(today()-365, today() %m-% months(1), by = 'month'), "%Y-%m")
 
 #current age
-c_age <- 44
+c_age <- floor(time_length(difftime(today(),as.Date(mdy("12-26-1978"))),"years"))
 
 #estimated EOL
 est_eol_age <- 90
@@ -195,9 +195,11 @@ calculate_yoe <- function(x) {
 
 #calculate current years of service
 c_yos <- round(time_length(difftime(today(),pebd),"years"), digits = 2)
+c_yos
 
 #calculate current retirement percentage
 c_pension_percentage <- round(c_yos * 0.025, digits = 2)
+c_pension_percentage
 
 #calculate average pay for last 36 months
 #create a historical 36 month list
@@ -246,6 +248,7 @@ c_monthly_gross_pension <- round(c_pension_percentage * hist_avg_monthly, digits
 
 #calculate annual pension
 c_annual_gross_pension <- c_monthly_gross_pension * 12
+scales::dollar(c_annual_gross_pension)
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate pensions:
@@ -257,9 +260,11 @@ final_36_months <- seq(as.Date(est_retire_date)%m-% months(36),as.Date(est_retir
 
 #calculate years of service based on 36 month vector
 est_yos <- round(time_length(difftime(final_36_months,pebd),"years"), digits = 2)
+max(est_yos)
 
 #calculate pension percentage from estimated years of service
 est_pension_percentage <- round(max(est_yos) * 0.025, digits = 3)
+est_pension_percentage
 
 #estimate rank, years of experience, and monthly base pay for the 36 months based on current 
 #rank and estimated promotion date
@@ -302,7 +307,7 @@ est_monthly_gross_pension <- round(est_pension_percentage * est_avg_monthly, dig
 
 #calculate annual pension
 est_annual_gross_pension <- est_monthly_gross_pension * 12
-
+scales::dollar(est_annual_gross_pension)
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average expenses for last 12 months
@@ -351,6 +356,10 @@ expenses_last_12_grouped <- expenses_last_12 %>%
 
 avg_monthly_expenses <- round(mean(expenses_last_12_grouped$monthly_amount), digits = 2)
 
+#calculate average annual expenses (minus housing)
+avg_annual_expenses <- avg_monthly_expenses * 12
+scales::dollar(avg_annual_expenses)
+
 #plot it
 ggplot(data = expenses_last_12_grouped %>% mutate(monthly_amount = monthly_amount),
        aes(x = date, y = monthly_amount),
@@ -398,6 +407,10 @@ income_last_12_grouped <- income_last_12 %>%
   summarise(monthly_amount = sum(amount))
 
 avg_monthly_income <- round(mean(income_last_12_grouped$monthly_amount), digits = 2)
+
+#calculate average annual income (does not include BAH)
+avg_annual_income <- avg_monthly_income * 12
+scales::dollar(avg_annual_income)
 
 #plot it
 ggplot(data = income_last_12_grouped) +
@@ -595,6 +608,8 @@ y_max <- plyr::round_any(max(net_worth_merged$net_worth_total) + 50000, 50000, f
 first_net_worth <- net_worth_merged %>% filter(date == min(date)) %>% select(net_worth_total)
 current_net_worth <- net_worth_merged %>% filter(date == max(date)) %>% select(net_worth_total)
 
+scales::dollar(current_net_worth[[1]])
+
 #plot the net worth
 ggplot(data = net_worth_merged,
        mapping= aes(x=date,
@@ -672,6 +687,7 @@ today_pension_fi_years_no_invest
 #assumed safe withdrawal rate, and estimated pension if I retired at O5
 
 est_pension_fi <- ((avg_monthly_expenses + housing_buffer)*12 - (calculate_net_income(est_annual_gross_pension))) * (1 / annual_safe_withdrawal)
+scales::dollar(est_pension_fi)
 
 #calculate years to naive FI based on current net_worth assuming no additional investments
 est_pension_fi_years_no_invest <- 0
@@ -724,7 +740,16 @@ est_percent_invested <- round(total_invest_last_12/total_annual_pay_gross, digit
 
 
 #begin building simulation
-#naive simulation just from c_age to est_eol_age with just the current net_worth growing
+
+#start - current age
+#stop - 90
+#add TSP - NO
+#add additional investments - NO
+#add pension - NO
+#add additional income - NO
+#add social security - NO
+#subtract expenses - NO
+#subtract RMD - NO
 
 run_num <- seq(c_age:est_eol_age)
 sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
@@ -747,6 +772,17 @@ sim_out <- as_tibble(cbind(run_num,
 tail(sim_out)
 
 #naive simulation just from c_age to est_eol_age beginning separating out retirement and non-retirement accounts
+
+#start - current age
+#stop - 90
+#add TSP - NO
+#add additional investments - NO
+#add pension - NO
+#add additional income - NO
+#add social security - NO
+#subtract expenses - NO
+#subtract RMD - NO
+
 run_num <- seq(c_age:est_eol_age)
 sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
 sim_age <- seq(from = c_age, to = est_eol_age, by = 1)
@@ -776,6 +812,17 @@ sim_out <- as_tibble(cbind(run_num,
 tail(sim_out)
 
 #add in TSP contributions until Navy retirement
+
+#start - CURRENT AGE
+#stop - 90
+#add TSP - YES
+#add additional investments - NO
+#add pension - NO
+#add additional income - NO
+#add social security - NO
+#subtract expenses - NO
+#subtract RMD - NO
+
 run_num <- seq(c_age:est_eol_age)
 sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
 sim_age <- seq(from = c_age, to = est_eol_age, by = 1)
@@ -812,14 +859,27 @@ for (i in run_num) {
 sim_out <- as_tibble(cbind(run_num,
                            sim_year,
                            sim_age,
-                           scales::dollar(sim_net_worth_value_retire),
-                           scales::dollar(sim_net_worth_value_non_retire),
-                           scales::dollar(sim_net_worth_value_total)))
+                           sim_net_worth_value_retire,
+                           sim_net_worth_value_non_retire,
+                           sim_net_worth_value_total)) %>%
+  mutate(sim_net_worth_value_retire = scales::dollar(sim_net_worth_value_retire),
+         sim_net_worth_value_non_retire = scales::dollar(sim_net_worth_value_non_retire),
+         sim_net_worth_value_total = scales::dollar(sim_net_worth_value_total))
 
 tail(sim_out)
 
 #start subtracting estimated annual expenses from non_retirement funds.  When do we run out?
 #assume no post navy employment and no additional investments
+
+#start - CURRENT AGE
+#stop - 90
+#add TSP - YES
+#add additional investments - NO
+#add pension - NO
+#add additional income - NO
+#add social security - NO
+#subtract expenses - YES
+#subtract RMD - NO
 
 est_annual_expenses <- (avg_monthly_expenses + housing_buffer) * 12
 
@@ -860,6 +920,16 @@ scales::dollar(sim_net_worth_value_total)
 
 #assume no post navy employment but now include continued investments until navy retirement
 
+#start - CURRENT AGE
+#stop - 90
+#add TSP - YES
+#add additional investments in Navy- YES
+#add pension - NO
+#add additional income - NO
+#add social security - NO
+#subtract expenses - YES
+#subtract RMD - NO
+
 est_annual_investments <- avg_monthly_investments * 12
 
 sim_year <- year(today())
@@ -896,42 +966,19 @@ scales::dollar(sim_net_worth_value_retire)
 scales::dollar(sim_net_worth_value_non_retire)
 scales::dollar(sim_net_worth_value_total)
 
-#what would happen if I shift TSP to non-retirement funds
-sim_year <- year(today())
-sim_age <- c_age
-sim_net_worth_value_retire <- c_retirement_total[[1]]
-sim_net_worth_value_non_retire <- c_non_retirement_total[[1]]
-sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-
-while (sim_net_worth_value_non_retire >= 0) {
-  if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
-    sim_net_worth_value_retire = sim_net_worth_value_retire 
-    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (est_annual_investments * (1-month(today())/12)) + (tsp * (1-month(today())/12)) 
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  } else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
-    sim_net_worth_value_retire = (sim_net_worth_value_retire ) * (1 + avg_annual_returns)
-    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + est_annual_investments + tsp) * (1 + avg_annual_returns)
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  } else if (sim_year != year(today()) & sim_year > year(est_retire_date)) {
-    sim_net_worth_value_retire = sim_net_worth_value_retire * (1 + avg_annual_returns)
-    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire - est_annual_expenses) * (1 + avg_annual_returns)
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  }
-}
-
-sim_year
-sim_age
-scales::dollar(sim_net_worth_value_retire)
-scales::dollar(sim_net_worth_value_non_retire)
-scales::dollar(sim_net_worth_value_total)
 
 # add in pension at estimated retirement date
+
+#start - CURRENT AGE
+#stop - 90
+#add TSP - YES
+#add additional investments in Navy- YES
+#add pension - YES
+#add additional income - NO
+#add social security - NO
+#subtract expenses - YES
+#subtract RMD - NO
+
 est_net_pension <- calculate_net_income(est_monthly_gross_pension*12)
 
 sim_year <- year(today())
@@ -969,7 +1016,16 @@ scales::dollar(sim_net_worth_value_non_retire)
 scales::dollar(sim_net_worth_value_total)
 
 #calculate estimated minimum income to make retirement funds last until 60 years of sim_age
-#tsp going to retirement funds
+
+#start - CURRENT AGE
+#stop - 90
+#add TSP - YES
+#add additional investments in Navy- YES
+#add pension - YES
+#add additional income - YES
+#add social security - NO
+#subtract expenses - YES
+#subtract RMD - NO
 
 ending_age <- c_age
 minimum_income <- 10000
