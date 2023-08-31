@@ -1,20 +1,3 @@
-# Things to do:
-# Load libraries - Done
-# Load files - Done
-# Set user inputs - Done
-# Define functions - Done
-# Calculate pensions:
-#   if I retired today
-#   estimated retirement
-# Calculate average expenses for last 12 months
-# Calculate average income for last 12 months
-# Calculate average investments savings and loan repayment for last 12 months
-# Calculate current net worth
-# Calculate FU numbers:
-#   Naive
-#   With retire today pension
-#   With estimated retirement pension
-# Build FI simulation
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Load libraries
