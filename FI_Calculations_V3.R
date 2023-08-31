@@ -37,6 +37,9 @@ net_worth <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Plann
 bank <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/Expenses.xlsx",
                    sheet = "Transactions")
 
+#required minimum distributions
+required_minimum_distributions <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/required_minimum_distributions.xlsx")
+
 #load military pay data
 pChart2023 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2023_Officer_Pay.csv")
 pChart2022 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2022_Officer_Pay.csv")
@@ -85,6 +88,9 @@ est_eol_age <- 90
 
 #calculate average annual return for S&P 500
 avg_annual_returns <- floor(mean(sp_500$annual_return))/100
+
+#automatic brokerage investments
+c_auto_brokerage_investments <- 600 * 12
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Define functions
@@ -583,12 +589,12 @@ liabilities <- net_worth_redux %>% select(date,
 retirement_funds <- retirement_funds %>%
   mutate(retirement_total = tsp + vanguard_ira_jeff + vanguard_ira_elaina)
 
-c_retirement_total <- retirement_funds %>% filter(date == max(date)) %>% select(retirement_total)
+c_retirement_total <- retirement_funds[retirement_funds$date == max(retirement_funds$date),]$retirement_total
 
 non_retirement_funds <- non_retirement_funds %>%
   mutate(non_retirement_total = vanguard_brokerage + usaa_savings + usaa_checking)
 
-c_non_retirement_total <- non_retirement_funds %>% filter(date == max(date)) %>% select(non_retirement_total)
+c_non_retirement_total <- non_retirement_funds[non_retirement_funds$date == max(non_retirement_funds$date),]$non_retirement_total
 
 liabilities <- liabilities %>%
   mutate(liabilities_total = usaa_visa + chase_cc + school_loan_elaina + fixed_rate_loan_nissan)
@@ -605,10 +611,10 @@ net_worth_merged <- net_worth_merged %>%
 #use max net worth to calculate a max value for the y access
 y_max <- plyr::round_any(max(net_worth_merged$net_worth_total) + 50000, 50000, f=ceiling)
 
-first_net_worth <- net_worth_merged %>% filter(date == min(date)) %>% select(net_worth_total)
-current_net_worth <- net_worth_merged %>% filter(date == max(date)) %>% select(net_worth_total)
+first_net_worth <- net_worth_merged[net_worth_merged$date == min(net_worth_merged$date),]$net_worth_total
+current_net_worth <- net_worth_merged[net_worth_merged$date == max(net_worth_merged$date),]$net_worth_total
 
-scales::dollar(current_net_worth[[1]])
+scales::dollar(current_net_worth)
 
 #plot the net worth
 ggplot(data = net_worth_merged,
@@ -618,12 +624,12 @@ ggplot(data = net_worth_merged,
   geom_point() +
   theme_minimal() +
   geom_text(aes(x = min(date),
-                y = first_net_worth[[1]],
-                label = paste0("$", round(first_net_worth[[1]]/1000),"K")),
+                y = first_net_worth,
+                label = paste0("$", round(first_net_worth/1000),"K")),
             vjust = -1) +
   geom_text(aes(x = max(date),
-                y = current_net_worth[[1]],
-                label = paste0("$", round(current_net_worth[[1]]/1000),"K")),
+                y = current_net_worth,
+                label = paste0("$", round(current_net_worth/1000),"K")),
             vjust = -1) +
   theme(axis.line = element_line(colour = "grey", 
                                  linewidth = 1,
@@ -646,7 +652,7 @@ naive_fi <- (avg_monthly_expenses + housing_buffer)*12 * (1 / annual_safe_withdr
 
 #calculate years to naive FI based on current net_worth assuming no additional investments
 naive_fi_years_no_invest <- 0
-sim_invest_value <- current_net_worth[[1]]
+sim_invest_value <- current_net_worth
 
 while (sim_invest_value < naive_fi) {
   sim_invest_value = sim_invest_value +
@@ -668,7 +674,7 @@ today_pension_fi <- ((avg_monthly_expenses + housing_buffer)*12 - (calculate_net
 
 #calculate years to naive FI based on current net_worth assuming no additional investments
 today_pension_fi_years_no_invest <- 0
-sim_invest_value <- current_net_worth[[1]]
+sim_invest_value <- current_net_worth
 
 while (sim_invest_value < today_pension_fi) {
   sim_invest_value = sim_invest_value +
@@ -691,7 +697,7 @@ scales::dollar(est_pension_fi)
 
 #calculate years to naive FI based on current net_worth assuming no additional investments
 est_pension_fi_years_no_invest <- 0
-sim_invest_value <- current_net_worth[[1]]
+sim_invest_value <- current_net_worth
 
 while (sim_invest_value < est_pension_fi) {
   sim_invest_value = sim_invest_value +
@@ -719,8 +725,8 @@ c_yos <- round(time_length(difftime(today(),pebd),"years"),digits = 2)
 c_yoe <- calculate_yoe(c_yos)
 
 #calculate jeff gross annual pay based on pay charts (ignore bah because we live in housing)
-jeff_monthly_pay_gross <- pChart2023 %>% filter(YOE == c_yoe) %>% select(all_of(c_rank))
-jeff_annual_pay_gross = jeff_monthly_pay_gross[[1]] * 12
+jeff_monthly_pay_gross <- pChart2023[pChart2023$YOE == c_yoe,c_rank]
+jeff_annual_pay_gross = jeff_monthly_pay_gross * 12
 
 #calculate elaina annual pay based on historicals (1099 employee)
 elaina_annual_pay_gross <- bank %>%
@@ -741,14 +747,14 @@ est_percent_invested <- round(total_invest_last_12/total_annual_pay_gross, digit
 
 #begin building simulation
 
-#start - current age
-#stop - 90
-#add TSP - NO
+#start - current age. "c_age"
+#stop - 90  "est_eol_age"
+#add TSP - NO 
 #add additional investments - NO
-#add pension - NO
+#add pension - NO 
 #add additional income - NO
 #add social security - NO
-#subtract expenses - NO
+#subtract expenses - NO 
 #subtract RMD - NO
 
 run_num <- seq(c_age:est_eol_age)
@@ -758,7 +764,7 @@ sim_net_worth_value <- run_num
 
 for (i in run_num) {
   if (i == 1) {
-    sim_net_worth_value[i] = current_net_worth[[1]]
+    sim_net_worth_value[i] = current_net_worth
   } else {
     sim_net_worth_value[i] = sim_net_worth_value[i -1] * (1 + avg_annual_returns)
   }
@@ -773,8 +779,8 @@ tail(sim_out)
 
 #naive simulation just from c_age to est_eol_age beginning separating out retirement and non-retirement accounts
 
-#start - current age
-#stop - 90
+#start - current age. "c_age"
+#stop - 90  "est_eol_age"
 #add TSP - NO
 #add additional investments - NO
 #add pension - NO
@@ -792,8 +798,8 @@ sim_net_worth_value_total <- run_num
 
 for (i in run_num) {
   if (i == 1) {
-    sim_net_worth_value_retire[i] = c_retirement_total[[1]]
-    sim_net_worth_value_non_retire[i] = c_non_retirement_total[[1]]
+    sim_net_worth_value_retire[i] = c_retirement_total
+    sim_net_worth_value_non_retire[i] = c_non_retirement_total
     sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
   } else {
     sim_net_worth_value_retire[i] = sim_net_worth_value_retire[i -1] * (1 + avg_annual_returns)
@@ -813,9 +819,9 @@ tail(sim_out)
 
 #add in TSP contributions until Navy retirement
 
-#start - CURRENT AGE
-#stop - 90
-#add TSP - YES
+#start - current age. "c_age"
+#stop - 90  "est_eol_age"
+#add TSP - YES "tsp"
 #add additional investments - NO
 #add pension - NO
 #add additional income - NO
@@ -834,12 +840,12 @@ sim_net_worth_value_total <- run_num
 for (i in run_num) {
   if (i == 1) {
     if (sim_year[i] <= year(est_retire_date)) {
-      sim_net_worth_value_retire[i] = c_retirement_total[[1]] + (tsp * (1-month(today())/12))
-      sim_net_worth_value_non_retire[i] = c_non_retirement_total[[1]]
+      sim_net_worth_value_retire[i] = c_retirement_total + (tsp * (1-month(today())/12))
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total
       sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
     } else {
-      sim_net_worth_value_retire[i] = c_retirement_total[[1]]
-      sim_net_worth_value_non_retire[i] = c_non_retirement_total[[1]]
+      sim_net_worth_value_retire[i] = c_retirement_total
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total
       sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
     } #end if sim_year <= retire year
 
@@ -871,22 +877,22 @@ tail(sim_out)
 #start subtracting estimated annual expenses from non_retirement funds.  When do we run out?
 #assume no post navy employment and no additional investments
 
-#start - CURRENT AGE
-#stop - 90
-#add TSP - YES
-#add additional investments - NO
+#start - current age. "c_age"
+#stop - 90  "est_eol_age"
+#add TSP - YES "tsp"
+#add additional investments in Navy - NO
 #add pension - NO
 #add additional income - NO
 #add social security - NO
-#subtract expenses - YES
+#subtract expenses - YES "est_annual_expenses"
 #subtract RMD - NO
 
 est_annual_expenses <- (avg_monthly_expenses + housing_buffer) * 12
 
 sim_year <- year(today())
 sim_age <- c_age
-sim_net_worth_value_retire <- c_retirement_total[[1]]
-sim_net_worth_value_non_retire <- c_non_retirement_total[[1]]
+sim_net_worth_value_retire <- c_retirement_total
+sim_net_worth_value_non_retire <- c_non_retirement_total
 sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
 
 while (sim_net_worth_value_non_retire >= 0) {
@@ -920,34 +926,32 @@ scales::dollar(sim_net_worth_value_total)
 
 #assume no post navy employment but now include continued investments until navy retirement
 
-#start - CURRENT AGE
-#stop - 90
-#add TSP - YES
-#add additional investments in Navy- YES
+#start - current age. "c_age"
+#stop - 90  "est_eol_age"
+#add TSP - YES "tsp"
+#add additional investments in Navy- YES "c_auto_brokerage_investments"
 #add pension - NO
 #add additional income - NO
 #add social security - NO
-#subtract expenses - YES
+#subtract expenses - YES "est_annual_expenses"
 #subtract RMD - NO
-
-est_annual_investments <- avg_monthly_investments * 12
 
 sim_year <- year(today())
 sim_age <- c_age
-sim_net_worth_value_retire <- c_retirement_total[[1]]
-sim_net_worth_value_non_retire <- c_non_retirement_total[[1]]
+sim_net_worth_value_retire <- c_retirement_total
+sim_net_worth_value_non_retire <- c_non_retirement_total
 sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
 
 while (sim_net_worth_value_non_retire >= 0) {
   if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
     sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12)) 
-    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (est_annual_investments * (1-month(today())/12)) 
+    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (c_auto_brokerage_investments * (1-month(today())/12)) 
     sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
     sim_year = sim_year + 1
     sim_age = sim_age + 1
   } else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
     sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
-    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + est_annual_investments) * (1 + avg_annual_returns)
+    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + c_auto_brokerage_investments) * (1 + avg_annual_returns)
     sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
     sim_year = sim_year + 1
     sim_age = sim_age + 1
@@ -969,34 +973,34 @@ scales::dollar(sim_net_worth_value_total)
 
 # add in pension at estimated retirement date
 
-#start - CURRENT AGE
-#stop - 90
-#add TSP - YES
-#add additional investments in Navy- YES
-#add pension - YES
+#start - current age. "c_age"
+#stop - 90  "est_eol_age"
+#add TSP - YES "tsp"
+#add additional investments in Navy- YES "c_auto_brokerage_investments"
+#add pension - YES "est_net_pension"
 #add additional income - NO
 #add social security - NO
-#subtract expenses - YES
+#subtract expenses - YES "est_annual_expenses
 #subtract RMD - NO
 
 est_net_pension <- calculate_net_income(est_monthly_gross_pension*12)
 
 sim_year <- year(today())
 sim_age <- c_age
-sim_net_worth_value_retire <- c_retirement_total[[1]]
-sim_net_worth_value_non_retire <- c_non_retirement_total[[1]]
+sim_net_worth_value_retire <- c_retirement_total
+sim_net_worth_value_non_retire <- c_non_retirement_total
 sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
 
 while (sim_net_worth_value_non_retire >= 0) {
   if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
     sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12)) 
-    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (est_annual_investments * (1-month(today())/12)) 
+    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (c_auto_brokerage_investments * (1-month(today())/12)) 
     sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
     sim_year = sim_year + 1
     sim_age = sim_age + 1
   } else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
     sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
-    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + est_annual_investments) * (1 + avg_annual_returns)
+    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + c_auto_brokerage_investments) * (1 + avg_annual_returns)
     sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
     sim_year = sim_year + 1
     sim_age = sim_age + 1
@@ -1017,37 +1021,37 @@ scales::dollar(sim_net_worth_value_total)
 
 #calculate estimated minimum income to make retirement funds last until 60 years of sim_age
 
-#start - CURRENT AGE
-#stop - 90
-#add TSP - YES
-#add additional investments in Navy- YES
-#add pension - YES
-#add additional income - YES
+#start - current age. "c_age"
+#stop - 90  "est_eol_age"
+#add TSP - YES "tsp"
+#add additional investments in Navy- YES "c_auto_brokerage_investments"
+#add pension - YES "est_net_pension"
+#add additional income - YES "minimum_income"
 #add social security - NO
-#subtract expenses - YES
+#subtract expenses - YES "est_annual_expenses"
 #subtract RMD - NO
 
 ending_age <- c_age
-minimum_income <- 10000
+minimum_income <- 0
 
 while (ending_age < 60) {
-  
+  minimum_income <- minimum_income + 5000
   sim_year <- year(today())
   sim_age <- c_age
-  sim_net_worth_value_retire <- c_retirement_total[[1]]
-  sim_net_worth_value_non_retire <- c_non_retirement_total[[1]]
+  sim_net_worth_value_retire <- c_retirement_total
+  sim_net_worth_value_non_retire <- c_non_retirement_total
   sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
   
-  while (sim_net_worth_value_non_retire >= 0 & sim_age <= 60) {
+  while (sim_net_worth_value_non_retire >= 0 & sim_age < 60) {
     if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
       sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12))
-      sim_net_worth_value_non_retire = sim_net_worth_value_non_retire
+      sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (c_auto_brokerage_investments * (1-month(today())/12)) 
       sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
       sim_year = sim_year + 1
       sim_age = sim_age + 1
     } else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
       sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
-      sim_net_worth_value_non_retire = sim_net_worth_value_non_retire * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + c_auto_brokerage_investments) * (1 + avg_annual_returns)
       sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
       sim_year = sim_year + 1
       sim_age = sim_age + 1
@@ -1060,11 +1064,136 @@ while (ending_age < 60) {
     }
   }
   ending_age <- sim_age
-  minimum_income <- minimum_income + 10000
+  print(ending_age)
+  print(minimum_income)
+  print(sim_net_worth_value_non_retire)
 }
 
 ending_age
 scales::dollar(minimum_income)
+scales::dollar(sim_net_worth_value_retire)
+scales::dollar(sim_net_worth_value_non_retire)
+scales::dollar(sim_net_worth_value_total)
+
+#now lets see how long retirement funds will last using the minimum income from the last sim
+
+#start - current age. "c_age"
+#stop - 90  "est_eol_age"
+#add TSP - YES "tsp"
+#add additional investments in Navy- YES "c_auto_brokerage_investments"
+#add pension - YES "est_net_pension"
+#add additional income - YES "minimum_income"
+#add social security - NO
+#subtract expenses - YES "est_annual_expenses"
+#subtract RMD - NO
+
+
+sim_year <- year(today())
+sim_age <- c_age
+sim_net_worth_value_retire <- c_retirement_total
+sim_net_worth_value_non_retire <- c_non_retirement_total
+sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+
+while (sim_age <= est_eol_age) {
+  #this years
+  if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
+    sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12)) 
+    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (c_auto_brokerage_investments * (1-month(today())/12)) 
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  }
+  #navy years not this year
+  else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
+    sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
+    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + c_auto_brokerage_investments) * (1 + avg_annual_returns)
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  }
+  #post navy
+  else if (sim_year != year(today()) & sim_year > year(est_retire_date)) {
+    if (sim_age < 60) {
+      sim_net_worth_value_retire = sim_net_worth_value_retire * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire - est_annual_expenses + est_net_pension + minimum_income) * (1 + avg_annual_returns)
+      sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+      sim_year = sim_year + 1
+      sim_age = sim_age + 1
+    }
+    else if (sim_age >= 60) {
+      sim_net_worth_value_retire = (sim_net_worth_value_retire - est_annual_expenses + est_net_pension) * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire = sim_net_worth_value_non_retire * (1 + avg_annual_returns)
+      sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+      sim_year = sim_year + 1
+      sim_age = sim_age + 1
+    }
+  }
+}
+
+sim_year
+sim_age
+scales::dollar(sim_net_worth_value_retire)
+scales::dollar(sim_net_worth_value_non_retire)
+scales::dollar(sim_net_worth_value_total)
+
+#begin calculating RMDs. Begins year you turn 72.
+
+#start - current age. "c_age"
+#stop - 90  "est_eol_age"
+#add TSP - YES "tsp"
+#add additional investments in Navy- YES "c_auto_brokerage_investments"
+#add pension - YES "est_net_pension"
+#add additional income - YES "minimum_income"
+#add social security - NO
+#subtract expenses - YES "est_annual_expenses"
+#subtract RMD - YES "rmd"
+
+
+
+sim_year <- year(today())
+sim_age <- c_age
+sim_net_worth_value_retire <- c_retirement_total
+sim_net_worth_value_non_retire <- c_non_retirement_total
+sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+
+while (sim_age <= est_eol_age) {
+  #this years
+  if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
+    sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12)) 
+    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (c_auto_brokerage_investments * (1-month(today())/12)) 
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  }
+  #navy years not this year
+  else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
+    sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
+    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + c_auto_brokerage_investments) * (1 + avg_annual_returns)
+    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+    sim_year = sim_year + 1
+    sim_age = sim_age + 1
+  }
+  #post navy
+  else if (sim_year != year(today()) & sim_year > year(est_retire_date)) {
+    if (sim_age < 60) {
+      sim_net_worth_value_retire = sim_net_worth_value_retire * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire - est_annual_expenses + est_net_pension + minimum_income) * (1 + avg_annual_returns)
+      sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+      sim_year = sim_year + 1
+      sim_age = sim_age + 1
+    }
+    else if (sim_age >= 60) {
+      sim_net_worth_value_retire = (sim_net_worth_value_retire - est_annual_expenses + est_net_pension) * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire = sim_net_worth_value_non_retire * (1 + avg_annual_returns)
+      sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+      sim_year = sim_year + 1
+      sim_age = sim_age + 1
+    }
+  }
+}
+
+sim_year
+sim_age
 scales::dollar(sim_net_worth_value_retire)
 scales::dollar(sim_net_worth_value_non_retire)
 scales::dollar(sim_net_worth_value_total)
