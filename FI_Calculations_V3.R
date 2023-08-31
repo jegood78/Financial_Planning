@@ -78,7 +78,10 @@ est_promotion <- as.Date(mdy("9-1-2023"))
 est_retire_date <- as.Date(mdy("09-1-2026"))
 
 #create a 12 month list
-rolling_12_months <- format(seq(today()-365, today() %m-% months(1), by = 'month'), "%Y-%m")
+rolling_12_months <- format(seq(lubridate::floor_date(today(), unit = "month") %m-% months(12),
+                                lubridate::floor_date(today(), unit = "month") %m-% months(1),
+                                by = "month"),
+                            "%Y-%m")
 
 #current age
 c_age <- floor(time_length(difftime(today(),as.Date(mdy("12-26-1978"))),"years"))
@@ -325,7 +328,7 @@ names(bank) <- tolower(names(bank))
 bank$category <- tolower(bank$category)
 
 #take a look at the distinct categories
-unique(bank$category)
+#unique(bank$category)
 
 #keep only the categories that are expenses
 expense_categories <- c("recreation",
@@ -350,7 +353,6 @@ expenses <- bank %>% filter(category %in% expense_categories)
 #change the date to month format
 expenses$date <- format(expenses$date, "%Y-%m")
 
-
 #keep only the last 12 months worth of expenses
 expenses_last_12 <- expenses %>%
   filter(date %in% rolling_12_months)
@@ -367,7 +369,7 @@ avg_annual_expenses <- avg_monthly_expenses * 12
 scales::dollar(avg_annual_expenses)
 
 #plot it
-ggplot(data = expenses_last_12_grouped %>% mutate(monthly_amount = monthly_amount),
+ggplot(data = expenses_last_12_grouped,
        aes(x = date, y = monthly_amount),
        fill = "red") +
   geom_hline(aes(yintercept = (avg_monthly_expenses))) +
@@ -1197,3 +1199,4 @@ sim_age
 scales::dollar(sim_net_worth_value_retire)
 scales::dollar(sim_net_worth_value_non_retire)
 scales::dollar(sim_net_worth_value_total)
+
