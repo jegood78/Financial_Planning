@@ -49,13 +49,13 @@ tsp <- 20500
 pebd <- as.Date(mdy("2-19-1999")) #pay entry based date
 
 #set current rank
-c_rank <- "O4" 
+c_rank <- "O5" 
 
 #set current date of rank
-c_dor <- as.Date(mdy("9-1-2018"))
+c_dor <- as.Date(mdy("9-1-2023"))
 
 #estimated promotion date
-est_promotion <- as.Date(mdy("9-1-2023")) 
+est_promotion <- as.Date(mdy("9-1-2029")) 
 
 #estimated retirement date
 est_retire_date <- as.Date(mdy("09-1-2026"))
