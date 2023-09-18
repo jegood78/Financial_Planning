@@ -65,10 +65,10 @@ pChart2020 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Plan
 housing_buffer <- 3000
 
 #bah amount to add back into pay
-bah <- 2640
+bah <- 2928
 
 #set annual safe withdrawal rate
-annual_safe_withdrawal <- 0.03
+annual_safe_withdrawal <- 0.04
 
 #set TSP contributions
 tsp <- 20500
@@ -348,6 +348,7 @@ expenses_last_12_grouped <- expenses_last_12 %>%
   summarise(monthly_amount = sum(amount))
 
 avg_monthly_expenses <- round(mean(expenses_last_12_grouped$monthly_amount), digits = 2)
+scales::dollar(avg_monthly_expenses)
 
 #calculate average annual expenses (minus housing)
 avg_annual_expenses <- avg_monthly_expenses * 12
@@ -396,6 +397,7 @@ income_last_12_grouped <- income_last_12 %>%
   summarise(monthly_amount = sum(amount))
 
 avg_monthly_income <- round(mean(income_last_12_grouped$monthly_amount), digits = 2)
+scales::dollar(avg_monthly_income)
 
 #calculate average annual income (does not include BAH)
 avg_annual_income <- avg_monthly_income * 12
