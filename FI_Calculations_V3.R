@@ -333,7 +333,9 @@ scales::dollar(est_annual_gross_pension)
 # Calculate average expenses for last 12 months
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 expenses <- bank %>% filter(transaction_type == "debit",
-                            !hof_category %in% c("transfer","investments"))
+                            !hof_category %in% c("transfer","investments"),
+                            !(category %in% c("auto_payment") & description %in% c("USAA LOAN PAYMENT")),
+                            !account_name %in% c("eleanor_savings"))
 
 #change the date to month format
 expenses$date <- format(expenses$date, "%Y-%m")
@@ -358,7 +360,7 @@ scales::dollar(avg_annual_expenses)
 ggplot(data = expenses_last_12_grouped,
        aes(x = date, y = monthly_amount),
        fill = "red") +
-  geom_hline(aes(yintercept = (avg_monthly_expenses))) +
+  #geom_hline(aes(yintercept = (avg_monthly_expenses))) +
   geom_col(fill = "red") +
   theme_minimal() +
   geom_text(aes(x = date,
@@ -367,7 +369,7 @@ ggplot(data = expenses_last_12_grouped,
             #label = paste0("$", monthly_amount)),
             vjust = -0.5) +
   geom_text(aes(x = max(date),
-                y = max(monthly_amount),
+                y = max(monthly_amount + 1500),
                 label = paste0("Average: \n",scales::dollar((avg_monthly_expenses))))) +
   labs(title = "Expenses by Month",subtitle = "Last 12 Months", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
@@ -405,7 +407,7 @@ scales::dollar(avg_annual_income)
 
 #plot it
 ggplot(data = income_last_12_grouped) +
-  geom_hline(aes(yintercept = avg_monthly_income)) +
+  #geom_hline(aes(yintercept = avg_monthly_income)) +
   geom_col(aes(x = date, y = monthly_amount),
            fill = "green") +
   theme_minimal() +
@@ -414,7 +416,7 @@ ggplot(data = income_last_12_grouped) +
                 label = paste0("$", monthly_amount)),
             vjust = -0.5) +
   geom_text(aes(x = max(date),
-                y = max(monthly_amount),
+                y = max(monthly_amount + 1500),
                 label = paste0("Average: \n",scales::dollar(avg_monthly_income)))) +
   labs(title = "Income by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
@@ -463,14 +465,13 @@ investments_last_12_grouped <- investments_last_12 %>%
 avg_monthly_investments <- round(mean(investments_last_12_grouped$monthly_amount), digits = 2)
 
 #plot it
-ggplot(data = investments_last_12_grouped_type) +
-  geom_hline(aes(yintercept = avg_monthly_investments)) +
-  geom_col(aes(x = date, y = monthly_amount, fill = type)) +
+ggplot(data = investments_last_12_grouped_type,
+       aes(x = date, y = monthly_amount, fill = type)) +
+  #geom_hline(aes(yintercept = avg_monthly_investments)) +
+  geom_col() +
   theme_minimal() +
-  geom_text(aes(x = date,
-                y = monthly_amount,
-                label = paste0("$", monthly_amount)),
-            vjust = -0.5) +
+  geom_text(aes(label = paste0("$", monthly_amount)),
+            position = position_stack()) +
   geom_text(aes(x = max(date),
                 y = max(monthly_amount),
                 label = paste0("Average: \n",scales::dollar(avg_monthly_investments)))) +
@@ -502,7 +503,7 @@ avg_monthly_savings <- round(mean(savings_last_12_grouped$monthly_amount), digit
 
 #plot it
 ggplot(data = savings_last_12_grouped) +
-  geom_hline(aes(yintercept = avg_monthly_savings)) +
+  #geom_hline(aes(yintercept = avg_monthly_savings)) +
   geom_col(aes(x = date, y = monthly_amount),
            fill = "blue") +
   theme_minimal() +
@@ -511,7 +512,7 @@ ggplot(data = savings_last_12_grouped) +
                 label = paste0("$", monthly_amount)),
             vjust = -0.5) +
   geom_text(aes(x = max(date),
-                y = max(monthly_amount),
+                y = max(monthly_amount+ 1500),
                 label = paste0("Average: \n",scales::dollar(avg_monthly_savings)))) +
   labs(title = "Savings by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
