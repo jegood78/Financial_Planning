@@ -329,6 +329,10 @@ est_monthly_gross_pension <- round(est_pension_percentage * est_avg_monthly, dig
 est_annual_gross_pension <- est_monthly_gross_pension * 12
 scales::dollar(est_annual_gross_pension)
 
+#calculate estimated annual net pension
+est_annual_net_pension <- calculate_net_income(est_annual_gross_pension)
+scales::dollar(est_annual_net_pension)
+
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average expenses for last 12 months
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
@@ -463,6 +467,7 @@ investments_last_12_grouped <- investments_last_12 %>%
   summarise(monthly_amount = sum(amount))
 
 avg_monthly_investments <- round(mean(investments_last_12_grouped$monthly_amount), digits = 2)
+scales::dollar(avg_monthly_investments)
 
 #plot it
 ggplot(data = investments_last_12_grouped_type,
@@ -500,6 +505,7 @@ savings_last_12_grouped <- savings_last_12 %>%
   summarise(monthly_amount = sum(amount))
 
 avg_monthly_savings <- round(mean(savings_last_12_grouped$monthly_amount), digits = 2)
+scales::dollar(avg_monthly_savings)
 
 #plot it
 ggplot(data = savings_last_12_grouped) +
@@ -538,6 +544,7 @@ loan_last_12_grouped <- loan_last_12 %>%
   summarise(monthly_amount = sum(amount))
 
 avg_monthly_loan_repayment <- round(mean(loan_last_12_grouped$monthly_amount), digits = 2)
+scales::dollar(avg_monthly_loan_repayment)
 
 #plot it
 ggplot(data = loan_last_12_grouped) +
@@ -594,14 +601,18 @@ retirement_funds <- retirement_funds %>%
   mutate(retirement_total = tsp + vanguard_ira_jeff + vanguard_ira_elaina)
 
 c_retirement_total <- retirement_funds[retirement_funds$date == max(retirement_funds$date),]$retirement_total
+scales::dollar(c_retirement_total)
 
 non_retirement_funds <- non_retirement_funds %>%
   mutate(non_retirement_total = vanguard_brokerage + usaa_savings + usaa_checking)
 
 c_non_retirement_total <- non_retirement_funds[non_retirement_funds$date == max(non_retirement_funds$date),]$non_retirement_total
+scales::dollar(c_non_retirement_total)
 
 liabilities <- liabilities %>%
   mutate(liabilities_total = usaa_visa + chase_cc + school_loan_elaina + fixed_rate_loan_nissan)
+
+liabilities %>% filter(date == max(date)) %>% select(liabilities_total)
 
 #merge the totals together into a single data table
 net_worth_merged <- retirement_funds %>% select(date, retirement_total) %>%
