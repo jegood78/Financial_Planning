@@ -106,12 +106,18 @@ avg_annual_returns <- floor(mean(sp_500$annual_return))/100
 #automatic brokerage investments
 c_auto_brokerage_investments <- 600 * 12
 
+#standard deduction married filing jointly
+std_deduction <- 27700
+
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Define functions
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
 #function to calculate federal taxes based on 2023 married filing jointly tax brackets
-calculate_net_income <- function(x){
+calculate_net_income <- function(gross_income, std_deduction){
+  
+  x <- gross_income - std_deduction #standard deduction
+  
   if (x <= 22000) {
     net_pay <- x*(1-0.10)
   } 
@@ -154,7 +160,10 @@ calculate_net_income <- function(x){
       (693750-462500) * (1-0.35) +
       (x-693750) * (1-0.37)
   }
-  return(round(net_pay))
+  
+  net_pay_final <- net_pay + std_deduction
+  
+  return(round(net_pay_final))
 }
 
 #function to calculate years of experience (yoe)
@@ -270,6 +279,10 @@ c_monthly_gross_pension <- round(c_pension_percentage * hist_avg_monthly, digits
 c_annual_gross_pension <- c_monthly_gross_pension * 12
 scales::dollar(c_annual_gross_pension)
 
+#calculate annual net pension
+c_annual_net_pension <- calculate_net_income(c_annual_gross_pension, std_deduction)
+scales::dollar(c_annual_net_pension)
+
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate pensions:
 #   estimated retirement 
@@ -330,7 +343,7 @@ est_annual_gross_pension <- est_monthly_gross_pension * 12
 scales::dollar(est_annual_gross_pension)
 
 #calculate estimated annual net pension
-est_annual_net_pension <- calculate_net_income(est_annual_gross_pension)
+est_annual_net_pension <- calculate_net_income(est_annual_gross_pension, std_deduction)
 scales::dollar(est_annual_net_pension)
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
@@ -685,7 +698,7 @@ naive_fi_years_no_invest
 #calculate naive FI number based on current average monthly expenses + housing buffer, 
 #assumed safe withdrawal rate, and pension if I retired today
 
-today_pension_fi <- ((avg_monthly_expenses + housing_buffer)*12 - (calculate_net_income(c_annual_gross_pension))) * (1 / annual_safe_withdrawal)
+today_pension_fi <- ((avg_monthly_expenses + housing_buffer)*12 - c_annual_net_pension) * (1 / annual_safe_withdrawal)
 
 #calculate years to naive FI based on current net_worth assuming no additional investments
 today_pension_fi_years_no_invest <- 0
@@ -707,7 +720,7 @@ today_pension_fi_years_no_invest
 #calculate naive FI number based on current average monthly expenses + housing buffer, 
 #assumed safe withdrawal rate, and estimated pension if I retired at O5
 
-est_pension_fi <- ((avg_monthly_expenses + housing_buffer)*12 - (calculate_net_income(est_annual_gross_pension))) * (1 / annual_safe_withdrawal)
+est_pension_fi <- ((avg_monthly_expenses + housing_buffer)*12 - est_annual_net_pension) * (1 / annual_safe_withdrawal)
 scales::dollar(est_pension_fi)
 
 #calculate years to naive FI based on current net_worth assuming no additional investments
@@ -998,7 +1011,7 @@ scales::dollar(sim_net_worth_value_total)
 #subtract expenses - YES "est_annual_expenses
 #subtract RMD - NO
 
-est_net_pension <- calculate_net_income(est_monthly_gross_pension*12)
+est_net_pension <- est_annual_net_pension
 
 sim_year <- year(today())
 sim_age <- c_age
