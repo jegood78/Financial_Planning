@@ -71,7 +71,7 @@ bah <- 2928
 annual_safe_withdrawal <- 0.04
 
 #set TSP contributions
-tsp <- 20500
+tsp <- 23000
 
 #set pay entry base date
 pebd <- as.Date(mdy("2-19-1999")) #pay entry based date
