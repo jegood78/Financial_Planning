@@ -694,7 +694,8 @@ net_worth_merged <- retirement_funds %>% select(date, retirement_total) %>%
 
 #calculate net worth total
 net_worth_merged <- net_worth_merged %>%
-  mutate(net_worth_total = retirement_total + non_retirement_total + liabilities_total)
+  mutate(net_worth_total = retirement_total + non_retirement_total + liabilities_total) %>%
+  filter(date >= lubridate::floor_date(today(), unit = "day") %m-% days(365))
 
 #use max net worth to calculate a max value for the y access
 y_max <- plyr::round_any(max(net_worth_merged$net_worth_total) + 50000, 50000, f=ceiling)
