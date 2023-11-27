@@ -94,6 +94,12 @@ rolling_12_months <- format(seq(lubridate::floor_date(today(), unit = "month") %
                                 by = "month"),
                             "%Y-%m")
 
+rolling_13_months <- format(seq(lubridate::floor_date(today(), unit = "month") %m-% months(12),
+                                lubridate::floor_date(today(), unit = "month") %m,
+                                by = "month"),
+                            "%Y-%m")
+
+
 #current age
 c_age <- floor(time_length(difftime(today(),as.Date(mdy("12-26-1978"))),"years"))
 
@@ -373,11 +379,20 @@ scales::dollar(avg_monthly_expenses)
 avg_annual_expenses <- avg_monthly_expenses * 12
 scales::dollar(avg_annual_expenses)
 
+#keep only the last 13 months worth of expenses to plot
+expenses_last_13 <- expenses %>%
+  filter(date %in% rolling_13_months)
+
+#calculate average monthly expenses for last 12 months
+expenses_last_13_grouped <- expenses_last_13 %>%
+  group_by(date) %>%
+  summarise(monthly_amount = sum(amount))
+
 #plot it
-ggplot(data = expenses_last_12_grouped,
+ggplot(data = expenses_last_13_grouped,
        aes(x = date, y = monthly_amount),
        fill = "red") +
-  #geom_hline(aes(yintercept = (avg_monthly_expenses))) +
+  geom_hline(aes(yintercept = (avg_monthly_expenses))) +
   geom_col(fill = "red") +
   theme_minimal() +
   geom_text(aes(x = date,
@@ -391,6 +406,7 @@ ggplot(data = expenses_last_12_grouped,
   labs(title = "Expenses by Month",subtitle = "Last 12 Months", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
         axis.ticks = element_blank(),
+        axis.text.x = element_text(angle = -90, vjust = 0),
         axis.line = element_line(colour = "grey",
                                  linewidth = 1,
                                  linetype = "solid"))
@@ -405,12 +421,11 @@ income <- bank %>%
 #change the date to month format
 income$date <- format(income$date, "%Y-%m")
 
-
-#keep only the last 12 months worth of expenses
+#keep only the last 12 months worth of income
 income_last_12 <- income %>%
   filter(date %in% rolling_12_months)
 
-#calculate average monthly expenses for last 12 months
+#calculate average monthly income for last 12 months
 income_last_12_grouped <- income_last_12 %>%
   group_by(date) %>%
   summarise(monthly_amount = sum(amount))
@@ -422,9 +437,19 @@ scales::dollar(avg_monthly_income)
 avg_annual_income <- avg_monthly_income * 12
 scales::dollar(avg_annual_income)
 
+#keep only the last 13 months worth of income to plot
+income_last_13 <- income %>%
+  filter(date %in% rolling_13_months)
+
+#calculate average monthly expenses for last 12 months
+income_last_13_grouped <- income_last_13 %>%
+  group_by(date) %>%
+  summarise(monthly_amount = sum(amount))
+
+
 #plot it
-ggplot(data = income_last_12_grouped) +
-  #geom_hline(aes(yintercept = avg_monthly_income)) +
+ggplot(data = income_last_13_grouped) +
+  geom_hline(aes(yintercept = avg_monthly_income)) +
   geom_col(aes(x = date, y = monthly_amount),
            fill = "green") +
   theme_minimal() +
@@ -438,6 +463,7 @@ ggplot(data = income_last_12_grouped) +
   labs(title = "Income by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
         axis.ticks = element_blank(),
+        axis.text.x = element_text(angle = -90, vjust = 0),
         axis.line = element_line(colour = "grey",
                                  linewidth = 1,
                                  linetype = "solid"))
@@ -466,11 +492,11 @@ investments %>%
 #change the date to month format
 investments$date <- format(investments$date, "%Y-%m")
 
-#keep only the last 12 months worth of expenses
+#keep only the last 12 months worth of investments
 investments_last_12 <- investments %>%
   filter(date %in% rolling_12_months)
 
-#calculate average monthly expenses for last 12 months
+#calculate average monthly investments for last 12 months
 investments_last_12_grouped_type <- investments_last_12 %>%
   group_by(date, type) %>%
   summarise(monthly_amount = sum(amount))
@@ -482,10 +508,23 @@ investments_last_12_grouped <- investments_last_12 %>%
 avg_monthly_investments <- round(mean(investments_last_12_grouped$monthly_amount), digits = 2)
 scales::dollar(avg_monthly_investments)
 
+#keep only the last 13 months worth of investments to plot
+investments_last_13 <- investments %>%
+  filter(date %in% rolling_13_months)
+
+#calculate average monthly investments for last 12 months
+investments_last_13_grouped_type <- investments_last_13 %>%
+  group_by(date, type) %>%
+  summarise(monthly_amount = sum(amount))
+
+investments_last_13_grouped <- investments_last_13 %>%
+  group_by(date) %>%
+  summarise(monthly_amount = sum(amount))
+
 #plot it
-ggplot(data = investments_last_12_grouped_type,
+ggplot(data = investments_last_13_grouped_type,
        aes(x = date, y = monthly_amount, fill = type)) +
-  #geom_hline(aes(yintercept = avg_monthly_investments)) +
+  geom_hline(aes(yintercept = avg_monthly_investments)) +
   geom_col() +
   theme_minimal() +
   geom_text(aes(label = paste0("$", monthly_amount)),
@@ -499,6 +538,7 @@ ggplot(data = investments_last_12_grouped_type,
         axis.line = element_line(colour = "grey",
                                  linewidth = 1,
                                  linetype = "solid"),
+        axis.text.x = element_text(angle = -90, vjust = 0),
         legend.position = "bottom")
 
 #keep only the categories that are savings
@@ -508,11 +548,11 @@ savings <- bank %>% filter(transaction_type == "credit",
 #change the date to month format
 savings$date <- format(savings$date, "%Y-%m")
 
-#keep only the last 12 months worth of expenses
+#keep only the last 12 months worth of savings
 savings_last_12 <- savings %>%
   filter(date %in% rolling_12_months)
 
-#calculate average monthly expenses for last 12 months
+#calculate average monthly savings for last 12 months
 savings_last_12_grouped <- savings_last_12 %>%
   group_by(date) %>%
   summarise(monthly_amount = sum(amount))
@@ -520,9 +560,18 @@ savings_last_12_grouped <- savings_last_12 %>%
 avg_monthly_savings <- round(mean(savings_last_12_grouped$monthly_amount), digits = 2)
 scales::dollar(avg_monthly_savings)
 
+#keep only the last 13 months worth of savings to plot
+savings_last_13 <- savings %>%
+  filter(date %in% rolling_13_months)
+
+#calculate average monthly expenses for last 13 months
+savings_last_13_grouped <- savings_last_13 %>%
+  group_by(date) %>%
+  summarise(monthly_amount = sum(amount))
+
 #plot it
-ggplot(data = savings_last_12_grouped) +
-  #geom_hline(aes(yintercept = avg_monthly_savings)) +
+ggplot(data = savings_last_13_grouped) +
+  geom_hline(aes(yintercept = avg_monthly_savings)) +
   geom_col(aes(x = date, y = monthly_amount),
            fill = "blue") +
   theme_minimal() +
@@ -536,6 +585,7 @@ ggplot(data = savings_last_12_grouped) +
   labs(title = "Savings by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
         axis.ticks = element_blank(),
+        axis.text.x = element_text(angle = -90, vjust = 0),
         axis.line = element_line(colour = "grey",
                                  linewidth = 1,
                                  linetype = "solid"))
@@ -547,11 +597,11 @@ loan <- bank %>% filter(category %in% c("auto_payment"))
 #change the date to month format
 loan$date <- format(loan$date, "%Y-%m")
 
-#keep only the last 12 months worth of expenses
+#keep only the last 12 months worth of loan repayment
 loan_last_12 <- loan %>%
   filter(date %in% rolling_12_months)
 
-#calculate average monthly expenses for last 12 months
+#calculate average monthly loan repayment for last 12 months
 loan_last_12_grouped <- loan_last_12 %>%
   group_by(date) %>%
   summarise(monthly_amount = sum(amount))
@@ -559,8 +609,17 @@ loan_last_12_grouped <- loan_last_12 %>%
 avg_monthly_loan_repayment <- round(mean(loan_last_12_grouped$monthly_amount), digits = 2)
 scales::dollar(avg_monthly_loan_repayment)
 
+#keep only the last 13 months worth of loan repayment
+loan_last_13 <- loan %>%
+  filter(date %in% rolling_13_months)
+
+#calculate average monthly loan repayment for last 13 months
+loan_last_13_grouped <- loan_last_13 %>%
+  group_by(date) %>%
+  summarise(monthly_amount = sum(amount))
+
 #plot it
-ggplot(data = loan_last_12_grouped) +
+ggplot(data = loan_last_13_grouped) +
   geom_hline(aes(yintercept = avg_monthly_loan_repayment)) +
   geom_col(aes(x = date, y = monthly_amount),
            fill = "orange") +
@@ -575,6 +634,7 @@ ggplot(data = loan_last_12_grouped) +
   labs(title = "Loan Repayment by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
   theme(axis.text.y = element_blank(),
         axis.ticks = element_blank(),
+        axis.text.x = element_text(angle = -90, vjust = 0),
         axis.line = element_line(colour = "grey",
                                  linewidth = 1,
                                  linetype = "solid"))
