@@ -95,7 +95,7 @@ rolling_12_months <- format(seq(lubridate::floor_date(today(), unit = "month") %
                             "%Y-%m")
 
 rolling_13_months <- format(seq(lubridate::floor_date(today(), unit = "month") %m-% months(12),
-                                lubridate::floor_date(today(), unit = "month") %m,
+                                lubridate::floor_date(today(), unit = "month"),
                                 by = "month"),
                             "%Y-%m")
 
