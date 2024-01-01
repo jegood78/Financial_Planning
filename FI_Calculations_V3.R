@@ -17,15 +17,30 @@ sp_500 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning
 net_worth <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/NetWorth.csv")
 
 #read in mint transactions
-bank <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/mint_transactions.csv") %>%
-  select(!c(Labels,Notes))
+# bank <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/mint_transactions.csv") %>%
+#   select(!c(Labels,Notes))
+bank <- read_xlsx("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_all.xlsx") %>%
+  select(!Tags)
 
 #read in mint categories
-cats <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/mint_categories.xlsx",
-                   sheet = "reference")
+# cats <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/mint_categories.xlsx",
+#                    sheet = "reference")
+cats <- read_xlsx("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transaction_categories.xlsx") %>%
+  rename(transaction_type = `Transaction Type`,
+         category = Category)
+cats$transaction_type <- tolower(cats$transaction_type)
+
+unique(cats$category)
+cats$category <- gsub("\\(","",cats$category)
+cats$category <- gsub("\\)","",cats$category)
+cats$category <- gsub("-","_",cats$category)
+cats$category <- gsub("& ","",cats$category)
+cats$category <- gsub(" ","_",cats$category)
+cats$category <- gsub("/","_",cats$category)
+cats$category <- tolower(cats$category)
 
 #get rid of spaces in names
-names(bank) <- sub(" ","_",names(bank))
+# names(bank) <- sub(" ","_",names(bank))
 
 #change all names to lower
 names(bank) <- tolower(names(bank))
@@ -34,15 +49,19 @@ names(bank) <- tolower(names(bank))
 unique(bank$category)
 bank$category <- gsub("& ","",bank$category)
 bank$category <- gsub(" ","_",bank$category)
+bank$category <- gsub("/","_",bank$category)
 bank$category <- tolower(bank$category)
 
-unique(bank$account_name)
-bank$account_name <- gsub(" ","_",bank$account_name)
-bank$account_name <- tolower(bank$account_name)
-bank$account_name <- gsub("_-_uniformed_services","",bank$account_name)
+# unique(bank$account_name)
+# bank$account_name <- gsub(" ","_",bank$account_name)
+# bank$account_name <- tolower(bank$account_name)
+# bank$account_name <- gsub("_-_uniformed_services","",bank$account_name)
+unique(bank$account)
+bank$account <- gsub(" ","_",bank$account)
+bank$account <- tolower(bank$account)
 
 #change dates to date type
-bank$date <- as.Date(mdy(bank$date))
+bank$date <- as.Date(ymd(bank$date))
 
 #add HOF category
 bank <- bank %>%
@@ -110,61 +129,61 @@ est_eol_age <- 90
 avg_annual_returns <- floor(mean(sp_500$annual_return))/100
 
 #automatic brokerage investments
-c_auto_brokerage_investments <- 600 * 12
+c_auto_brokerage_investments <- 2000 * 12
 
 #standard deduction married filing jointly
-std_deduction <- 27700
+std_deduction <- 29200
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Define functions
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
-#function to calculate federal taxes based on 2023 married filing jointly tax brackets
+#function to calculate federal taxes based on 2024 married filing jointly tax brackets
 calculate_net_income <- function(gross_income, std_deduction){
   
   x <- gross_income - std_deduction #standard deduction
   
-  if (x <= 22000) {
+  if (x <= 23200) {
     net_pay <- x*(1-0.10)
   } 
-  else if (x > 22000 & x <= 89450) {
-    net_pay <- 22000*(1-0.10) + 
-      (x-22000)*(1-0.12) 
+  else if (x > 23200 & x <= 94300) {
+    net_pay <- 23200*(1-0.10) + 
+      (x-23200)*(1-0.12) 
   } 
-  else if (x > 89450 & x <= 190750) {
-    net_pay <- 22000*(1-0.10) + 
-      (89450-22000)*(1-0.12) + 
-      (x-89450)*(1-0.22)
+  else if (x > 94300 & x <= 201050) {
+    net_pay <- 23200*(1-0.10) + 
+      (94300-23200)*(1-0.12) + 
+      (x-94300)*(1-0.22)
   } 
-  else if (x > 190750 & x <= 364200) {
-    net_pay <- 22000*(1-0.10) + 
-      (89450-22000)*(1-0.12) + 
-      (190750-89450)*(1-0.22) + 
-      (x-190750)*(1-0.24)
+  else if (x > 201050 & x <= 383900) {
+    net_pay <- 23200*(1-0.10) + 
+      (94300-23200)*(1-0.12) + 
+      (201050-94300)*(1-0.22) + 
+      (x-201050)*(1-0.24)
   }
-  else if (x > 364200 & x <= 462500) {
-    net_pay <- 22000*(1-0.10) + 
-      (89450-22000)*(1-0.12) + 
-      (190750-89450)*(1-0.22) + 
-      (364200-190750)*(1-0.24) +
-      (x-364200) * (1-0.32)
+  else if (x > 383900 & x <= 487450) {
+    net_pay <- 23200*(1-0.10) + 
+      (94300-23200)*(1-0.12) + 
+      (201050-94300)*(1-0.22) + 
+      (383900-201050)*(1-0.24) +
+      (x-383900) * (1-0.32)
   }
-  else if (x > 462500 & x <= 693750) {
-    net_pay <- 22000*(1-0.10) + 
-      (89450-22000)*(1-0.12) + 
-      (190750-89450)*(1-0.22) + 
-      (364200-190750)*(1-0.24) +
-      (462500-364200) * (1-0.32) +
-      (x-462500) * (1-0.35)
+  else if (x > 487450 & x <= 731200) {
+    net_pay <- 23200*(1-0.10) + 
+      (94300-23200)*(1-0.12) + 
+      (201050-94300)*(1-0.22) + 
+      (383900-201050)*(1-0.24) +
+      (487450-383900) * (1-0.32) +
+      (x-487450) * (1-0.35)
   }
-  else if (x > 693750) {
-    net_pay <- 22000*(1-0.10) + 
-      (89450-22000)*(1-0.12) + 
-      (190750-89450)*(1-0.22) + 
-      (364200-190750)*(1-0.24) +
-      (462500-364200) * (1-0.32) +
-      (693750-462500) * (1-0.35) +
-      (x-693750) * (1-0.37)
+  else if (x > 731200) {
+    net_pay <- 23200*(1-0.10) + 
+      (94300-23200)*(1-0.12) + 
+      (201050-94300)*(1-0.22) + 
+      (383900-201050)*(1-0.24) +
+      (487450-383900) * (1-0.32) +
+      (731200-487450) * (1-0.35) +
+      (x-731200) * (1-0.37)
   }
   
   net_pay_final <- net_pay + std_deduction
@@ -355,10 +374,16 @@ scales::dollar(est_annual_net_pension)
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average expenses for last 12 months
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
-expenses <- bank %>% filter(transaction_type == "debit",
-                            !hof_category %in% c("transfer","investments"),
-                            !(category %in% c("auto_payment") & description %in% c("USAA LOAN PAYMENT")),
-                            !account_name %in% c("eleanor_savings"))
+# expenses <- bank %>% filter(transaction_type == "debit",
+#                             !hof_category %in% c("transfer","investments"),
+#                             !(category %in% c("auto_payment") & description %in% c("USAA LOAN PAYMENT")),
+#                             !account_name %in% c("eleanor_savings"))
+
+expenses <- bank %>%
+  filter(account %in% c("signature_visa", "usaa_checking","usaa_savings"),
+         !transaction_type %in% c("income"),
+         !grepl("savings",bank$category)) %>%
+  mutate(amount = amount * -1)
 
 #change the date to month format
 expenses$date <- format(expenses$date, "%Y-%m")
@@ -414,9 +439,14 @@ ggplot(data = expenses_last_13_grouped,
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average income for last 12 months
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+# income <- bank %>%
+#   filter(transaction_type == "credit",
+#          hof_category %in% c("income"))
+
 income <- bank %>%
-  filter(transaction_type == "credit",
-         hof_category %in% c("income"))
+  filter(account %in% c("signature_visa", "usaa_checking","usaa_savings"),
+         transaction_type %in% c("income")) %>%
+  mutate(amount = amount)
 
 #change the date to month format
 income$date <- format(income$date, "%Y-%m")
@@ -472,22 +502,26 @@ ggplot(data = income_last_13_grouped) +
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average investments and savings and loan repayment for last 12 months
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
-bank %>% filter(transaction_type == "credit",
-                hof_category == "investments") %>%
-  group_by(account_name) %>% summarise(total = sum(amount))
-
-investments <- bank %>% 
-  filter(hof_category == "investments",
-         #account_name %in% c("jeff_and_elaina_brokerage","thrift_savings_plan"),
-         !category %in% c("dividend_cap_gains"),
-         transaction_type == "credit",
-         !grepl("Settlement",description)) %>%
-  mutate(type = if_else(account_name %in% c("thrift_savings_plan","jeff_ira","elaina_ira"),
+investments <- bank %>%
+  filter(account %in% c("elaina_roth_ira","jeff_and_elaina_brokerage","jeff_roth_ira","thrift_savings_plan"),
+         !category %in% c("securities_trades"),
+         !transaction_type %in% c("income")) %>%
+  mutate(type = if_else(account %in% c("thrift_savings_plan","jeff_ira","elaina_ira"),
                         "retirement",
                         "non-retirement"))
 
+# investments <- bank %>% 
+#   filter(hof_category == "investments",
+#          #account_name %in% c("jeff_and_elaina_brokerage","thrift_savings_plan"),
+#          !category %in% c("dividend_cap_gains"),
+#          transaction_type == "credit",
+#          !grepl("Settlement",description)) %>%
+#   mutate(type = if_else(account_name %in% c("thrift_savings_plan","jeff_ira","elaina_ira"),
+#                         "retirement",
+#                         "non-retirement"))
+
 investments %>%
-  group_by(account_name) %>% summarise(total = sum(amount))
+  group_by(account) %>% summarise(total = sum(amount))
 
 #change the date to month format
 investments$date <- format(investments$date, "%Y-%m")
@@ -542,8 +576,13 @@ ggplot(data = investments_last_13_grouped_type,
         legend.position = "bottom")
 
 #keep only the categories that are savings
-savings <- bank %>% filter(transaction_type == "credit",
-                           category %in% c("savings")) 
+savings <- bank %>%
+  filter(grepl("savings",bank$category),
+         account %in% c("usaa_checking")) %>%
+  mutate(amount = amount * -1)
+  
+# savings <- bank %>% filter(transaction_type == "credit",
+#                            category %in% c("savings")) 
 
 #change the date to month format
 savings$date <- format(savings$date, "%Y-%m")
@@ -592,7 +631,11 @@ ggplot(data = savings_last_13_grouped) +
 
 
 #keep only the categories that are loan repayment
-loan <- bank %>% filter(category %in% c("auto_payment"))
+#loan <- bank %>% filter(category %in% c("auto_payment"))
+loan <- bank %>% 
+  filter(grepl("loan",bank$category),
+         !grepl("nissan",bank$account)) %>%
+  mutate(amount = amount * -1)
 
 #change the date to month format
 loan$date <- format(loan$date, "%Y-%m")
@@ -603,7 +646,7 @@ loan_last_12 <- loan %>%
 
 #calculate average monthly loan repayment for last 12 months
 loan_last_12_grouped <- loan_last_12 %>%
-  group_by(date) %>%
+  group_by(date,category) %>%
   summarise(monthly_amount = sum(amount))
 
 avg_monthly_loan_repayment <- round(mean(loan_last_12_grouped$monthly_amount), digits = 2)
@@ -615,20 +658,19 @@ loan_last_13 <- loan %>%
 
 #calculate average monthly loan repayment for last 13 months
 loan_last_13_grouped <- loan_last_13 %>%
-  group_by(date) %>%
+  group_by(date,category) %>%
   summarise(monthly_amount = sum(amount))
 
 #plot it
 ggplot(data = loan_last_13_grouped) +
   geom_hline(aes(yintercept = avg_monthly_loan_repayment)) +
-  geom_col(aes(x = date, y = monthly_amount),
-           fill = "orange") +
+  geom_col(aes(x = date, y = monthly_amount,fill = category)) +
   theme_minimal() +
   geom_text(aes(x = date,
                 y = monthly_amount,
                 label = paste0("$", monthly_amount)),
             vjust = -0.5) +
-  geom_text(aes(x = max(date),
+  geom_text(aes(x = min(date),
                 y = max(monthly_amount),
                 label = paste0("Average: \n",scales::dollar(avg_monthly_loan_repayment)))) +
   labs(title = "Loan Repayment by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
