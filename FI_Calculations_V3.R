@@ -67,6 +67,9 @@ bank$date <- as.Date(ymd(bank$date))
 bank <- bank %>%
   left_join(cats, by = "category")
 
+#remove duplicates
+bank <- distinct(bank)
+
 #required minimum distributions
 required_minimum_distributions <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/required_minimum_distributions.xlsx")
 
