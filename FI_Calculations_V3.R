@@ -6,6 +6,7 @@ library(tidyverse)
 library(lubridate)
 library(scales)
 library(readxl)
+library(writexl)
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Load files
@@ -19,8 +20,13 @@ net_worth <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Plann
 #read in mint transactions
 # bank <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/mint_transactions.csv") %>%
 #   select(!c(Labels,Notes))
-bank <- read_xlsx("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_all.xlsx") %>%
-  select(!Tags)
+bank <- read_xlsx("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_all.xlsx")
+
+#remove duplicates
+bank <- distinct(bank)
+
+#write out the new data set
+write_xlsx(bank,"/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_all.xlsx")
 
 #read in mint categories
 # cats <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/mint_categories.xlsx",
@@ -65,10 +71,8 @@ bank$date <- as.Date(ymd(bank$date))
 
 #add HOF category
 bank <- bank %>%
-  left_join(cats, by = "category")
-
-#remove duplicates
-bank <- distinct(bank)
+  left_join(cats, by = "category") %>%
+  select(!tags)
 
 #required minimum distributions
 required_minimum_distributions <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/required_minimum_distributions.xlsx")
