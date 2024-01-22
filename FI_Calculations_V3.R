@@ -20,13 +20,7 @@ net_worth <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Plann
 #read in mint transactions
 # bank <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/mint_transactions.csv") %>%
 #   select(!c(Labels,Notes))
-bank <- read_xlsx("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_all.xlsx")
-
-#remove duplicates
-bank <- distinct(bank)
-
-#write out the new data set
-write_xlsx(bank,"/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_all.xlsx")
+bank_raw <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw.csv")
 
 #read in mint categories
 # cats <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/mint_categories.xlsx",
@@ -49,35 +43,60 @@ cats$category <- tolower(cats$category)
 # names(bank) <- sub(" ","_",names(bank))
 
 #change all names to lower
-names(bank) <- tolower(names(bank))
+# names(bank) <- tolower(names(bank))
+names(bank_raw) <- tolower(names(bank_raw))
 
 # do the same to category and account_name
-unique(bank$category)
-bank$category <- gsub("& ","",bank$category)
-bank$category <- gsub(" ","_",bank$category)
-bank$category <- gsub("/","_",bank$category)
-bank$category <- tolower(bank$category)
+# unique(bank$category)
+# bank$category <- gsub("& ","",bank$category)
+# bank$category <- gsub(" ","_",bank$category)
+# bank$category <- gsub("/","_",bank$category)
+# bank$category <- tolower(bank$category)
+
+unique(bank_raw$category)
+bank_raw$category <- gsub("& ","",bank_raw$category)
+bank_raw$category <- gsub(" ","_",bank_raw$category)
+bank_raw$category <- gsub("/","_",bank_raw$category)
+bank_raw$category <- tolower(bank_raw$category)
 
 # unique(bank$account_name)
 # bank$account_name <- gsub(" ","_",bank$account_name)
 # bank$account_name <- tolower(bank$account_name)
 # bank$account_name <- gsub("_-_uniformed_services","",bank$account_name)
-unique(bank$account)
-bank$account <- gsub(" ","_",bank$account)
-bank$account <- tolower(bank$account)
+# unique(bank$account)
+# bank$account <- gsub(" ","_",bank$account)
+# bank$account <- tolower(bank$account)
+
+unique(bank_raw$account)
+bank_raw$account <- gsub(" ","_",bank_raw$account)
+bank_raw$account <- tolower(bank_raw$account)
 
 #change dates to date type
-bank$date <- as.Date(ymd(bank$date))
+bank_raw$date <- as.Date(ymd(bank_raw$date))
 
-#add HOF category
-bank <- bank %>%
+#add transaction type category
+
+# bank <- bank %>%
+#   left_join(cats, by = "category") %>%
+#   select(!tags)
+
+bank_raw <- bank_raw %>%
   left_join(cats, by = "category") %>%
   select(!tags)
+
+bank <- bank_raw
+
+#remove duplicates
+bank <- distinct(bank)
+
+#write out the new data set
+# write_xlsx(bank,"/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_all.xlsx")
 
 #required minimum distributions
 required_minimum_distributions <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/required_minimum_distributions.xlsx")
 
 #load military pay data
+pChart2024 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2024_Officer_Pay.csv")
 pChart2023 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2023_Officer_Pay.csv")
 pChart2022 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2022_Officer_Pay.csv")
 pChart2021 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2021_Officer_Pay.csv")
@@ -297,6 +316,9 @@ for (i in 1:36) {
   } else if (hist_year[i] == "2023") {
     temp_val <- pChart2023 %>% filter(YOE == hist_yoe[i]) %>% select(hist_rank[i])
     hist_monthly_pay[i] <- temp_val[[1]]
+  } else if (hist_year[i] >= "2024") {
+    temp_val <- pChart2024 %>% filter(YOE == hist_yoe[i]) %>% select(hist_rank[i])
+    hist_monthly_pay[i] <- temp_val[[1]]
   } else {
     hist_monthly_pay[i] <- "ERROR"
   }
@@ -357,8 +379,11 @@ for (i in 1:36) {
   } else if (est_year[i] == "2022") {
     temp_val <- pChart2022 %>% filter(YOE == est_yoe[i]) %>% select(est_rank[i])
     est_monthly_pay[i] <- temp_val[[1]]
-  } else if (est_year[i] >= "2023") {
+  } else if (est_year[i] == "2023") {
     temp_val <- pChart2023 %>% filter(YOE == est_yoe[i]) %>% select(est_rank[i])
+    est_monthly_pay[i] <- temp_val[[1]]
+  } else if (est_year[i] >= "2024") {
+    temp_val <- pChart2024 %>% filter(YOE == est_yoe[i]) %>% select(est_rank[i])
     est_monthly_pay[i] <- temp_val[[1]]
   } else {
     est_monthly_pay[i] <- "ERROR"
@@ -393,7 +418,7 @@ expenses <- bank %>%
   mutate(amount = amount * -1)
 
 #change the date to month format
-expenses$date <- format(expenses$date, "%Y-%m")
+expenses$date <- format(ymd(expenses$date), "%Y-%m")
 
 #keep only the last 12 months worth of expenses
 expenses_last_12 <- expenses %>%
