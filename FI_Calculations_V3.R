@@ -22,6 +22,15 @@ net_worth <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Plann
 #   select(!c(Labels,Notes))
 bank_raw <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw.csv")
 
+bank_new <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw_new.csv")
+
+bank_merged <- rbind(bank_raw,
+                     bank_new)
+
+bank <- distinct(bank_merged)
+
+write_csv(bank, "/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw.csv")
+
 #read in mint categories
 # cats <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/mint_categories.xlsx",
 #                    sheet = "reference")
@@ -40,51 +49,47 @@ cats$category <- gsub("/","_",cats$category)
 cats$category <- tolower(cats$category)
 
 #get rid of spaces in names
-# names(bank) <- sub(" ","_",names(bank))
+names(bank) <- sub(" ","_",names(bank))
 
 #change all names to lower
-# names(bank) <- tolower(names(bank))
-names(bank_raw) <- tolower(names(bank_raw))
+names(bank) <- tolower(names(bank))
+#names(bank_raw) <- tolower(names(bank_raw))
 
 # do the same to category and account_name
-# unique(bank$category)
-# bank$category <- gsub("& ","",bank$category)
-# bank$category <- gsub(" ","_",bank$category)
-# bank$category <- gsub("/","_",bank$category)
-# bank$category <- tolower(bank$category)
+unique(bank$category)
+bank$category <- gsub("& ","",bank$category)
+bank$category <- gsub(" ","_",bank$category)
+bank$category <- gsub("/","_",bank$category)
+bank$category <- tolower(bank$category)
 
-unique(bank_raw$category)
-bank_raw$category <- gsub("& ","",bank_raw$category)
-bank_raw$category <- gsub(" ","_",bank_raw$category)
-bank_raw$category <- gsub("/","_",bank_raw$category)
-bank_raw$category <- tolower(bank_raw$category)
+# unique(bank_raw$category)
+# bank_raw$category <- gsub("& ","",bank_raw$category)
+# bank_raw$category <- gsub(" ","_",bank_raw$category)
+# bank_raw$category <- gsub("/","_",bank_raw$category)
+# bank_raw$category <- tolower(bank_raw$category)
 
-# unique(bank$account_name)
-# bank$account_name <- gsub(" ","_",bank$account_name)
-# bank$account_name <- tolower(bank$account_name)
-# bank$account_name <- gsub("_-_uniformed_services","",bank$account_name)
-# unique(bank$account)
-# bank$account <- gsub(" ","_",bank$account)
-# bank$account <- tolower(bank$account)
+unique(bank$account)
+bank$account <- gsub(" ","_",bank$account)
+bank$account <- tolower(bank$account)
 
-unique(bank_raw$account)
-bank_raw$account <- gsub(" ","_",bank_raw$account)
-bank_raw$account <- tolower(bank_raw$account)
+# unique(bank_raw$account)
+# bank_raw$account <- gsub(" ","_",bank_raw$account)
+# bank_raw$account <- tolower(bank_raw$account)
 
 #change dates to date type
-bank_raw$date <- as.Date(ymd(bank_raw$date))
+bank$date <- as.Date(ymd(bank$date))
 
 #add transaction type category
 
-# bank <- bank %>%
-#   left_join(cats, by = "category") %>%
-#   select(!tags)
-
-bank_raw <- bank_raw %>%
+bank <- bank %>%
   left_join(cats, by = "category") %>%
   select(!tags)
-
-bank <- bank_raw
+# 
+# bank_raw <- bank_raw %>%
+#   left_join(cats, by = "category") %>%
+#   select(!tags)
+# 
+# bank <- bank_raw
 
 #remove duplicates
 bank <- distinct(bank)
