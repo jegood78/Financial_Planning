@@ -24,6 +24,9 @@ bank_raw <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planni
 
 bank_new <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw_new.csv")
 
+#################################################################################
+#create a key to merge the two files on
+#################################################################################
 bank_merged <- rbind(bank_raw,
                      bank_new)
 
