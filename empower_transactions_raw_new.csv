@@ -1,4 +1,43 @@
 Date,Account,Description,Category,Tags,Amount
+2024-02-17,"Signature Visa","Sq *casero's Lemoyne Pa","Restaurants",,-10.63
+2024-02-16,"Signature Visa","Sq *casero's Lemoyne Pa","Restaurants",,-8.5
+2024-02-16,"Signature Visa","Sq *the Market Street Dellemoyne Pa","Restaurants",,-10.59
+2024-02-16,"Usaa Savings","Venmo","Transfers",,-40
+2024-02-16,"USAA Checking","Interest Paid","Interest",,0.01
+2024-02-16,"Jeff and Elaina Brokerage","Vanguard Total Stock Market Index Admiral Cl-buy","Securities Trades",,-500
+2024-02-15,"Nissan Vehicle Loan","Principal","Vehicle Loan",,679.82
+2024-02-15,"Nissan Vehicle Loan","Interest","Vehicle Loan",,134.22
+2024-02-15,"Signature Visa","Airbnb","Rent",,-3252.98
+2024-02-15,"Signature Visa","Airbnb","Rent",,-84.84
+2024-02-15,"Signature Visa","Chewy","Pets/Pet Care",,-76.18
+2024-02-15,"Usaa Savings","Usaa","Savings",,1100
+2024-02-15,"USAA Checking","Ic Payments","Vehicle Loan",,-814.04
+2024-02-15,"USAA Checking","Usaa","Savings",,-1100
+2024-02-15,"USAA Checking","Usaa","Adeline Savings",,-50
+2024-02-15,"USAA Checking","Usaa","Eleanor Savings",,-50
+2024-02-15,"Eleanor Savings","Usaa","Eleanor Savings",,50
+2024-02-15,"Adeline Savings","Usaa","Adeline Savings",,50
+2024-02-14,"Signature Visa","Amici Pizza","Restaurants",,-15.89
+2024-02-14,"Signature Visa","Sq *sweet Velvet Macaronscamp Hill Pa","Restaurants",,-21.6
+2024-02-13,"Signature Visa","Chiropractic Care Center","Healthcare/Medical",,-52.91
+2024-02-13,"Signature Visa","Pennsylvania State Government","Automotive",,-50
+2024-02-13,"USAA Checking","Brightwheel","Education",,-186.37
+2024-02-13,"USAA Checking","Dfas","Jeff Pay",,3809.39
+2024-02-12,"Signature Visa","Chipotle Mexican Grill","Restaurants",,-23.32
+2024-02-12,"Signature Visa","Giant Gas Station","Gasoline/Fuel",,-28.13
+2024-02-12,"Signature Visa","Millennium Way Dental Stuenola Pa","Healthcare/Medical",,-305.87
+2024-02-12,"Signature Visa","Dsw","Clothing/Shoes",,-40
+2024-02-12,"Signature Visa","Auntie Anne's","Restaurants",,-5.61
+2024-02-12,"Signature Visa","Giant Food","Groceries",,-174.15
+2024-02-12,"Signature Visa","Jcpenney","Clothing/Shoes",,106.8
+2024-02-12,"Signature Visa","Dsw","Clothing/Shoes",,248.96
+2024-02-12,"USAA Checking","Target","Diapers/BabyFood",,-130.9
+2024-02-11,"Signature Visa","Petsmart","Pets/Pet Care",,-21.6
+2024-02-10,"Signature Visa","Amici Pizza","Restaurants",,-14.83
+2024-02-09,"Signature Visa","Iherb","Personal Care",,-30.6
+2024-02-09,"Signature Visa","Modwash Pa0503 Mechani Mechanicsburgpa","Automotive",,-25
+2024-02-09,"Signature Visa","Kohl's","Clothing/Shoes",,-81.62
+2024-02-08,"Signature Visa","Sheetz","Automotive",,-15
 2024-02-08,"Signature Visa","Tst* Valley Bistro Enola Pa","Restaurants",,-19.24
 2024-02-07,"Signature Visa","Millennium Way Dental Stuenola Pa","Healthcare/Medical",,-66.95
 2024-02-06,"Signature Visa","Sheetz","Gasoline/Fuel",,-55.79
@@ -327,37 +366,3 @@ Date,Account,Description,Category,Tags,Amount
 2023-11-24,"Usaa Savings","Venmo","Transfers",,-30
 2023-11-24,"USAA Checking","Target","General Merchandise",,-134.48
 2023-11-23,"Signature Visa","Panera Bread","Restaurants",,-32.08
-2023-11-22,"Signature Visa","Sheetz","Gasoline/Fuel",,-37
-2023-11-22,"Signature Visa","Amici Pizza","Restaurants",,-35.13
-2023-11-22,"Signature Visa","Panera Bread","Restaurants",,-3.29
-2023-11-22,"Signature Visa","Panera Bread","Restaurants",,-24.14
-2023-11-21,"USAA Checking","Target","General Merchandise",,-367.54
-2023-11-21,"USAA Checking","Brightwheel Brghtwhl* ***********j7h0","Education",,-186.15
-2023-11-20,"Signature Visa","Icp*central Pa Gymnasticsxxx-xxx1030 Pa","Entertainment",,-86
-2023-11-20,"Signature Visa","Comcast","Cable/Satellite",,-39.99
-2023-11-20,"Signature Visa","Wegmans","Groceries",,-55.07
-2023-11-20,"USAA Checking","Target","General Merchandise",,-140.71
-2023-11-20,"USAA Checking","Target","General Merchandise",,-53.52
-2023-11-20,"USAA Checking","Target","General Merchandise",,-36.05
-2023-11-20,"USAA Checking","Target","General Merchandise",,-15
-2023-11-19,"Signature Visa","Giant Food","Groceries",,-112.21
-2023-11-19,"Signature Visa","Amazon","General Merchandise",,-1.58
-2023-11-19,"Signature Visa","Aldi","Groceries",,-116.53
-2023-11-18,"Signature Visa","Dollar Tree","General Merchandise",,-40.47
-2023-11-18,"Signature Visa","Iherb","Healthcare/Medical",,-58.44
-2023-11-16,"Signature Visa","Hobby Lobby","Hobbies",,-19.44
-2023-11-16,"Signature Visa","Kohl's","General Merchandise",,5.6
-2023-11-16,"Signature Visa","Independent Trading Co","Clothing/Shoes",,-58.5
-2023-11-16,"USAA Checking","Interest Paid","Interest",,0.01
-2023-11-16,"USAA Checking","Chase","Credit Card Payments",,-140.55
-2023-11-15,"Nissan Vehicle Loan","Principal","Uncategorized",,670.46
-2023-11-15,"Nissan Vehicle Loan","Interest","Uncategorized",,143.58
-2023-11-15,"Signature Visa","Itt Office Nsaxxxx0597 Mechanicsburgpa","Office Supplies",,-150
-2023-11-15,"Usaa Savings","Venmo","Transfers",,-40
-2023-11-15,"Usaa Savings","Usaa","Transfers",,1100
-2023-11-15,"USAA Checking","Ic Payments","Online Services",,-814.04
-2023-11-15,"USAA Checking","Usaa","Transfers",,-1100
-2023-11-15,"USAA Checking","Usaa","Transfers",,-50
-2023-11-15,"USAA Checking","Usaa","Transfers",,-50
-2023-11-15,"Eleanor Savings","Usaa","Transfers",,50
-2023-11-15,"Adeline Savings","Usaa","Transfers",,50
