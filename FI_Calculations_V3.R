@@ -24,9 +24,6 @@ bank_raw <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planni
 
 bank_new <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw_new.csv")
 
-#################################################################################
-#create a key to merge the two files on
-#################################################################################
 bank_merged <- rbind(bank_raw,
                      bank_new)
 
@@ -78,9 +75,6 @@ bank$account <- tolower(bank$account)
 # unique(bank_raw$account)
 # bank_raw$account <- gsub(" ","_",bank_raw$account)
 # bank_raw$account <- tolower(bank_raw$account)
-
-#change dates to date type
-bank$date <- as.Date(ymd(bank$date))
 
 #add transaction type category
 
