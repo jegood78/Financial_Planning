@@ -21,8 +21,10 @@ net_worth <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Plann
 # bank <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/mint_transactions.csv") %>%
 #   select(!c(Labels,Notes))
 bank_raw <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw.csv")
+bank_raw
 
 bank_new <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw_new.csv")
+bank_new
 
 bank_merged <- rbind(bank_raw,
                      bank_new)
@@ -531,6 +533,30 @@ ggplot(data = income_last_13_grouped) +
         axis.line = element_line(colour = "grey",
                                  linewidth = 1,
                                  linetype = "solid"))
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+# Calculate average investments and savings and loan repayment for last 12 months
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+
+expenses_grouped_all <- expenses %>%
+  group_by(date) %>%
+  summarise(monthly_amount = sum(amount)) %>%
+  mutate(category = "expenses")
+
+income_grouped_all <- income %>%
+  group_by(date) %>%
+  summarise(monthly_amount = sum(amount)) %>%
+  mutate(category = "income")
+
+ins_and_outs <- rbind(expenses_grouped_all,
+                      income_grouped_all)
+
+ggplot(data = ins_and_outs,
+       aes(x = date,
+           y = monthly_amount,
+           group = category,
+           color = category)) +
+  geom_line()
 
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
