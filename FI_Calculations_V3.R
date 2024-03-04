@@ -287,7 +287,7 @@ c_pension_percentage
 
 #calculate average pay for last 36 months
 #create a historical 36 month list
-historical_36_months <- format(seq(today()-(365 * 3), today() %m-% months(1), by = 'month'), "%Y-%m")
+historical_36_months <- format(seq(today()-(365 * 3), today() %m-% months(0), by = 'month'), "%Y-%m")
 
 #calculate historical years of service
 historical_yos <- round(time_length(difftime(as.Date(ym(historical_36_months)),pebd),"years"),digits = 2)
