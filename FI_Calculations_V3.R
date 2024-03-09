@@ -13,34 +13,40 @@ library(writexl)
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 #read in table of historical S&P 500 returns
 sp_500 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/sp-500-historical-annual-returns.csv")
+sp_500
 
 #read in net worth document
 net_worth <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/NetWorth.csv")
+net_worth
 
-#read in mint transactions
-# bank <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/mint_transactions.csv") %>%
-#   select(!c(Labels,Notes))
+#read in bank transactions from empower
+#historical transactions
 bank_raw <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw.csv")
 bank_raw
 
+#new transactions
 bank_new <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw_new.csv")
 bank_new
 
+#merge historical and new transactions
 bank_merged <- rbind(bank_raw,
                      bank_new)
 
+#keep only distinct entries
 bank <- distinct(bank_merged)
 
+#export the new historicals
 write_csv(bank, "/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw.csv")
 
-#read in mint categories
-# cats <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/mint_categories.xlsx",
-#                    sheet = "reference")
+#read in transaction categories
 cats <- read_xlsx("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transaction_categories.xlsx") %>%
   rename(transaction_type = `Transaction Type`,
          category = Category)
+
+#change all of the transactions types to lower case
 cats$transaction_type <- tolower(cats$transaction_type)
 
+#clean up the text to get rid of special characters and make them lower case
 unique(cats$category)
 cats$category <- gsub("\\(","",cats$category)
 cats$category <- gsub("\\)","",cats$category)
@@ -55,7 +61,6 @@ names(bank) <- sub(" ","_",names(bank))
 
 #change all names to lower
 names(bank) <- tolower(names(bank))
-#names(bank_raw) <- tolower(names(bank_raw))
 
 # do the same to category and account_name
 unique(bank$category)
@@ -64,47 +69,36 @@ bank$category <- gsub(" ","_",bank$category)
 bank$category <- gsub("/","_",bank$category)
 bank$category <- tolower(bank$category)
 
-# unique(bank_raw$category)
-# bank_raw$category <- gsub("& ","",bank_raw$category)
-# bank_raw$category <- gsub(" ","_",bank_raw$category)
-# bank_raw$category <- gsub("/","_",bank_raw$category)
-# bank_raw$category <- tolower(bank_raw$category)
-
 unique(bank$account)
 bank$account <- gsub(" ","_",bank$account)
 bank$account <- tolower(bank$account)
 
-# unique(bank_raw$account)
-# bank_raw$account <- gsub(" ","_",bank_raw$account)
-# bank_raw$account <- tolower(bank_raw$account)
-
 #add transaction type category
-
 bank <- bank %>%
   left_join(cats, by = "category") %>%
   select(!tags)
-# 
-# bank_raw <- bank_raw %>%
-#   left_join(cats, by = "category") %>%
-#   select(!tags)
-# 
-# bank <- bank_raw
 
-#remove duplicates
-bank <- distinct(bank)
-
-#write out the new data set
-# write_xlsx(bank,"/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_all.xlsx")
+bank
 
 #required minimum distributions
 required_minimum_distributions <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/required_minimum_distributions.xlsx")
+required_minimum_distributions
 
 #load military pay data
 pChart2024 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2024_Officer_Pay.csv")
+pChart2024
+
 pChart2023 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2023_Officer_Pay.csv")
+pChart2023
+
 pChart2022 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2022_Officer_Pay.csv")
+pChart2022
+
 pChart2021 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2021_Officer_Pay.csv")
+pChart2021
+
 pChart2020 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2020_Officer_Pay.csv")
+pChart2020
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Set user inputs
@@ -142,24 +136,31 @@ rolling_12_months <- format(seq(lubridate::floor_date(today(), unit = "month") %
                                 lubridate::floor_date(today(), unit = "month") %m-% months(1),
                                 by = "month"),
                             "%Y-%m")
+rolling_12_months
 
 rolling_13_months <- format(seq(lubridate::floor_date(today(), unit = "month") %m-% months(12),
                                 lubridate::floor_date(today(), unit = "month"),
                                 by = "month"),
                             "%Y-%m")
-
+rolling_13_months
 
 #current age
 c_age <- floor(time_length(difftime(today(),as.Date(mdy("12-26-1978"))),"years"))
+c_age
+
+#year I turn 60
+year_60 <- year(today()) + 60 - c_age
 
 #estimated EOL
 est_eol_age <- 90
 
 #calculate average annual return for S&P 500
 avg_annual_returns <- floor(mean(sp_500$annual_return))/100
+avg_annual_returns
 
 #automatic brokerage investments
-c_auto_brokerage_investments <- 2000 * 12
+c_auto_brokerage_investments <- 1000 * 12
+c_auto_brokerage_investments
 
 #standard deduction married filing jointly
 std_deduction <- 29200
@@ -287,10 +288,12 @@ c_pension_percentage
 
 #calculate average pay for last 36 months
 #create a historical 36 month list
-historical_36_months <- format(seq(today()-(365 * 3), today() %m-% months(0), by = 'month'), "%Y-%m")
+historical_36_months <- format(seq(today()%m-% months(36), today() %m-% months(1), by = 'month'), "%Y-%m")
+historical_36_months
 
 #calculate historical years of service
-historical_yos <- round(time_length(difftime(as.Date(ym(historical_36_months)),pebd),"years"),digits = 2)
+historical_yos <- round(time_length(difftime(ceiling_date(as.Date(ym(historical_36_months)),'month') - days(1),pebd),"years"),digits = 2)
+historical_yos
 
 #calculate average monthly pay for historical 36 months
 hist_monthly_pay <- seq(1:36)
@@ -328,10 +331,17 @@ for (i in 1:36) {
   }
 }
 
+hist_monthly_pay
+hist_year
+hist_yoe
+hist_rank
+
 hist_avg_monthly <- round(mean(hist_monthly_pay),digits = 2)
+scales::dollar(hist_avg_monthly)
 
 #calculate monthly pension based on pension percentage and historical average monthly pay
 c_monthly_gross_pension <- round(c_pension_percentage * hist_avg_monthly, digits = 2)
+scales::dollar(c_monthly_gross_pension)
 
 #calculate annual pension
 c_annual_gross_pension <- c_monthly_gross_pension * 12
@@ -347,10 +357,11 @@ scales::dollar(c_annual_net_pension)
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
 # create vector of 36 months based on estimated retirement date
-final_36_months <- seq(as.Date(est_retire_date)%m-% months(36),as.Date(est_retire_date), by = "month")
+final_36_months <- seq(as.Date(est_retire_date)%m-% months(36),as.Date(est_retire_date)%m-% months(1), by = "month")
+final_36_months
 
 #calculate years of service based on 36 month vector
-est_yos <- round(time_length(difftime(final_36_months,pebd),"years"), digits = 2)
+est_yos <- round(time_length(difftime(ceiling_date(as.Date(ymd(final_36_months)),'month') - days(1),pebd),"years"), digits = 2)
 max(est_yos)
 
 #calculate pension percentage from estimated years of service
@@ -394,10 +405,17 @@ for (i in 1:36) {
   }
 }
 
+est_monthly_pay
+est_year
+est_yoe
+est_rank
+
 est_avg_monthly <- round(mean(est_monthly_pay),digits = 2)
+scales::dollar(est_avg_monthly)
 
 #calculate monthly pension based on pension percentage and historical average monthly pay
 est_monthly_gross_pension <- round(est_pension_percentage * est_avg_monthly, digits = 2)
+scales::dollar(est_monthly_gross_pension)
 
 #calculate annual pension
 est_annual_gross_pension <- est_monthly_gross_pension * 12
@@ -410,16 +428,14 @@ scales::dollar(est_annual_net_pension)
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average expenses for last 12 months
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
-# expenses <- bank %>% filter(transaction_type == "debit",
-#                             !hof_category %in% c("transfer","investments"),
-#                             !(category %in% c("auto_payment") & description %in% c("USAA LOAN PAYMENT")),
-#                             !account_name %in% c("eleanor_savings"))
 
 expenses <- bank %>%
   filter(account %in% c("signature_visa", "usaa_checking","usaa_savings"),
          !transaction_type %in% c("income"),
          !grepl("savings",bank$category)) %>%
   mutate(amount = amount * -1)
+
+expenses
 
 #change the date to month format
 expenses$date <- format(ymd(expenses$date), "%Y-%m")
@@ -428,10 +444,17 @@ expenses$date <- format(ymd(expenses$date), "%Y-%m")
 expenses_last_12 <- expenses %>%
   filter(date %in% rolling_12_months)
 
+expenses_last_12 %>%
+  filter(category %in% c("housing"))
+
 #calculate average monthly expenses for last 12 months
 expenses_last_12_grouped <- expenses_last_12 %>%
   group_by(date) %>%
   summarise(monthly_amount = sum(amount))
+
+#ignore august 2023.  Incomplete data
+expenses_last_12_grouped <- expenses_last_12_grouped %>%
+  filter(date > "2023-08")
 
 avg_monthly_expenses <- round(mean(expenses_last_12_grouped$monthly_amount), digits = 2)
 scales::dollar(avg_monthly_expenses)
@@ -448,6 +471,10 @@ expenses_last_13 <- expenses %>%
 expenses_last_13_grouped <- expenses_last_13 %>%
   group_by(date) %>%
   summarise(monthly_amount = sum(amount))
+
+#ignore august 2023.  Incomplete data
+expenses_last_13_grouped <- expenses_last_13_grouped %>%
+  filter(date > "2023-08")
 
 #plot it
 ggplot(data = expenses_last_13_grouped,
@@ -475,14 +502,13 @@ ggplot(data = expenses_last_13_grouped,
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average income for last 12 months
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
-# income <- bank %>%
-#   filter(transaction_type == "credit",
-#          hof_category %in% c("income"))
 
 income <- bank %>%
   filter(account %in% c("signature_visa", "usaa_checking","usaa_savings"),
          transaction_type %in% c("income")) %>%
   mutate(amount = amount)
+
+income
 
 #change the date to month format
 income$date <- format(income$date, "%Y-%m")
@@ -495,6 +521,10 @@ income_last_12 <- income %>%
 income_last_12_grouped <- income_last_12 %>%
   group_by(date) %>%
   summarise(monthly_amount = sum(amount))
+
+#ignore august 2023 to say consistent with expenses
+income_last_12_grouped <- income_last_12_grouped %>%
+  filter(date > "2023-08")
 
 avg_monthly_income <- round(mean(income_last_12_grouped$monthly_amount), digits = 2)
 scales::dollar(avg_monthly_income)
@@ -512,6 +542,9 @@ income_last_13_grouped <- income_last_13 %>%
   group_by(date) %>%
   summarise(monthly_amount = sum(amount))
 
+#ignore august 2023 to stay consistent
+income_last_13_grouped <- income_last_13_grouped %>%
+  filter(date > "2023-08")
 
 #plot it
 ggplot(data = income_last_13_grouped) +
@@ -535,29 +568,32 @@ ggplot(data = income_last_13_grouped) +
                                  linetype = "solid"))
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
-# Calculate average investments and savings and loan repayment for last 12 months
+# plot income and expenses combined
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+merged_last_13_grouped <- rbind(expenses_last_13_grouped %>%
+                                  mutate(transaction_type = "expense"),
+                                
+                                income_last_13_grouped %>%
+                                  mutate(transaction_type = "income"))
 
-expenses_grouped_all <- expenses %>%
-  group_by(date) %>%
-  summarise(monthly_amount = sum(amount)) %>%
-  mutate(category = "expenses")
-
-income_grouped_all <- income %>%
-  group_by(date) %>%
-  summarise(monthly_amount = sum(amount)) %>%
-  mutate(category = "income")
-
-ins_and_outs <- rbind(expenses_grouped_all,
-                      income_grouped_all)
-
-ggplot(data = ins_and_outs,
-       aes(x = date,
-           y = monthly_amount,
-           group = category,
-           color = category)) +
-  geom_line()
-
+#plot it
+ggplot(data = merged_last_13_grouped) +
+  geom_col(aes(x = date,
+               y = monthly_amount,
+               group = transaction_type,
+               fill = transaction_type),
+           position = "dodge") +
+  scale_fill_manual(values = c("expense" = "red","income" = "green")) +
+  scale_y_continuous(seq(0,13000,500), labels = dollar)+
+  theme_minimal() +
+  labs(title = "Income and Expenses by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
+  theme(axis.ticks = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.x = element_text(angle = -90, vjust = 0),
+        axis.line = element_line(colour = "grey",
+                                 linewidth = 1,
+                                 linetype = "solid"),
+        legend.position = "bottom")
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average investments and savings and loan repayment for last 12 months
@@ -570,70 +606,60 @@ investments <- bank %>%
                         "retirement",
                         "non-retirement"))
 
-# investments <- bank %>% 
-#   filter(hof_category == "investments",
-#          #account_name %in% c("jeff_and_elaina_brokerage","thrift_savings_plan"),
-#          !category %in% c("dividend_cap_gains"),
-#          transaction_type == "credit",
-#          !grepl("Settlement",description)) %>%
-#   mutate(type = if_else(account_name %in% c("thrift_savings_plan","jeff_ira","elaina_ira"),
-#                         "retirement",
-#                         "non-retirement"))
-
 investments %>%
   group_by(account) %>% summarise(total = sum(amount))
 
 #change the date to month format
 investments$date <- format(investments$date, "%Y-%m")
 
-#keep only the last 12 months worth of investments
-investments_last_12 <- investments %>%
-  filter(date %in% rolling_12_months)
-
-#calculate average monthly investments for last 12 months
-investments_last_12_grouped_type <- investments_last_12 %>%
-  group_by(date, type) %>%
-  summarise(monthly_amount = sum(amount))
-
-investments_last_12_grouped <- investments_last_12 %>%
-  group_by(date) %>%
-  summarise(monthly_amount = sum(amount))
-
-avg_monthly_investments <- round(mean(investments_last_12_grouped$monthly_amount), digits = 2)
-scales::dollar(avg_monthly_investments)
-
-#keep only the last 13 months worth of investments to plot
-investments_last_13 <- investments %>%
-  filter(date %in% rolling_13_months)
-
-#calculate average monthly investments for last 12 months
-investments_last_13_grouped_type <- investments_last_13 %>%
-  group_by(date, type) %>%
-  summarise(monthly_amount = sum(amount))
-
-investments_last_13_grouped <- investments_last_13 %>%
-  group_by(date) %>%
-  summarise(monthly_amount = sum(amount))
-
-#plot it
-ggplot(data = investments_last_13_grouped_type,
-       aes(x = date, y = monthly_amount, fill = type)) +
-  geom_hline(aes(yintercept = avg_monthly_investments)) +
-  geom_col() +
-  theme_minimal() +
-  geom_text(aes(label = paste0("$", monthly_amount)),
-            position = position_stack()) +
-  geom_text(aes(x = max(date),
-                y = max(monthly_amount),
-                label = paste0("Average: \n",scales::dollar(avg_monthly_investments)))) +
-  labs(title = "Investments by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
-  theme(axis.text.y = element_blank(),
-        axis.ticks = element_blank(),
-        axis.line = element_line(colour = "grey",
-                                 linewidth = 1,
-                                 linetype = "solid"),
-        axis.text.x = element_text(angle = -90, vjust = 0),
-        legend.position = "bottom")
+# #keep only the last 12 months worth of investments
+# investments_last_12 <- investments %>%
+#   filter(date %in% rolling_12_months)
+# 
+# #calculate average monthly investments for last 12 months
+# investments_last_12_grouped_type <- investments_last_12 %>%
+#   group_by(date, type) %>%
+#   summarise(monthly_amount = sum(amount))
+# 
+# investments_last_12_grouped <- investments_last_12 %>%
+#   group_by(date) %>%
+#   summarise(monthly_amount = sum(amount))
+# 
+# avg_monthly_investments <- round(mean(investments_last_12_grouped$monthly_amount), digits = 2)
+# scales::dollar(avg_monthly_investments)
+# 
+# #keep only the last 13 months worth of investments to plot
+# investments_last_13 <- investments %>%
+#   filter(date %in% rolling_13_months)
+# 
+# #calculate average monthly investments for last 12 months
+# investments_last_13_grouped_type <- investments_last_13 %>%
+#   group_by(date, type) %>%
+#   summarise(monthly_amount = sum(amount))
+# 
+# investments_last_13_grouped <- investments_last_13 %>%
+#   group_by(date) %>%
+#   summarise(monthly_amount = sum(amount))
+# 
+# #plot it
+# ggplot(data = investments_last_13_grouped_type,
+#        aes(x = date, y = monthly_amount, fill = type)) +
+#   geom_hline(aes(yintercept = avg_monthly_investments)) +
+#   geom_col() +
+#   theme_minimal() +
+#   geom_text(aes(label = paste0("$", monthly_amount)),
+#             position = position_stack()) +
+#   geom_text(aes(x = max(date),
+#                 y = max(monthly_amount),
+#                 label = paste0("Average: \n",scales::dollar(avg_monthly_investments)))) +
+#   labs(title = "Investments by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
+#   theme(axis.text.y = element_blank(),
+#         axis.ticks = element_blank(),
+#         axis.line = element_line(colour = "grey",
+#                                  linewidth = 1,
+#                                  linetype = "solid"),
+#         axis.text.x = element_text(angle = -90, vjust = 0),
+#         legend.position = "bottom")
 
 #keep only the categories that are savings
 savings <- bank %>%
@@ -641,57 +667,53 @@ savings <- bank %>%
          account %in% c("usaa_checking")) %>%
   mutate(amount = amount * -1)
   
-# savings <- bank %>% filter(transaction_type == "credit",
-#                            category %in% c("savings")) 
-
 #change the date to month format
 savings$date <- format(savings$date, "%Y-%m")
 
-#keep only the last 12 months worth of savings
-savings_last_12 <- savings %>%
-  filter(date %in% rolling_12_months)
-
-#calculate average monthly savings for last 12 months
-savings_last_12_grouped <- savings_last_12 %>%
-  group_by(date) %>%
-  summarise(monthly_amount = sum(amount))
-
-avg_monthly_savings <- round(mean(savings_last_12_grouped$monthly_amount), digits = 2)
-scales::dollar(avg_monthly_savings)
-
-#keep only the last 13 months worth of savings to plot
-savings_last_13 <- savings %>%
-  filter(date %in% rolling_13_months)
-
-#calculate average monthly expenses for last 13 months
-savings_last_13_grouped <- savings_last_13 %>%
-  group_by(date) %>%
-  summarise(monthly_amount = sum(amount))
-
-#plot it
-ggplot(data = savings_last_13_grouped) +
-  geom_hline(aes(yintercept = avg_monthly_savings)) +
-  geom_col(aes(x = date, y = monthly_amount),
-           fill = "blue") +
-  theme_minimal() +
-  geom_text(aes(x = date,
-                y = monthly_amount,
-                label = paste0("$", monthly_amount)),
-            vjust = -0.5) +
-  geom_text(aes(x = max(date),
-                y = max(monthly_amount+ 1500),
-                label = paste0("Average: \n",scales::dollar(avg_monthly_savings)))) +
-  labs(title = "Savings by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
-  theme(axis.text.y = element_blank(),
-        axis.ticks = element_blank(),
-        axis.text.x = element_text(angle = -90, vjust = 0),
-        axis.line = element_line(colour = "grey",
-                                 linewidth = 1,
-                                 linetype = "solid"))
+# #keep only the last 12 months worth of savings
+# savings_last_12 <- savings %>%
+#   filter(date %in% rolling_12_months)
+# 
+# #calculate average monthly savings for last 12 months
+# savings_last_12_grouped <- savings_last_12 %>%
+#   group_by(date) %>%
+#   summarise(monthly_amount = sum(amount))
+# 
+# avg_monthly_savings <- round(mean(savings_last_12_grouped$monthly_amount), digits = 2)
+# scales::dollar(avg_monthly_savings)
+# 
+# #keep only the last 13 months worth of savings to plot
+# savings_last_13 <- savings %>%
+#   filter(date %in% rolling_13_months)
+# 
+# #calculate average monthly expenses for last 13 months
+# savings_last_13_grouped <- savings_last_13 %>%
+#   group_by(date) %>%
+#   summarise(monthly_amount = sum(amount))
+# 
+# #plot it
+# ggplot(data = savings_last_13_grouped) +
+#   geom_hline(aes(yintercept = avg_monthly_savings)) +
+#   geom_col(aes(x = date, y = monthly_amount),
+#            fill = "blue") +
+#   theme_minimal() +
+#   geom_text(aes(x = date,
+#                 y = monthly_amount,
+#                 label = paste0("$", monthly_amount)),
+#             vjust = -0.5) +
+#   geom_text(aes(x = max(date),
+#                 y = max(monthly_amount+ 1500),
+#                 label = paste0("Average: \n",scales::dollar(avg_monthly_savings)))) +
+#   labs(title = "Savings by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
+#   theme(axis.text.y = element_blank(),
+#         axis.ticks = element_blank(),
+#         axis.text.x = element_text(angle = -90, vjust = 0),
+#         axis.line = element_line(colour = "grey",
+#                                  linewidth = 1,
+#                                  linetype = "solid"))
 
 
 #keep only the categories that are loan repayment
-#loan <- bank %>% filter(category %in% c("auto_payment"))
 loan <- bank %>% 
   filter(grepl("loan",bank$category),
          !grepl("nissan",bank$account)) %>%
@@ -700,46 +722,59 @@ loan <- bank %>%
 #change the date to month format
 loan$date <- format(loan$date, "%Y-%m")
 
-#keep only the last 12 months worth of loan repayment
-loan_last_12 <- loan %>%
-  filter(date %in% rolling_12_months)
+# #keep only the last 12 months worth of loan repayment
+# loan_last_12 <- loan %>%
+#   filter(date %in% rolling_12_months)
+# 
+# #calculate average monthly loan repayment for last 12 months
+# loan_last_12_grouped <- loan_last_12 %>%
+#   group_by(date,category) %>%
+#   summarise(monthly_amount = sum(amount))
+# 
+# avg_monthly_loan_repayment <- round(mean(loan_last_12_grouped$monthly_amount), digits = 2)
+# scales::dollar(avg_monthly_loan_repayment)
+# 
+# #keep only the last 13 months worth of loan repayment
+# loan_last_13 <- loan %>%
+#   filter(date %in% rolling_13_months)
+# 
+# #calculate average monthly loan repayment for last 13 months
+# loan_last_13_grouped <- loan_last_13 %>%
+#   group_by(date,category) %>%
+#   summarise(monthly_amount = sum(amount))
+# 
+# #plot it
+# ggplot(data = loan_last_13_grouped) +
+#   geom_hline(aes(yintercept = avg_monthly_loan_repayment)) +
+#   geom_col(aes(x = date, y = monthly_amount,fill = category)) +
+#   theme_minimal() +
+#   geom_text(aes(x = date,
+#                 y = monthly_amount,
+#                 label = paste0("$", monthly_amount)),
+#             vjust = -0.5) +
+#   geom_text(aes(x = min(date),
+#                 y = max(monthly_amount),
+#                 label = paste0("Average: \n",scales::dollar(avg_monthly_loan_repayment)))) +
+#   labs(title = "Loan Repayment by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
+#   theme(axis.text.y = element_blank(),
+#         axis.ticks = element_blank(),
+#         axis.text.x = element_text(angle = -90, vjust = 0),
+#         axis.line = element_line(colour = "grey",
+#                                  linewidth = 1,
+#                                  linetype = "solid"))
 
-#calculate average monthly loan repayment for last 12 months
-loan_last_12_grouped <- loan_last_12 %>%
-  group_by(date,category) %>%
-  summarise(monthly_amount = sum(amount))
+#calculate total paid back on school loan
+school_loans <- loan %>%
+  filter(category %in% c("school_loan","loans"))
 
-avg_monthly_loan_repayment <- round(mean(loan_last_12_grouped$monthly_amount), digits = 2)
-scales::dollar(avg_monthly_loan_repayment)
+total_paid <- sum(school_loans$amount)
+scales::dollar(total_paid)
 
-#keep only the last 13 months worth of loan repayment
-loan_last_13 <- loan %>%
-  filter(date %in% rolling_13_months)
+#calculate amount remaining
+initial_value <- max(net_worth$School_Loan_Elaina *-1)
 
-#calculate average monthly loan repayment for last 13 months
-loan_last_13_grouped <- loan_last_13 %>%
-  group_by(date,category) %>%
-  summarise(monthly_amount = sum(amount))
-
-#plot it
-ggplot(data = loan_last_13_grouped) +
-  geom_hline(aes(yintercept = avg_monthly_loan_repayment)) +
-  geom_col(aes(x = date, y = monthly_amount,fill = category)) +
-  theme_minimal() +
-  geom_text(aes(x = date,
-                y = monthly_amount,
-                label = paste0("$", monthly_amount)),
-            vjust = -0.5) +
-  geom_text(aes(x = min(date),
-                y = max(monthly_amount),
-                label = paste0("Average: \n",scales::dollar(avg_monthly_loan_repayment)))) +
-  labs(title = "Loan Repayment by Month", subtitle = "Last 12 Months", x = NULL, y = NULL) +
-  theme(axis.text.y = element_blank(),
-        axis.ticks = element_blank(),
-        axis.text.x = element_text(angle = -90, vjust = 0),
-        axis.line = element_line(colour = "grey",
-                                 linewidth = 1,
-                                 linetype = "solid"))
+remaining_school_loan <- initial_value - total_paid
+scales::dollar(remaining_school_loan)
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate current net worth
@@ -831,6 +866,33 @@ ggplot(data = net_worth_merged,
   scale_y_continuous(labels = scales::dollar,breaks = seq(0, y_max, 50000)) +
   labs(title = "Net Worth", subtitle = "Last 12 Months", x = NULL, y = NULL)
 
+#build an area plot
+net_worth_merged_long <- net_worth_merged %>%
+  select(!net_worth_total) %>%
+  pivot_longer(cols = c("retirement_total", "non_retirement_total", "liabilities_total"),
+               names_to = "fund_type",
+               values_to = "amount")
+
+ggplot(data = net_worth_merged_long,
+       aes(x = date,
+           y = amount,
+           group = fund_type,
+           fill = fund_type)) +
+  geom_area() +
+  theme_minimal() +
+  scale_y_continuous(seq(-100000,1000000,50000), labels = dollar) +
+  theme(axis.line = element_line(colour = "grey", 
+                                 linewidth = 1,
+                                 linetype = "solid"),
+        axis.title = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        legend.position = "bottom") +
+  labs(title = "Net Worth",
+       subtitle = "Last 12 Months",
+       fill = "Fund Type") +
+  scale_fill_discrete(name = "Fund Type", labels = c("Liabilities", "Non-Retirement", "Retirement"))
+
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate FU numbers:
 #   Naive
@@ -839,7 +901,16 @@ ggplot(data = net_worth_merged,
 #calculate naive FI number based on current average monthly expenses + housing buffer and 
 #assumed safe withdrawal rate
 
-naive_fi <- (avg_monthly_expenses + housing_buffer)*12 * (1 / annual_safe_withdrawal)
+#add housing buffer to months before Feb 2024
+expenses_last_12_grouped_housing <- expenses_last_12_grouped %>%
+  mutate(monthly_amount = if_else(date < "2024-02",
+                                  monthly_amount + housing_buffer,
+                                  monthly_amount))
+
+avg_monthly_expenses_housing <- mean(expenses_last_12_grouped_housing$monthly_amount)
+
+naive_fi <- (avg_monthly_expenses_housing)*12 * (1 / annual_safe_withdrawal)
+scales::dollar(naive_fi)
 
 #calculate years to naive FI based on current net_worth assuming no additional investments
 naive_fi_years_no_invest <- 0
@@ -861,7 +932,11 @@ naive_fi_years_no_invest
 #calculate naive FI number based on current average monthly expenses + housing buffer, 
 #assumed safe withdrawal rate, and pension if I retired today
 
-today_pension_fi <- ((avg_monthly_expenses + housing_buffer)*12 - c_annual_net_pension) * (1 / annual_safe_withdrawal)
+today_pension_fi <- ((avg_monthly_expenses_housing)*12 - c_annual_net_pension) * (1 / annual_safe_withdrawal)
+scales::dollar(today_pension_fi)
+
+#todays pension is worth
+scales::dollar(naive_fi - today_pension_fi)
 
 #calculate years to naive FI based on current net_worth assuming no additional investments
 today_pension_fi_years_no_invest <- 0
@@ -883,8 +958,11 @@ today_pension_fi_years_no_invest
 #calculate naive FI number based on current average monthly expenses + housing buffer, 
 #assumed safe withdrawal rate, and estimated pension if I retired at O5
 
-est_pension_fi <- ((avg_monthly_expenses + housing_buffer)*12 - est_annual_net_pension) * (1 / annual_safe_withdrawal)
+est_pension_fi <- ((avg_monthly_expenses_housing)*12 - est_annual_net_pension) * (1 / annual_safe_withdrawal)
 scales::dollar(est_pension_fi)
+
+#what is my est pension worth
+scales::dollar(naive_fi - est_pension_fi)
 
 #calculate years to naive FI based on current net_worth assuming no additional investments
 est_pension_fi_years_no_invest <- 0
@@ -898,7 +976,6 @@ while (sim_invest_value < est_pension_fi) {
 
 est_pension_fi_years_no_invest
 
-
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Build FI Simulation
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
@@ -910,30 +987,30 @@ est_pension_fi_years_no_invest
 # toggle inputs for post Navy pay
 # toggle inputs for post Navy investments
 
-#calculate effective tax rate based on pay scale
-#calculate current years of service and years of experience
-c_yos <- round(time_length(difftime(today(),pebd),"years"),digits = 2)
-c_yoe <- calculate_yoe(c_yos)
-
-#calculate jeff gross annual pay based on pay charts (ignore bah because we live in housing)
-jeff_monthly_pay_gross <- pChart2023[pChart2023$YOE == c_yoe,c_rank]
-jeff_annual_pay_gross = jeff_monthly_pay_gross * 12
-
-#calculate elaina annual pay based on historicals (1099 employee)
-elaina_annual_pay_gross <- bank %>%
-  filter(category == "elaina_pay" & date >= (today()-365)) %>%
-  summarise(elaina_annual_pay = sum(amount))
-
-#total annual gross
-total_annual_pay_gross <- jeff_annual_pay_gross + elaina_annual_pay_gross[[1]]
-
-#estimate effective tax rate based on calculated gross and average monthly income
-est_effective_tax_rate <- 1 - (avg_monthly_income *12) / total_annual_pay_gross
-
-#calculate annual investment percentage
-total_invest_last_12 <- sum(investments_last_12_grouped$monthly_amount) + tsp
-
-est_percent_invested <- round(total_invest_last_12/total_annual_pay_gross, digits = 2)
+# #calculate effective tax rate based on pay scale
+# #calculate current years of service and years of experience
+# c_yos <- round(time_length(difftime(today(),pebd),"years"),digits = 2)
+# c_yoe <- calculate_yoe(c_yos)
+# 
+# #calculate jeff gross annual pay based on pay charts (ignore bah because we live in housing)
+# jeff_monthly_pay_gross <- pChart2023[pChart2023$YOE == c_yoe,c_rank]
+# jeff_annual_pay_gross = jeff_monthly_pay_gross * 12
+# 
+# #calculate elaina annual pay based on historicals (1099 employee)
+# elaina_annual_pay_gross <- bank %>%
+#   filter(category == "elaina_pay" & date >= (today()-365)) %>%
+#   summarise(elaina_annual_pay = sum(amount))
+# 
+# #total annual gross
+# total_annual_pay_gross <- jeff_annual_pay_gross + elaina_annual_pay_gross[[1]]
+# 
+# #estimate effective tax rate based on calculated gross and average monthly income
+# est_effective_tax_rate <- 1 - (avg_monthly_income *12) / total_annual_pay_gross
+# 
+# #calculate annual investment percentage
+# total_invest_last_12 <- sum(investments_last_12_grouped$monthly_amount) + tsp
+# 
+# est_percent_invested <- round(total_invest_last_12/total_annual_pay_gross, digits = 2)
 
 
 #begin building simulation
@@ -961,12 +1038,30 @@ for (i in run_num) {
   }
 }
 
-sim_out <- as_tibble(cbind(run_num,
+sim1_out <- as_tibble(cbind(run_num,
                            sim_year,
                            sim_age,
                            sim_net_worth_value))
 
-tail(sim_out)
+ggplot(data = sim1_out,
+       aes(x = sim_year,
+           y = sim_net_worth_value)) +
+  geom_vline(xintercept = year(est_retire_date),
+             color = "blue") +
+  geom_vline(xintercept = year_60,
+             color = "forestgreen") +
+  geom_area() +
+  theme_minimal() +
+  scale_y_continuous(seq(-100000,10000000,50000), labels = dollar) +
+  theme(axis.line = element_line(colour = "grey", 
+                                 linewidth = 1,
+                                 linetype = "solid"),
+        axis.title = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        legend.position = "none") +
+  labs(title = "Simulated Net Worth",
+       subtitle = "Naive based only on current net worth")
 
 #naive simulation just from c_age to est_eol_age beginning separating out retirement and non-retirement accounts
 
@@ -999,14 +1094,44 @@ for (i in run_num) {
   }
 }
 
-sim_out <- as_tibble(cbind(run_num,
+sim2_out <- as_tibble(cbind(run_num,
                            sim_year,
                            sim_age,
                            sim_net_worth_value_retire,
                            sim_net_worth_value_non_retire,
                            sim_net_worth_value_total))
 
-tail(sim_out)
+tail(sim2_out)
+
+sim2_out_long <- sim2_out %>%
+  select(!sim_net_worth_value_total) %>%
+  pivot_longer(cols = c("sim_net_worth_value_retire","sim_net_worth_value_non_retire"),
+               names_to = "fund_type",
+               values_to = "amount")
+
+ggplot(data = sim2_out_long,
+       aes(x = sim_year,
+           y = amount,
+           group = fund_type,
+           fill = fund_type)) +
+  geom_vline(xintercept = year(est_retire_date),
+             color = "blue") +
+  geom_vline(xintercept = year_60,
+             color = "forestgreen") +
+  geom_area(position = position_stack(reverse = T)) +
+  theme_minimal() +
+  scale_y_continuous(seq(-100000,100000000,50000), labels = dollar) +
+  theme(axis.line = element_line(colour = "grey", 
+                                 linewidth = 1,
+                                 linetype = "solid"),
+        axis.title = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        legend.position = "bottom") +
+  labs(title = "Simulated Net Worth",
+       subtitle = "Naive based only on current net worth",
+       fill = "Fund Type") +
+  scale_fill_discrete(name = "Fund Type", labels = c("Non-Retirement", "Retirement"))
 
 #add in TSP contributions until Navy retirement
 
@@ -1053,17 +1178,45 @@ for (i in run_num) {
   } #end if i == 1
 } #end for loop
 
-sim_out <- as_tibble(cbind(run_num,
+sim3_out <- as_tibble(cbind(run_num,
                            sim_year,
                            sim_age,
                            sim_net_worth_value_retire,
                            sim_net_worth_value_non_retire,
-                           sim_net_worth_value_total)) %>%
-  mutate(sim_net_worth_value_retire = scales::dollar(sim_net_worth_value_retire),
-         sim_net_worth_value_non_retire = scales::dollar(sim_net_worth_value_non_retire),
-         sim_net_worth_value_total = scales::dollar(sim_net_worth_value_total))
+                           sim_net_worth_value_total))
 
-tail(sim_out)
+tail(sim3_out)
+
+sim3_out_long <- sim3_out %>%
+  select(!sim_net_worth_value_total) %>%
+  pivot_longer(cols = c("sim_net_worth_value_retire","sim_net_worth_value_non_retire"),
+               names_to = "fund_type",
+               values_to = "amount")
+
+ggplot(data = sim3_out_long,
+       aes(x = sim_year,
+           y = amount,
+           group = fund_type,
+           fill = fund_type)) +
+  geom_vline(xintercept = year(est_retire_date),
+             color = "blue") +
+  geom_vline(xintercept = year_60,
+             color = "forestgreen") +
+  geom_area(position = position_stack(reverse = T)) +
+  theme_minimal() +
+  scale_y_continuous(seq(-100000,100000000,50000), labels = dollar) +
+  theme(axis.line = element_line(colour = "grey", 
+                                 linewidth = 1,
+                                 linetype = "solid"),
+        axis.title = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        legend.position = "bottom") +
+  labs(title = "Simulated Net Worth",
+       subtitle = "Naive based only on current net worth \nAdd TSP",
+       fill = "Fund Type") +
+  scale_fill_discrete(name = "Fund Type", labels = c("Non-Retirement", "Retirement"))
+
 
 #start subtracting estimated annual expenses from non_retirement funds.  When do we run out?
 #assume no post navy employment and no additional investments
@@ -1078,42 +1231,84 @@ tail(sim_out)
 #subtract expenses - YES "est_annual_expenses"
 #subtract RMD - NO
 
-est_annual_expenses <- (avg_monthly_expenses + housing_buffer) * 12
+est_annual_expenses <- (avg_monthly_expenses_housing) * 12
 
-sim_year <- year(today())
-sim_age <- c_age
-sim_net_worth_value_retire <- c_retirement_total
-sim_net_worth_value_non_retire <- c_non_retirement_total
-sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+run_num <- seq(c_age:est_eol_age)
+sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
+sim_age <- seq(from = c_age, to = est_eol_age, by = 1)
+sim_net_worth_value_retire <- run_num
+sim_net_worth_value_non_retire <- run_num
+sim_net_worth_value_total <- run_num
 
-while (sim_net_worth_value_non_retire >= 0) {
-  if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
-    sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12))
-    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  } else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
-    sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
-    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire * (1 + avg_annual_returns)
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  } else if (sim_year != year(today()) & sim_year > year(est_retire_date)) {
-    sim_net_worth_value_retire = sim_net_worth_value_retire * (1 + avg_annual_returns)
-    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire - est_annual_expenses) * (1 + avg_annual_returns)
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  }
-}
+for (i in run_num) {
+  if (i == 1) {
+    if (sim_year[i] <= year(est_retire_date)) {
+      sim_net_worth_value_retire[i] = c_retirement_total + (tsp * (1-month(today())/12))
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } else {
+      sim_net_worth_value_retire[i] = c_retirement_total
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } #end if sim_year <= retire year
+    
+  } else {
+    if (sim_year[i] <= year(est_retire_date)) { #for years that I am still in the Navy
+      sim_net_worth_value_retire[i] = (sim_net_worth_value_retire[i -1] + tsp) * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire[i] = sim_net_worth_value_non_retire[i -1] * (1 + avg_annual_returns)
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } else { 
+      if (sim_age[i] < 60) { # for years after the navy but before 59.5 years old
+        sim_net_worth_value_retire[i] =  sim_net_worth_value_retire[i -1]  * (1 + avg_annual_returns) 
+        sim_net_worth_value_non_retire[i] = (sim_net_worth_value_non_retire[i -1] - est_annual_expenses) * (1 + avg_annual_returns)
+        sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+      } else { #for years after the navy and over 60
+        sim_net_worth_value_retire[i] = (sim_net_worth_value_retire[i -1] - est_annual_expenses) * (1 + avg_annual_returns) 
+        sim_net_worth_value_non_retire[i] = sim_net_worth_value_non_retire[i -1] * (1 + avg_annual_returns)
+        sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+      }
 
-sim_year
-sim_age
-scales::dollar(sim_net_worth_value_retire)
-scales::dollar(sim_net_worth_value_non_retire)
-scales::dollar(sim_net_worth_value_total)
+    } #end if sim_year >= retire year
+  } #end if i == 1
+} #end for loop
 
+sim4_out <- as_tibble(cbind(run_num,
+                            sim_year,
+                            sim_age,
+                            sim_net_worth_value_retire,
+                            sim_net_worth_value_non_retire,
+                            sim_net_worth_value_total))
+
+
+sim4_out_long <- sim4_out %>%
+  select(!sim_net_worth_value_total) %>%
+  pivot_longer(cols = c("sim_net_worth_value_retire","sim_net_worth_value_non_retire"),
+               names_to = "fund_type",
+               values_to = "amount")
+
+ggplot(data = sim4_out_long,
+       aes(x = sim_year,
+           y = amount,
+           group = fund_type,
+           fill = fund_type)) +
+  geom_vline(xintercept = year(est_retire_date),
+             color = "blue") +
+  geom_vline(xintercept = year_60,
+             color = "forestgreen") +
+  geom_area(position = position_stack(reverse = T)) +
+  theme_minimal() +
+  scale_y_continuous(seq(-100000,100000000,50000), labels = dollar) +
+  theme(axis.line = element_line(colour = "grey", 
+                                 linewidth = 1,
+                                 linetype = "solid"),
+        axis.title = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        legend.position = "bottom") +
+  labs(title = "Simulated Net Worth",
+       subtitle = "Naive based only on current net worth \nAdd TSP, subtract est expenses",
+       fill = "Fund Type") +
+  scale_fill_discrete(name = "Fund Type", labels = c("Non-Retirement", "Retirement"))
 
 #assume no post navy employment but now include continued investments until navy retirement
 
@@ -1127,39 +1322,82 @@ scales::dollar(sim_net_worth_value_total)
 #subtract expenses - YES "est_annual_expenses"
 #subtract RMD - NO
 
-sim_year <- year(today())
-sim_age <- c_age
-sim_net_worth_value_retire <- c_retirement_total
-sim_net_worth_value_non_retire <- c_non_retirement_total
-sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+run_num <- seq(c_age:est_eol_age)
+sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
+sim_age <- seq(from = c_age, to = est_eol_age, by = 1)
+sim_net_worth_value_retire <- run_num
+sim_net_worth_value_non_retire <- run_num
+sim_net_worth_value_total <- run_num
 
-while (sim_net_worth_value_non_retire >= 0) {
-  if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
-    sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12)) 
-    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (c_auto_brokerage_investments * (1-month(today())/12)) 
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  } else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
-    sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
-    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + c_auto_brokerage_investments) * (1 + avg_annual_returns)
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  } else if (sim_year != year(today()) & sim_year > year(est_retire_date)) {
-    sim_net_worth_value_retire = sim_net_worth_value_retire * (1 + avg_annual_returns)
-    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire - est_annual_expenses) * (1 + avg_annual_returns)
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  }
-}
+for (i in run_num) {
+  if (i == 1) {
+    if (sim_year[i] <= year(est_retire_date)) {
+      sim_net_worth_value_retire[i] = c_retirement_total + (tsp * (1-month(today())/12))
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total + (c_auto_brokerage_investments * (1-month(today())/12)) 
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } else {
+      sim_net_worth_value_retire[i] = c_retirement_total
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } #end if sim_year <= retire year
+    
+  } else {
+    if (sim_year[i] <= year(est_retire_date)) { #for years that I am still in the Navy
+      sim_net_worth_value_retire[i] = (sim_net_worth_value_retire[i -1] + tsp) * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire[i] = (sim_net_worth_value_non_retire[i -1] + c_auto_brokerage_investments) * (1 + avg_annual_returns)
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } else { 
+      if (sim_age[i] < 60) { # for years after the navy but before 59.5 years old
+        sim_net_worth_value_retire[i] =  sim_net_worth_value_retire[i -1]  * (1 + avg_annual_returns) 
+        sim_net_worth_value_non_retire[i] = (sim_net_worth_value_non_retire[i -1] - est_annual_expenses) * (1 + avg_annual_returns)
+        sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+      } else { #for years after the navy and over 60
+        sim_net_worth_value_retire[i] = (sim_net_worth_value_retire[i -1] - est_annual_expenses) * (1 + avg_annual_returns) 
+        sim_net_worth_value_non_retire[i] = sim_net_worth_value_non_retire[i -1] * (1 + avg_annual_returns)
+        sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+      }
+      
+    } #end if sim_year >= retire year
+  } #end if i == 1
+} #end for loop
 
-sim_year
-sim_age
-scales::dollar(sim_net_worth_value_retire)
-scales::dollar(sim_net_worth_value_non_retire)
-scales::dollar(sim_net_worth_value_total)
+sim5_out <- as_tibble(cbind(run_num,
+                            sim_year,
+                            sim_age,
+                            sim_net_worth_value_retire,
+                            sim_net_worth_value_non_retire,
+                            sim_net_worth_value_total))
+
+
+sim5_out_long <- sim5_out %>%
+  select(!sim_net_worth_value_total) %>%
+  pivot_longer(cols = c("sim_net_worth_value_retire","sim_net_worth_value_non_retire"),
+               names_to = "fund_type",
+               values_to = "amount")
+
+ggplot(data = sim5_out_long,
+       aes(x = sim_year,
+           y = amount,
+           group = fund_type,
+           fill = fund_type)) +
+  geom_vline(xintercept = year(est_retire_date),
+             color = "blue") +
+  geom_vline(xintercept = year_60,
+             color = "forestgreen") +
+  geom_area(position = position_stack(reverse = T)) +
+  theme_minimal() +
+  scale_y_continuous(seq(-100000,100000000,50000), labels = dollar) +
+  theme(axis.line = element_line(colour = "grey", 
+                                 linewidth = 1,
+                                 linetype = "solid"),
+        axis.title = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        legend.position = "bottom") +
+  labs(title = "Simulated Net Worth",
+       subtitle = "Naive based only on current net worth \nAdd TSP, additional investments in Navy \nSubtract est expenses",
+       fill = "Fund Type") +
+  scale_fill_discrete(name = "Fund Type", labels = c("Non-Retirement", "Retirement"))
 
 
 # add in pension at estimated retirement date
@@ -1176,39 +1414,82 @@ scales::dollar(sim_net_worth_value_total)
 
 est_net_pension <- est_annual_net_pension
 
-sim_year <- year(today())
-sim_age <- c_age
-sim_net_worth_value_retire <- c_retirement_total
-sim_net_worth_value_non_retire <- c_non_retirement_total
-sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+run_num <- seq(c_age:est_eol_age)
+sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
+sim_age <- seq(from = c_age, to = est_eol_age, by = 1)
+sim_net_worth_value_retire <- run_num
+sim_net_worth_value_non_retire <- run_num
+sim_net_worth_value_total <- run_num
 
-while (sim_net_worth_value_non_retire >= 0) {
-  if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
-    sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12)) 
-    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (c_auto_brokerage_investments * (1-month(today())/12)) 
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  } else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
-    sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
-    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + c_auto_brokerage_investments) * (1 + avg_annual_returns)
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  } else if (sim_year != year(today()) & sim_year > year(est_retire_date)) {
-    sim_net_worth_value_retire = sim_net_worth_value_retire * (1 + avg_annual_returns)
-    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire - est_annual_expenses + est_net_pension) * (1 + avg_annual_returns)
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  }
-}
+for (i in run_num) {
+  if (i == 1) {
+    if (sim_year[i] <= year(est_retire_date)) {
+      sim_net_worth_value_retire[i] = c_retirement_total + (tsp * (1-month(today())/12))
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total + (c_auto_brokerage_investments * (1-month(today())/12)) 
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } else {
+      sim_net_worth_value_retire[i] = c_retirement_total
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } #end if sim_year <= retire year
+    
+  } else {
+    if (sim_year[i] <= year(est_retire_date)) { #for years that I am still in the Navy
+      sim_net_worth_value_retire[i] = (sim_net_worth_value_retire[i -1] + tsp) * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire[i] = (sim_net_worth_value_non_retire[i -1] + c_auto_brokerage_investments) * (1 + avg_annual_returns)
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } else { 
+      if (sim_age[i] < 60) { # for years after the navy but before 59.5 years old
+        sim_net_worth_value_retire[i] =  sim_net_worth_value_retire[i -1]  * (1 + avg_annual_returns) 
+        sim_net_worth_value_non_retire[i] = (sim_net_worth_value_non_retire[i -1] - est_annual_expenses + est_net_pension) * (1 + avg_annual_returns)
+        sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+      } else { #for years after the navy and over 60
+        sim_net_worth_value_retire[i] = (sim_net_worth_value_retire[i -1] - est_annual_expenses + est_net_pension) * (1 + avg_annual_returns) 
+        sim_net_worth_value_non_retire[i] = sim_net_worth_value_non_retire[i -1] * (1 + avg_annual_returns)
+        sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+      }
+      
+    } #end if sim_year >= retire year
+  } #end if i == 1
+} #end for loop
 
-sim_year
-sim_age
-scales::dollar(sim_net_worth_value_retire)
-scales::dollar(sim_net_worth_value_non_retire)
-scales::dollar(sim_net_worth_value_total)
+sim6_out <- as_tibble(cbind(run_num,
+                            sim_year,
+                            sim_age,
+                            sim_net_worth_value_retire,
+                            sim_net_worth_value_non_retire,
+                            sim_net_worth_value_total))
+
+
+sim6_out_long <- sim6_out %>%
+  select(!sim_net_worth_value_total) %>%
+  pivot_longer(cols = c("sim_net_worth_value_retire","sim_net_worth_value_non_retire"),
+               names_to = "fund_type",
+               values_to = "amount")
+
+ggplot(data = sim6_out_long,
+       aes(x = sim_year,
+           y = amount,
+           group = fund_type,
+           fill = fund_type)) +
+  geom_vline(xintercept = year(est_retire_date),
+             color = "blue") +
+  geom_vline(xintercept = year_60,
+             color = "forestgreen") +
+  geom_area(position = position_stack(reverse = T)) +
+  theme_minimal() +
+  scale_y_continuous(seq(-100000,100000000,50000), labels = dollar) +
+  theme(axis.line = element_line(colour = "grey", 
+                                 linewidth = 1,
+                                 linetype = "solid"),
+        axis.title = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        legend.position = "bottom") +
+  labs(title = "Simulated Net Worth",
+       subtitle = "Naive based only on current net worth \nAdd TSP, additional investments in Navy, estimated pension \nSubtract est expenses",
+       fill = "Fund Type") +
+  scale_fill_discrete(name = "Fund Type", labels = c("Non-Retirement", "Retirement"))
 
 #calculate estimated minimum income to make retirement funds last until 60 years of sim_age
 
@@ -1260,11 +1541,12 @@ while (ending_age < 60) {
   print(sim_net_worth_value_non_retire)
 }
 
+if (ending_age == 60 & sim_net_worth_value_non_retire < 0) {
+  minimum_income = minimum_income + 5000
+}
+
 ending_age
 scales::dollar(minimum_income)
-scales::dollar(sim_net_worth_value_retire)
-scales::dollar(sim_net_worth_value_non_retire)
-scales::dollar(sim_net_worth_value_total)
 
 #now lets see how long retirement funds will last using the minimum income from the last sim
 
@@ -1278,54 +1560,83 @@ scales::dollar(sim_net_worth_value_total)
 #subtract expenses - YES "est_annual_expenses"
 #subtract RMD - NO
 
+run_num <- seq(c_age:est_eol_age)
+sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
+sim_age <- seq(from = c_age, to = est_eol_age, by = 1)
+sim_net_worth_value_retire <- run_num
+sim_net_worth_value_non_retire <- run_num
+sim_net_worth_value_total <- run_num
 
-sim_year <- year(today())
-sim_age <- c_age
-sim_net_worth_value_retire <- c_retirement_total
-sim_net_worth_value_non_retire <- c_non_retirement_total
-sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
+for (i in run_num) {
+  if (i == 1) {
+    if (sim_year[i] <= year(est_retire_date)) {
+      sim_net_worth_value_retire[i] = c_retirement_total + (tsp * (1-month(today())/12))
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total + (c_auto_brokerage_investments * (1-month(today())/12)) 
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } else {
+      sim_net_worth_value_retire[i] = c_retirement_total
+      sim_net_worth_value_non_retire[i] = c_non_retirement_total
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } #end if sim_year <= retire year
+    
+  } else {
+    if (sim_year[i] <= year(est_retire_date)) { #for years that I am still in the Navy
+      sim_net_worth_value_retire[i] = (sim_net_worth_value_retire[i -1] + tsp) * (1 + avg_annual_returns)
+      sim_net_worth_value_non_retire[i] = (sim_net_worth_value_non_retire[i -1] + c_auto_brokerage_investments) * (1 + avg_annual_returns)
+      sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+    } else { 
+      if (sim_age[i] < 60) { # for years after the navy but before 59.5 years old
+        sim_net_worth_value_retire[i] =  sim_net_worth_value_retire[i -1]  * (1 + avg_annual_returns) 
+        sim_net_worth_value_non_retire[i] = (sim_net_worth_value_non_retire[i -1] - est_annual_expenses + est_net_pension + minimum_income) * (1 + avg_annual_returns)
+        sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+      } else { #for years after the navy and over 60
+        sim_net_worth_value_retire[i] = (sim_net_worth_value_retire[i -1] - est_annual_expenses + est_net_pension) * (1 + avg_annual_returns) 
+        sim_net_worth_value_non_retire[i] = sim_net_worth_value_non_retire[i -1] * (1 + avg_annual_returns)
+        sim_net_worth_value_total[i] = sim_net_worth_value_retire[i] + sim_net_worth_value_non_retire[i]
+      }
+      
+    } #end if sim_year >= retire year
+  } #end if i == 1
+} #end for loop
 
-while (sim_age <= est_eol_age) {
-  #this years
-  if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
-    sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12)) 
-    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (c_auto_brokerage_investments * (1-month(today())/12)) 
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  }
-  #navy years not this year
-  else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
-    sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
-    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + c_auto_brokerage_investments) * (1 + avg_annual_returns)
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  }
-  #post navy
-  else if (sim_year != year(today()) & sim_year > year(est_retire_date)) {
-    if (sim_age < 60) {
-      sim_net_worth_value_retire = sim_net_worth_value_retire * (1 + avg_annual_returns)
-      sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire - est_annual_expenses + est_net_pension + minimum_income) * (1 + avg_annual_returns)
-      sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-      sim_year = sim_year + 1
-      sim_age = sim_age + 1
-    }
-    else if (sim_age >= 60) {
-      sim_net_worth_value_retire = (sim_net_worth_value_retire - est_annual_expenses + est_net_pension) * (1 + avg_annual_returns)
-      sim_net_worth_value_non_retire = sim_net_worth_value_non_retire * (1 + avg_annual_returns)
-      sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-      sim_year = sim_year + 1
-      sim_age = sim_age + 1
-    }
-  }
-}
+sim7_out <- as_tibble(cbind(run_num,
+                            sim_year,
+                            sim_age,
+                            sim_net_worth_value_retire,
+                            sim_net_worth_value_non_retire,
+                            sim_net_worth_value_total))
 
-sim_year
-sim_age
-scales::dollar(sim_net_worth_value_retire)
-scales::dollar(sim_net_worth_value_non_retire)
-scales::dollar(sim_net_worth_value_total)
+
+sim7_out_long <- sim7_out %>%
+  select(!sim_net_worth_value_total) %>%
+  pivot_longer(cols = c("sim_net_worth_value_retire","sim_net_worth_value_non_retire"),
+               names_to = "fund_type",
+               values_to = "amount")
+
+ggplot(data = sim7_out_long,
+       aes(x = sim_year,
+           y = amount,
+           group = fund_type,
+           fill = fund_type)) +
+  geom_vline(xintercept = year(est_retire_date),
+             color = "blue") +
+  geom_vline(xintercept = year_60,
+             color = "forestgreen") +
+  geom_area(position = position_stack(reverse = T)) +
+  theme_minimal() +
+  scale_y_continuous(seq(-100000,100000000,50000), labels = dollar) +
+  theme(axis.line = element_line(colour = "grey", 
+                                 linewidth = 1,
+                                 linetype = "solid"),
+        axis.title = element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        legend.position = "bottom") +
+  labs(title = "Simulated Net Worth",
+       subtitle = "Naive based only on current net worth \nAdd TSP, additional investments in Navy, estimated pension, \nminimum income \nSubtract est expenses",
+       fill = "Fund Type") +
+  scale_fill_discrete(name = "Fund Type", labels = c("Non-Retirement", "Retirement"))
+
 
 #begin calculating RMDs. Begins year you turn 72.
 
@@ -1338,54 +1649,4 @@ scales::dollar(sim_net_worth_value_total)
 #add social security - NO
 #subtract expenses - YES "est_annual_expenses"
 #subtract RMD - YES "rmd"
-
-
-
-sim_year <- year(today())
-sim_age <- c_age
-sim_net_worth_value_retire <- c_retirement_total
-sim_net_worth_value_non_retire <- c_non_retirement_total
-sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-
-while (sim_age <= est_eol_age) {
-  #this years
-  if (sim_year == year(today()) & sim_year <= year(est_retire_date)) {
-    sim_net_worth_value_retire = sim_net_worth_value_retire + (tsp * (1-month(today())/12)) 
-    sim_net_worth_value_non_retire = sim_net_worth_value_non_retire + (c_auto_brokerage_investments * (1-month(today())/12)) 
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  }
-  #navy years not this year
-  else if (sim_year != year(today()) & sim_year <= year(est_retire_date)) {
-    sim_net_worth_value_retire = (sim_net_worth_value_retire + tsp) * (1 + avg_annual_returns)
-    sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire + c_auto_brokerage_investments) * (1 + avg_annual_returns)
-    sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-    sim_year = sim_year + 1
-    sim_age = sim_age + 1
-  }
-  #post navy
-  else if (sim_year != year(today()) & sim_year > year(est_retire_date)) {
-    if (sim_age < 60) {
-      sim_net_worth_value_retire = sim_net_worth_value_retire * (1 + avg_annual_returns)
-      sim_net_worth_value_non_retire = (sim_net_worth_value_non_retire - est_annual_expenses + est_net_pension + minimum_income) * (1 + avg_annual_returns)
-      sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-      sim_year = sim_year + 1
-      sim_age = sim_age + 1
-    }
-    else if (sim_age >= 60) {
-      sim_net_worth_value_retire = (sim_net_worth_value_retire - est_annual_expenses + est_net_pension) * (1 + avg_annual_returns)
-      sim_net_worth_value_non_retire = sim_net_worth_value_non_retire * (1 + avg_annual_returns)
-      sim_net_worth_value_total <- sim_net_worth_value_non_retire + sim_net_worth_value_retire
-      sim_year = sim_year + 1
-      sim_age = sim_age + 1
-    }
-  }
-}
-
-sim_year
-sim_age
-scales::dollar(sim_net_worth_value_retire)
-scales::dollar(sim_net_worth_value_non_retire)
-scales::dollar(sim_net_worth_value_total)
 
