@@ -47,7 +47,7 @@ cats <- read_xlsx("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/
 cats$transaction_type <- tolower(cats$transaction_type)
 
 #clean up the text to get rid of special characters and make them lower case
-unique(cats$category)
+#unique(cats$category)
 cats$category <- gsub("\\(","",cats$category)
 cats$category <- gsub("\\)","",cats$category)
 cats$category <- gsub("-","_",cats$category)
@@ -63,13 +63,13 @@ names(bank) <- sub(" ","_",names(bank))
 names(bank) <- tolower(names(bank))
 
 # do the same to category and account_name
-unique(bank$category)
+#unique(bank$category)
 bank$category <- gsub("& ","",bank$category)
 bank$category <- gsub(" ","_",bank$category)
 bank$category <- gsub("/","_",bank$category)
 bank$category <- tolower(bank$category)
 
-unique(bank$account)
+#unique(bank$account)
 bank$account <- gsub(" ","_",bank$account)
 bank$account <- tolower(bank$account)
 
@@ -86,19 +86,19 @@ required_minimum_distributions
 
 #load military pay data
 pChart2024 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2024_Officer_Pay.csv")
-pChart2024
+#pChart2024
 
 pChart2023 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2023_Officer_Pay.csv")
-pChart2023
+#pChart2023
 
 pChart2022 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2022_Officer_Pay.csv")
-pChart2022
+#pChart2022
 
 pChart2021 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2021_Officer_Pay.csv")
-pChart2021
+#pChart2021
 
 pChart2020 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2020_Officer_Pay.csv")
-pChart2020
+#pChart2020
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Set user inputs
