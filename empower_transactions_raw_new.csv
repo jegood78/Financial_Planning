@@ -1,9 +1,43 @@
 Date,Account,Description,Category,Tags,Amount
+2024-04-15,"Nissan Vehicle Loan","Principal","Vehicle Loan",,686.15
+2024-04-15,"Nissan Vehicle Loan","Interest","Vehicle Loan",,127.89
+2024-04-15,"Usaa Savings","Usaa","Savings",,1100
+2024-04-15,"USAA Checking","Ic Payments","Vehicle Loan",,-814.04
+2024-04-15,"USAA Checking","Target","Gifts",", , ",-172.81
+2024-04-15,"USAA Checking","Usaa","Savings",,-1100
+2024-04-15,"USAA Checking","Usaa","Adeline Savings",,-50
+2024-04-15,"USAA Checking","Usaa","Eleanor Savings",,-50
+2024-04-15,"USAA Checking","Dfas","Jeff Pay",,6222.17
+2024-04-15,"USAA Checking","Target","General Merchandise",,32.12
+2024-04-15,"Eleanor Savings","Usaa","Eleanor Savings",,50
+2024-04-15,"Adeline Savings","Usaa","Adeline Savings",,50
+2024-04-15,"Jeff and Elaina Brokerage","Vanguard Total Stock Market Index Admiral Cl-buy","Investment",,-500
+2024-04-13,"Signature Visa","Py *gourmet Gang Henrico Va","Restaurants",,-30.96
+2024-04-13,"Signature Visa","Brghtwhl* Francis Asbu Www.mybrightwca","Education",,-408.94
+2024-04-13,"Signature Visa","Cvb Aquarium Virginia Beacva","Entertainment",,-175.5
+2024-04-13,"Signature Visa","Little Creek Community","Groceries",,-276.2
+2024-04-13,"Signature Visa","Parkwhiz","Travel",,-5
+2024-04-11,"Signature Visa","Amazon Prime","Entertainment",,-4.76
+2024-04-11,"USAA Checking","Target","Gifts",", , , ",-240.63
+2024-04-11,"USAA Checking","Target","General Merchandise",,-5.04
+2024-04-11,"USAA Checking","Dfas","Jeff Pay",,5410.86
+2024-04-11,"USAA Checking","Target","General Merchandise",,26.17
+2024-04-10,"USAA Checking","Tgcx0008 Virginia Beacva","ATM/Cash",,-300
+2024-04-09,"Signature Visa","Little Creek Community","Groceries",,-11.28
+2024-04-08,"Signature Visa","11-11 Inc","Clothing/Shoes",,95.4
+2024-04-08,"Signature Visa","11-11 Inc","Clothing/Shoes",,-95.81
+2024-04-08,"Signature Visa","Py *gourmet Gang Xxx-xxx-1550 Va","Restaurants",,-18.39
+2024-04-08,"Signature Visa","11-11 Inc","Clothing/Shoes",,-95.4
+2024-04-08,"Signature Visa","Reginos Italian Restaura Norfolk Va","Restaurants",,-31.5
+2024-04-08,"Signature Visa","Reebok","Clothing/Shoes",,-74.2
+2024-04-08,"USAA Checking","Target","Groceries",,-65.89
+2024-04-07,"Signature Visa","Nordstrom","Clothing/Shoes",,-21.17
+2024-04-07,"Signature Visa","Rei","General Merchandise",,-137
 2024-04-03,"Usaa Savings","Us Department Of Education","School Loan",,-243.42
 2024-04-03,"USAA Checking","Usaa","Insurance",,-188.26
 2024-04-02,"Signature Visa","Amazon Prime","Entertainment",,-4.23
 2024-04-02,"Usaa Savings","The Vanguard Group","Investment",,-500
-2024-04-02,"USAA Checking","Target","Gifts",,-191.57
+2024-04-02,"USAA Checking","Target","Gifts",", , , ",-191.57
 2024-04-02,"USAA Checking","Taste","Restaurants",,-33.71
 2024-04-02,"USAA Checking","Taste","Restaurants",,-3.67
 2024-04-02,"Jeff and Elaina Brokerage","Cash-funds Received","Transfers",,500
@@ -330,35 +364,3 @@ Date,Account,Description,Category,Tags,Amount
 2024-01-19,"USAA Checking","Chase","Chase_Credit_Card_Payment",,-574.92
 2024-01-18,"Signature Visa","Myeyedr","Healthcare/Medical",,-108
 2024-01-18,"Signature Visa","Apple","Dues & Subscriptions",,-53.74
-2024-01-17,"Usaa Savings","Xx52-1ohtaxites Ohincometx ***********4805","Taxes",,-200
-2024-01-16,"Signature Visa","Chiropractic Care Center","Healthcare/Medical",,-52.91
-2024-01-16,"Signature Visa","Amici Pizza","Restaurants",,-17.48
-2024-01-16,"Usaa Savings","Usaa","Savings",,1100
-2024-01-16,"USAA Checking","Interest Paid","Interest",,0.03
-2024-01-16,"USAA Checking","Irs","Taxes",,-2000
-2024-01-16,"USAA Checking","Ic Payments","Vehicle Loan",,-814.04
-2024-01-16,"USAA Checking","Brightwheel Brghtwhl* ***********g3x5","Education",,-186.37
-2024-01-16,"USAA Checking","Usaa","Savings",,-1100
-2024-01-16,"USAA Checking","Usaa","Adeline Savings",,-50
-2024-01-16,"USAA Checking","Usaa","Eleanor Savings",,-50
-2024-01-16,"Eleanor Savings","Usaa","Eleanor Savings",,50
-2024-01-16,"Adeline Savings","Usaa","Adeline Savings",,50
-2024-01-15,"Signature Visa","Tiny Town","Entertainment",,-75
-2024-01-15,"Signature Visa","Prince Street Cafe","Restaurants",,-41.56
-2024-01-15,"Nissan Vehicle Loan","Principal","Uncategorized",,676.69
-2024-01-15,"Nissan Vehicle Loan","Interest","Vehicle Loan",,137.35
-2024-01-14,"Signature Visa","Risto","Restaurants",,-98.84
-2024-01-14,"Signature Visa","Cvs Pharmacy","Healthcare/Medical",,-10.3
-2024-01-13,"Signature Visa","Mezza Restaurant","Restaurants",,-10.99
-2024-01-13,"Signature Visa","Sq *casero's Lemoyne Pa","Restaurants",,-8.5
-2024-01-13,"Signature Visa","Sq *batch Lemoyne Pa","Restaurants",,-6.5
-2024-01-12,"Signature Visa","Giant Gas Station","Gasoline/Fuel",,-18.79
-2024-01-12,"Signature Visa","Giant Food","Restaurants",,-10.76
-2024-01-12,"Signature Visa","Giant Food","Groceries",,-242.27
-2024-01-11,"Signature Visa","Independent Trading Co","Refunds & Reimbursements",,50
-2024-01-11,"Signature Visa","Chewy","Pets/Pet Care",,-88.49
-2024-01-11,"USAA Checking","Target","Gifts",", ",-111.43
-2024-01-10,"Signature Visa","Amici Pizza","Restaurants",,-14.83
-2024-01-10,"Signature Visa","Cvs Pharmacy","Healthcare/Medical",,-11.42
-2024-01-10,"Usaa Savings","Venmo","Transfers",,-53
-2024-01-10,"USAA Checking","Dfas","Jeff Pay",,3809.4
