@@ -1,5 +1,72 @@
 Date,Account,Description,Category,Tags,Amount
-2024-04-18,"Signature Visa","Comcast","Cable/Satellite",,1.33
+2024-05-03,"Usaa Savings","Us Department Of Education","School Loan",,-243.42
+2024-05-03,"USAA Checking","Usaa","Insurance",,-188.26
+2024-05-02,"Signature Visa","Canteen Vending Services","Groceries",,-1.85
+2024-05-02,"Signature Visa","Canteen Vending Services","Groceries",,-1.85
+2024-05-02,"Signature Visa","Canteen Vending Services","Groceries",,-1.35
+2024-05-02,"Signature Visa","Tst* Walk-on's - Slidell,slidell La","Restaurants",,-24.28
+2024-05-01,"Signature Visa","Norfolk Botanical Garden","Entertainment",,-61.8
+2024-05-01,"Signature Visa","Sq *beaten Path Llc (dba)virginia Bch Va","Pets/Pet Care",,-25.9
+2024-05-01,"Signature Visa","Old Town News St2884 San Diego Ca","Hobbies",,-7.99
+2024-05-01,"Signature Visa","Kroger","Groceries",,-36.02
+2024-05-01,"Signature Visa","Peet's Coffee","Restaurants",,-6.94
+2024-05-01,"Signature Visa","Tst* Clayton's Mexican Tacoronado Ca","Restaurants",,-15.95
+2024-05-01,"Signature Visa","Burger King","Restaurants",,-18.5
+2024-05-01,"Usaa Savings","Usaa","Savings",,1100
+2024-05-01,"USAA Checking","Usaa","Savings",,-1100
+2024-05-01,"USAA Checking","Usaa","Eleanor Savings",,-50
+2024-05-01,"USAA Checking","Usaa","Adeline Savings",,-50
+2024-05-01,"Eleanor Savings","Usaa","Eleanor Savings",,50
+2024-05-01,"Adeline Savings","Usaa","Adeline Savings",,50
+2024-04-30,"Signature Visa","Navy Exchange","Clothing/Shoes",,19.99
+2024-04-30,"Signature Visa","The Defense Commissary Agency","Groceries",,-25.14
+2024-04-30,"Signature Visa","Sunoco","Gasoline/Fuel",,-53.18
+2024-04-30,"Signature Visa","Brghtwhl* Francis Asbu Www.mybrightwca","Education",,-489.44
+2024-04-30,"Usaa Savings","Interest Paid","Interest",,0.08
+2024-04-30,"Usaa Savings","The Vanguard Group","Investment",,-500
+2024-04-30,"Usaa Savings","Dfas","Jeff Pay",,4393.92
+2024-04-30,"Usaa Savings","Deposit@mobile","Healthcare/Medical",,693.09
+2024-04-30,"Eleanor Savings","Interest Paid","Interest",,0.01
+2024-04-30,"Adeline Savings","Interest Paid","Interest",,0.01
+2024-04-30,"Jeff and Elaina Brokerage","Cash-funds Received","Transfers",,500
+2024-04-29,"Signature Visa","The Islander","Restaurants",,-33.21
+2024-04-29,"Signature Visa","Navy Exchange","Groceries",,-2.99
+2024-04-29,"Signature Visa","Taste","Restaurants",,-38.19
+2024-04-29,"Signature Visa","Baja Oyster Bar Corp San Diego Ca","Restaurants",,-21.19
+2024-04-29,"Signature Visa","Apple","Dues & Subscriptions",,-9.99
+2024-04-29,"Usaa Savings","Venmo","Professional Expenses",,-65
+2024-04-29,"Usaa Savings","Adp Workmarket Direct Dep ***********1938","Elaina Pay",,3520
+2024-04-29,"USAA Checking","Target","Gifts",", ",-118.16
+2024-04-29,"USAA Checking","Dfas","Jeff Pay",,5432.42
+2024-04-29,"Jeff and Elaina Brokerage","Vanguard Total Stock Market Index Admiral Cl-buy","Securities Trades",,-500
+2024-04-28,"Signature Visa","The Defense Commissary Agency","Groceries",,-34.27
+2024-04-28,"Signature Visa","American Airlines","Travel",,-26.61
+2024-04-28,"Signature Visa","Hulu","Entertainment",,-20.41
+2024-04-27,"Signature Visa","Little Creek Community","Groceries",,-136.45
+2024-04-27,"Signature Visa","Children's Museum","Entertainment",,-5
+2024-04-27,"Signature Visa","Cvs Pharmacy","Healthcare/Medical",,-8.28
+2024-04-27,"Signature Visa","Amazon Prime","Entertainment",,-3.81
+2024-04-27,"Signature Visa","City Of Portsmouth","Entertainment",,-20
+2024-04-27,"Signature Visa","Leapfrog Enterprises, Inc","Child/Dependent",,-11
+2024-04-26,"Signature Visa","Kohl's","Clothing/Shoes",,22.63
+2024-04-26,"USAA Checking","Target","General Merchandise",,-69.65
+2024-04-25,"USAA Checking","Deposit@mobile","Rent",,97.6
+2024-04-25,"USAA Checking","Target","General Merchandise",,7.05
+2024-04-23,"Signature Visa","Harris Teeter","Groceries",,-18.65
+2024-04-23,"Signature Visa","Care-a-lot","Pets/Pet Care",,-44.5
+2024-04-23,"Signature Visa","Rite Aid","Healthcare/Medical",,-2
+2024-04-23,"Usaa Savings","Deposit@mobile","Savings",,800
+2024-04-23,"Usaa Savings","Ohio Department Of Taxation","Taxes",,400
+2024-04-22,"USAA Checking","Chase","Chase_Credit_Card_Payment",,-699.83
+2024-04-22,"USAA Checking","Usaa","USAA Credit Card Payment",,-6901.81
+2024-04-22,"USAA Checking","Deposit@mobile","Savings",,46.2
+2024-04-22,"Signature Visa","Usaa","USAA Credit Card Payment",,6901.81
+2024-04-21,"Signature Visa","Dropbox","Gym",,-87.02
+2024-04-21,"Signature Visa","Apple","Dues & Subscriptions",,-3.21
+2024-04-21,"Signature Visa","Little Creek Community","Groceries",,-333.88
+2024-04-21,"Signature Visa","Amazon","Books",,-10.59
+2024-04-20,"Signature Visa","Five Below","General Merchandise",,-18.5
+2024-04-18,"Signature Visa","Comcast","Internet",,1.33
 2024-04-17,"Signature Visa","Sq *naval Special Warfarevirginia Beacva","Restaurants",,-8
 2024-04-17,"USAA Checking","Target","General Merchandise",,-6.43
 2024-04-17,"USAA Checking","Target","Clothing/Shoes",,65.91
@@ -282,75 +349,3 @@ Date,Account,Description,Category,Tags,Amount
 2024-02-08,"Signature Visa","Sheetz","Automotive",,-15
 2024-02-08,"Signature Visa","Tst* Valley Bistro Enola Pa","Restaurants",,-19.24
 2024-02-07,"Signature Visa","Millennium Way Dental Stuenola Pa","Healthcare/Medical",,-66.95
-2024-02-06,"Signature Visa","Sheetz","Gasoline/Fuel",,-55.79
-2024-02-06,"Signature Visa","Sheetz","Gasoline/Fuel",,-33.29
-2024-02-06,"Signature Visa","Plaza Azteca","Restaurants",,-63.77
-2024-02-06,"Signature Visa","Dsw","Clothing/Shoes",,-49.99
-2024-02-06,"Signature Visa","Jcpenney","Clothing/Shoes",,-106.8
-2024-02-06,"Usaa Savings","The Vanguard Group","Investment",,-1000
-2024-02-06,"USAA Checking","Brightwheel","Education",,-186.37
-2024-02-06,"USAA Checking","Target","Gifts",", ",-155.1
-2024-02-06,"Eleanor Savings","Usaa","Transfers",,-500
-2024-02-06,"Eleanor Savings","Deposit@mobile","Transfers",,1000
-2024-02-06,"Adeline Savings","Usaa","Transfers",,500
-2024-02-06,"Jeff and Elaina Brokerage","Cash-funds Received","Transfers",,1000
-2024-02-05,"Signature Visa","Macy's","Clothing/Shoes",,-72
-2024-02-05,"Signature Visa","Macy's","Clothing/Shoes",,-72
-2024-02-05,"Signature Visa","Wegmans","Groceries",,-26.45
-2024-02-05,"Signature Visa","Usaa","USAA Credit Card Payment",,4401.75
-2024-02-05,"Signature Visa","Dsw","Clothing/Shoes",,-49.99
-2024-02-05,"Usaa Savings","Us Department Of Education","School Loan",,-243.42
-2024-02-05,"Usaa Savings","Usaa","USAA Credit Card Payment",,-4401.75
-2024-02-05,"Usaa Savings","Usaa","Savings",,1000
-2024-02-05,"Usaa Savings","Deposit@mobile","Savings",,110
-2024-02-05,"USAA Checking","Usaa","Insurance",,-193.32
-2024-02-05,"USAA Checking","Usaa","Transfers",,-1000
-2024-02-05,"Jeff and Elaina Brokerage","Vanguard Total Stock Market Index Admiral Cl-buy","Transfers",,-1000
-2024-02-03,"Signature Visa","Costco","Restaurants",,-2.84
-2024-02-03,"Signature Visa","Costco","General Merchandise",", , , , , , , ",-169.79
-2024-02-03,"Signature Visa","Dsw","Clothing/Shoes",,-98.99
-2024-02-02,"Signature Visa","Dsw","Clothing/Shoes",,-49.99
-2024-02-02,"Signature Visa","Sq *the Mane Studio, Llc Mechanicsburgpa","Personal Care",,-172.5
-2024-02-02,"Signature Visa","Little Caesars","Restaurants",,-13.76
-2024-02-02,"Signature Visa","Oxo Httpswww.oxo.tx","Personal Care",,-34.94
-2024-02-01,"Signature Visa","Little Caesars","Restaurants",,-7.41
-2024-02-01,"Signature Visa","Panera Bread","Restaurants",,-16.17
-2024-02-01,"Signature Visa","Cvs Pharmacy","Healthcare/Medical",,-17.15
-2024-02-01,"Signature Visa","Panera Bread","Restaurants",,-17.36
-2024-02-01,"Usaa Savings","Usaa","Savings",,1100
-2024-02-01,"USAA Checking","Usaa","Savings",,-1100
-2024-02-01,"USAA Checking","Usaa","Eleanor Savings",,-50
-2024-02-01,"USAA Checking","Usaa","Adeline Savings",,-50
-2024-02-01,"Eleanor Savings","Usaa","Eleanor Savings",,50
-2024-02-01,"Adeline Savings","Usaa","Adeline Savings",,50
-2024-01-31,"Signature Visa","Tan And Garcia Pediatricsenola Pa","Healthcare/Medical",,-103.53
-2024-01-31,"Usaa Savings","Interest Paid","Interest",,0.06
-2024-01-31,"Eleanor Savings","Interest Paid","Interest",,0.01
-2024-01-30,"Signature Visa","Macy's","Clothing/Shoes",,-169
-2024-01-30,"Signature Visa","Chiropractic Care Center","Healthcare/Medical",,-52.91
-2024-01-30,"Signature Visa","Giant Food","Groceries",,-8.98
-2024-01-30,"USAA Checking","Brightwheel","Education",,-186.37
-2024-01-30,"USAA Checking","Dfas","Jeff Pay",,3809.34
-2024-01-29,"Thrift Savings Plan","Traditional - Thrift Savings Plan - Uniformed Services","Savings",,2285.34
-2024-01-29,"Signature Visa","Sheetz","Gasoline/Fuel",,-2.86
-2024-01-29,"Signature Visa","Starbucks","Restaurants",,-25
-2024-01-29,"Signature Visa","Hobby Lobby","Hobbies",,-21.48
-2024-01-29,"Signature Visa","Sheetz","Gasoline/Fuel",,-21.2
-2024-01-29,"Signature Visa","Marshalls","Clothing/Shoes",,-24.99
-2024-01-29,"Signature Visa","Petsmart","Pets/Pet Care",,-99
-2024-01-29,"Signature Visa","Cvs Pharmacy","Healthcare/Medical",,-6.72
-2024-01-29,"Signature Visa","Carlisle Barracks Afb Xxx-xxxx2995 Ny","Professional Expenses",,-17.4
-2024-01-29,"Signature Visa","Apple","Dues & Subscriptions",,-9.99
-2024-01-29,"Usaa Savings","Adp Workmarket Direct Dep ***********9018","Elaina Pay",,2790
-2024-01-28,"Signature Visa","Amazon","Groceries",,-13.54
-2024-01-28,"Signature Visa","Daily Harvest","Groceries",,-188.89
-2024-01-28,"Signature Visa","Amazon","Electronics",,-27.97
-2024-01-28,"Signature Visa","Hulu","Entertainment",,-20.41
-2024-01-28,"Signature Visa","Michaels","Hobbies",,-14.82
-2024-01-27,"Signature Visa","Meadowbrooke Gourds","Gifts",,-102.83
-2024-01-27,"Signature Visa","Meadowbrooke Gourds","Gifts",,-42.47
-2024-01-27,"Signature Visa","Giant Food","Groceries",,-172.08
-2024-01-26,"Signature Visa","Sheetz","Gasoline/Fuel",,-52.92
-2024-01-26,"Signature Visa","Myeyedr","Healthcare/Medical",,-756
-2024-01-25,"Signature Visa","Sky Zone","Entertainment",,-78.62
-2024-01-24,"Signature Visa","At&t","Telephone",,-212.41
