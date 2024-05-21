@@ -435,10 +435,10 @@ expenses <- bank %>%
          !grepl("savings",bank$category)) %>%
   mutate(amount = amount * -1)
 
-expenses
+expenses$date
 
 #change the date to month format
-expenses$date <- format(ymd(expenses$date), "%Y-%m")
+expenses$date <- format(mdy(expenses$date), "%Y-%m")
 
 #keep only the last 12 months worth of expenses
 expenses_last_12 <- expenses %>%
@@ -511,7 +511,7 @@ income <- bank %>%
 income
 
 #change the date to month format
-income$date <- format(income$date, "%Y-%m")
+income$date <- format(mdy(income$date), "%Y-%m")
 
 #keep only the last 12 months worth of income
 income_last_12 <- income %>%
@@ -610,7 +610,7 @@ investments %>%
   group_by(account) %>% summarise(total = sum(amount))
 
 #change the date to month format
-investments$date <- format(investments$date, "%Y-%m")
+investments$date <- format(mdy(investments$date), "%Y-%m")
 
 # #keep only the last 12 months worth of investments
 # investments_last_12 <- investments %>%
@@ -668,7 +668,7 @@ savings <- bank %>%
   mutate(amount = amount * -1)
   
 #change the date to month format
-savings$date <- format(savings$date, "%Y-%m")
+savings$date <- format(mdy(savings$date), "%Y-%m")
 
 # #keep only the last 12 months worth of savings
 # savings_last_12 <- savings %>%
@@ -720,7 +720,7 @@ loan <- bank %>%
   mutate(amount = amount * -1)
 
 #change the date to month format
-loan$date <- format(loan$date, "%Y-%m")
+loan$date <- format(mdy(loan$date), "%Y-%m")
 
 # #keep only the last 12 months worth of loan repayment
 # loan_last_12 <- loan %>%
