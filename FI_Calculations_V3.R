@@ -918,46 +918,46 @@ expenses_last_12_grouped_housing <- expenses_last_12_grouped %>%
 
 avg_monthly_expenses_housing <- mean(expenses_last_12_grouped_housing$monthly_amount)
 
-naive_fi <- (avg_monthly_expenses_housing)*12 * (1 / annual_safe_withdrawal)
-scales::dollar(naive_fi)
-
-#calculate years to naive FI based on current net_worth assuming no additional investments
-naive_fi_years_no_invest <- 0
-sim_invest_value <- current_net_worth
-
-while (sim_invest_value < naive_fi) {
-  sim_invest_value = sim_invest_value +
-    (sim_invest_value*avg_annual_returns) 
-  naive_fi_years_no_invest <- naive_fi_years_no_invest + 1
-}
-
-naive_fi_years_no_invest
-
-#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
-# Calculate FU numbers:
-#   With retire today pension
-#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
-
-#calculate naive FI number based on current average monthly expenses + housing buffer, 
-#assumed safe withdrawal rate, and pension if I retired today
-
-today_pension_fi <- ((avg_monthly_expenses_housing)*12 - c_annual_net_pension) * (1 / annual_safe_withdrawal)
-scales::dollar(today_pension_fi)
-
-#todays pension is worth
-scales::dollar(naive_fi - today_pension_fi)
-
-#calculate years to naive FI based on current net_worth assuming no additional investments
-today_pension_fi_years_no_invest <- 0
-sim_invest_value <- current_net_worth
-
-while (sim_invest_value < today_pension_fi) {
-  sim_invest_value = sim_invest_value +
-    (sim_invest_value*avg_annual_returns) 
-  today_pension_fi_years_no_invest <- today_pension_fi_years_no_invest + 1
-}
-
-today_pension_fi_years_no_invest
+# naive_fi <- (avg_monthly_expenses_housing)*12 * (1 / annual_safe_withdrawal)
+# scales::dollar(naive_fi)
+# 
+# #calculate years to naive FI based on current net_worth assuming no additional investments
+# naive_fi_years_no_invest <- 0
+# sim_invest_value <- current_net_worth
+# 
+# while (sim_invest_value < naive_fi) {
+#   sim_invest_value = sim_invest_value +
+#     (sim_invest_value*avg_annual_returns) 
+#   naive_fi_years_no_invest <- naive_fi_years_no_invest + 1
+# }
+# 
+# naive_fi_years_no_invest
+# 
+# #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+# # Calculate FU numbers:
+# #   With retire today pension
+# #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+# 
+# #calculate naive FI number based on current average monthly expenses + housing buffer, 
+# #assumed safe withdrawal rate, and pension if I retired today
+# 
+# today_pension_fi <- ((avg_monthly_expenses_housing)*12 - c_annual_net_pension) * (1 / annual_safe_withdrawal)
+# scales::dollar(today_pension_fi)
+# 
+# #todays pension is worth
+# scales::dollar(naive_fi - today_pension_fi)
+# 
+# #calculate years to naive FI based on current net_worth assuming no additional investments
+# today_pension_fi_years_no_invest <- 0
+# sim_invest_value <- current_net_worth
+# 
+# while (sim_invest_value < today_pension_fi) {
+#   sim_invest_value = sim_invest_value +
+#     (sim_invest_value*avg_annual_returns) 
+#   today_pension_fi_years_no_invest <- today_pension_fi_years_no_invest + 1
+# }
+# 
+# today_pension_fi_years_no_invest
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate FU numbers:
@@ -971,7 +971,7 @@ est_pension_fi <- ((avg_monthly_expenses_housing)*12 - est_annual_net_pension) *
 scales::dollar(est_pension_fi)
 
 #what is my est pension worth
-scales::dollar(naive_fi - est_pension_fi)
+#scales::dollar(naive_fi - est_pension_fi)
 
 #calculate years to naive FI based on current net_worth assuming no additional investments
 est_pension_fi_years_no_invest <- 0
