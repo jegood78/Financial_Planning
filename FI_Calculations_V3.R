@@ -24,8 +24,8 @@ net_worth
 bank_raw <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw.csv")
 bank_raw
 
-bank_raw$Date <- as.Date(mdy(bank_raw$Date))
-bank_raw
+#bank_raw$Date <- as.Date(mdy(bank_raw$Date))
+#bank_raw
 
 #new transactions
 bank_new <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw_new.csv")
