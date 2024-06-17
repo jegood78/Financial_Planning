@@ -56,100 +56,143 @@ bank <- bank %>%
   left_join(cats, by = "category") %>%
   select(!tags)
 
+#tsp monthly
+tsp_pre_032024 <- 2285
+tsp_post_032024 <- 1942
+
 #keep only the accounts we care about
 unique(bank$account)
 
 bank_redux <- bank %>%
   filter(account %in% c("signature_visa",
                         "usaa_savings",
-                        "usaa_checking",
-                        "thrift_savings_plan"),
+                        "usaa_checking"),
          !category %in% c("eleanor_savings",
                           "adeline_savings",
-                          "usaa_credit_card_payment")) %>%
-  mutate(category = if_else(account %in% c("thrift_savings_plan"),
-                            "investment",
-                            category))
+                          "usaa_credit_card_payment")) 
 
 #assign to budget group (fixed expenses, investments, savings, misc, income)
 unique(bank_redux$category)
 
-bank_redux1 <- bank_redux %>%
-  mutate(budget_group = if_else(category %in% c("jeff_pay",
-                                                "elaina_pay",
-                                                "other_income",
-                                                "interest",
-                                                "paychecks_salary"),
-                                "income",
-                                if_else(category %in% c("rent",
-                                                        "vehicle_loan",
-                                                        "groceries",
-                                                        "school_loan",
-                                                        "telephone",
-                                                        "gym",
-                                                        "pets_pet_care",
-                                                        "automotive",
-                                                        "gasoline_fuel",
-                                                        "diapers_babyfood",
-                                                        "insurance",
-                                                        "taxes",
-                                                        "loans",
-                                                        "education",
-                                                        "dues_subscriptions",
-                                                        "cable_satellite",
-                                                        "internet"),
-                                        "fixed_expenses",
-                                        if_else(category %in% c("savings"),
-                                                "savings",
-                                                if_else(category %in% c("investment"),
-                                                        "investment",
-                                                        "misc_spending"))))) 
-
-#summarize by month
-#change the date to month format
-bank_redux1$date <- format(ymd(bank_redux1$date), "%Y-%m")
-
-income <- bank_redux1 %>%
-  filter(budget_group %in% c("income")) %>%
+income <- bank_redux %>%
+  filter(category %in% c("jeff_pay",
+                         "elaina_pay",
+                         "other_income",
+                         "interest",
+                         "paychecks_salary")) %>%
+  mutate(date = format(ymd(date), "%Y-%m")) %>%
   group_by(date) %>%
   summarise(monthly_amount = sum(amount)) %>%
   mutate(type = "in",
-         budget_group = "income")
+         budget_group = "income",
+         monthly_amount = if_else(date < "2024-03",
+                                  monthly_amount + tsp_pre_032024,
+                                  monthly_amount + tsp_post_032024))
 
-fixed_expenses <- bank_redux1 %>%
-  filter(budget_group %in% c("fixed_expenses")) %>%
+fixed_expenses <- bank_redux %>%
+  filter(category %in% c("rent",
+                         "vehicle_loan",
+                         "groceries",
+                         "school_loan",
+                         "telephone",
+                         "gym",
+                         "pets_pet_care",
+                         "automotive",
+                         "gasoline_fuel",
+                         "diapers_babyfood",
+                         "insurance",
+                         "taxes",
+                         "loans",
+                         "education",
+                         "dues_subscriptions",
+                         "cable_satellite",
+                         "internet",
+                         "healthcare_medical")) %>%
+  mutate(date = format(ymd(date), "%Y-%m")) %>%
   group_by(date) %>%
   summarise(monthly_amount = sum(amount)*-1) %>%
   mutate(type = "out",
          budget_group = "fixed_expenses")
 
-savings <- bank_redux1 %>%
+savings <- bank_redux %>%
   filter(account %in% c("usaa_savings"),
-         budget_group %in% c("savings")) %>%
+         category %in% c("savings")) %>%
+  mutate(date = format(ymd(date), "%Y-%m")) %>%
   group_by(date) %>%
   summarise(monthly_amount = sum(amount)) %>%
   mutate(type = "out",
          budget_group = "savings")
 
-investment <- bank_redux1 %>%
-  filter(budget_group %in% c("investment")) %>%
+investment <- bank_redux %>%
+  filter(grepl("invest", category)) %>%
+  mutate(date = format(ymd(date), "%Y-%m")) %>%
   mutate(amount = if_else(amount < 0,
                           amount*-1,
                           amount)) %>%
   group_by(date) %>%
   summarise(monthly_amount = sum(amount)) %>%
   mutate(type = "out",
-         budget_group = "investment")
+         budget_group = "investment",
+         monthly_amount = if_else(date < "2024-03",
+                                  monthly_amount + tsp_pre_032024,
+                                  monthly_amount + tsp_post_032024))
 
-misc_spending <- bank_redux1 %>%
-  filter(budget_group %in% c("misc_spending")) %>%
+misc_spending <- bank_redux %>%
+  filter(!category %in% c("jeff_pay",
+                          "elaina_pay",
+                          "other_income",
+                          "interest",
+                          "paychecks_salary",
+                          "rent",
+                          "vehicle_loan",
+                          "groceries",
+                          "school_loan",
+                          "telephone",
+                          "gym",
+                          "pets_pet_care",
+                          "automotive",
+                          "gasoline_fuel",
+                          "diapers_babyfood",
+                          "insurance",
+                          "taxes",
+                          "loans",
+                          "education",
+                          "dues_subscriptions",
+                          "cable_satellite",
+                          "internet",
+                          "healthcare_medical",
+                          "savings",
+                          "investment")) %>%
+  mutate(date = format(ymd(date), "%Y-%m")) %>%
   group_by(date) %>%
   summarise(monthly_amount = sum(amount)*-1) %>%
   mutate(type = "out",
          budget_group = "misc_spending")
 
-monthly_merged <- rbind(income,
+monthly_merged_long <- rbind(income,
                         fixed_expenses,
                         savings,
                         investment,
                         misc_spending)
+
+monthly_merged_wide <- income %>% 
+  select(date, monthly_amount) %>% 
+  rename("income_monthly" = "monthly_amount") %>%
+  left_join(fixed_expenses %>%
+              select(date, monthly_amount) %>%
+              rename("fixed_expenses_monthly" = "monthly_amount")) %>%
+  mutate(fixed_expenses_percent = scales::percent(fixed_expenses_monthly/income_monthly)) %>%
+  left_join(savings %>%
+              select(date, monthly_amount) %>%
+              rename("savings_monthly" = "monthly_amount")) %>%
+  mutate(savings_monthly = if_else(is.na(savings_monthly),0,savings_monthly),
+         savings_percent = scales::percent(savings_monthly/income_monthly)) %>%
+  left_join(investment %>%
+              select(date, monthly_amount) %>%
+              rename("investment_monthly" = "monthly_amount")) %>%
+  mutate(investment_monthly = if_else(is.na(investment_monthly),0,investment_monthly),
+         investment_percent = scales::percent(investment_monthly/income_monthly)) %>%
+  left_join(misc_spending %>%
+              select(date, monthly_amount) %>%
+              rename("misc_spending_monthly" = "monthly_amount")) %>%
+  mutate(misc_spending_percent = scales::percent(misc_spending_monthly/income_monthly))
