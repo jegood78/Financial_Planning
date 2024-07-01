@@ -30,6 +30,7 @@ bank_raw
 #new transactions
 bank_new <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw_new.csv")
 bank_new
+#bank_new$Date <- mdy(bank_new$Date)
 
 #merge historical and new transactions
 bank_merged <- rbind(bank_raw,
@@ -37,6 +38,7 @@ bank_merged <- rbind(bank_raw,
 
 #keep only distinct entries
 bank <- distinct(bank_merged)
+#bank <- bank %>% filter(!is.na(Date))
 
 #export the new historicals
 write_csv(bank, "/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/empower_transactions_raw.csv")
@@ -439,6 +441,8 @@ expenses <- bank %>%
   mutate(amount = amount * -1)
 
 expenses$date
+
+expenses %>% filter(is.na(date))
 
 #change the date to month format
 expenses$date <- format(ymd(expenses$date), "%Y-%m")
