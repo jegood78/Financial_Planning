@@ -1,4 +1,25 @@
 Date,Account,Description,Category,Tags,Amount
+2024-07-15,"Nissan Vehicle Loan","Principal","Vehicle Loan",,699.55
+2024-07-15,"Nissan Vehicle Loan","Interest","Vehicle Loan",,114.49
+2024-07-15,"Usaa Savings","Usaa","Savings",,1100
+2024-07-15,"USAA Checking","Ic Payments","Vehicle Loan",,-814.04
+2024-07-15,"USAA Checking","Target","General Merchandise",,-147.08
+2024-07-15,"USAA Checking","Usaa","Rent",,-3200
+2024-07-15,"USAA Checking","Usaa","Savings",,-1100
+2024-07-15,"USAA Checking","Usaa","Eleanor Savings",,-50
+2024-07-15,"USAA Checking","Usaa","Adeline Savings",,-50
+2024-07-15,"Eleanor Savings","Usaa","Eleanor Savings",,50
+2024-07-15,"Adeline Savings","Usaa","Adeline Savings",,50
+2024-07-13,"Signature Visa","Virginia Natural Gas","Utilities",,-77.48
+2024-07-13,"Signature Visa","Dd Bodaciouspizzag Xxx-xxx-1040 Ca","Restaurants",,-32.89
+2024-07-11,"USAA Checking","Dfas","Jeff Pay",,5422.86
+2024-07-09,"Signature Visa","Cheddarup* Ocean Park Www.cheddarupco","Restaurants",,-30
+2024-07-09,"Signature Visa","Little Creek Community","Groceries",,-65.68
+2024-07-09,"Usaa Savings","The Vanguard Group","Investment",,-500
+2024-07-09,"Jeff and Elaina Brokerage","Cash-funds Received","Investment",,500
+2024-07-08,"Jeff and Elaina Brokerage","Vanguard Total Stock Market Index Admiral Cl-buy","Investment",,-500
+2024-07-07,"Signature Visa","Wawa","Gasoline/Fuel",,-38.3
+2024-07-07,"Signature Visa","Paypal *opclfirewor Xxxxxx7733 Ca","Transfers",,-20
 2024-07-05,"Usaa Savings","Venmo","Babysitting",,-72
 2024-07-03,"Usaa Savings","Us Department Of Education","School Loan",,-243.42
 2024-07-03,"USAA Checking","Target","Diapers/BabyFood",,-154.11
@@ -268,39 +289,3 @@ Date,Account,Description,Category,Tags,Amount
 2024-04-21,"Signature Visa","Amazon","Books",,-10.59
 2024-04-20,"Signature Visa","Five Below","General Merchandise",,-18.5
 2024-04-18,"Signature Visa","Comcast","Internet",,1.33
-2024-04-17,"Signature Visa","Sq *naval Special Warfarevirginia Beacva","Restaurants",,-8
-2024-04-17,"USAA Checking","Target","General Merchandise",,-6.43
-2024-04-17,"USAA Checking","Target","Clothing/Shoes",,65.91
-2024-04-16,"Signature Visa","H&r Block","Taxes",,-173.84
-2024-04-16,"Usaa Savings","The Vanguard Group","Investment",,-500
-2024-04-16,"USAA Checking","Interest Paid","Interest",,0.03
-2024-04-16,"Jeff and Elaina Brokerage","Cash-funds Received","Transfers",,500
-2024-04-15,"Signature Visa","Starbucks","Restaurants",,-25
-2024-04-15,"Signature Visa","Kohl's","Clothing/Shoes",,-276.22
-2024-04-15,"Signature Visa","Nail Spa","Personal Care",,-35
-2024-04-15,"Signature Visa","Chick-fil-a","Restaurants",,-31.92
-2024-04-15,"Nissan Vehicle Loan","Principal","Vehicle Loan",,686.15
-2024-04-15,"Nissan Vehicle Loan","Interest","Vehicle Loan",,127.89
-2024-04-15,"Usaa Savings","Usaa","Savings",,1100
-2024-04-15,"USAA Checking","Ic Payments","Vehicle Loan",,-814.04
-2024-04-15,"USAA Checking","Target","Gifts",", , ",-172.81
-2024-04-15,"USAA Checking","Usaa","Savings",,-1100
-2024-04-15,"USAA Checking","Usaa","Adeline Savings",,-50
-2024-04-15,"USAA Checking","Usaa","Eleanor Savings",,-50
-2024-04-15,"USAA Checking","Dfas","Jeff Pay",,6222.17
-2024-04-15,"USAA Checking","Target","General Merchandise",,32.12
-2024-04-15,"Eleanor Savings","Usaa","Eleanor Savings",,50
-2024-04-15,"Adeline Savings","Usaa","Adeline Savings",,50
-2024-04-15,"Jeff and Elaina Brokerage","Vanguard Total Stock Market Index Admiral Cl-buy","Investment",,-500
-2024-04-13,"Signature Visa","Navy Exchange","ATM/Cash",,123.49
-2024-04-13,"Signature Visa","Py *gourmet Gang Henrico Va","Restaurants",,-30.96
-2024-04-13,"Signature Visa","Brghtwhl* Francis Asbu Www.mybrightwca","Education",,-408.94
-2024-04-13,"Signature Visa","Cvb Aquarium Virginia Beacva","Entertainment",,-175.5
-2024-04-13,"Signature Visa","Little Creek Community","Groceries",,-276.2
-2024-04-13,"Signature Visa","Parkwhiz","Travel",,-5
-2024-04-11,"Signature Visa","Amazon Prime","Entertainment",,-4.76
-2024-04-11,"USAA Checking","Target","Gifts",", , , ",-240.63
-2024-04-11,"USAA Checking","Target","General Merchandise",,-5.04
-2024-04-11,"USAA Checking","Dfas","Jeff Pay",,5410.86
-2024-04-11,"USAA Checking","Target","General Merchandise",,26.17
-2024-04-10,"USAA Checking","Tgcx0008 Virginia Beacva","ATM/Cash",,-300
