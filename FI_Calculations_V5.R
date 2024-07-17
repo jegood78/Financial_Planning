@@ -189,3 +189,25 @@ ggplot(data = bank_monthly,
                                  linewidth = 1,
                                  linetype = "solid"),
         legend.position = "bottom")
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+#calculate monthly average expenses
+
+avg_monthly_expenses_grouped <- bank_monthly %>%
+  filter(transaction_type %in% c("fixed_expenses", "misc_expenses")) %>%
+  group_by(month) %>%
+  summarise(monthly_expenses = sum(monthly_amount)) %>%
+  summarise(average_monthly_expenses = mean(monthly_expenses))
+
+avg_monthly_expenses <- round(avg_monthly_expenses_grouped[[1]])
+
+#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
+#calculate monthly average income
+
+avg_monthly_income_grouped <- bank_monthly %>%
+  filter(transaction_type %in% c("income")) %>%
+  group_by(month) %>%
+  summarise(monthly_income = sum(monthly_amount)) %>%
+  summarise(average_monthly_income = mean(monthly_income))
+
+avg_monthly_income <- round(avg_monthly_income_grouped[[1]])

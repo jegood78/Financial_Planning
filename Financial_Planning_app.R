@@ -10,19 +10,19 @@ ui <- fluidPage(
   
   numericInput(inputId = "bah",
                label = "Basic Allowance for Housing",
-               value = 2640,
+               value = 2928,
                min = 0,
                max = 6000), #end numericInput bah
   
   sliderInput(inputId = "annual_safe_withdrawal",
               label = "Annual Safe Withdrawal Rate (%)",
-              value = 3,
+              value = 4,
               min = 0,
               max = 10), #end sliderInput annual_safe_withdrawal
   
   numericInput(inputId = "tsp",
                label = "TSP Contributions",
-               value = 20500,
+               value = 23000,
                min = 0,
                max = 20500), #end numericInput tsp
   
@@ -34,16 +34,16 @@ ui <- fluidPage(
   selectInput(inputId = "c_rank",
               label = "Current Rank",
               choices = c('O1','O1E','O2','O2E','O3','O3E','O4','O5','O6','O7','O8','O9','O10'),
-              selected = 'O4'), #end selectInput c_rank
+              selected = 'O5'), #end selectInput c_rank
   
   dateInput(inputId = "c_dor",
             label = "Current Date of Rank",
-            value = "2018-09-01",
+            value = "2023-09-01",
             min = "1990-01-01"), #end dateInput c_dor
   
   dateInput(inputId = "est_promotion",
             label = "Estimated Promotion Date",
-            value = "2023-09-01",
+            value = "2029-09-01",
             min = "1990-01-01"), #end dateInput est_promotion
   
   dateInput(inputId = "est_navy_retire_date",
