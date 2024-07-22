@@ -1,7 +1,13 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type,key,month
-2024-07-15,USAA FUNDS TRANSFER DB,USAA FUNDS TRANSFER DB,Category Pending,-3200,Posted,fixed_expenses,USAA FUNDS TRANSFER DB_-3200_7/15/24,2024-07
-2024-07-15,ICPAYMENT,ICPAYMENT,Category Pending,-814.04,Posted,fixed_expenses,ICPAYMENT_-814.04_7/15/24,2024-07
-2024-07-15,TARGET DEBIT CRD ACH TRAN   ***********2770,TARGET DEBIT CRD ACH TRAN   ***********2770,Category Pending,-147.08,Posted,misc_expenses,TARGET DEBIT CRD ACH TRAN   ***********2770_-147.08_7/15/24,2024-07
+2024-07-17,Chase Credit Card,CHASE CREDIT CRD EPAY       ***********3428,Credit Card Payment,-583.42,Posted,misc_expenses,Chase Credit Card_-583.42_7/17/24,2024-07
+2024-07-17,Dominion Energy,DOMINION ENERGY  BILLPAY    ***********7814,Bills & Utilities,-544.16,Posted,fixed_expenses,Dominion Energy_-544.16_7/17/24,2024-07
+2024-07-17,Dominion Energy,DOMINION ENERGY  BILLPAY    ***********7814,Bills & Utilities,-166.73,Posted,fixed_expenses,Dominion Energy_-166.73_7/17/24,2024-07
+2024-07-17,Zelle Transfer to Lauren,Zelle: Lauren,Transfer,-105,Posted,misc_expenses,Zelle Transfer to Lauren_-105_7/17/24,2024-07
+2024-07-17,Target,TARGET DEBIT CRD ACH TRAN   ***********0179,Shopping,-90.61,Posted,misc_expenses,Target_-90.61_7/17/24,2024-07
+2024-07-16,Interest Paid,INTEREST PAID,Interest Income,0.06,Posted,income,Interest Paid_0.06_7/16/24,2024-07
+2024-07-15,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-3200,Posted,fixed_expenses,USAA Transfer_-3200_7/15/24,2024-07
+2024-07-15,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,ICPayment_-814.04_7/15/24,2024-07
+2024-07-15,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-147.08,Posted,misc_expenses,Target_-147.08_7/15/24,2024-07
 2024-07-11,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5422.86,Posted,income,Defense Finance and Accounting Service_5422.86_7/11/24,2024-07
 2024-07-03,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-154.11,Posted,misc_expenses,Target_-154.11_7/3/24,2024-07
 2024-07-03,USAA Property and Casualty Insurance,USAA P&C         AUTOPAY    ***********3049,Financial,-18.3,Posted,fixed_expenses,USAA Property and Casualty Insurance_-18.3_7/3/24,2024-07
@@ -198,7 +204,21 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,ke
 2024-01-19,Transfer to Venmo,VENMO            PAYMENT    ***********4890,Transfer,-45,Posted,misc_expenses,Transfer to Venmo_-45_1/19/24,2024-01
 2024-01-17,Ohtaxites Ohincometx,8052-1OHTAXITES  OHINCOMETX ***********4805,Taxes,-200,Posted,fixed_expenses,Ohtaxites Ohincometx_-200_1/17/24,2024-01
 2024-01-16,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_1/16/24,2024-01
-2024-07-14,TM *MEAN GIRLS TOURING   800-653-8000 CA,TM *MEAN GIRLS TOURING   800-653-8000 CA,Category Pending,-163.1,Posted,misc_expenses,TM *MEAN GIRLS TOURING   800-653-8000 CA_-163.1_7/14/24,2024-07
+2024-07-20,STARBUCKS 800-782-7282   800-782-7282 WA,STARBUCKS 800-782-7282   800-782-7282 WA,Category Pending,-25,Posted,misc_expenses,STARBUCKS 800-782-7282   800-782-7282 WA_-25_7/20/24,2024-07
+2024-07-19,SQ *G4CPOA               VIRGINIA BEACVA,SQ *G4CPOA               VIRGINIA BEACVA,Category Pending,-40,Posted,misc_expenses,SQ *G4CPOA               VIRGINIA BEACVA_-40_7/19/24,2024-07
+2024-07-18,Avsva Bark Virginia Beacva,AVSVA BARK               VIRGINIA BEACVA,Veterinary,-69.5,Posted,fixed_expenses,Avsva Bark Virginia Beacva_-69.5_7/18/24,2024-07
+2024-07-18,ExxonMobil,EXXON CAPE HENRY         VIRGINIA BEACVA,Gas,-48.9,Posted,fixed_expenses,ExxonMobil_-48.9_7/18/24,2024-07
+2024-07-18,Panda Express,PANDA EXPRESS 2949A      VIRGINIA BEACVA,Fast Food,-11.04,Posted,fixed_expenses,Panda Express_-11.04_7/18/24,2024-07
+2024-07-17,Costco,COSTCO WHSE #0202        NORFOLK      VA,Shopping,-153.99,Posted,fixed_expenses,Costco_-153.99_7/17/24,2024-07
+2024-07-17,Walmart,WAL-MART #4064           VIRGINIA BEACVA,Shopping,-78.11,Posted,fixed_expenses,Walmart_-78.11_7/17/24,2024-07
+2024-07-17,The Therapist Development,THE THERAPIST DEVELOPMENT4156724474   CA,Education,-64.8,Posted,misc_expenses,The Therapist Development_-64.8_7/17/24,2024-07
+2024-07-17,Costco,COSTCO WHSE #0202        NORFOLK      VA,Shopping,-7.49,Posted,misc_expenses,Costco_-7.49_7/17/24,2024-07
+2024-07-16,Verizon,VERIZON*RECURRING PAY    800-VERIZON  FL,Utilities,-201.18,Posted,fixed_expenses,Verizon_-201.18_7/16/24,2024-07
+2024-07-16,The Home Depot,THE HOME DEPOT #4614     VIRGINIA BCH VA,Home Improvement,28.56,Posted,misc_expenses,The Home Depot_28.56_7/16/24,2024-07
+2024-07-15,Vans,VANS.COM                 P://SHOP.VANSCA,Clothing,-84.82,Posted,misc_expenses,Vans_-84.82_7/15/24,2024-07
+2024-07-15,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-21.23,Posted,fixed_expenses,Chick-fil-A_-21.23_7/15/24,2024-07
+2024-07-14,Ticketmaster,TM *MEAN GIRLS TOURING   800-653-8000 CA,Entertainment,-163.1,Posted,misc_expenses,Ticketmaster_-163.1_7/14/24,2024-07
+2024-07-14,The Home Depot,THE HOME DEPOT #4614     VIRGINIA BCH VA,Home Improvement,-25.72,Posted,misc_expenses,The Home Depot_-25.72_7/14/24,2024-07
 2024-07-13,Virginianaturalgasbill,VIRGINIANATURALGASBILL   866-383-1846 GA,Utilities,-77.48,Posted,fixed_expenses,Virginianaturalgasbill_-77.48_7/13/24,2024-07
 2024-07-13,Bodaciouspizzag,DD BODACIOUSPIZZAG       855-973-1040 CA,Food & Dining,-32.89,Posted,fixed_expenses,Bodaciouspizzag_-32.89_7/13/24,2024-07
 2024-07-12,Walmart,WM SUPERCENTER #4064     VIRGINIA BEACVA,Shopping,-332.54,Posted,fixed_expenses,Walmart_-332.54_7/12/24,2024-07

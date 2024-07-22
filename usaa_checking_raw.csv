@@ -1,10 +1,17 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type
-7/15/24,USAA FUNDS TRANSFER DB,USAA FUNDS TRANSFER DB,Category Pending,-3200,Posted,fixed_expenses
-7/15/24,USAA FUNDS TRANSFER DB,USAA FUNDS TRANSFER DB,Category Pending,-1100,Posted,savings
-7/15/24,ICPAYMENT,ICPAYMENT,Category Pending,-814.04,Posted,fixed_expenses
-7/15/24,TARGET DEBIT CRD ACH TRAN   ***********2770,TARGET DEBIT CRD ACH TRAN   ***********2770,Category Pending,-147.08,Posted,misc_expenses
-7/15/24,USAA FUNDS TRANSFER DB,USAA FUNDS TRANSFER DB,Category Pending,-50,Posted,savings
-7/15/24,USAA FUNDS TRANSFER DB,USAA FUNDS TRANSFER DB,Category Pending,-50,Posted,savings
+7/22/24,TARGET DEBIT CRD ACH TRAN   ***********2770,TARGET DEBIT CRD ACH TRAN   ***********2770,Category Pending,-171.35,Pending,misc_expenses
+7/17/24,Chase Credit Card,CHASE CREDIT CRD EPAY       ***********3428,Credit Card Payment,-583.42,Posted,misc_expenses
+7/17/24,Dominion Energy,DOMINION ENERGY  BILLPAY    ***********7814,Bills & Utilities,-544.16,Posted,fixed_expenses
+7/17/24,Dominion Energy,DOMINION ENERGY  BILLPAY    ***********7814,Bills & Utilities,-166.73,Posted,fixed_expenses
+7/17/24,Zelle Transfer to Lauren,Zelle: Lauren,Transfer,-105,Posted,misc_expenses
+7/17/24,Target,TARGET DEBIT CRD ACH TRAN   ***********0179,Shopping,-90.61,Posted,misc_expenses
+7/16/24,Interest Paid,INTEREST PAID,Interest Income,0.06,Posted,income
+7/15/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-3200,Posted,fixed_expenses
+7/15/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-1100,Posted,savings
+7/15/24,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses
+7/15/24,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-147.08,Posted,misc_expenses
+7/15/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-50,Posted,savings
+7/15/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-50,Posted,savings
 7/11/24,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5422.86,Posted,income
 7/3/24,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-154.11,Posted,misc_expenses
 7/3/24,USAA Property and Casualty Insurance,USAA P&C         AUTOPAY    ***********3049,Financial,-18.3,Posted,fixed_expenses
