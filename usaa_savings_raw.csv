@@ -1,12 +1,15 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type
+7/29/24,ADP WORKMARKET   DIRECT DEP ***********3373,ADP WORKMARKET   DIRECT DEP ***********3373,Category Pending,3085.8,Pending,income
+7/25/24,Transfer to Venmo,VENMO            PAYMENT    ***********6264,Transfer,-72,Posted,fixed_expenses
+7/23/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
 7/15/24,USAA FUNDS TRANSFER CR,USAA FUNDS TRANSFER CR,Category Pending,1100,Posted,savings
 7/9/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
 7/5/24,Transfer to Venmo,VENMO            PAYMENT    ***********1592,Transfer,-72,Posted,misc_expenses
 7/3/24,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-243.42,Posted,fixed_expenses
 7/1/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
 6/28/24,Interest Paid,INTEREST PAID,Interest Income,0.19,Posted,income
-6/27/24,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********9992,Paycheck,110,Posted,income
 6/27/24,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********9991,Paycheck,1760,Posted,income
+6/27/24,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********9992,Paycheck,110,Posted,income
 6/25/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
 6/24/24,Transfer to Venmo,VENMO            PAYMENT    ***********1105,Transfer,-54,Posted,misc_expenses
 6/21/24,Transfer to Venmo,VENMO            PAYMENT    ***********1922,Transfer,-54,Posted,misc_expenses
@@ -14,71 +17,71 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type
 6/17/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
 6/13/24,Transfer to Venmo,VENMO            PAYMENT    ***********6366,Transfer,-72,Posted,misc_expenses
 6/12/24,Transfer to Venmo,VENMO            PAYMENT    ***********6322,Transfer,-72,Posted,misc_expenses
-6/11/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
 6/11/24,Transfer to Venmo,VENMO            PAYMENT    ***********3463,Transfer,-72,Posted,misc_expenses
+6/11/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
 6/10/24,Transfer to Venmo,VENMO            PAYMENT    ***********0357,Transfer,-195,Posted,misc_expenses
 6/4/24,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-243.42,Posted,fixed_expenses
-6/3/24,USAA Credit Card,USAA CREDIT CARD PAYMENT,Credit Card Payment,-6606.31,Posted,misc_expenses
 6/3/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
-5/31/24,Transfer to Venmo,VENMO            PAYMENT    ***********7766,Transfer,-15,Posted,misc_expenses
+6/3/24,USAA Credit Card,USAA CREDIT CARD PAYMENT,Credit Card Payment,-6606.31,Posted,misc_expenses
 5/31/24,Interest Paid,INTEREST PAID,Interest Income,0.2,Posted,income
-5/30/24,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********2085,Paycheck,110,Posted,income
+5/31/24,Transfer to Venmo,VENMO            PAYMENT    ***********7766,Transfer,-15,Posted,misc_expenses
 5/30/24,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********4187,Paycheck,3025,Posted,income
-5/28/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
+5/30/24,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********2085,Paycheck,110,Posted,income
 5/28/24,Transfer to Venmo,VENMO            PAYMENT    ***********0437,Transfer,-260,Posted,misc_expenses
+5/28/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
 5/15/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
 5/14/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
 5/13/24,Federal Tax Refund,IRS  TREAS 310     TAX REF  ***********0908,Federal Tax,4277,Posted,income
-5/6/24,Transfer to Venmo,VENMO            PAYMENT    ***********9445,Transfer,-100,Posted,misc_expenses
 5/6/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,2700,Posted,savings
+5/6/24,Transfer to Venmo,VENMO            PAYMENT    ***********9445,Transfer,-100,Posted,misc_expenses
 5/3/24,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-243.42,Posted,fixed_expenses
 5/1/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
-4/30/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
-4/30/24,Interest Paid,INTEREST PAID,Interest Income,0.08,Posted,income
-4/30/24,Mobile Deposit,DEPOSIT@MOBILE,Income,693.09,Posted,income
 4/30/24,Defense Finance and Accounting Service,DFAS-CLEVELAND   PPTAS      ***********1645,Paycheck,4393.92,Posted,income
-4/29/24,Transfer to Venmo,VENMO            PAYMENT    ***********5254,Transfer,-65,Posted,misc_expenses
+4/30/24,Mobile Deposit,DEPOSIT@MOBILE,Income,693.09,Posted,income
+4/30/24,Interest Paid,INTEREST PAID,Interest Income,0.08,Posted,income
+4/30/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
 4/29/24,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********1938,Paycheck,3520,Posted,income
-4/23/24,State of Ohio Taxrefunds,STATE OF OHIO    TAXREFUNDS ***********5402,Taxes,400,Posted,income
+4/29/24,Transfer to Venmo,VENMO            PAYMENT    ***********5254,Transfer,-65,Posted,misc_expenses
 4/23/24,Mobile Deposit,DEPOSIT@MOBILE,Income,800,Posted,income
+4/23/24,State of Ohio Taxrefunds,STATE OF OHIO    TAXREFUNDS ***********5402,Taxes,400,Posted,income
 4/16/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
 4/15/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
 4/3/24,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-243.42,Posted,fixed_expenses
 4/2/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
-4/1/24,USAA Credit Card,USAA CREDIT CARD PAYMENT,Credit Card Payment,-2973.01,Posted,misc_expenses
-4/1/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
 4/1/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,2500,Posted,savings
+4/1/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
+4/1/24,USAA Credit Card,USAA CREDIT CARD PAYMENT,Credit Card Payment,-2973.01,Posted,misc_expenses
 3/29/24,Interest Paid,INTEREST PAID,Interest Income,0.05,Posted,income
 3/25/24,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********7665,Paycheck,3520,Posted,income
 3/22/24,Transfer to Venmo,VENMO            PAYMENT    ***********0158,Transfer,-40,Posted,misc_expenses
 3/19/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
 3/15/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
-3/7/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-3200,Posted,savings
 3/7/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-500,Posted,savings
-3/5/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
+3/7/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-3200,Posted,savings
 3/5/24,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-243.42,Posted,fixed_expenses
-3/1/24,USAA Credit Card,USAA CREDIT CARD PAYMENT,Credit Card Payment,-5263.92,Posted,misc_expenses
-3/1/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
+3/5/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
 3/1/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,3000,Posted,savings
+3/1/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
+3/1/24,USAA Credit Card,USAA CREDIT CARD PAYMENT,Credit Card Payment,-5263.92,Posted,misc_expenses
 2/29/24,Interest Paid,INTEREST PAID,Interest Income,0.05,Posted,income
-2/28/24,Transfer from Venmo,VENMO            CASHOUT    ***********4408,Transfer,198.9,Posted,misc_expenses
 2/28/24,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********8650,Paycheck,3920,Posted,income
-2/26/24,Transfer to Venmo,VENMO            PAYMENT    ***********5686,Transfer,-350,Posted,misc_expenses
+2/28/24,Transfer from Venmo,VENMO            CASHOUT    ***********4408,Transfer,198.9,Posted,misc_expenses
 2/26/24,Transfer to Venmo,VENMO            PAYMENT    ***********9346,Transfer,-40,Posted,misc_expenses
+2/26/24,Transfer to Venmo,VENMO            PAYMENT    ***********5686,Transfer,-350,Posted,misc_expenses
 2/21/24,Transfer to Venmo,VENMO            PAYMENT    ***********9594,Transfer,-40,Posted,misc_expenses
 2/20/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
 2/16/24,Transfer to Venmo,VENMO            PAYMENT    ***********2560,Transfer,-40,Posted,misc_expenses
 2/15/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
 2/6/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-1000,Posted,investment
-2/5/24,USAA Credit Card,USAA CREDIT CARD PAYMENT,Credit Card Payment,-4401.75,Posted,misc_expenses
-2/5/24,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-243.42,Posted,fixed_expenses
-2/5/24,Mobile Deposit,DEPOSIT@MOBILE,Income,110,Posted,income
 2/5/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1000,Posted,savings
+2/5/24,Mobile Deposit,DEPOSIT@MOBILE,Income,110,Posted,income
+2/5/24,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-243.42,Posted,fixed_expenses
+2/5/24,USAA Credit Card,USAA CREDIT CARD PAYMENT,Credit Card Payment,-4401.75,Posted,misc_expenses
 2/1/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
 1/31/24,Interest Paid,INTEREST PAID,Interest Income,0.06,Posted,income
 1/29/24,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********9018,Paycheck,2790,Posted,income
-1/23/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-1000,Posted,investment
 1/23/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-500,Posted,savings
+1/23/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-1000,Posted,investment
 1/22/24,Mobile Deposit,DEPOSIT@MOBILE,Income,400,Posted,income
 1/19/24,Transfer to Venmo,VENMO            PAYMENT    ***********4890,Transfer,-45,Posted,misc_expenses
 1/17/24,Ohtaxites Ohincometx,8052-1OHTAXITES  OHINCOMETX ***********4805,Taxes,-200,Posted,fixed_expenses
