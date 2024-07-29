@@ -2,18 +2,6 @@ library(shiny)
 
 ui <- fluidPage(
   
-  numericInput(inputId = "housing_buffer",
-               label = "Housing Cost Estimate",
-               value = 3000,
-               min = 0,
-               max = 6000), #end numericInput housing_buffer
-  
-  numericInput(inputId = "bah",
-               label = "Basic Allowance for Housing",
-               value = 2928,
-               min = 0,
-               max = 6000), #end numericInput bah
-  
   sliderInput(inputId = "annual_safe_withdrawal",
               label = "Annual Safe Withdrawal Rate (%)",
               value = 4,
@@ -50,6 +38,12 @@ ui <- fluidPage(
             label = "Estimated Navy Retirement Date",
             value = "2026-09-01",
             min = "1990-01-01"), #end dateInput est_retire_date
+  
+  numericInput(inputId = "bah",
+               label = "Basic Allowance for Housing",
+               value = 2928,
+               min = 0,
+               max = 6000), #end numericInput bah
   
   textOutput(outputId = "est_annual_income"), #end textOutput est_annual_income
   
