@@ -12,11 +12,11 @@ library(writexl)
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 #read in table of historical S&P 500 returns
 sp_500 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/sp-500-historical-annual-returns.csv")
-sp_500
+#sp_500
 
 #read in net worth document
 net_worth <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/NetWorth.csv")
-net_worth
+#net_worth
 
 #tsp monthly
 tsp_pre_032024 <- 2285
@@ -102,13 +102,13 @@ bank <- rbind(checking_raw,
               visa_raw)
 
 #check duplicates by key
-bank %>% group_by(key) %>% summarise(count = n()) %>% arrange(desc(count))
+bank %>% group_by(key) %>% summarise(count = n()) %>% arrange(desc(count)) %>% filter(count > 1)
 
 #remove duplicates
 bank <- distinct(bank)
 
 #check duplicates by 
-bank %>% group_by(key) %>% summarise(count = n()) %>% arrange(desc(count))
+bank %>% group_by(key) %>% summarise(count = n()) %>% arrange(desc(count)) %>% filter(count > 1)
 
 #export the new historicals
 write_csv(bank, "/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/usaa_historical.csv")
@@ -173,7 +173,7 @@ bank_monthly <- rbind(income_monthly,
 
 #required minimum distributions
 required_minimum_distributions <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/required_minimum_distributions.xlsx")
-required_minimum_distributions
+#required_minimum_distributions
 
 #load military pay data
 pChart2024 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2024_Officer_Pay.csv")
@@ -227,17 +227,17 @@ rolling_12_months <- format(seq(lubridate::floor_date(today(), unit = "month") %
                                 lubridate::floor_date(today(), unit = "month") %m-% months(1),
                                 by = "month"),
                             "%Y-%m")
-rolling_12_months
+max(rolling_12_months)
 
 rolling_13_months <- format(seq(lubridate::floor_date(today(), unit = "month") %m-% months(12),
                                 lubridate::floor_date(today(), unit = "month"),
                                 by = "month"),
                             "%Y-%m")
-rolling_13_months
+max(rolling_13_months)
 
 #current age
 c_age <- floor(time_length(difftime(today(),as.Date(mdy("12-26-1978"))),"years"))
-c_age
+#c_age
 
 #year I turn 60
 year_60 <- year(today()) + 60 - c_age
@@ -247,11 +247,11 @@ est_eol_age <- 90
 
 #calculate average annual return for S&P 500
 avg_annual_returns <- floor(mean(sp_500$annual_return))/100
-avg_annual_returns
+paste0("Average annual returns for S&P 500 = ", scales::percent(avg_annual_returns))
 
 #automatic brokerage investments
 c_auto_brokerage_investments <- 1000 * 12
-c_auto_brokerage_investments
+paste0("Auto brokerage investment amount = ", scales::dollar(c_auto_brokerage_investments))
 
 #standard deduction married filing jointly
 std_deduction <- 29200
@@ -370,20 +370,20 @@ calculate_yoe <- function(x) {
 
 #calculate current years of service
 c_yos <- round(time_length(difftime(today(),pebd),"years"), digits = 2)
-c_yos
+paste0("Current years of service = ", c_yos)
 
 #calculate current retirement percentage
 c_pension_percentage <- round(c_yos * 0.025, digits = 2)
-c_pension_percentage
+paste0("Estimated pension rate if I retired today = ", scales::percent(c_pension_percentage))
 
 #calculate average pay for last 36 months
 #create a historical 36 month list
 historical_36_months <- format(seq(today()%m-% months(36), today() %m-% months(1), by = 'month'), "%Y-%m")
-historical_36_months
+#historical_36_months
 
 #calculate historical years of service
 historical_yos <- round(time_length(difftime(ceiling_date(as.Date(ym(historical_36_months)),'month') - days(1),pebd),"years"),digits = 2)
-historical_yos
+#historical_yos
 
 #calculate average monthly pay for historical 36 months
 hist_monthly_pay <- seq(1:36)
@@ -423,19 +423,19 @@ for (i in 1:36) {
 
 
 hist_avg_monthly <- round(mean(hist_monthly_pay),digits = 2)
-scales::dollar(hist_avg_monthly)
+paste0("Average monthly base pay for last 36 months = ", scales::dollar(hist_avg_monthly))
 
 #calculate monthly pension based on pension percentage and historical average monthly pay
 c_monthly_gross_pension <- round(c_pension_percentage * hist_avg_monthly, digits = 2)
-scales::dollar(c_monthly_gross_pension)
+paste0("Estimated gross monthly pension if I retired today = ", scales::dollar(c_monthly_gross_pension))
 
 #calculate annual pension
 c_annual_gross_pension <- c_monthly_gross_pension * 12
-scales::dollar(c_annual_gross_pension)
+paste0("Estimated gross annual pension of I retired today = ", scales::dollar(c_annual_gross_pension))
 
 #calculate annual net pension
 c_annual_net_pension <- calculate_net_income(c_annual_gross_pension, std_deduction)
-scales::dollar(c_annual_net_pension)
+paste0("Estimated net annual pension if I retired today = ", scales::dollar(c_annual_net_pension))
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate pensions:
@@ -444,15 +444,15 @@ scales::dollar(c_annual_net_pension)
 
 # create vector of 36 months based on estimated retirement date
 final_36_months <- seq(as.Date(est_retire_date)%m-% months(36),as.Date(est_retire_date)%m-% months(1), by = "month")
-final_36_months
+max(final_36_months)
 
 #calculate years of service based on 36 month vector
 est_yos <- round(time_length(difftime(ceiling_date(as.Date(ymd(final_36_months)),'month') - days(1),pebd),"years"), digits = 2)
-max(est_yos)
+paste0("Estimated years of service when I retire = ", max(est_yos))
 
 #calculate pension percentage from estimated years of service
 est_pension_percentage <- round(max(est_yos) * 0.025, digits = 3)
-est_pension_percentage
+paste0("Estimated pension rate when I retire = ", scales::percent(est_pension_percentage))
 
 #estimate rank, years of experience, and monthly base pay for the 36 months based on current 
 #rank and estimated promotion date
@@ -492,19 +492,19 @@ for (i in 1:36) {
 }
 
 est_avg_monthly <- round(mean(est_monthly_pay),digits = 2)
-scales::dollar(est_avg_monthly)
+paste0("Estimated monthly base pay when I retire = ", scales::dollar(est_avg_monthly))
 
 #calculate monthly pension based on pension percentage and historical average monthly pay
 est_monthly_gross_pension <- round(est_pension_percentage * est_avg_monthly, digits = 2)
-scales::dollar(est_monthly_gross_pension)
+paste0("Estimated gross monthly pension when I retire = ", scales::dollar(est_monthly_gross_pension))
 
 #calculate annual pension
 est_annual_gross_pension <- est_monthly_gross_pension * 12
-scales::dollar(est_annual_gross_pension)
+paste0("Estimated gross annual pension when I retire = ", scales::dollar(est_annual_gross_pension))
 
 #calculate estimated annual net pension
 est_annual_net_pension <- calculate_net_income(est_annual_gross_pension, std_deduction)
-scales::dollar(est_annual_net_pension)
+paste0("Estimated net annual pension when I retire = ", scales::dollar(est_annual_net_pension))
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average expenses for last 12 months
@@ -517,7 +517,7 @@ avg_monthly_expenses_grouped <- bank_monthly %>%
   summarise(average_monthly_expenses = mean(monthly_expenses))
 
 avg_monthly_expenses <- round(avg_monthly_expenses_grouped[[1]])
-scales::dollar(avg_monthly_expenses)
+paste0("Average monthly expenses (last 12 months) = ", scales::dollar(avg_monthly_expenses))
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average income for last 12 months
@@ -530,7 +530,7 @@ avg_monthly_income_grouped <- bank_monthly %>%
   summarise(average_monthly_income = mean(monthly_income))
 
 avg_monthly_income <- round(avg_monthly_income_grouped[[1]])
-scales::dollar(avg_monthly_income)
+paste0("Average monthly income (last 12 months) = ", scales::dollar(avg_monthly_income))
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate Jeff base income from pay charts
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
@@ -543,7 +543,7 @@ monthly_base <- monthly_base_df[[1]]
 monthly_net <- round(calculate_net_income(monthly_base * 12, std_deduction) / 12)
 
 monthly_base_income_jeff <- monthly_net + bah
-scales::dollar(monthly_base_income_jeff)
+paste0("Average monthly income (Jeff base pay) = ", scales::dollar(monthly_base_income_jeff))
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average investments and savings for last 12 months
@@ -568,7 +568,10 @@ bank_monthly %>%
                                "in" = "green4")) +
   scale_y_continuous(seq(0,25000,500), labels = dollar)+
   theme_minimal() +
-  labs(title = "Income and Expenses by Month", subtitle = "Historical 12 Months + Current", x = NULL, y = NULL) +
+  labs(title = "Income and Expenses by Month",
+       subtitle = "Historical 12 Months + Current \nBlack line = Jeff Base Pay",
+       x = NULL,
+       y = NULL) +
   theme(axis.ticks = element_blank(),
         axis.title.y = element_blank(),
         axis.text.x = element_text(angle = -90, vjust = 0),
@@ -612,7 +615,7 @@ retirement_funds <- retirement_funds %>%
   mutate(retirement_total = tsp + vanguard_ira_jeff + vanguard_ira_elaina)
 
 c_retirement_total <- retirement_funds[retirement_funds$date == max(retirement_funds$date),]$retirement_total
-scales::dollar(c_retirement_total)
+paste0("Current retirement fund amount = ", scales::dollar(c_retirement_total))
 
 c_tsp_amount <- retirement_funds[retirement_funds$date == max(retirement_funds$date),]$tsp
 
@@ -620,12 +623,13 @@ non_retirement_funds <- non_retirement_funds %>%
   mutate(non_retirement_total = vanguard_brokerage + usaa_savings + usaa_checking)
 
 c_non_retirement_total <- non_retirement_funds[non_retirement_funds$date == max(non_retirement_funds$date),]$non_retirement_total
-scales::dollar(c_non_retirement_total)
+paste0("Current non-retirement fund amount = ", scales::dollar(c_non_retirement_total))
 
 liabilities <- liabilities %>%
   mutate(liabilities_total = usaa_visa + chase_cc + school_loan_elaina + fixed_rate_loan_nissan)
 
-liabilities %>% filter(date == max(date)) %>% select(liabilities_total)
+liability_total <- liabilities %>% filter(date == max(date)) %>% select(liabilities_total)
+paste0("Current liability total = ", scales::dollar(liability_total[[1]]))
 
 #merge the totals together into a single data table
 net_worth_merged <- retirement_funds %>% select(date, retirement_total) %>%
@@ -643,7 +647,7 @@ y_max <- plyr::round_any(max(net_worth_merged$net_worth_total) + 50000, 50000, f
 first_net_worth <- net_worth_merged[net_worth_merged$date == min(net_worth_merged$date),]$net_worth_total
 current_net_worth <- net_worth_merged[net_worth_merged$date == max(net_worth_merged$date),]$net_worth_total
 
-scales::dollar(current_net_worth)
+paste0("Current net worth = ", scales::dollar(current_net_worth))
 
 first_date = min(net_worth_merged$date)
 last_date = max(net_worth_merged$date)
@@ -709,7 +713,7 @@ ggplot(data = net_worth_merged_long,
 #assumed safe withdrawal rate, and estimated pension if I retired at O5
 
 est_pension_fi <- ((avg_monthly_expenses)*12 - est_annual_net_pension) * (1 / annual_safe_withdrawal)
-scales::dollar(est_pension_fi)
+paste0("Estimated FI number based on calculated pension = ", scales::dollar(est_pension_fi))
 
 #what is my est pension worth
 #scales::dollar(naive_fi - est_pension_fi)
@@ -724,7 +728,7 @@ while (sim_invest_value < est_pension_fi) {
   est_pension_fi_years_no_invest <- est_pension_fi_years_no_invest + 1
 }
 
-est_pension_fi_years_no_invest
+paste0(est_pension_fi_years_no_invest, " years to reach FI based on current investments")
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Build FI Simulation
@@ -764,13 +768,13 @@ while (ending_age < 60) {
     }
   }
   ending_age <- sim_age
-  print(ending_age)
-  print(minimum_income)
-  print(sim_net_worth_value_non_retire)
+  #print(ending_age)
+  #print(minimum_income)
+  #print(sim_net_worth_value_non_retire)
 }
 
-ending_age
-scales::dollar(minimum_income)
+#ending_age
+paste0("We must make ", scales::dollar(minimum_income), " per year until I turn 60")
 
 run_num <- seq(c_age:est_eol_age)
 sim_year <- seq(year(today()),year(today()) + est_eol_age - c_age, by = 1)
@@ -911,3 +915,5 @@ ggplot(data = sim8_out_long,
        subtitle = "Naive based only on current net worth \nAdd TSP, additional investments in Navy, estimated pension, \nminimum income \nSubtract est expenses, rmd",
        fill = "Fund Type") +
   scale_fill_discrete(name = "Fund Type", labels = c("Non-Retirement","IRA", "TSP"))
+
+paste0("Simulated final net worth value = ", scales::dollar(tail(sim8_out$sim_net_worth_value_total,1)))
