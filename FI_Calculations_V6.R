@@ -883,7 +883,7 @@ sim8_out <- as_tibble(cbind(run_num,
                             sim_net_worth_value_non_retire,
                             sim_net_worth_value_total))
 
-sim8_out
+#sim8_out
 
 sim8_out_long <- sim8_out %>%
   select(!sim_net_worth_value_total) %>%

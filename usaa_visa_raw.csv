@@ -1,25 +1,61 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type
-7/28/24,WAL-MART #4064,WAL-MART #4064,Category Pending,-173.63,Pending,fixed_expenses
-7/28/24,LIDL #1299,LIDL #1299,Category Pending,-143.61,Pending,fixed_expenses
-7/28/24,CARE A LOT VA BEACH DA,CARE A LOT VA BEACH DA,Category Pending,-61.1,Pending,fixed_expenses
-7/28/24,Hulu 877-8244858 CA,Hulu 877-8244858 CA,Category Pending,-20.41,Pending,fixed_expenses
-7/28/24,APPLE.COM/BILL,APPLE.COM/BILL,Category Pending,-9.99,Pending,misc_expenses
-7/26/24,LITTLE CREEK COMM        VIRGINIA BEACVA,LITTLE CREEK COMM        VIRGINIA BEACVA,Category Pending,-116.38,Posted,fixed_expenses
-7/26/24,NAVY EXCHANGE 050180,NAVY EXCHANGE 050180,Category Pending,-73.47,Pending,misc_expenses
-7/26/24,CVS/PHARMACY #08938      VIRGINIA BEACVA,CVS/PHARMACY #08938      VIRGINIA BEACVA,Category Pending,-50.02,Posted,fixed_expenses
+8/12/24,IN *D & M HANES INC.,IN *D & M HANES INC.,Category Pending,-48,Pending,fixed_expenses
+8/11/24,STARBUCKS STORE 21598,STARBUCKS STORE 21598,Category Pending,-15.72,Pending,fixed_expenses
+8/11/24,LEAPING LIZARD CAFE,LEAPING LIZARD CAFE,Category Pending,-15.83,Pending,fixed_expenses
+8/11/24,AMAZON MKTPL*RM7IN4XN0   Amzn.com/billWA,AMAZON MKTPL*RM7IN4XN0   Amzn.com/billWA,Category Pending,-18.7,Posted,misc_expenses
+8/11/24,ZAP*ZAPPOS.COM           800-927-7671 NV,ZAP*ZAPPOS.COM           800-927-7671 NV,Category Pending,-95.39,Posted,misc_expenses
+8/10/24,SHOREBREAK PIZZA (ONLINE,SHOREBREAK PIZZA (ONLINE,Category Pending,-23.13,Pending,fixed_expenses
+8/10/24,TST*AMERICAN BREW        Virginia BeacVA,TST*AMERICAN BREW        Virginia BeacVA,Category Pending,-43.76,Posted,fixed_expenses
+8/9/24,ATL GOLDBERGS            ATLANTA      GA,ATL GOLDBERGS            ATLANTA      GA,Category Pending,-8.37,Posted,misc_expenses
+8/9/24,MISSISSIPPI MUD COFFEE,MISSISSIPPI MUD COFFEE,Category Pending,-8.56,Pending,misc_expenses
+8/9/24,WAWA 694                 VIRGINIA BEACVA,WAWA 694                 VIRGINIA BEACVA,Category Pending,-38.99,Posted,fixed_expenses
+8/9/24,KOHLS #0650              VIRGINIA BEACVA,KOHLS #0650              VIRGINIA BEACVA,Category Pending,-72.06,Posted,misc_expenses
+8/9/24,TJMAXX #0226             VIRGINIA BEACVA,TJMAXX #0226             VIRGINIA BEACVA,Category Pending,-158.12,Posted,misc_expenses
+8/8/24,CVS,CVS/PHARMACY #05330      SLIDELL      LA,Pharmacy,-12.59,Posted,fixed_expenses
+8/8/24,The Original Italian Pie,THE ORIGINAL ITALIAN PIE 985-6610240  LA,Restaurants,-15.21,Posted,fixed_expenses
+8/8/24,Walmart,WM SUPERCENTER #553      SLIDELL      LA,Shopping,-66.62,Posted,fixed_expenses
+8/8/24,Lulus Fashion Lounge Luluca,"LULUS FASHION LOUNGE,    HTTPSWWW.LULUCA",Clothing,-306.96,Posted,misc_expenses
+8/7/24,Travel Store Inter Airtx,DFW TV5 TRAVEL STORE     DFW INTER AIRTX,Travel,-3.36,Posted,misc_expenses
+8/7/24,Hudson News,HUDSONNEWS  ST1159       IRVING       TX,Newspapers & Magazines,-10.92,Posted,misc_expenses
+8/7/24,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-14.65,Posted,fixed_expenses
+8/7/24,Copelands of New Orlea,COPELANDS OF NEW ORLEA   985-6430001  LA,Restaurants,-18.47,Posted,fixed_expenses
+8/7/24,Lidl,LIDL #1299               VIRGINIA BEACVA,Groceries,-92.67,Posted,fixed_expenses
+8/7/24,Walmart,WM SUPERCENTER #4064     VIRGINIA BEACVA,Shopping,-239.39,Posted,fixed_expenses
+8/6/24,Panda Express,SAN PANDAEXPRESS T2E 1365SAN DIEGO    CA,Fast Food,-10.74,Posted,fixed_expenses
+8/6/24,Clayton's Mexican,TST* CLAYTON'S MEXICAN TACORONADO     CA,Restaurants,-14,Posted,fixed_expenses
+8/6/24,Anthropologie,ANTHROPOLOGIE.COM        HTTPSWWW.ANTHPA,Clothing,-128.79,Posted,misc_expenses
+8/6/24,Anthropologie,ANTHROPOLOGIE.COM        HTTPSWWW.ANTHPA,Clothing,-128.79,Posted,misc_expenses
+8/3/24,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-32.1,Posted,fixed_expenses
+8/2/24,David's Bridal,DAVIDS BRIDAL #951       KING OF PRUSSPA,Clothing,52.99,Posted,misc_expenses
+8/2/24,David's Bridal,DAVIDS BRIDAL #951       KING OF PRUSSPA,Clothing,42.39,Posted,misc_expenses
+8/2/24,David's Bridal,DAVIDS BRIDAL #951       KING OF PRUSSPA,Clothing,38,Posted,misc_expenses
+8/2/24,Taste Bayville Far Virginia Beac,TST*TASTE - BAYVILLE FAR Virginia BeacVA,Restaurants,-14.48,Posted,fixed_expenses
+8/2/24,Navy Exchange,NAVY EXCHANGE 050180     VIRGINIA BEACVA,Shopping,-49.11,Posted,misc_expenses
+8/1/24,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-16.31,Posted,fixed_expenses
+7/31/24,USAA Credit Card,USAA CREDIT CARD PAYMENT SAN ANTONIO  TX,Credit Card Payment,3830.51,Posted,misc_expenses
+7/29/24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-9.99,Posted,misc_expenses
+7/29/24,Busch Gardens,BUSCH GARDENS PARKING    WILLIAMSBURG VA,Amusement,-32,Posted,misc_expenses
+7/28/24,Hulu,Hulu 877-8244858 CA      HULU.COM/BILLCA,Television,-20.41,Posted,fixed_expenses
+7/28/24,Care a Lot Va Beach Data Virginia Beacva,CARE A LOT VA BEACH DATA VIRGINIA BEACVA,Pet Food & Supplies,-61.1,Posted,fixed_expenses
+7/28/24,Wawa,WAWA 675                 VIRGINIA BEACVA,Gas,-62.07,Posted,fixed_expenses
+7/28/24,Lidl,LIDL #1299               VIRGINIA BEACVA,Groceries,-143.61,Posted,fixed_expenses
+7/28/24,Walmart,WAL-MART #4064           VIRGINIA BEACVA,Shopping,-173.63,Posted,fixed_expenses
 7/26/24,JOSE TEQUI* JOSE TEQUI   HTTPSJOSETEQUVA,JOSE TEQUI* JOSE TEQUI   HTTPSJOSETEQUVA,Category Pending,-36.56,Posted,fixed_expenses
+7/26/24,CVS/PHARMACY #08938      VIRGINIA BEACVA,CVS/PHARMACY #08938      VIRGINIA BEACVA,Category Pending,-50.02,Posted,fixed_expenses
+7/26/24,NAVY EXCHANGE 050180,NAVY EXCHANGE 050180,Category Pending,-73.47,Pending,misc_expenses
+7/26/24,LITTLE CREEK COMM        VIRGINIA BEACVA,LITTLE CREEK COMM        VIRGINIA BEACVA,Category Pending,-116.38,Posted,fixed_expenses
 7/25/24,NEX FUEL 050039          VIRGINIA BEACVA,NEX FUEL 050039          VIRGINIA BEACVA,Category Pending,-37.75,Posted,fixed_expenses
-7/24/24,AT&T,ATT* BILL PAYMENT        800-331-0500 TX,Bills & Utilities,-207.89,Posted,fixed_expenses
-7/24/24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-15.66,Posted,fixed_expenses
-7/24/24,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-13.21,Posted,fixed_expenses
 7/24/24,Taste Bayville Far,TST* TASTE - BAYVILLE FAR757-464-1566 VA,Restaurants,-10.02,Posted,fixed_expenses
-7/23/24,Baladi Mediterranean Virginia Beacva,SQ *BALADI MEDITERRANEAN Virginia BeacVA,Restaurants,-108.84,Posted,fixed_expenses
-7/23/24,Kohls Virginia Beacva,KOHLS #0650              VIRGINIA BEACVA,Shopping,-60.42,Posted,misc_expenses
-7/23/24,Ulta Beauty,ULTA #677                VIRGINIA BEACVA,Personal Care,-34.45,Posted,misc_expenses
-7/23/24,Amazon,AMAZON MKTPL*RJ0LE5VD1   Amzn.com/billWA,Shopping,-30.08,Posted,misc_expenses
-7/23/24,Food Lion,FOOD LION #0391          VIRGINIABEACHVA,Groceries,-12.69,Posted,fixed_expenses
-7/23/24,Panda Express,PANDA EXPRESS 2949A      VIRGINIA BEACVA,Fast Food,-11.04,Posted,fixed_expenses
+7/24/24,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-13.21,Posted,fixed_expenses
+7/24/24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-15.66,Posted,fixed_expenses
+7/24/24,AT&T,ATT* BILL PAYMENT        800-331-0500 TX,Bills & Utilities,-207.89,Posted,fixed_expenses
 7/23/24,Amazon,AMAZON RET* 111-556600   WWW.AMAZON.COWA,Shopping,-4.76,Posted,misc_expenses
+7/23/24,Panda Express,PANDA EXPRESS 2949A      VIRGINIA BEACVA,Fast Food,-11.04,Posted,fixed_expenses
+7/23/24,Food Lion,FOOD LION #0391          VIRGINIABEACHVA,Groceries,-12.69,Posted,fixed_expenses
+7/23/24,Amazon,AMAZON MKTPL*RJ0LE5VD1   Amzn.com/billWA,Shopping,-30.08,Posted,misc_expenses
+7/23/24,Ulta Beauty,ULTA #677                VIRGINIA BEACVA,Personal Care,-34.45,Posted,misc_expenses
+7/23/24,Kohls Virginia Beacva,KOHLS #0650              VIRGINIA BEACVA,Shopping,-60.42,Posted,misc_expenses
+7/23/24,Baladi Mediterranean Virginia Beacva,SQ *BALADI MEDITERRANEAN Virginia BeacVA,Restaurants,-108.84,Posted,fixed_expenses
 7/20/24,STARBUCKS 800-782-7282   800-782-7282 WA,STARBUCKS 800-782-7282   800-782-7282 WA,Category Pending,-25,Posted,misc_expenses
 7/19/24,SHOREBREAK PIZZA (ONLINE,SHOREBREAK PIZZA (ONLINE,Category Pending,-24.29,Posted,fixed_expenses
 7/19/24,SQ *G4CPOA               VIRGINIA BEACVA,SQ *G4CPOA               VIRGINIA BEACVA,Category Pending,-40,Posted,misc_expenses

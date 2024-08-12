@@ -1,4 +1,14 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type,key,month
+2024-08-08,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-45,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-45_8/8/24,2024-08
+2024-08-07,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-1,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-1_8/7/24,2024-08
+2024-08-07,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-45,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-45_8/7/24,2024-08
+2024-08-06,ATM Fee Rebate,ATM REBATE,Atm Fee,3,Posted,income,ATM Fee Rebate_3_8/6/24,2024-08
+2024-08-06,North Island,NORTH ISLAND CR          CORONADO     CA,Cash,-103,Posted,misc_expenses,North Island_-103_8/6/24,2024-08
+2024-08-05,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,45.3,Posted,misc_expenses,Target_45.3_8/5/24,2024-08
+2024-08-05,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-42.22,Posted,misc_expenses,Target_-42.22_8/5/24,2024-08
+2024-08-05,USAA Property and Casualty Insurance,USAA P&C         AUTOPAY    ***********3049,Financial,-147.48,Posted,fixed_expenses,USAA Property and Casualty Insurance_-147.48_8/5/24,2024-08
+2024-07-31,Target,TARGET DEBIT CRD ACH TRAN   ***********0185,Shopping,-22.15,Posted,misc_expenses,Target_-22.15_7/31/24,2024-07
+2024-07-30,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5422.82,Posted,income,Defense Finance and Accounting Service_5422.82_7/30/24,2024-07
 2024-07-26,Midland National Life Insurance,MIDLAND NATIONAL INSURANCE  ***********1874,Life Insurance,-195.8,Posted,fixed_expenses,Midland National Life Insurance_-195.8_7/26/24,2024-07
 2024-07-25,Target,TARGET DEBIT CRD ACH TRAN   ***********0184,Shopping,-21.53,Posted,misc_expenses,Target_-21.53_7/25/24,2024-07
 2024-07-23,Target,TARGET DEBIT CRD ACH TRAN   ***********0184,Shopping,-15.68,Posted,misc_expenses,Target_-15.68_7/23/24,2024-07
@@ -128,6 +138,17 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,ke
 2024-01-16,Brightwheel,brightwheel      BRGHTWHL*  ***********G3X5,Babysitter & Daycare,-186.37,Posted,fixed_expenses,Brightwheel_-186.37_1/16/24,2024-01
 2024-01-16,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,ICPayment_-814.04_1/16/24,2024-01
 2024-01-16,IRS Tax Payment,IRS              USATAXPYMT ***********4831,Federal Tax,-2000,Posted,fixed_expenses,IRS Tax Payment_-2000_1/16/24,2024-01
+2024-08-09,Transfer to Venmo,VENMO            PAYMENT    ***********1185,Transfer,-72,Posted,fixed_expenses,Transfer to Venmo_-72_8/9/24,2024-08
+2024-08-08,Transfer to Venmo,VENMO            PAYMENT    ***********5636,Transfer,-72,Posted,fixed_expenses,Transfer to Venmo_-72_8/8/24,2024-08
+2024-08-07,Transfer to Venmo,VENMO            PAYMENT    ***********5527,Transfer,-72,Posted,fixed_expenses,Transfer to Venmo_-72_8/7/24,2024-08
+2024-08-06,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,Vanguard_-500_8/6/24,2024-08
+2024-08-05,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-243.42,Posted,fixed_expenses,Department of Education_-243.42_8/5/24,2024-08
+2024-08-02,Transfer to Venmo,VENMO            PAYMENT    ***********8740,Transfer,-72,Posted,fixed_expenses,Transfer to Venmo_-72_8/2/24,2024-08
+2024-08-01,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_8/1/24,2024-08
+2024-08-01,Transfer to Venmo,VENMO            PAYMENT    ***********9618,Transfer,-72,Posted,fixed_expenses,Transfer to Venmo_-72_8/1/24,2024-08
+2024-07-31,Interest Paid,INTEREST PAID,Interest Income,0.22,Posted,income,Interest Paid_0.22_7/31/24,2024-07
+2024-07-31,Transfer to Venmo,VENMO            PAYMENT    ***********8070,Transfer,-72,Posted,fixed_expenses,Transfer to Venmo_-72_7/31/24,2024-07
+2024-07-29,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********3373,Paycheck,3085.8,Posted,income,Adp Workmarket Direct Deposit_3085.8_7/29/24,2024-07
 2024-07-25,Transfer to Venmo,VENMO            PAYMENT    ***********6264,Transfer,-72,Posted,fixed_expenses,Transfer to Venmo_-72_7/25/24,2024-07
 2024-07-23,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,Vanguard_-500_7/23/24,2024-07
 2024-07-15,USAA FUNDS TRANSFER CR,USAA FUNDS TRANSFER CR,Category Pending,1100,Posted,savings,USAA FUNDS TRANSFER CR_1100_7/15/24,2024-07
@@ -210,21 +231,55 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,ke
 2024-01-19,Transfer to Venmo,VENMO            PAYMENT    ***********4890,Transfer,-45,Posted,misc_expenses,Transfer to Venmo_-45_1/19/24,2024-01
 2024-01-17,Ohtaxites Ohincometx,8052-1OHTAXITES  OHINCOMETX ***********4805,Taxes,-200,Posted,fixed_expenses,Ohtaxites Ohincometx_-200_1/17/24,2024-01
 2024-01-16,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_1/16/24,2024-01
-2024-07-26,LITTLE CREEK COMM        VIRGINIA BEACVA,LITTLE CREEK COMM        VIRGINIA BEACVA,Category Pending,-116.38,Posted,fixed_expenses,LITTLE CREEK COMM        VIRGINIA BEACVA_-116.38_7/26/24,2024-07
-2024-07-26,CVS/PHARMACY #08938      VIRGINIA BEACVA,CVS/PHARMACY #08938      VIRGINIA BEACVA,Category Pending,-50.02,Posted,fixed_expenses,CVS/PHARMACY #08938      VIRGINIA BEACVA_-50.02_7/26/24,2024-07
+2024-08-11,AMAZON MKTPL*RM7IN4XN0   Amzn.com/billWA,AMAZON MKTPL*RM7IN4XN0   Amzn.com/billWA,Category Pending,-18.7,Posted,misc_expenses,AMAZON MKTPL*RM7IN4XN0   Amzn.com/billWA_-18.7_8/11/24,2024-08
+2024-08-11,ZAP*ZAPPOS.COM           800-927-7671 NV,ZAP*ZAPPOS.COM           800-927-7671 NV,Category Pending,-95.39,Posted,misc_expenses,ZAP*ZAPPOS.COM           800-927-7671 NV_-95.39_8/11/24,2024-08
+2024-08-10,TST*AMERICAN BREW        Virginia BeacVA,TST*AMERICAN BREW        Virginia BeacVA,Category Pending,-43.76,Posted,fixed_expenses,TST*AMERICAN BREW        Virginia BeacVA_-43.76_8/10/24,2024-08
+2024-08-09,ATL GOLDBERGS            ATLANTA      GA,ATL GOLDBERGS            ATLANTA      GA,Category Pending,-8.37,Posted,misc_expenses,ATL GOLDBERGS            ATLANTA      GA_-8.37_8/9/24,2024-08
+2024-08-09,WAWA 694                 VIRGINIA BEACVA,WAWA 694                 VIRGINIA BEACVA,Category Pending,-38.99,Posted,fixed_expenses,WAWA 694                 VIRGINIA BEACVA_-38.99_8/9/24,2024-08
+2024-08-09,KOHLS #0650              VIRGINIA BEACVA,KOHLS #0650              VIRGINIA BEACVA,Category Pending,-72.06,Posted,misc_expenses,KOHLS #0650              VIRGINIA BEACVA_-72.06_8/9/24,2024-08
+2024-08-09,TJMAXX #0226             VIRGINIA BEACVA,TJMAXX #0226             VIRGINIA BEACVA,Category Pending,-158.12,Posted,misc_expenses,TJMAXX #0226             VIRGINIA BEACVA_-158.12_8/9/24,2024-08
+2024-08-08,CVS,CVS/PHARMACY #05330      SLIDELL      LA,Pharmacy,-12.59,Posted,fixed_expenses,CVS_-12.59_8/8/24,2024-08
+2024-08-08,The Original Italian Pie,THE ORIGINAL ITALIAN PIE 985-6610240  LA,Restaurants,-15.21,Posted,fixed_expenses,The Original Italian Pie_-15.21_8/8/24,2024-08
+2024-08-08,Walmart,WM SUPERCENTER #553      SLIDELL      LA,Shopping,-66.62,Posted,fixed_expenses,Walmart_-66.62_8/8/24,2024-08
+2024-08-08,Lulus Fashion Lounge Luluca,"LULUS FASHION LOUNGE,    HTTPSWWW.LULUCA",Clothing,-306.96,Posted,misc_expenses,Lulus Fashion Lounge Luluca_-306.96_8/8/24,2024-08
+2024-08-07,Travel Store Inter Airtx,DFW TV5 TRAVEL STORE     DFW INTER AIRTX,Travel,-3.36,Posted,misc_expenses,Travel Store Inter Airtx_-3.36_8/7/24,2024-08
+2024-08-07,Hudson News,HUDSONNEWS  ST1159       IRVING       TX,Newspapers & Magazines,-10.92,Posted,misc_expenses,Hudson News_-10.92_8/7/24,2024-08
+2024-08-07,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-14.65,Posted,fixed_expenses,Chick-fil-A_-14.65_8/7/24,2024-08
+2024-08-07,Copelands of New Orlea,COPELANDS OF NEW ORLEA   985-6430001  LA,Restaurants,-18.47,Posted,fixed_expenses,Copelands of New Orlea_-18.47_8/7/24,2024-08
+2024-08-07,Lidl,LIDL #1299               VIRGINIA BEACVA,Groceries,-92.67,Posted,fixed_expenses,Lidl_-92.67_8/7/24,2024-08
+2024-08-07,Walmart,WM SUPERCENTER #4064     VIRGINIA BEACVA,Shopping,-239.39,Posted,fixed_expenses,Walmart_-239.39_8/7/24,2024-08
+2024-08-06,Panda Express,SAN PANDAEXPRESS T2E 1365SAN DIEGO    CA,Fast Food,-10.74,Posted,fixed_expenses,Panda Express_-10.74_8/6/24,2024-08
+2024-08-06,Clayton's Mexican,TST* CLAYTON'S MEXICAN TACORONADO     CA,Restaurants,-14,Posted,fixed_expenses,Clayton's Mexican_-14_8/6/24,2024-08
+2024-08-06,Anthropologie,ANTHROPOLOGIE.COM        HTTPSWWW.ANTHPA,Clothing,-128.79,Posted,misc_expenses,Anthropologie_-128.79_8/6/24,2024-08
+2024-08-03,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-32.1,Posted,fixed_expenses,Chick-fil-A_-32.1_8/3/24,2024-08
+2024-08-02,David's Bridal,DAVIDS BRIDAL #951       KING OF PRUSSPA,Clothing,52.99,Posted,misc_expenses,David's Bridal_52.99_8/2/24,2024-08
+2024-08-02,David's Bridal,DAVIDS BRIDAL #951       KING OF PRUSSPA,Clothing,42.39,Posted,misc_expenses,David's Bridal_42.39_8/2/24,2024-08
+2024-08-02,David's Bridal,DAVIDS BRIDAL #951       KING OF PRUSSPA,Clothing,38,Posted,misc_expenses,David's Bridal_38_8/2/24,2024-08
+2024-08-02,Taste Bayville Far Virginia Beac,TST*TASTE - BAYVILLE FAR Virginia BeacVA,Restaurants,-14.48,Posted,fixed_expenses,Taste Bayville Far Virginia Beac_-14.48_8/2/24,2024-08
+2024-08-02,Navy Exchange,NAVY EXCHANGE 050180     VIRGINIA BEACVA,Shopping,-49.11,Posted,misc_expenses,Navy Exchange_-49.11_8/2/24,2024-08
+2024-08-01,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-16.31,Posted,fixed_expenses,Shorebreak Pizza Online_-16.31_8/1/24,2024-08
+2024-07-29,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-9.99,Posted,misc_expenses,Apple_-9.99_7/29/24,2024-07
+2024-07-29,Busch Gardens,BUSCH GARDENS PARKING    WILLIAMSBURG VA,Amusement,-32,Posted,misc_expenses,Busch Gardens_-32_7/29/24,2024-07
+2024-07-28,Hulu,Hulu 877-8244858 CA      HULU.COM/BILLCA,Television,-20.41,Posted,fixed_expenses,Hulu_-20.41_7/28/24,2024-07
+2024-07-28,Care a Lot Va Beach Data Virginia Beacva,CARE A LOT VA BEACH DATA VIRGINIA BEACVA,Pet Food & Supplies,-61.1,Posted,fixed_expenses,Care a Lot Va Beach Data Virginia Beacva_-61.1_7/28/24,2024-07
+2024-07-28,Wawa,WAWA 675                 VIRGINIA BEACVA,Gas,-62.07,Posted,fixed_expenses,Wawa_-62.07_7/28/24,2024-07
+2024-07-28,Lidl,LIDL #1299               VIRGINIA BEACVA,Groceries,-143.61,Posted,fixed_expenses,Lidl_-143.61_7/28/24,2024-07
+2024-07-28,Walmart,WAL-MART #4064           VIRGINIA BEACVA,Shopping,-173.63,Posted,fixed_expenses,Walmart_-173.63_7/28/24,2024-07
 2024-07-26,JOSE TEQUI* JOSE TEQUI   HTTPSJOSETEQUVA,JOSE TEQUI* JOSE TEQUI   HTTPSJOSETEQUVA,Category Pending,-36.56,Posted,fixed_expenses,JOSE TEQUI* JOSE TEQUI   HTTPSJOSETEQUVA_-36.56_7/26/24,2024-07
+2024-07-26,CVS/PHARMACY #08938      VIRGINIA BEACVA,CVS/PHARMACY #08938      VIRGINIA BEACVA,Category Pending,-50.02,Posted,fixed_expenses,CVS/PHARMACY #08938      VIRGINIA BEACVA_-50.02_7/26/24,2024-07
+2024-07-26,LITTLE CREEK COMM        VIRGINIA BEACVA,LITTLE CREEK COMM        VIRGINIA BEACVA,Category Pending,-116.38,Posted,fixed_expenses,LITTLE CREEK COMM        VIRGINIA BEACVA_-116.38_7/26/24,2024-07
 2024-07-25,NEX FUEL 050039          VIRGINIA BEACVA,NEX FUEL 050039          VIRGINIA BEACVA,Category Pending,-37.75,Posted,fixed_expenses,NEX FUEL 050039          VIRGINIA BEACVA_-37.75_7/25/24,2024-07
-2024-07-24,AT&T,ATT* BILL PAYMENT        800-331-0500 TX,Bills & Utilities,-207.89,Posted,fixed_expenses,AT&T_-207.89_7/24/24,2024-07
-2024-07-24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-15.66,Posted,fixed_expenses,Apple_-15.66_7/24/24,2024-07
-2024-07-24,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-13.21,Posted,fixed_expenses,Shorebreak Pizza Online_-13.21_7/24/24,2024-07
 2024-07-24,Taste Bayville Far,TST* TASTE - BAYVILLE FAR757-464-1566 VA,Restaurants,-10.02,Posted,fixed_expenses,Taste Bayville Far_-10.02_7/24/24,2024-07
-2024-07-23,Baladi Mediterranean Virginia Beacva,SQ *BALADI MEDITERRANEAN Virginia BeacVA,Restaurants,-108.84,Posted,fixed_expenses,Baladi Mediterranean Virginia Beacva_-108.84_7/23/24,2024-07
-2024-07-23,Kohls Virginia Beacva,KOHLS #0650              VIRGINIA BEACVA,Shopping,-60.42,Posted,misc_expenses,Kohls Virginia Beacva_-60.42_7/23/24,2024-07
-2024-07-23,Ulta Beauty,ULTA #677                VIRGINIA BEACVA,Personal Care,-34.45,Posted,misc_expenses,Ulta Beauty_-34.45_7/23/24,2024-07
-2024-07-23,Amazon,AMAZON MKTPL*RJ0LE5VD1   Amzn.com/billWA,Shopping,-30.08,Posted,misc_expenses,Amazon_-30.08_7/23/24,2024-07
-2024-07-23,Food Lion,FOOD LION #0391          VIRGINIABEACHVA,Groceries,-12.69,Posted,fixed_expenses,Food Lion_-12.69_7/23/24,2024-07
-2024-07-23,Panda Express,PANDA EXPRESS 2949A      VIRGINIA BEACVA,Fast Food,-11.04,Posted,fixed_expenses,Panda Express_-11.04_7/23/24,2024-07
+2024-07-24,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-13.21,Posted,fixed_expenses,Shorebreak Pizza Online_-13.21_7/24/24,2024-07
+2024-07-24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-15.66,Posted,fixed_expenses,Apple_-15.66_7/24/24,2024-07
+2024-07-24,AT&T,ATT* BILL PAYMENT        800-331-0500 TX,Bills & Utilities,-207.89,Posted,fixed_expenses,AT&T_-207.89_7/24/24,2024-07
 2024-07-23,Amazon,AMAZON RET* 111-556600   WWW.AMAZON.COWA,Shopping,-4.76,Posted,misc_expenses,Amazon_-4.76_7/23/24,2024-07
+2024-07-23,Panda Express,PANDA EXPRESS 2949A      VIRGINIA BEACVA,Fast Food,-11.04,Posted,fixed_expenses,Panda Express_-11.04_7/23/24,2024-07
+2024-07-23,Food Lion,FOOD LION #0391          VIRGINIABEACHVA,Groceries,-12.69,Posted,fixed_expenses,Food Lion_-12.69_7/23/24,2024-07
+2024-07-23,Amazon,AMAZON MKTPL*RJ0LE5VD1   Amzn.com/billWA,Shopping,-30.08,Posted,misc_expenses,Amazon_-30.08_7/23/24,2024-07
+2024-07-23,Ulta Beauty,ULTA #677                VIRGINIA BEACVA,Personal Care,-34.45,Posted,misc_expenses,Ulta Beauty_-34.45_7/23/24,2024-07
+2024-07-23,Kohls Virginia Beacva,KOHLS #0650              VIRGINIA BEACVA,Shopping,-60.42,Posted,misc_expenses,Kohls Virginia Beacva_-60.42_7/23/24,2024-07
+2024-07-23,Baladi Mediterranean Virginia Beacva,SQ *BALADI MEDITERRANEAN Virginia BeacVA,Restaurants,-108.84,Posted,fixed_expenses,Baladi Mediterranean Virginia Beacva_-108.84_7/23/24,2024-07
 2024-07-20,STARBUCKS 800-782-7282   800-782-7282 WA,STARBUCKS 800-782-7282   800-782-7282 WA,Category Pending,-25,Posted,misc_expenses,STARBUCKS 800-782-7282   800-782-7282 WA_-25_7/20/24,2024-07
 2024-07-19,SHOREBREAK PIZZA (ONLINE,SHOREBREAK PIZZA (ONLINE,Category Pending,-24.29,Posted,fixed_expenses,SHOREBREAK PIZZA (ONLINE_-24.29_7/19/24,2024-07
 2024-07-19,SQ *G4CPOA               VIRGINIA BEACVA,SQ *G4CPOA               VIRGINIA BEACVA,Category Pending,-40,Posted,misc_expenses,SQ *G4CPOA               VIRGINIA BEACVA_-40_7/19/24,2024-07
