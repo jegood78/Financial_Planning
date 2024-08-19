@@ -1,4 +1,11 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type
+8/16/24,Interest Paid,INTEREST PAID,Interest Income,0.03,Posted,income
+8/15/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-50,Posted,savings
+8/15/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-50,Posted,savings
+8/15/24,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses
+8/15/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-1100,Posted,savings
+8/15/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-3200,Posted,fixed_expenses
+8/13/24,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5422.86,Posted,income
 8/8/24,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-45,Posted,fixed_expenses
 8/7/24,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-1,Posted,fixed_expenses
 8/7/24,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-45,Posted,fixed_expenses
