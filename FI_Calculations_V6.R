@@ -220,7 +220,7 @@ c_dor <- as.Date(mdy("9-1-2023"))
 est_promotion <- as.Date(mdy("9-1-2029")) 
 
 #estimated retirement date
-est_retire_date <- as.Date(mdy("09-1-2026"))
+est_retire_date <- as.Date(mdy("09-30-2026"))
 
 #create a 12 month list
 rolling_12_months <- format(seq(lubridate::floor_date(today(), unit = "month") %m-% months(12),

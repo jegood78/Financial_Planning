@@ -1,4 +1,9 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type,key,month
+2024-08-22,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-40,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-40_8/22/24,2024-08
+2024-08-21,Nordstrom,NORDSTROM        TRANS      ***********9798,Shopping,-192.67,Posted,misc_expenses,Nordstrom_-192.67_8/21/24,2024-08
+2024-08-21,Dominion Energy,DOMINION ENERGY  BILLPAY    ***********7814,Bills & Utilities,-220.77,Posted,fixed_expenses,Dominion Energy_-220.77_8/21/24,2024-08
+2024-08-20,Chase Credit Card,CHASE CREDIT CRD EPAY       ***********4004,Credit Card Payment,-153.99,Posted,misc_expenses,Chase Credit Card_-153.99_8/20/24,2024-08
+2024-08-19,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-238.03,Posted,misc_expenses,Target_-238.03_8/19/24,2024-08
 2024-08-16,Interest Paid,INTEREST PAID,Interest Income,0.03,Posted,income,Interest Paid_0.03_8/16/24,2024-08
 2024-08-15,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,ICPayment_-814.04_8/15/24,2024-08
 2024-08-15,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-3200,Posted,fixed_expenses,USAA Transfer_-3200_8/15/24,2024-08
@@ -142,6 +147,10 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,ke
 2024-01-16,Brightwheel,brightwheel      BRGHTWHL*  ***********G3X5,Babysitter & Daycare,-186.37,Posted,fixed_expenses,Brightwheel_-186.37_1/16/24,2024-01
 2024-01-16,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,ICPayment_-814.04_1/16/24,2024-01
 2024-01-16,IRS Tax Payment,IRS              USATAXPYMT ***********4831,Federal Tax,-2000,Posted,fixed_expenses,IRS Tax Payment_-2000_1/16/24,2024-01
+2024-08-22,Transfer to Venmo,VENMO            PAYMENT    ***********5240,Transfer,-76,Posted,fixed_expenses,Transfer to Venmo_-76_8/22/24,2024-08
+2024-08-20,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,Vanguard_-500_8/20/24,2024-08
+2024-08-19,Mobile Deposit,DEPOSIT@MOBILE,Income,1276.93,Posted,savings,Mobile Deposit_1276.93_8/19/24,2024-08
+2024-08-19,Mobile Deposit,DEPOSIT@MOBILE,Income,5.25,Posted,savings,Mobile Deposit_5.25_8/19/24,2024-08
 2024-08-15,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_8/15/24,2024-08
 2024-08-12,Transfer to Venmo,VENMO            PAYMENT    ***********2861,Transfer,-81,Posted,fixed_expenses,Transfer to Venmo_-81_8/12/24,2024-08
 2024-08-09,Transfer to Venmo,VENMO            PAYMENT    ***********1185,Transfer,-72,Posted,fixed_expenses,Transfer to Venmo_-72_8/9/24,2024-08
@@ -237,8 +246,22 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,ke
 2024-01-19,Transfer to Venmo,VENMO            PAYMENT    ***********4890,Transfer,-45,Posted,misc_expenses,Transfer to Venmo_-45_1/19/24,2024-01
 2024-01-17,Ohtaxites Ohincometx,8052-1OHTAXITES  OHINCOMETX ***********4805,Taxes,-200,Posted,fixed_expenses,Ohtaxites Ohincometx_-200_1/17/24,2024-01
 2024-01-16,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_1/16/24,2024-01
-2024-08-16,Capital Digestive Care   Silver SpringMD,Capital Digestive Care   Silver SpringMD,Category Pending,-21.89,Posted,fixed_expenses,Capital Digestive Care   Silver SpringMD_-21.89_8/16/24,2024-08
-2024-08-16,VERIZON*RECURRING PAY    800-VERIZON  FL,VERIZON*RECURRING PAY    800-VERIZON  FL,Category Pending,-100.59,Posted,fixed_expenses,VERIZON*RECURRING PAY    800-VERIZON  FL_-100.59_8/16/24,2024-08
+2024-08-24,APPLE.COM/BILL           866-712-7753 CA,APPLE.COM/BILL           866-712-7753 CA,Category Pending,-12.88,Posted,fixed_expenses,APPLE.COM/BILL           866-712-7753 CA_-12.88_8/24/24,2024-08
+2024-08-24,IHERB IHERB.COM he3Ws    951-6163600  CA,IHERB IHERB.COM he3Ws    951-6163600  CA,Category Pending,-68.06,Posted,fixed_expenses,IHERB IHERB.COM he3Ws    951-6163600  CA_-68.06_8/24/24,2024-08
+2024-08-24,LIDL #1299               VIRGINIA BEACVA,LIDL #1299               VIRGINIA BEACVA,Category Pending,-109.48,Posted,fixed_expenses,LIDL #1299               VIRGINIA BEACVA_-109.48_8/24/24,2024-08
+2024-08-24,ATT* BILL PAYMENT        800-331-0500 TX,ATT* BILL PAYMENT        800-331-0500 TX,Category Pending,-207.89,Posted,fixed_expenses,ATT* BILL PAYMENT        800-331-0500 TX_-207.89_8/24/24,2024-08
+2024-08-23,WAWA 675                 VIRGINIA BEACVA,WAWA 675                 VIRGINIA BEACVA,Category Pending,-21.74,Posted,fixed_expenses,WAWA 675                 VIRGINIA BEACVA_-21.74_8/23/24,2024-08
+2024-08-23,Shirtmax,SHIRTMAX                 404-352-4774 GA,Clothing,-22.35,Posted,misc_expenses,Shirtmax_-22.35_8/23/24,2024-08
+2024-08-23,TST*TASTE - BAYVILLE FAR Virginia BeacVA,TST*TASTE - BAYVILLE FAR Virginia BeacVA,Category Pending,-25.61,Posted,fixed_expenses,TST*TASTE - BAYVILLE FAR Virginia BeacVA_-25.61_8/23/24,2024-08
+2024-08-23,Naval Special Warfarevirginia Beacva,SQ *NAVAL SPECIAL WARFAREVirginia BeacVA,Business Services,-30,Posted,misc_expenses,Naval Special Warfarevirginia Beacva_-30_8/23/24,2024-08
+2024-08-23,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Category Pending,-41.93,Posted,fixed_expenses,SHOREBREAK PIZZA (ONLINE 757-4819393  VA_-41.93_8/23/24,2024-08
+2024-08-20,Navy Exchange,NAVY EXCHANGE 050180     VIRGINIA BEACVA,Shopping,-17.98,Posted,misc_expenses,Navy Exchange_-17.98_8/20/24,2024-08
+2024-08-18,Starbucks,STARBUCKS STORE 17020    VIRGINIA BEACVA,Coffee Shops,-9.92,Posted,misc_expenses,Starbucks_-9.92_8/18/24,2024-08
+2024-08-18,Little Caesars,LITTLE CAESARS 0629 0003 757-363-7992 VA,Fast Food,-14.69,Posted,fixed_expenses,Little Caesars_-14.69_8/18/24,2024-08
+2024-08-18,Walmart,WAL-MART #4064           VIRGINIA BEACVA,Shopping,-350.68,Posted,fixed_expenses,Walmart_-350.68_8/18/24,2024-08
+2024-08-16,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-13.21,Posted,fixed_expenses,Shorebreak Pizza Online_-13.21_8/16/24,2024-08
+2024-08-16,Capital Digestive Care Silver Spring,Capital Digestive Care   Silver SpringMD,Doctor,-21.89,Posted,fixed_expenses,Capital Digestive Care Silver Spring_-21.89_8/16/24,2024-08
+2024-08-16,Verizon,VERIZON*RECURRING PAY    800-VERIZON  FL,Utilities,-100.59,Posted,fixed_expenses,Verizon_-100.59_8/16/24,2024-08
 2024-08-15,TACO BELL 727641         757-465-8282 VA,TACO BELL 727641         757-465-8282 VA,Category Pending,-20.13,Posted,fixed_expenses,TACO BELL 727641         757-465-8282 VA_-20.13_8/15/24,2024-08
 2024-08-15,CHICK-FIL-A #00734       757-318-7641 VA,CHICK-FIL-A #00734       757-318-7641 VA,Category Pending,-38,Posted,fixed_expenses,CHICK-FIL-A #00734       757-318-7641 VA_-38_8/15/24,2024-08
 2024-08-15,Greenlin Lambs Gap,Greenlin - Lambs Gap     171-7275942  PA,Business Services,-50,Posted,misc_expenses,Greenlin Lambs Gap_-50_8/15/24,2024-08
