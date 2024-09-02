@@ -1,15 +1,33 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type
-8/25/24,STARBUCKS 800-782-7282,STARBUCKS 800-782-7282,Category Pending,-25,Pending,misc_expenses
-8/25/24,THE HOME DEPOT #4614,THE HOME DEPOT #4614,Category Pending,-33.01,Pending,misc_expenses
-8/25/24,WM SUPERCENTER #4064,WM SUPERCENTER #4064,Category Pending,-81.87,Pending,misc_expenses
-8/24/24,STARBUCKS STORE 21598,STARBUCKS STORE 21598,Category Pending,-9.59,Pending,misc_expenses
-8/24/24,APPLE.COM/BILL           866-712-7753 CA,APPLE.COM/BILL           866-712-7753 CA,Category Pending,-12.88,Posted,fixed_expenses
-8/24/24,TAYLOR S DO-IT CENTER 670,TAYLOR S DO-IT CENTER 670,Category Pending,-13.77,Pending,misc_expenses
-8/24/24,SHAKE SHACK - 1265A,SHAKE SHACK - 1265A,Category Pending,-40.97,Pending,fixed_expenses
-8/24/24,IHERB IHERB.COM he3Ws    951-6163600  CA,IHERB IHERB.COM he3Ws    951-6163600  CA,Category Pending,-68.06,Posted,fixed_expenses
-8/24/24,LIDL #1299               VIRGINIA BEACVA,LIDL #1299               VIRGINIA BEACVA,Category Pending,-109.48,Posted,fixed_expenses
-8/24/24,WF* WAYFAIR3891524245,WF* WAYFAIR3891524245,Category Pending,-136.73,Pending,misc_expenses
-8/24/24,ATT* BILL PAYMENT        800-331-0500 TX,ATT* BILL PAYMENT        800-331-0500 TX,Category Pending,-207.89,Posted,fixed_expenses
+8/31/24,CAR SPA #32,CAR SPA #32,Category Pending,-18,Pending,misc_expenses
+8/31/24,TAYLOR S HARDWARE 6711,TAYLOR S HARDWARE 6711,Category Pending,-18.51,Pending,misc_expenses
+8/31/24,PETSMART # 1171,PETSMART # 1171,Category Pending,-23.31,Pending,fixed_expenses
+8/31/24,CHICK-FIL-A #00734,CHICK-FIL-A #00734,Category Pending,-32.1,Pending,misc_expenses
+8/30/24,Lulus Fashion Lounge Luluca,"LULUS FASHION LOUNGE,    HTTPSWWW.LULUCA",Clothing,298.48,Posted,misc_expenses
+8/30/24,Costco,COSTCO WHSE #0202        NORFOLK      VA,Shopping,-6.72,Posted,misc_expenses
+8/30/24,TJ Maxx,TJMAXX #0226             VIRGINIA BEACVA,Clothing,-42.39,Posted,misc_expenses
+8/30/24,ULTA #677,ULTA #677,Category Pending,-116.06,Pending,misc_expenses
+8/30/24,Costco,COSTCO WHSE #0202        NORFOLK      VA,Shopping,-199.44,Posted,fixed_expenses
+8/30/24,TJ Maxx,TJMAXX #0226             VIRGINIA BEACVA,Clothing,-241.66,Posted,misc_expenses
+8/28/24,Dillard's,DILLARDS 698 DILLARD'S   501-320-3700 AR,Shopping,242.54,Posted,misc_expenses
+8/28/24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-9.99,Posted,fixed_expenses
+8/28/24,Hulu,Hulu 877-8244858 CA      HULU.COM/BILLCA,Television,-20.41,Posted,fixed_expenses
+8/27/24,Reward Points Redemption,REWARD POINTS REDEMPTION,Credit Card Payment,624.27,Posted,misc_expenses
+8/26/24,Kohls Virginia Beacva,KOHLS #0650              VIRGINIA BEACVA,Shopping,33.92,Posted,misc_expenses
+8/26/24,Kohls Virginia Beacva,KOHLS #0650              VIRGINIA BEACVA,Shopping,19.42,Posted,misc_expenses
+8/26/24,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-2.6,Posted,misc_expenses
+8/26/24,E-ZPass,NJ EZPASS                888-288-6865 NJ,Auto & Transport,-25,Posted,misc_expenses
+8/25/24,Starbucks,STARBUCKS 800-782-7282   800-782-7282 WA,Coffee Shops,-25,Posted,misc_expenses
+8/25/24,The Home Depot,THE HOME DEPOT #4614     VIRGINIA BCH VA,Home Improvement,-33.01,Posted,misc_expenses
+8/25/24,Shake Shack,SHAKE SHACK - 1265A      646-747-7178 VA,Fast Food,-40.97,Posted,misc_expenses
+8/25/24,Walmart,WM SUPERCENTER #4064     VIRGINIA BEACVA,Shopping,-81.87,Posted,fixed_expenses
+8/25/24,Wayfair,WF* WAYFAIR3891524245    HTTPSWWW.WAYFMA,Furnishings,-136.73,Posted,misc_expenses
+8/24/24,Starbucks,STARBUCKS STORE 21598    VIRGINIA BEACVA,Coffee Shops,-9.59,Posted,misc_expenses
+8/24/24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-12.88,Posted,fixed_expenses
+8/24/24,Taylor S Do It Center Virginia Beacva,TAYLOR S DO-IT CENTER 670VIRGINIA BEACVA,Home Improvement,-13.77,Posted,misc_expenses
+8/24/24,iHerb.com,IHERB IHERB.COM he3Ws    951-6163600  CA,Health & Fitness,-68.06,Posted,misc_expenses
+8/24/24,Lidl,LIDL #1299               VIRGINIA BEACVA,Groceries,-109.48,Posted,fixed_expenses
+8/24/24,AT&T,ATT* BILL PAYMENT        800-331-0500 TX,Bills & Utilities,-207.89,Posted,fixed_expenses
 8/23/24,WAWA 675                 VIRGINIA BEACVA,WAWA 675                 VIRGINIA BEACVA,Category Pending,-21.74,Posted,fixed_expenses
 8/23/24,Shirtmax,SHIRTMAX                 404-352-4774 GA,Clothing,-22.35,Posted,misc_expenses
 8/23/24,TST*TASTE - BAYVILLE FAR Virginia BeacVA,TST*TASTE - BAYVILLE FAR Virginia BeacVA,Category Pending,-25.61,Posted,fixed_expenses
