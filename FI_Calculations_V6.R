@@ -506,6 +506,10 @@ paste0("Estimated gross annual pension when I retire = ", scales::dollar(est_ann
 est_annual_net_pension <- calculate_net_income(est_annual_gross_pension, std_deduction)
 paste0("Estimated net annual pension when I retire = ", scales::dollar(est_annual_net_pension))
 
+#calculate estimated monthly net pension
+est_monthly_net_pension <- est_annual_net_pension/12
+paste0("Estimated net monthly pension when I retire = ", scales::dollar(est_monthly_net_pension))
+
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate average expenses for last 12 months
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
@@ -563,13 +567,15 @@ bank_monthly %>%
            group = flow,
            fill = flow)) +
   geom_hline(yintercept = monthly_base_income_jeff) +
+  geom_hline(yintercept = est_monthly_net_pension,
+             color = "darkblue") +
   geom_col(position = "dodge") +
   scale_fill_manual(values = c("out" = "red",
                                "in" = "green4")) +
   scale_y_continuous(seq(0,25000,500), labels = dollar)+
   theme_minimal() +
   labs(title = "Income and Expenses by Month",
-       subtitle = "Historical 12 Months + Current \nBlack line = Jeff Base Pay",
+       subtitle = "Historical 12 Months + Current \nBlack line = Jeff Base Pay, Blue line = Est Monthly Net Pension",
        x = NULL,
        y = NULL) +
   theme(axis.ticks = element_blank(),
@@ -705,7 +711,7 @@ ggplot(data = net_worth_merged_long,
   scale_fill_discrete(name = "Fund Type", labels = c("Liabilities", "Non-Retirement", "Retirement"))
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
-# Calculate FU numbers:
+# Calculate FI numbers:
 #   With estimated retirement pension
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
