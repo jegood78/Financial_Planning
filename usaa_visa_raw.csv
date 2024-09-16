@@ -1,12 +1,55 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type
-8/31/24,CAR SPA #32,CAR SPA #32,Category Pending,-18,Pending,misc_expenses
-8/31/24,TAYLOR S HARDWARE 6711,TAYLOR S HARDWARE 6711,Category Pending,-18.51,Pending,misc_expenses
-8/31/24,PETSMART # 1171,PETSMART # 1171,Category Pending,-23.31,Pending,fixed_expenses
-8/31/24,CHICK-FIL-A #00734,CHICK-FIL-A #00734,Category Pending,-32.1,Pending,misc_expenses
+9/16/24,VERIZON*RECURRING PAY,VERIZON*RECURRING PAY,Category Pending,-100.59,Pending,fixed_expenses
+9/15/24,JERSEY MIKES SUBS#6019,JERSEY MIKES SUBS#6019,Category Pending,-21.46,Pending,misc_expenses
+9/15/24,LIDL #1299,LIDL #1299,Category Pending,-163.06,Pending,fixed_expenses
+9/15/24,WM SUPERCENTER #4064,WM SUPERCENTER #4064,Category Pending,-232.02,Pending,fixed_expenses
+9/15/24,BRGHTWHL* FRANCIS ASBU,BRGHTWHL* FRANCIS ASBU,Category Pending,-570.21,Pending,fixed_expenses
+9/13/24,SUNOCO 8000814402        VIRGINIA BEACVA,SUNOCO 8000814402        VIRGINIA BEACVA,Category Pending,-12.72,Posted,fixed_expenses
+9/11/24,Chick-fil-A,CHICK-FIL-A #00734       VIRGINIA BEACVA,Fast Food,-7.34,Posted,misc_expenses
+9/11/24,Special Boat Team Twevirginia Beacva,SQ *SPECIAL BOAT TEAM TWEVIRGINIA BEACVA,Gifts & Donations,-8,Posted,misc_expenses
+9/11/24,Chick-fil-A,CHICK-FIL-A #00734       VIRGINIA BEACVA,Fast Food,-27.98,Posted,misc_expenses
+9/10/24,Walmart,WAL-MART #4064           VIRGINIA BEACVA,Shopping,-256.6,Posted,fixed_expenses
+9/9/24,Sheetz,SHEETZ 0518   00005181   MECHANICSBURGPA,Gas,-3.98,Posted,misc_expenses
+9/9/24,CVS,CVS/PHARMACY #01639      MECHANICSBURGPA,Pharmacy,-5.59,Posted,fixed_expenses
+9/9/24,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-13.21,Posted,misc_expenses
+9/9/24,Starbucks,STARBUCKS 800-782-7282   800-782-7282 WA,Coffee Shops,-25,Posted,misc_expenses
+9/9/24,Sheetz,SHEETZ 2518   00025189   MECHANICSBURGPA,Gas,-28.46,Posted,fixed_expenses
+9/9/24,Sweet Velvet Macaronscamp Hill,SQ *SWEET VELVET MACARONSCamp Hill    PA,Groceries,-43.2,Posted,misc_expenses
+9/9/24,Hampton Inn,HAMPTON INN HARRISBURG   MECHANICSBURGPA,Hotel,-44.4,Posted,misc_expenses
+9/9/24,Greenlin Lambs Gap Mechanicsburg,Greenlin - Lambs Gap     MechanicsburgPA,Business Services,-241.05,Posted,misc_expenses
+9/8/24,Pilot Flying J,PILOT 370                PITTSTON     PA,Gas,-5.98,Posted,misc_expenses
+9/8/24,Pilot Flying J,PILOT_00370              PITTSTON     PA,Gas,-63.42,Posted,fixed_expenses
+9/8/24,Appalachian Brewing Mechanicsburg,TST*APPALACHIAN BREWING  MechanicsburgPA,Alcohol & Bars,-77.18,Posted,misc_expenses
+9/7/24,Dollar General,DOLLAR GENERAL 15815     JEFFERSONVILLNY,Shopping,-17.01,Posted,misc_expenses
+9/6/24,The Market Street Dellemoyne,SQ *THE MARKET STREET DELLemoyne      PA,Fast Food,-11.59,Posted,misc_expenses
+9/6/24,Sheetz,SHEETZ 2518   00025189   MECHANICSBURGPA,Gas,-44.84,Posted,fixed_expenses
+9/6/24,Ppy North Branch Inn,PPY*North Branch Inn     Hortonville  NY,Hotel,-750.64,Posted,misc_expenses
+9/5/24,Sheetz,SHEETZ 0699   00006999   MECHANICSVILLVA,Gas,-2.62,Posted,misc_expenses
+9/5/24,Pepsi Cola Bottling,CPI*PEPSI-COLA BOTTLING C540-347-3112 VA,Fast Food,-3,Posted,misc_expenses
+9/5/24,Walgreens,WALGREENS #7133          VIRGINIA BEACVA,Pharmacy,-11.53,Posted,fixed_expenses
+9/5/24,Sheetz,SHEETZ 2699   00026997   MECHANICSVILLVA,Gas,-20.79,Posted,fixed_expenses
+9/5/24,Amici Pizza Mechanicsburgpa,AMICI PIZZA              MECHANICSBURGPA,Food & Dining,-42.24,Posted,misc_expenses
+9/5/24,Ring,RING YEARLY PLAN         HTTPSRING.COMCA,Home Services,-49.99,Posted,fixed_expenses
+9/4/24,Anthropologie,ANTHROPOLOGIE.COM        HTTPSWWW.ANTHPA,Clothing,122.84,Posted,misc_expenses
+9/4/24,Virginianaturalgasbill,VIRGINIANATURALGASBILL   866-383-1846 GA,Utilities,-39.01,Posted,fixed_expenses
+9/4/24,Kroger,KROGER #532              VIRGINIA BEACVA,Groceries,-46.98,Posted,fixed_expenses
+9/3/24,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-15.04,Posted,fixed_expenses
+9/3/24,Taste Bayville Far,TST*TASTE - BAYVILLE FAR 757-464-1566 VA,Restaurants,-30.06,Posted,misc_expenses
+9/3/24,Navy Exchange,NAVY EXCHANGE 050180     VIRGINIA BEACVA,Shopping,-37.99,Posted,misc_expenses
+9/2/24,USAA Credit Card,USAA CREDIT CARD PAYMENT SAN ANTONIO  TX,Credit Card Payment,3062.57,Posted,misc_expenses
+9/2/24,TJ Maxx,TJMAXX #0226             VIRGINIA BEACVA,Clothing,69.41,Posted,misc_expenses
+9/2/24,Shorebreak Pizza Virginia Beac,Shorebreak Pizza         Virginia BeacVA,Food & Dining,-14.78,Posted,misc_expenses
+9/1/24,Kroger Fuel,KROGER FUEL #3532        VIRGINIA BEACVA,Gas,-53.05,Posted,fixed_expenses
+9/1/24,Kroger,KROGER #532              VIRGINIA BEACVA,Groceries,-107.28,Posted,fixed_expenses
+8/31/24,Car Spa Virginia Beacva,CAR SPA #32              VIRGINIA BEACVA,Service & Parts,-18,Posted,misc_expenses
+8/31/24,Taylor S Hardware Virginia Beacva,TAYLOR S HARDWARE 6711   VIRGINIA BEACVA,Home Improvement,-18.51,Posted,misc_expenses
+8/31/24,PetSmart,PETSMART # 1171          VIRGINIA BEACVA,Pet Food & Supplies,-23.31,Posted,fixed_expenses
+8/31/24,Wawa,WAWA 8609                VIRGINIA BEACVA,Gas,-26.47,Posted,fixed_expenses
+8/31/24,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-32.1,Posted,misc_expenses
 8/30/24,Lulus Fashion Lounge Luluca,"LULUS FASHION LOUNGE,    HTTPSWWW.LULUCA",Clothing,298.48,Posted,misc_expenses
 8/30/24,Costco,COSTCO WHSE #0202        NORFOLK      VA,Shopping,-6.72,Posted,misc_expenses
 8/30/24,TJ Maxx,TJMAXX #0226             VIRGINIA BEACVA,Clothing,-42.39,Posted,misc_expenses
-8/30/24,ULTA #677,ULTA #677,Category Pending,-116.06,Pending,misc_expenses
+8/30/24,Ulta Beauty,ULTA #677                VIRGINIA BEACVA,Personal Care,-116.06,Posted,misc_expenses
 8/30/24,Costco,COSTCO WHSE #0202        NORFOLK      VA,Shopping,-199.44,Posted,fixed_expenses
 8/30/24,TJ Maxx,TJMAXX #0226             VIRGINIA BEACVA,Clothing,-241.66,Posted,misc_expenses
 8/28/24,Dillard's,DILLARDS 698 DILLARD'S   501-320-3700 AR,Shopping,242.54,Posted,misc_expenses
