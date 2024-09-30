@@ -1,9 +1,48 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type
-9/16/24,VERIZON*RECURRING PAY,VERIZON*RECURRING PAY,Category Pending,-100.59,Pending,fixed_expenses
-9/15/24,JERSEY MIKES SUBS#6019,JERSEY MIKES SUBS#6019,Category Pending,-21.46,Pending,misc_expenses
-9/15/24,LIDL #1299,LIDL #1299,Category Pending,-163.06,Pending,fixed_expenses
-9/15/24,WM SUPERCENTER #4064,WM SUPERCENTER #4064,Category Pending,-232.02,Pending,fixed_expenses
-9/15/24,BRGHTWHL* FRANCIS ASBU,BRGHTWHL* FRANCIS ASBU,Category Pending,-570.21,Pending,fixed_expenses
+9/29/24,USAA CREDIT CARD PAYMENT,USAA CREDIT CARD PAYMENT,Category Pending,4498.7,Pending,fixed_expenses
+9/29/24,VA BEACH 9TH ST GARAGE,VA BEACH 9TH ST GARAGE,Category Pending,-10,Pending,misc_expenses
+9/29/24,PP*Pirate Crafted Treasur,PP*Pirate Crafted Treasur,Category Pending,-26.5,Pending,misc_expenses
+9/29/24,SQ *POPITOS PIZZA POP-,SQ *POPITOS PIZZA POP-,Category Pending,-33.24,Pending,misc_expenses
+9/29/24,SQ *Y & S HAND CRAFT C,SQ *Y & S HAND CRAFT C,Category Pending,-53,Pending,misc_expenses
+9/28/24,APPLE.COM/BILL,APPLE.COM/BILL,Category Pending,-9.99,Pending,fixed_expenses
+9/28/24,Hulu 877-8244858 CA      HULU.COM/BILLCA,Hulu 877-8244858 CA      HULU.COM/BILLCA,Category Pending,-20.41,Posted,fixed_expenses
+9/28/24,SPO*VICTORIA'SPIZZERIA,SPO*VICTORIA'SPIZZERIA,Category Pending,-60.22,Pending,misc_expenses
+9/27/24,KOHLS #0650              VIRGINIA BEACVA,KOHLS #0650              VIRGINIA BEACVA,Category Pending,-45.51,Posted,misc_expenses
+9/27/24,KROGER #532              VIRGINIA BEACVA,KROGER #532              VIRGINIA BEACVA,Category Pending,-160.31,Posted,fixed_expenses
+9/26/24,Kindle,Kindle Svcs*NO9SH9AV3    888-802-3080 WA,Books,-14.99,Posted,misc_expenses
+9/26/24,Kroger,KROGER #532              VIRGINIA BEACVA,Groceries,-18.15,Posted,fixed_expenses
+9/26/24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-107.49,Posted,misc_expenses
+9/25/24,Nissan,HALL NISSAN VIRGINIA BEA VIRGINIA BCH VA,Auto & Transport,81.42,Posted,fixed_expenses
+9/25/24,Kindle,Kindle Svcs*GI3L65VC3    888-802-3080 WA,Books,-14.99,Posted,misc_expenses
+9/25/24,Kindle,Kindle Svcs*JP3KW3TE3    888-802-3080 WA,Books,-14.99,Posted,misc_expenses
+9/24/24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-12.88,Posted,misc_expenses
+9/24/24,AT&T,ATT* BILL PAYMENT        800-331-0500 TX,Bills & Utilities,-207.89,Posted,fixed_expenses
+9/22/24,TJ Maxx,TJMAXX #0226             VIRGINIA BEACVA,Clothing,34.97,Posted,misc_expenses
+9/22/24,Walmart,WM SUPERCENTER #4064     VIRGINIA BEACVA,Shopping,20.61,Posted,misc_expenses
+9/22/24,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-13.21,Posted,misc_expenses
+9/21/24,Navy Exchange,NAVY EXCHANGE 050180     VIRGINIA BEACVA,Shopping,-9.99,Posted,misc_expenses
+9/21/24,Taco Bell,TACO BELL 0015909        VIRGINIA BCH VA,Fast Food,-14.51,Posted,misc_expenses
+9/21/24,Py Gourmet Gang,PY *GOURMET GANG         HENRICO      VA,Restaurants,-16.36,Posted,misc_expenses
+9/21/24,7-Eleven,7-ELEVEN 26611           VIRGINIA BEACVA,Gas,-20.77,Posted,misc_expenses
+9/21/24,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-23.88,Posted,misc_expenses
+9/21/24,Navy Exchange,NEX FUEL 050039          VIRGINIA BEACVA,Gas,-25.67,Posted,fixed_expenses
+9/21/24,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-29.53,Posted,misc_expenses
+9/21/24,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-63.83,Posted,fixed_expenses
+9/21/24,Nissan,HALL NISSAN VIRGINIA BEA VIRGINIA BCH VA,Auto & Transport,-81.42,Posted,fixed_expenses
+9/21/24,Nissan,HALL NISSAN VIRGINIA BEA VIRGINIA BCH VA,Auto & Transport,-81.42,Posted,fixed_expenses
+9/21/24,Walmart,WM SUPERCENTER #4064     VIRGINIA BEACVA,Shopping,-197.36,Posted,fixed_expenses
+9/21/24,Liability Insuranc,CPH LIABILITY INSURANC   800-875-1911 IL,Financial,-206,Posted,fixed_expenses
+9/19/24,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-19.07,Posted,fixed_expenses
+9/19/24,Wawa,WAWA 675                 VIRGINIA BEACVA,Gas,-26.8,Posted,fixed_expenses
+9/18/24,Special Boat Team Twevirginia Beacva,SQ *SPECIAL BOAT TEAM TWEVIRGINIA BEACVA,Gifts & Donations,-8,Posted,misc_expenses
+9/18/24,CVS,CVS/PHARMACY #08938      VIRGINIA BEACVA,Pharmacy,-24.48,Posted,fixed_expenses
+9/16/24,Verizon,VERIZON*RECURRING PAY    800-VERIZON  FL,Utilities,-100.59,Posted,fixed_expenses
+9/15/24,CVS,CVS/PHARMACY #08938      VIRGINIA BEACVA,Pharmacy,-12.68,Posted,fixed_expenses
+9/15/24,Jersey Mike's Subs,JERSEY MIKES 6019        VIRGINIA BEACVA,Fast Food,-21.46,Posted,misc_expenses
+9/15/24,Global Independe Virginia Beacva,GLOBAL - 627 INDEPENDE   VIRGINIA BEACVA,Gas,-55.41,Posted,fixed_expenses
+9/15/24,Lidl,LIDL #1299               VIRGINIA BEACVA,Groceries,-163.06,Posted,fixed_expenses
+9/15/24,Walmart,WM SUPERCENTER #4064     VIRGINIA BEACVA,Shopping,-232.02,Posted,fixed_expenses
+9/15/24,Brightwheel,BRGHTWHL* FRANCIS ASBU   WWW.MYBRIGHTWCA,Babysitter & Daycare,-570.21,Posted,fixed_expenses
 9/13/24,SUNOCO 8000814402        VIRGINIA BEACVA,SUNOCO 8000814402        VIRGINIA BEACVA,Category Pending,-12.72,Posted,fixed_expenses
 9/11/24,Chick-fil-A,CHICK-FIL-A #00734       VIRGINIA BEACVA,Fast Food,-7.34,Posted,misc_expenses
 9/11/24,Special Boat Team Twevirginia Beacva,SQ *SPECIAL BOAT TEAM TWEVIRGINIA BEACVA,Gifts & Donations,-8,Posted,misc_expenses

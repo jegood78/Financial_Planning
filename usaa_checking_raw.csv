@@ -1,12 +1,24 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type
-9/16/24,USAA FUNDS TRANSFER DB,USAA FUNDS TRANSFER DB,Category Pending,-50,Posted,savings
-9/16/24,USAA FUNDS TRANSFER DB,USAA FUNDS TRANSFER DB,Category Pending,-50,Posted,savings
-9/16/24,TARGET DEBIT CRD ACH TRAN   ***********3991,TARGET DEBIT CRD ACH TRAN   ***********3991,Category Pending,-50.34,Pending,misc_expenses
-9/16/24,TARGET DEBIT CRD ACH TRAN   ***********3991,TARGET DEBIT CRD ACH TRAN   ***********3991,Category Pending,-59.4,Pending,misc_expenses
-9/16/24,TARGET DEBIT CRD ACH TRAN   ***********3991,TARGET DEBIT CRD ACH TRAN   ***********3991,Category Pending,-72.49,Pending,misc_expenses
-9/16/24,DOMINION ENERGY  BILLPAY    ***********7814,DOMINION ENERGY  BILLPAY    ***********7814,Category Pending,-219.81,Pending,fixed_expenses
-9/16/24,USAA FUNDS TRANSFER DB,USAA FUNDS TRANSFER DB,Category Pending,-1100,Posted,savings
-9/16/24,USAA FUNDS TRANSFER DB,USAA FUNDS TRANSFER DB,Category Pending,-3200,Posted,fixed_expenses
+9/30/24,USAA FUNDS TRANSFER CR,USAA FUNDS TRANSFER CR,Category Pending,2000,Posted,savings
+9/30/24,2821 SHORE DR                    092824,2821 SHORE DR                    092824,Category Pending,-63,Posted,misc_expenses
+9/30/24,USAA CREDIT CARD PAYMENT,USAA CREDIT CARD PAYMENT,Category Pending,-4498.7,Posted,misc_expenses
+9/27/24,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5422.82,Posted,income
+9/25/24,Midland National Life Insurance,MIDLAND NATIONAL INSURANCE  ***********1874,Life Insurance,-195.8,Posted,fixed_expenses
+9/24/24,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-324,Posted,fixed_expenses
+9/23/24,7-Eleven,7ELEVEN-FCTI             VIRGINIA BEACVA,Cash,-60,Posted,misc_expenses
+9/18/24,Target,TARGET DEBIT CRD ACH TRAN   ***********3991,Shopping,-51.92,Posted,misc_expenses
+9/17/24,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-268.51,Posted,misc_expenses
+9/17/24,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-324,Posted,fixed_expenses
+9/16/24,Interest Paid,INTEREST PAID,Interest Income,0.04,Posted,fixed_expenses
+9/16/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-50,Posted,savings
+9/16/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-50,Posted,savings
+9/16/24,Target,TARGET DEBIT CRD ACH TRAN   ***********3991,Shopping,-50.34,Posted,misc_expenses
+9/16/24,Target,TARGET DEBIT CRD ACH TRAN   ***********3991,Shopping,-59.4,Posted,misc_expenses
+9/16/24,Target,TARGET DEBIT CRD ACH TRAN   ***********3991,Shopping,-72.49,Posted,misc_expenses
+9/16/24,Dominion Energy,DOMINION ENERGY  BILLPAY    ***********7814,Bills & Utilities,-219.81,Posted,fixed_expenses
+9/16/24,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses
+9/16/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-1100,Posted,savings
+9/16/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-3200,Posted,fixed_expenses
 9/12/24,Chase Credit Card,CHASE CREDIT CRD EPAY       ***********6683,Credit Card Payment,-2492.32,Posted,misc_expenses
 9/11/24,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5422.86,Posted,income
 9/11/24,Target,TARGET DEBIT CRD ACH TRAN   ***********3991,Shopping,-13.08,Posted,misc_expenses
