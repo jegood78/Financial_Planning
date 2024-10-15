@@ -1,12 +1,46 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type
-9/29/24,USAA CREDIT CARD PAYMENT,USAA CREDIT CARD PAYMENT,Category Pending,4498.7,Pending,fixed_expenses
-9/29/24,VA BEACH 9TH ST GARAGE,VA BEACH 9TH ST GARAGE,Category Pending,-10,Pending,misc_expenses
-9/29/24,PP*Pirate Crafted Treasur,PP*Pirate Crafted Treasur,Category Pending,-26.5,Pending,misc_expenses
-9/29/24,SQ *POPITOS PIZZA POP-,SQ *POPITOS PIZZA POP-,Category Pending,-33.24,Pending,misc_expenses
-9/29/24,SQ *Y & S HAND CRAFT C,SQ *Y & S HAND CRAFT C,Category Pending,-53,Pending,misc_expenses
-9/28/24,APPLE.COM/BILL,APPLE.COM/BILL,Category Pending,-9.99,Pending,fixed_expenses
+10/13/24,Walmart,WAL-MART #4064           VIRGINIA BEACVA,Shopping,33.3,Posted,misc_expenses
+10/12/24,Kohls Virginia Beacva,KOHLS #0650              VIRGINIA BEACVA,Shopping,-12.71,Posted,misc_expenses
+10/12/24,iHerb.com,IHERB IHERB.COM fe1R7    951-6163600  CA,Health & Fitness,-36.91,Posted,misc_expenses
+10/12/24,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-60.99,Posted,fixed_expenses
+10/11/24,Global Independe Virginia Beacva,GLOBAL - 627 INDEPENDE   VIRGINIA BEACVA,Gas,-59.03,Posted,fixed_expenses
+10/11/24,Lidl,LIDL #1299               VIRGINIA BEACVA,Groceries,-136.99,Posted,fixed_expenses
+10/11/24,Walmart,WM SUPERCENTER #4064     VIRGINIA BEACVA,Shopping,-221.98,Posted,fixed_expenses
+10/11/24,Hairbyraquel,SQ *HAIRBYRAQUEL         Virginia BeacVA,Hair,-323.75,Posted,misc_expenses
+10/10/24,Panda Express,SAN PANDAEXPRESS T2E 1365SAN DIEGO    CA,Fast Food,-12.62,Posted,misc_expenses
+10/10/24,Peet's Coffee,SAN PEETS COFFEE T2E 4310SAN DIEGO    CA,Coffee Shops,-13.15,Posted,misc_expenses
+10/10/24,Ehxkyokiv Nonstopeast Rutherfonj,AMZ*ehxkyokiv DFW NonstopEAST RUTHERFONJ,Groceries,-28.64,Posted,misc_expenses
+10/10/24,Miguels Coronado,TST* MIGUELS CORONADO NEWCORONADO     CA,Restaurants,-34.26,Posted,misc_expenses
+10/10/24,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-44.23,Posted,misc_expenses
+10/8/24,365 Retail Markets,365 MARKET 888 432-3299  TROY         MI,Fast Food,-5,Posted,misc_expenses
+10/8/24,Navy Exchange,NAVY EXCHANGE 110111     SAN DIEGO    VA,Shopping,-15.07,Posted,misc_expenses
+10/8/24,Navy Exchange,NAVY EXCHANGE 110110     SAN DIEGO    VA,Shopping,-15.99,Posted,misc_expenses
+10/7/24,Navy Exchange,NAVY EXCHANGE 110282     SAN DIEGO    VA,Shopping,-2.29,Posted,misc_expenses
+10/7/24,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-12.14,Posted,misc_expenses
+10/7/24,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-22.18,Posted,misc_expenses
+10/7/24,Oyster Bar,TST*TJ OYSTER BAR        Bonita       CA,Restaurants,-42.13,Posted,misc_expenses
+10/6/24,Prime Video,Prime Video *8Q51I09Z3   888-802-3080 WA,Television,-3.99,Posted,misc_expenses
+10/6/24,Navy Exchange,NAVY EXCHANGE 110282     SAN DIEGO    VA,Shopping,-4.78,Posted,misc_expenses
+10/6/24,North Island Nas Comm Islca,NORTH ISLAND NAS COMM    NAS NORTH ISLCA,Groceries,-72.61,Posted,fixed_expenses
+10/6/24,Karina Mich Le Permane,PP*Karina Mich?le Permane757-3038165  VA,Spa & Massage,-100,Posted,misc_expenses
+10/4/24,Navy Exchange,NAVY EXCHANGE 050180     VIRGINIA BEACVA,Shopping,-18,Posted,misc_expenses
+10/4/24,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-24.57,Posted,misc_expenses
+10/4/24,Virginianaturalgasbill,VIRGINIANATURALGASBILL   866-383-1846 GA,Utilities,-35.4,Posted,fixed_expenses
+10/4/24,Spo Victoria'spizzeria Virginia Beacva,SPO*VICTORIA'SPIZZERIA   VIRGINIA BEACVA,Food & Dining,-81.26,Posted,misc_expenses
+10/4/24,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-149.35,Posted,fixed_expenses
+10/2/24,US Postal Service,USPS PO 5165270092       NORFOLK      VA,Shipping,-9.5,Posted,misc_expenses
+10/2/24,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-11.41,Posted,misc_expenses
+10/2/24,Navy Exchange,NEX FUEL 050040          VIRGINIA BEACVA,Gas,-33.3,Posted,fixed_expenses
+10/2/24,Plastic Surgery,SJ PLASTIC SURGERY       175-74965556 VA,Doctor,-262,Posted,misc_expenses
+10/1/24,Kroger,KROGER #532              VIRGINIA BEACVA,Groceries,-40.88,Posted,fixed_expenses
+9/29/24,USAA Credit Card,USAA CREDIT CARD PAYMENT SAN ANTONIO  TX,Credit Card Payment,4498.7,Posted,fixed_expenses
+9/29/24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-9.99,Posted,fixed_expenses
+9/29/24,9th St Garage Virginia Beacva,VA BEACH 9TH ST GARAGE   VIRGINIA BEACVA,Parking,-10,Posted,misc_expenses
+9/29/24,Pirate Crafted Treasurmount,PP*PIRATE CRAFTED TREASURMOUNT HOLLY  NC,Shopping,-26.5,Posted,misc_expenses
+9/29/24,Popitos Pizza Pop-up Virginia Beacva,SQ *POPITOS PIZZA POP-UP Virginia BeacVA,Food & Dining,-33.24,Posted,misc_expenses
+9/29/24,Y & S Hand Craft Corpvirginia Beacva,SQ *Y & S HAND CRAFT CORPVirginia BeacVA,Groceries,-53,Posted,misc_expenses
+9/29/24,Spo Victoria'spizzeria Virginia Beacva,SPO*VICTORIA'SPIZZERIA   VIRGINIA BEACVA,Food & Dining,-74.22,Posted,misc_expenses
 9/28/24,Hulu 877-8244858 CA      HULU.COM/BILLCA,Hulu 877-8244858 CA      HULU.COM/BILLCA,Category Pending,-20.41,Posted,fixed_expenses
-9/28/24,SPO*VICTORIA'SPIZZERIA,SPO*VICTORIA'SPIZZERIA,Category Pending,-60.22,Pending,misc_expenses
 9/27/24,KOHLS #0650              VIRGINIA BEACVA,KOHLS #0650              VIRGINIA BEACVA,Category Pending,-45.51,Posted,misc_expenses
 9/27/24,KROGER #532              VIRGINIA BEACVA,KROGER #532              VIRGINIA BEACVA,Category Pending,-160.31,Posted,fixed_expenses
 9/26/24,Kindle,Kindle Svcs*NO9SH9AV3    888-802-3080 WA,Books,-14.99,Posted,misc_expenses

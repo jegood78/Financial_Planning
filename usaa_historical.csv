@@ -1,5 +1,21 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type,key,month
-2024-09-30,2821 SHORE DR                    092824,2821 SHORE DR                    092824,Category Pending,-63,Posted,misc_expenses,2821 SHORE DR                    092824_-63_9/30/24,2024-09
+2024-10-15,USAA FUNDS TRANSFER DB,USAA FUNDS TRANSFER DB,Category Pending,-3200,Posted,fixed_expenses,USAA FUNDS TRANSFER DB_-3200_10/15/24,2024-10
+2024-10-10,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5423.19,Posted,income,Defense Finance and Accounting Service_5423.19_10/10/24,2024-10
+2024-10-09,Navy Exchange,NAVY EXCHANGE 110290     SAN DIEGO    CA,Shopping,-23.79,Posted,misc_expenses,Navy Exchange_-23.79_10/9/24,2024-10
+2024-10-08,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-405,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-405_10/8/24,2024-10
+2024-10-04,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-95,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-95_10/4/24,2024-10
+2024-10-03,USAA Property and Casualty Insurance,USAA P&C         AUTOPAY    ***********3049,Financial,-193.14,Posted,fixed_expenses,USAA Property and Casualty Insurance_-193.14_10/3/24,2024-10
+2024-10-01,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-324,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-324_10/1/24,2024-10
+2024-09-30,Target,TARGET DEBIT CRD ACH TRAN   ***********1267,Shopping,80.52,Posted,misc_expenses,Target_80.52_9/30/24,2024-09
+2024-09-30,Target,TARGET DEBIT CRD ACH TRAN   ***********3991,Shopping,72.49,Posted,misc_expenses,Target_72.49_9/30/24,2024-09
+2024-09-30,Target,TARGET DEBIT CRD ACH TRAN   ***********3991,Shopping,59.4,Posted,misc_expenses,Target_59.4_9/30/24,2024-09
+2024-09-30,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,59.01,Posted,misc_expenses,Target_59.01_9/30/24,2024-09
+2024-09-30,Target,TARGET DEBIT CRD ACH TRAN   ***********3991,Shopping,51.92,Posted,misc_expenses,Target_51.92_9/30/24,2024-09
+2024-09-30,Target,TARGET DEBIT CRD ACH TRAN   ***********3991,Shopping,50.34,Posted,misc_expenses,Target_50.34_9/30/24,2024-09
+2024-09-30,Target,TARGET DEBIT CRD ACH TRAN   ***********3991,Shopping,13.08,Posted,misc_expenses,Target_13.08_9/30/24,2024-09
+2024-09-30,ATM Fee Rebate,ATM REBATE,Atm Fee,3,Posted,misc_expenses,ATM Fee Rebate_3_9/30/24,2024-09
+2024-09-30,ATM Withdrawal,Wells Fargo Ban          VIRGINIA BEACVA,Cash,-63,Posted,misc_expenses,ATM Withdrawal_-63_9/30/24,2024-09
+2024-09-30,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-69.22,Posted,misc_expenses,Target_-69.22_9/30/24,2024-09
 2024-09-27,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5422.82,Posted,income,Defense Finance and Accounting Service_5422.82_9/27/24,2024-09
 2024-09-25,Midland National Life Insurance,MIDLAND NATIONAL INSURANCE  ***********1874,Life Insurance,-195.8,Posted,fixed_expenses,Midland National Life Insurance_-195.8_9/25/24,2024-09
 2024-09-24,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-324,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-324_9/24/24,2024-09
@@ -181,7 +197,13 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,ke
 2024-01-16,Brightwheel,brightwheel      BRGHTWHL*  ***********G3X5,Babysitter & Daycare,-186.37,Posted,fixed_expenses,Brightwheel_-186.37_1/16/24,2024-01
 2024-01-16,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,ICPayment_-814.04_1/16/24,2024-01
 2024-01-16,IRS Tax Payment,IRS              USATAXPYMT ***********4831,Federal Tax,-2000,Posted,fixed_expenses,IRS Tax Payment_-2000_1/16/24,2024-01
-2024-09-30,USAA FUNDS TRANSFER DB,USAA FUNDS TRANSFER DB,Category Pending,-2000,Posted,savings,USAA FUNDS TRANSFER DB_-2000_9/30/24,2024-09
+2024-10-15,USAA FUNDS TRANSFER CR,USAA FUNDS TRANSFER CR,Category Pending,1100,Posted,savings,USAA FUNDS TRANSFER CR_1100_10/15/24,2024-10
+2024-10-03,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-243.42,Posted,fixed_expenses,Department of Education_-243.42_10/3/24,2024-10
+2024-10-01,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_10/1/24,2024-10
+2024-10-01,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,Vanguard_-500_10/1/24,2024-10
+2024-09-30,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********0564,Paycheck,3355,Posted,income,Adp Workmarket Direct Deposit_3355_9/30/24,2024-09
+2024-09-30,Interest Paid,INTEREST PAID,Interest Income,0.26,Posted,income,Interest Paid_0.26_9/30/24,2024-09
+2024-09-30,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-2000,Posted,savings,USAA Transfer_-2000_9/30/24,2024-09
 2024-09-17,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,Vanguard_-500_9/17/24,2024-09
 2024-09-16,USAA FUNDS TRANSFER CR,USAA FUNDS TRANSFER CR,Category Pending,1100,Posted,savings,USAA FUNDS TRANSFER CR_1100_9/16/24,2024-09
 2024-09-10,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-2500,Posted,savings,USAA Transfer_-2500_9/10/24,2024-09
@@ -290,6 +312,46 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,ke
 2024-01-19,Transfer to Venmo,VENMO            PAYMENT    ***********4890,Transfer,-45,Posted,misc_expenses,Transfer to Venmo_-45_1/19/24,2024-01
 2024-01-17,Ohtaxites Ohincometx,8052-1OHTAXITES  OHINCOMETX ***********4805,Taxes,-200,Posted,fixed_expenses,Ohtaxites Ohincometx_-200_1/17/24,2024-01
 2024-01-16,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_1/16/24,2024-01
+2024-10-13,Walmart,WAL-MART #4064           VIRGINIA BEACVA,Shopping,33.3,Posted,misc_expenses,Walmart_33.3_10/13/24,2024-10
+2024-10-12,Kohls Virginia Beacva,KOHLS #0650              VIRGINIA BEACVA,Shopping,-12.71,Posted,misc_expenses,Kohls Virginia Beacva_-12.71_10/12/24,2024-10
+2024-10-12,iHerb.com,IHERB IHERB.COM fe1R7    951-6163600  CA,Health & Fitness,-36.91,Posted,misc_expenses,iHerb.com_-36.91_10/12/24,2024-10
+2024-10-12,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-60.99,Posted,fixed_expenses,Little Creek Comm Virginia Beacva_-60.99_10/12/24,2024-10
+2024-10-11,Global Independe Virginia Beacva,GLOBAL - 627 INDEPENDE   VIRGINIA BEACVA,Gas,-59.03,Posted,fixed_expenses,Global Independe Virginia Beacva_-59.03_10/11/24,2024-10
+2024-10-11,Lidl,LIDL #1299               VIRGINIA BEACVA,Groceries,-136.99,Posted,fixed_expenses,Lidl_-136.99_10/11/24,2024-10
+2024-10-11,Walmart,WM SUPERCENTER #4064     VIRGINIA BEACVA,Shopping,-221.98,Posted,fixed_expenses,Walmart_-221.98_10/11/24,2024-10
+2024-10-11,Hairbyraquel,SQ *HAIRBYRAQUEL         Virginia BeacVA,Hair,-323.75,Posted,misc_expenses,Hairbyraquel_-323.75_10/11/24,2024-10
+2024-10-10,Panda Express,SAN PANDAEXPRESS T2E 1365SAN DIEGO    CA,Fast Food,-12.62,Posted,misc_expenses,Panda Express_-12.62_10/10/24,2024-10
+2024-10-10,Peet's Coffee,SAN PEETS COFFEE T2E 4310SAN DIEGO    CA,Coffee Shops,-13.15,Posted,misc_expenses,Peet's Coffee_-13.15_10/10/24,2024-10
+2024-10-10,Ehxkyokiv Nonstopeast Rutherfonj,AMZ*ehxkyokiv DFW NonstopEAST RUTHERFONJ,Groceries,-28.64,Posted,misc_expenses,Ehxkyokiv Nonstopeast Rutherfonj_-28.64_10/10/24,2024-10
+2024-10-10,Miguels Coronado,TST* MIGUELS CORONADO NEWCORONADO     CA,Restaurants,-34.26,Posted,misc_expenses,Miguels Coronado_-34.26_10/10/24,2024-10
+2024-10-10,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-44.23,Posted,misc_expenses,Shorebreak Pizza Online_-44.23_10/10/24,2024-10
+2024-10-08,365 Retail Markets,365 MARKET 888 432-3299  TROY         MI,Fast Food,-5,Posted,misc_expenses,365 Retail Markets_-5_10/8/24,2024-10
+2024-10-08,Navy Exchange,NAVY EXCHANGE 110111     SAN DIEGO    VA,Shopping,-15.07,Posted,misc_expenses,Navy Exchange_-15.07_10/8/24,2024-10
+2024-10-08,Navy Exchange,NAVY EXCHANGE 110110     SAN DIEGO    VA,Shopping,-15.99,Posted,misc_expenses,Navy Exchange_-15.99_10/8/24,2024-10
+2024-10-07,Navy Exchange,NAVY EXCHANGE 110282     SAN DIEGO    VA,Shopping,-2.29,Posted,misc_expenses,Navy Exchange_-2.29_10/7/24,2024-10
+2024-10-07,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-12.14,Posted,misc_expenses,Chick-fil-A_-12.14_10/7/24,2024-10
+2024-10-07,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-22.18,Posted,misc_expenses,Chick-fil-A_-22.18_10/7/24,2024-10
+2024-10-07,Oyster Bar,TST*TJ OYSTER BAR        Bonita       CA,Restaurants,-42.13,Posted,misc_expenses,Oyster Bar_-42.13_10/7/24,2024-10
+2024-10-06,Prime Video,Prime Video *8Q51I09Z3   888-802-3080 WA,Television,-3.99,Posted,misc_expenses,Prime Video_-3.99_10/6/24,2024-10
+2024-10-06,Navy Exchange,NAVY EXCHANGE 110282     SAN DIEGO    VA,Shopping,-4.78,Posted,misc_expenses,Navy Exchange_-4.78_10/6/24,2024-10
+2024-10-06,North Island Nas Comm Islca,NORTH ISLAND NAS COMM    NAS NORTH ISLCA,Groceries,-72.61,Posted,fixed_expenses,North Island Nas Comm Islca_-72.61_10/6/24,2024-10
+2024-10-06,Karina Mich Le Permane,PP*Karina Mich?le Permane757-3038165  VA,Spa & Massage,-100,Posted,misc_expenses,Karina Mich Le Permane_-100_10/6/24,2024-10
+2024-10-04,Navy Exchange,NAVY EXCHANGE 050180     VIRGINIA BEACVA,Shopping,-18,Posted,misc_expenses,Navy Exchange_-18_10/4/24,2024-10
+2024-10-04,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-24.57,Posted,misc_expenses,Chick-fil-A_-24.57_10/4/24,2024-10
+2024-10-04,Virginianaturalgasbill,VIRGINIANATURALGASBILL   866-383-1846 GA,Utilities,-35.4,Posted,fixed_expenses,Virginianaturalgasbill_-35.4_10/4/24,2024-10
+2024-10-04,Spo Victoria'spizzeria Virginia Beacva,SPO*VICTORIA'SPIZZERIA   VIRGINIA BEACVA,Food & Dining,-81.26,Posted,misc_expenses,Spo Victoria'spizzeria Virginia Beacva_-81.26_10/4/24,2024-10
+2024-10-04,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-149.35,Posted,fixed_expenses,Little Creek Comm Virginia Beacva_-149.35_10/4/24,2024-10
+2024-10-02,US Postal Service,USPS PO 5165270092       NORFOLK      VA,Shipping,-9.5,Posted,misc_expenses,US Postal Service_-9.5_10/2/24,2024-10
+2024-10-02,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-11.41,Posted,misc_expenses,Shorebreak Pizza Online_-11.41_10/2/24,2024-10
+2024-10-02,Navy Exchange,NEX FUEL 050040          VIRGINIA BEACVA,Gas,-33.3,Posted,fixed_expenses,Navy Exchange_-33.3_10/2/24,2024-10
+2024-10-02,Plastic Surgery,SJ PLASTIC SURGERY       175-74965556 VA,Doctor,-262,Posted,misc_expenses,Plastic Surgery_-262_10/2/24,2024-10
+2024-10-01,Kroger,KROGER #532              VIRGINIA BEACVA,Groceries,-40.88,Posted,fixed_expenses,Kroger_-40.88_10/1/24,2024-10
+2024-09-29,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-9.99,Posted,fixed_expenses,Apple_-9.99_9/29/24,2024-09
+2024-09-29,9th St Garage Virginia Beacva,VA BEACH 9TH ST GARAGE   VIRGINIA BEACVA,Parking,-10,Posted,misc_expenses,9th St Garage Virginia Beacva_-10_9/29/24,2024-09
+2024-09-29,Pirate Crafted Treasurmount,PP*PIRATE CRAFTED TREASURMOUNT HOLLY  NC,Shopping,-26.5,Posted,misc_expenses,Pirate Crafted Treasurmount_-26.5_9/29/24,2024-09
+2024-09-29,Popitos Pizza Pop-up Virginia Beacva,SQ *POPITOS PIZZA POP-UP Virginia BeacVA,Food & Dining,-33.24,Posted,misc_expenses,Popitos Pizza Pop-up Virginia Beacva_-33.24_9/29/24,2024-09
+2024-09-29,Y & S Hand Craft Corpvirginia Beacva,SQ *Y & S HAND CRAFT CORPVirginia BeacVA,Groceries,-53,Posted,misc_expenses,Y & S Hand Craft Corpvirginia Beacva_-53_9/29/24,2024-09
+2024-09-29,Spo Victoria'spizzeria Virginia Beacva,SPO*VICTORIA'SPIZZERIA   VIRGINIA BEACVA,Food & Dining,-74.22,Posted,misc_expenses,Spo Victoria'spizzeria Virginia Beacva_-74.22_9/29/24,2024-09
 2024-09-28,Hulu 877-8244858 CA      HULU.COM/BILLCA,Hulu 877-8244858 CA      HULU.COM/BILLCA,Category Pending,-20.41,Posted,fixed_expenses,Hulu 877-8244858 CA      HULU.COM/BILLCA_-20.41_9/28/24,2024-09
 2024-09-27,KOHLS #0650              VIRGINIA BEACVA,KOHLS #0650              VIRGINIA BEACVA,Category Pending,-45.51,Posted,misc_expenses,KOHLS #0650              VIRGINIA BEACVA_-45.51_9/27/24,2024-09
 2024-09-27,KROGER #532              VIRGINIA BEACVA,KROGER #532              VIRGINIA BEACVA,Category Pending,-160.31,Posted,fixed_expenses,KROGER #532              VIRGINIA BEACVA_-160.31_9/27/24,2024-09
