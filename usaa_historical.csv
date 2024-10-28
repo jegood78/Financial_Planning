@@ -1,5 +1,17 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type,key,month
-2024-10-15,USAA FUNDS TRANSFER DB,USAA FUNDS TRANSFER DB,Category Pending,-3200,Posted,fixed_expenses,USAA FUNDS TRANSFER DB_-3200_10/15/24,2024-10
+2024-10-25,Midland National Life Insurance,MIDLAND NATIONAL INSURANCE  ***********1874,Life Insurance,-195.8,Posted,fixed_expenses,Midland National Life Insurance_-195.8_10/25/24,2024-10
+2024-10-24,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-324,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-324_10/24/24,2024-10
+2024-10-24,Chase Credit Card,CHASE CREDIT CRD EPAY       ***********5560,Credit Card Payment,-500,Posted,misc_expenses,Chase Credit Card_-500_10/24/24,2024-10
+2024-10-23,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-162,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-162_10/23/24,2024-10
+2024-10-23,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-252,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-252_10/23/24,2024-10
+2024-10-21,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-53.77,Posted,misc_expenses,Target_-53.77_10/21/24,2024-10
+2024-10-17,Chase Credit Card,CHASE CREDIT CRD EPAY       ***********3826,Credit Card Payment,-355.54,Posted,misc_expenses,Chase Credit Card_-355.54_10/17/24,2024-10
+2024-10-16,Interest Paid,INTEREST PAID,Interest Income,0.03,Posted,misc_expenses,Interest Paid_0.03_10/16/24,2024-10
+2024-10-16,Internet Withdrawal,INTERNET WITHDRAWAL,Uncategorized,-25,Posted,misc_expenses,Internet Withdrawal_-25_10/16/24,2024-10
+2024-10-16,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-324,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-324_10/16/24,2024-10
+2024-10-15,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-15.92,Posted,misc_expenses,Target_-15.92_10/15/24,2024-10
+2024-10-15,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,ICPayment_-814.04_10/15/24,2024-10
+2024-10-15,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-3200,Posted,fixed_expenses,USAA Transfer_-3200_10/15/24,2024-10
 2024-10-10,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5423.19,Posted,income,Defense Finance and Accounting Service_5423.19_10/10/24,2024-10
 2024-10-09,Navy Exchange,NAVY EXCHANGE 110290     SAN DIEGO    CA,Shopping,-23.79,Posted,misc_expenses,Navy Exchange_-23.79_10/9/24,2024-10
 2024-10-08,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-405,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-405_10/8/24,2024-10
@@ -197,7 +209,12 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,ke
 2024-01-16,Brightwheel,brightwheel      BRGHTWHL*  ***********G3X5,Babysitter & Daycare,-186.37,Posted,fixed_expenses,Brightwheel_-186.37_1/16/24,2024-01
 2024-01-16,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,ICPayment_-814.04_1/16/24,2024-01
 2024-01-16,IRS Tax Payment,IRS              USATAXPYMT ***********4831,Federal Tax,-2000,Posted,fixed_expenses,IRS Tax Payment_-2000_1/16/24,2024-01
-2024-10-15,USAA FUNDS TRANSFER CR,USAA FUNDS TRANSFER CR,Category Pending,1100,Posted,savings,USAA FUNDS TRANSFER CR_1100_10/15/24,2024-10
+2024-10-24,Transfer from Venmo,VENMO            CASHOUT    ***********2849,Transfer,457,Posted,savings,Transfer from Venmo_457_10/24/24,2024-10
+2024-10-24,Transfer to Venmo,VENMO            ADDFUNDS   ***********1728,Transfer,-25,Posted,savings,Transfer to Venmo_-25_10/24/24,2024-10
+2024-10-24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-1000,Posted,savings,USAA Transfer_-1000_10/24/24,2024-10
+2024-10-15,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_10/15/24,2024-10
+2024-10-15,Mobile Deposit,DEPOSIT@MOBILE,Income,50,Posted,savings,Mobile Deposit_50_10/15/24,2024-10
+2024-10-15,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,Vanguard_-500_10/15/24,2024-10
 2024-10-03,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-243.42,Posted,fixed_expenses,Department of Education_-243.42_10/3/24,2024-10
 2024-10-01,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_10/1/24,2024-10
 2024-10-01,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,Vanguard_-500_10/1/24,2024-10
@@ -312,6 +329,47 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,ke
 2024-01-19,Transfer to Venmo,VENMO            PAYMENT    ***********4890,Transfer,-45,Posted,misc_expenses,Transfer to Venmo_-45_1/19/24,2024-01
 2024-01-17,Ohtaxites Ohincometx,8052-1OHTAXITES  OHINCOMETX ***********4805,Taxes,-200,Posted,fixed_expenses,Ohtaxites Ohincometx_-200_1/17/24,2024-01
 2024-01-16,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_1/16/24,2024-01
+2024-10-24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,1.94,Posted,fixed_expenses,Apple_1.94_10/24/24,2024-10
+2024-10-24,Illertal Ost Tankshop Dettingen an,Illertal Ost Tankshop    Dettingen an DF,Utilities,-1.08,Posted,misc_expenses,Illertal Ost Tankshop Dettingen an_-1.08_10/24/24,2024-10
+2024-10-24,Exchange,AAFES GARMISCH MAIN STOR APO          XX,Shopping,-4.25,Posted,misc_expenses,Exchange_-4.25_10/24/24,2024-10
+2024-10-24,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Category Pending,-13.21,Posted,misc_expenses,SHOREBREAK PIZZA (ONLINE 757-4819393  VA_-13.21_10/24/24,2024-10
+2024-10-24,Popeyes,AAFES PANZER POPEYES     APO          XX,Fast Food,-14.25,Posted,misc_expenses,Popeyes_-14.25_10/24/24,2024-10
+2024-10-24,Exchange,AAFES PANZER MAIN STORE  APO          XX,Shopping,-18.98,Posted,misc_expenses,Exchange_-18.98_10/24/24,2024-10
+2024-10-24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-45.12,Posted,fixed_expenses,Apple_-45.12_10/24/24,2024-10
+2024-10-24,AT&T,ATT* BILL PAYMENT        800-331-0500 TX,Bills & Utilities,-208.01,Posted,fixed_expenses,AT&T_-208.01_10/24/24,2024-10
+2024-10-23,Scope Arena F&b,SCOPE ARENA (F&B)        165-02396947 TX,Fast Food,-5,Posted,misc_expenses,Scope Arena F&b_-5_10/23/24,2024-10
+2024-10-23,Tida Thai Cuisine,TIDA THAI CUISINE        NORFOLK      VA,Restaurants,-13.26,Posted,misc_expenses,Tida Thai Cuisine_-13.26_10/23/24,2024-10
+2024-10-23,Kindle,Kindle Svcs*TW34N5DH3    888-802-3080 WA,Books,-14.99,Posted,misc_expenses,Kindle_-14.99_10/23/24,2024-10
+2024-10-23,Hofbraeustueberl Garmischgarmisch Partdf,Hofbraeustueberl GarmischGarmisch-PartDF,Restaurants,-31.44,Posted,misc_expenses,Hofbraeustueberl Garmischgarmisch Partdf_-31.44_10/23/24,2024-10
+2024-10-23,"Dayton's Coffee, Tea","SQ *DAYTON'S COFFEE, TEA gosq.com     PA",Coffee Shops,-39.86,Posted,misc_expenses,"Dayton's Coffee, Tea_-39.86_10/23/24",2024-10
+2024-10-21,Allgaeuer Tor West Dietmannsrieddf,Allgaeuer Tor WEST       DietmannsriedDF,Utilities,-1.09,Posted,misc_expenses,Allgaeuer Tor West Dietmannsrieddf_-1.09_10/21/24,2024-10
+2024-10-21,Allgaeuer Tor West Dietmannsrieddf,Allgaeuer Tor WEST       DietmannsriedDF,Groceries,-4.46,Posted,misc_expenses,Allgaeuer Tor West Dietmannsrieddf_-4.46_10/21/24,2024-10
+2024-10-21,Exchange,AAFES SEHNE BAKERY       APO          XX,Shopping,-5.11,Posted,misc_expenses,Exchange_-5.11_10/21/24,2024-10
+2024-10-21,Dunkin',AAFES-PANZ DUNKIN DONUTS APO          XX,Coffee Shops,-5.32,Posted,misc_expenses,Dunkin'_-5.32_10/21/24,2024-10
+2024-10-21,Afrc Edelweiss Non Lodgi Apo,AFRC EDELWEISS NON LODGI APO          XX,Restaurants,-5.5,Posted,misc_expenses,Afrc Edelweiss Non Lodgi Apo_-5.5_10/21/24,2024-10
+2024-10-21,Deutsche Kantine Stuttgart,Deutsche Kantine         Stuttgart    DF,Restaurants,-14.68,Posted,misc_expenses,Deutsche Kantine Stuttgart_-14.68_10/21/24,2024-10
+2024-10-21,Old Navy,OLD NAVY ON-LINE         800-6536289  OH,Clothing,-55.42,Posted,misc_expenses,Old Navy_-55.42_10/21/24,2024-10
+2024-10-21,Chewy,CHEWY.COM                800-672-4399 FL,Pet Food & Supplies,-56.68,Posted,fixed_expenses,Chewy_-56.68_10/21/24,2024-10
+2024-10-20,Kroger,KROGER #532 VIRGINIA BEAC VA      CREDIT,Groceries,14,Posted,fixed_expenses,Kroger_14_10/20/24,2024-10
+2024-10-20,Hausmann's Flughafen Frankfurt,Hausmann's Flughafen     Frankfurt    DF,Restaurants,-13.96,Posted,misc_expenses,Hausmann's Flughafen Frankfurt_-13.96_10/20/24,2024-10
+2024-10-20,Starbucks,AAFES PNZ STARBUCKS      APO          XX,Coffee Shops,-15.7,Posted,misc_expenses,Starbucks_-15.7_10/20/24,2024-10
+2024-10-20,Hausmann's Flughafen Frankfurt,Hausmann's Flughafen     Frankfurt    DF,Restaurants,-19.02,Posted,misc_expenses,Hausmann's Flughafen Frankfurt_-19.02_10/20/24,2024-10
+2024-10-19,Chick-fil-A,CHICK FIL A/PETE'S COFFE STERLING     VA,Fast Food,-7.37,Posted,misc_expenses,Chick-fil-A_-7.37_10/19/24,2024-10
+2024-10-19,Potbelly,POTBELLY #384            DULLES       VA,Fast Food,-21.67,Posted,misc_expenses,Potbelly_-21.67_10/19/24,2024-10
+2024-10-18,Kroger Fuel,KROGER FUEL #3532        VIRGINIA BEACVA,Gas,-29.02,Posted,fixed_expenses,Kroger Fuel_-29.02_10/18/24,2024-10
+2024-10-18,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-37.2,Posted,misc_expenses,Chick-fil-A_-37.2_10/18/24,2024-10
+2024-10-18,Kroger,KROGER #532              VIRGINIA BEACVA,Groceries,-141.95,Posted,fixed_expenses,Kroger_-141.95_10/18/24,2024-10
+2024-10-17,Green Clean Auto Wash Virginia Beacva,GREEN CLEAN AUTO WASH-   VIRGINIA BEACVA,Service & Parts,-12,Posted,misc_expenses,Green Clean Auto Wash Virginia Beacva_-12_10/17/24,2024-10
+2024-10-17,Amazon Digital Services,AMAZON DIGI* YP5JD35N3   HTTPSWWW.LINKWA,Electronics & Software,-15.99,Posted,misc_expenses,Amazon Digital Services_-15.99_10/17/24,2024-10
+2024-10-17,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-26.43,Posted,misc_expenses,Shorebreak Pizza Online_-26.43_10/17/24,2024-10
+2024-10-17,Hairbyraquel,SQ *HAIRBYRAQUEL         Virginia BeacVA,Hair,-32,Posted,misc_expenses,Hairbyraquel_-32_10/17/24,2024-10
+2024-10-17,Cumberland Valley Counse,CUMBERLAND VALLEY COUNSE 7172431511   PA,Doctor,-38,Posted,misc_expenses,Cumberland Valley Counse_-38_10/17/24,2024-10
+2024-10-16,Little Caesars,LITTLE CAESARS 0629 0003 VIRGINIA BEACVA,Fast Food,-21.16,Posted,misc_expenses,Little Caesars_-21.16_10/16/24,2024-10
+2024-10-16,Verizon,VERIZON*RECURRING PAY    800-VERIZON  FL,Utilities,-100.59,Posted,fixed_expenses,Verizon_-100.59_10/16/24,2024-10
+2024-10-15,Brightwheel,BRGHTWHL* FRANCIS ASBU   WWW.MYBRIGHTWCA,Babysitter & Daycare,-494.33,Posted,fixed_expenses,Brightwheel_-494.33_10/15/24,2024-10
+2024-10-14,Virginia Zoo,VIRGINIA ZOO             NORFOLK      VA,Entertainment,-28.52,Posted,misc_expenses,Virginia Zoo_-28.52_10/14/24,2024-10
+2024-10-14,Taste Bayville Far,TST*TASTE - BAYVILLE FAR 757-464-1566 VA,Restaurants,-41.2,Posted,misc_expenses,Taste Bayville Far_-41.2_10/14/24,2024-10
+2024-10-14,Walmart,WALMART.COM 8009256278   800-966-6546 AR,Shopping,-41.24,Posted,fixed_expenses,Walmart_-41.24_10/14/24,2024-10
 2024-10-13,Walmart,WAL-MART #4064           VIRGINIA BEACVA,Shopping,33.3,Posted,misc_expenses,Walmart_33.3_10/13/24,2024-10
 2024-10-12,Kohls Virginia Beacva,KOHLS #0650              VIRGINIA BEACVA,Shopping,-12.71,Posted,misc_expenses,Kohls Virginia Beacva_-12.71_10/12/24,2024-10
 2024-10-12,iHerb.com,IHERB IHERB.COM fe1R7    951-6163600  CA,Health & Fitness,-36.91,Posted,misc_expenses,iHerb.com_-36.91_10/12/24,2024-10

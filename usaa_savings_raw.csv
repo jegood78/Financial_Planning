@@ -1,5 +1,10 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type
-10/15/24,USAA FUNDS TRANSFER CR,USAA FUNDS TRANSFER CR,Category Pending,1100,Posted,savings
+10/24/24,Transfer from Venmo,VENMO            CASHOUT    ***********2849,Transfer,457,Posted,savings
+10/24/24,Transfer to Venmo,VENMO            ADDFUNDS   ***********1728,Transfer,-25,Posted,savings
+10/24/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-1000,Posted,savings
+10/15/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
+10/15/24,Mobile Deposit,DEPOSIT@MOBILE,Income,50,Posted,savings
+10/15/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
 10/3/24,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-243.42,Posted,fixed_expenses
 10/1/24,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings
 10/1/24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment
