@@ -1,4 +1,7 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type,key,month
+2024-10-30,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5423.16,Posted,income,Defense Finance and Accounting Service_5423.16_10/30/24,2024-10
+2024-10-30,Federal Payment,3801000000000000 FED PAYMNT ***********0000,Income,294,Posted,income,Federal Payment_294_10/30/24,2024-10
+2024-10-28,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-63.13,Posted,misc_expenses,Target_-63.13_10/28/24,2024-10
 2024-10-25,Midland National Life Insurance,MIDLAND NATIONAL INSURANCE  ***********1874,Life Insurance,-195.8,Posted,fixed_expenses,Midland National Life Insurance_-195.8_10/25/24,2024-10
 2024-10-24,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-324,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-324_10/24/24,2024-10
 2024-10-24,Chase Credit Card,CHASE CREDIT CRD EPAY       ***********5560,Credit Card Payment,-500,Posted,misc_expenses,Chase Credit Card_-500_10/24/24,2024-10
@@ -209,6 +212,11 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,ke
 2024-01-16,Brightwheel,brightwheel      BRGHTWHL*  ***********G3X5,Babysitter & Daycare,-186.37,Posted,fixed_expenses,Brightwheel_-186.37_1/16/24,2024-01
 2024-01-16,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,ICPayment_-814.04_1/16/24,2024-01
 2024-01-16,IRS Tax Payment,IRS              USATAXPYMT ***********4831,Federal Tax,-2000,Posted,fixed_expenses,IRS Tax Payment_-2000_1/16/24,2024-01
+2024-11-01,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_11/1/24,2024-11
+2024-10-31,Interest Paid,INTEREST PAID,Interest Income,0.29,Posted,income,Interest Paid_0.29_10/31/24,2024-10
+2024-10-30,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********1305,Paycheck,4180,Posted,income,Adp Workmarket Direct Deposit_4180_10/30/24,2024-10
+2024-10-29,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,Vanguard_-500_10/29/24,2024-10
+2024-10-28,Transfer to Venmo,VENMO            PAYMENT    ***********2276,Transfer,-2,Posted,misc_expenses,Transfer to Venmo_-2_10/28/24,2024-10
 2024-10-24,Transfer from Venmo,VENMO            CASHOUT    ***********2849,Transfer,457,Posted,savings,Transfer from Venmo_457_10/24/24,2024-10
 2024-10-24,Transfer to Venmo,VENMO            ADDFUNDS   ***********1728,Transfer,-25,Posted,savings,Transfer to Venmo_-25_10/24/24,2024-10
 2024-10-24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-1000,Posted,savings,USAA Transfer_-1000_10/24/24,2024-10
@@ -329,6 +337,22 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,ke
 2024-01-19,Transfer to Venmo,VENMO            PAYMENT    ***********4890,Transfer,-45,Posted,misc_expenses,Transfer to Venmo_-45_1/19/24,2024-01
 2024-01-17,Ohtaxites Ohincometx,8052-1OHTAXITES  OHINCOMETX ***********4805,Taxes,-200,Posted,fixed_expenses,Ohtaxites Ohincometx_-200_1/17/24,2024-01
 2024-01-16,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_1/16/24,2024-01
+2024-10-31,Cpoa Sbt 20,SQ *CPOA SBT 20          GULFPORT     MS,Gifts & Donations,-5.13,Posted,misc_expenses,Cpoa Sbt 20_-5.13_10/31/24,2024-10
+2024-10-30,Kroger Fuel,KROGER FUEL #3532        VIRGINIA BEACVA,Gas,-40.33,Posted,fixed_expenses,Kroger Fuel_-40.33_10/30/24,2024-10
+2024-10-29,Kroger,KROGER #532              VIRGINIA BEACVA,Groceries,-41.87,Posted,fixed_expenses,Kroger_-41.87_10/29/24,2024-10
+2024-10-29,Vagaro,Vagaro_*Karina Michele   NORFOLK      VA,Business Services,-495,Posted,fixed_expenses,Vagaro_-495_10/29/24,2024-10
+2024-10-28,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-9.99,Posted,fixed_expenses,Apple_-9.99_10/28/24,2024-10
+2024-10-28,Hulu,HLU*HULUPLUS             hulu.com/billCA,Television,-23.64,Posted,fixed_expenses,Hulu_-23.64_10/28/24,2024-10
+2024-10-28,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-31.81,Posted,misc_expenses,Shorebreak Pizza Online_-31.81_10/28/24,2024-10
+2024-10-28,7-Eleven,7 ELEVEN 33537           VIRGINIA BEACVA,Gas,-46.04,Posted,fixed_expenses,7-Eleven_-46.04_10/28/24,2024-10
+2024-10-27,Eg Facepa,NWC EG                   HTTPSWWW.FACEPA,Doctor,-1,Posted,misc_expenses,Eg Facepa_-1_10/27/24,2024-10
+2024-10-26,Iad Express,IAD IAD EXPRESS          DULLES       VA,Shopping,-6.96,Posted,misc_expenses,Iad Express_-6.96_10/26/24,2024-10
+2024-10-26,Shorebreak Pizza Virginia Beac,Shorebreak Pizza         Virginia BeacVA,Food & Dining,-86.03,Posted,misc_expenses,Shorebreak Pizza Virginia Beac_-86.03_10/26/24,2024-10
+2024-10-26,Sam's Club,SAMSCLUB.COM             888-746-7726 AR,Shopping,-101.75,Posted,fixed_expenses,Sam's Club_-101.75_10/26/24,2024-10
+2024-10-25,Starbucks,AAFES PNZ STARBUCKS      APO          XX,Coffee Shops,-5.35,Posted,misc_expenses,Starbucks_-5.35_10/25/24,2024-10
+2024-10-25,Manfreds Stuttgart,MANFREDS                 STUTTGART    DF,Shopping,-12.02,Posted,misc_expenses,Manfreds Stuttgart_-12.02_10/25/24,2024-10
+2024-10-25,Travel Value Stuttgart,TRAVEL VALUE T1          STUTTGART    DF,Travel,-14.02,Posted,misc_expenses,Travel Value Stuttgart_-14.02_10/25/24,2024-10
+2024-10-25,Kroger,KROGER #532              VIRGINIA BEACVA,Groceries,-113.01,Posted,fixed_expenses,Kroger_-113.01_10/25/24,2024-10
 2024-10-24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,1.94,Posted,fixed_expenses,Apple_1.94_10/24/24,2024-10
 2024-10-24,Illertal Ost Tankshop Dettingen an,Illertal Ost Tankshop    Dettingen an DF,Utilities,-1.08,Posted,misc_expenses,Illertal Ost Tankshop Dettingen an_-1.08_10/24/24,2024-10
 2024-10-24,Exchange,AAFES GARMISCH MAIN STOR APO          XX,Shopping,-4.25,Posted,misc_expenses,Exchange_-4.25_10/24/24,2024-10
