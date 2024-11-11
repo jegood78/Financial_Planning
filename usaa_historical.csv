@@ -1,4 +1,7 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type,key,month
+2024-11-05,USAA Property and Casualty Insurance,USAA P&C         AUTOPAY    ***********3049,Financial,-193.14,Posted,fixed_expenses,USAA Property and Casualty Insurance_-193.14_11/5/24,2024-11
+2024-11-05,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-324,Posted,fixed_expenses,Zelle Transfer to Amber Carroll_-324_11/5/24,2024-11
+2024-11-04,Water Bill,USAA FUNDS TRANSFER DB,Transfer,-188.67,Posted,fixed_expenses,Water Bill_-188.67_11/4/24,2024-11
 2024-10-30,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5423.16,Posted,income,Defense Finance and Accounting Service_5423.16_10/30/24,2024-10
 2024-10-30,Federal Payment,3801000000000000 FED PAYMNT ***********0000,Income,294,Posted,income,Federal Payment_294_10/30/24,2024-10
 2024-10-28,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-63.13,Posted,misc_expenses,Target_-63.13_10/28/24,2024-10
@@ -212,6 +215,7 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,ke
 2024-01-16,Brightwheel,brightwheel      BRGHTWHL*  ***********G3X5,Babysitter & Daycare,-186.37,Posted,fixed_expenses,Brightwheel_-186.37_1/16/24,2024-01
 2024-01-16,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,ICPayment_-814.04_1/16/24,2024-01
 2024-01-16,IRS Tax Payment,IRS              USATAXPYMT ***********4831,Federal Tax,-2000,Posted,fixed_expenses,IRS Tax Payment_-2000_1/16/24,2024-01
+2024-11-05,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-243.42,Posted,fixed_expenses,Department of Education_-243.42_11/5/24,2024-11
 2024-11-01,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_11/1/24,2024-11
 2024-10-31,Interest Paid,INTEREST PAID,Interest Income,0.29,Posted,income,Interest Paid_0.29_10/31/24,2024-10
 2024-10-30,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********1305,Paycheck,4180,Posted,income,Adp Workmarket Direct Deposit_4180_10/30/24,2024-10
@@ -337,6 +341,20 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,ke
 2024-01-19,Transfer to Venmo,VENMO            PAYMENT    ***********4890,Transfer,-45,Posted,misc_expenses,Transfer to Venmo_-45_1/19/24,2024-01
 2024-01-17,Ohtaxites Ohincometx,8052-1OHTAXITES  OHINCOMETX ***********4805,Taxes,-200,Posted,fixed_expenses,Ohtaxites Ohincometx_-200_1/17/24,2024-01
 2024-01-16,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,USAA Transfer_1100_1/16/24,2024-01
+2024-11-06,Costco,COSTCO WHSE #0202        NORFOLK      VA,Shopping,-373.04,Posted,fixed_expenses,Costco_-373.04_11/6/24,2024-11
+2024-11-06,ExxonMobil,EXXON 7-ELEVEN 1048169   VIRGINIA BEACVA,Gas,-40.31,Posted,fixed_expenses,ExxonMobil_-40.31_11/6/24,2024-11
+2024-11-06,Panda Express,PANDA EXPRESS 2949A      VIRGINIA BEACVA,Fast Food,-14.05,Posted,misc_expenses,Panda Express_-14.05_11/6/24,2024-11
+2024-11-06,Costco,COSTCO WHSE #0202        NORFOLK      VA,Shopping,-7.49,Posted,misc_expenses,Costco_-7.49_11/6/24,2024-11
+2024-11-05,Amazon,AMAZON RETA* 0D0SY7K53   WWW.AMAZON.COWA,Shopping,-17.59,Posted,misc_expenses,Amazon_-17.59_11/5/24,2024-11
+2024-11-05,Bobos Fine Chicken Res,BOBOS FINE CHICKEN RES   757-6351279  VA,Food & Dining,-16.65,Posted,misc_expenses,Bobos Fine Chicken Res_-16.65_11/5/24,2024-11
+2024-11-04,Kroger,KROGER #532              VIRGINIA BEACVA,Groceries,-71.2,Posted,fixed_expenses,Kroger_-71.2_11/4/24,2024-11
+2024-11-04,Virginianaturalgasbill,VIRGINIANATURALGASBILL   866-383-1846 GA,Utilities,-38.37,Posted,fixed_expenses,Virginianaturalgasbill_-38.37_11/4/24,2024-11
+2024-11-03,Chewy,CHEWY.COM                800-672-4399 FL,Pharmacy,-78.59,Posted,fixed_expenses,Chewy_-78.59_11/3/24,2024-11
+2024-11-03,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-12.89,Posted,misc_expenses,Shorebreak Pizza Online_-12.89_11/3/24,2024-11
+2024-11-02,CVS,CVS/PHARMACY #08938      VIRGINIA BEACVA,Pharmacy,-6.07,Posted,fixed_expenses,CVS_-6.07_11/2/24,2024-11
+2024-11-01,Navy Exchange,NAVY EXCHANGE 050180     VIRGINIA BEACVA,Shopping,-257.96,Posted,misc_expenses,Navy Exchange_-257.96_11/1/24,2024-11
+2024-11-01,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-116.92,Posted,fixed_expenses,Little Creek Comm Virginia Beacva_-116.92_11/1/24,2024-11
+2024-11-01,Taste Bayville Far,TST*TASTE - BAYVILLE FAR 757-464-1566 VA,Restaurants,-27.85,Posted,misc_expenses,Taste Bayville Far_-27.85_11/1/24,2024-11
 2024-10-31,Cpoa Sbt 20,SQ *CPOA SBT 20          GULFPORT     MS,Gifts & Donations,-5.13,Posted,misc_expenses,Cpoa Sbt 20_-5.13_10/31/24,2024-10
 2024-10-30,Kroger Fuel,KROGER FUEL #3532        VIRGINIA BEACVA,Gas,-40.33,Posted,fixed_expenses,Kroger Fuel_-40.33_10/30/24,2024-10
 2024-10-29,Kroger,KROGER #532              VIRGINIA BEACVA,Groceries,-41.87,Posted,fixed_expenses,Kroger_-41.87_10/29/24,2024-10
