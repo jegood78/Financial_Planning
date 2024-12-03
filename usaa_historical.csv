@@ -1,4 +1,14 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type,Transaction Category,key,month
+2024-11-29,Target,TARGET DEBIT CRD ACH TRAN   ***********0217,Shopping,-40.02,Posted,misc_expenses,clothing,Target_-40.02_11/29/24,2024-11
+2024-11-29,Target,TARGET DEBIT CRD ACH TRAN   ***********0217,Shopping,-120.06,Posted,misc_expenses,clothing,Target_-120.06_11/29/24,2024-11
+2024-11-26,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5423.16,Posted,income,jeff_pay,Defense Finance and Accounting Service_5423.16_11/26/24,2024-11
+2024-11-26,Midland National Life Insurance,MIDLAND NATIONAL INSURANCE  ***********1874,Life Insurance,-195.8,Posted,fixed_expenses,insurance,Midland National Life Insurance_-195.8_11/26/24,2024-11
+2024-11-26,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-324,Posted,fixed_expenses,child_care,Zelle Transfer to Amber Carroll_-324_11/26/24,2024-11
+2024-11-25,Target,TARGET DEBIT CRD ACH TRAN   ***********1047,Shopping,11.98,Posted,misc_expenses,clothing,Target_11.98_11/25/24,2024-11
+2024-11-25,Target,TARGET DEBIT CRD ACH TRAN   ***********1047,Shopping,-38.02,Posted,misc_expenses,clothing,Target_-38.02_11/25/24,2024-11
+2024-11-21,Chase Credit Card,CHASE CREDIT CRD EPAY       ***********4024,Credit Card Payment,-1032.26,Posted,misc_expenses,chase_credit_card,Chase Credit Card_-1032.26_11/21/24,2024-11
+2024-11-20,Target,TARGET DEBIT CRD ACH TRAN   ***********0199,Shopping,-69.67,Posted,misc_expenses,clothing,Target_-69.67_11/20/24,2024-11
+2024-11-18,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-333,Posted,fixed_expenses,child_care,Zelle Transfer to Amber Carroll_-333_11/18/24,2024-11
 2024-11-15,Interest Paid,INTEREST PAID,Interest Income,0.03,Posted,income,miscellaneous,Interest Paid_0.03_11/15/24,2024-11
 2024-11-15,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,transportation,ICPayment_-814.04_11/15/24,2024-11
 2024-11-15,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-3200,Posted,fixed_expenses,housing_utilities,USAA Transfer_-3200_11/15/24,2024-11
@@ -223,6 +233,10 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,Tr
 2024-01-16,Brightwheel,brightwheel      BRGHTWHL*  ***********G3X5,Babysitter & Daycare,-186.37,Posted,fixed_expenses,education,Brightwheel_-186.37_1/16/24,2024-01
 2024-01-16,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,transportation,ICPayment_-814.04_1/16/24,2024-01
 2024-01-16,IRS Tax Payment,IRS              USATAXPYMT ***********4831,Federal Tax,-2000,Posted,fixed_expenses,taxes,IRS Tax Payment_-2000_1/16/24,2024-01
+2024-11-29,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********3755,Paycheck,4565,Posted,income,elaina_pay,Adp Workmarket Direct Deposit_4565_11/29/24,2024-11
+2024-11-29,Interest Paid,INTEREST PAID,Interest Income,0.27,Posted,income,miscellaneous,Interest Paid_0.27_11/29/24,2024-11
+2024-11-26,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,investment,Vanguard_-500_11/26/24,2024-11
+2024-11-18,Transfer to Venmo,VENMO            PAYMENT    ***********0384,Transfer,-5,Posted,misc_expenses,miscellaneous,Transfer to Venmo_-5_11/18/24,2024-11
 2024-11-15,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,savings,USAA Transfer_1100_11/15/24,2024-11
 2024-11-12,Mobile Deposit,DEPOSIT@MOBILE,Income,50,Posted,savings,savings,Mobile Deposit_50_11/12/24,2024-11
 2024-11-12,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,investment,Vanguard_-500_11/12/24,2024-11
@@ -352,6 +366,53 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,Tr
 2024-01-19,Transfer to Venmo,VENMO            PAYMENT    ***********4890,Transfer,-45,Posted,misc_expenses,child_care,Transfer to Venmo_-45_1/19/24,2024-01
 2024-01-17,Ohtaxites Ohincometx,8052-1OHTAXITES  OHINCOMETX ***********4805,Taxes,-200,Posted,fixed_expenses,taxes,Ohtaxites Ohincometx_-200_1/17/24,2024-01
 2024-01-16,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,savings,USAA Transfer_1100_1/16/24,2024-01
+2024-11-29,7-ELEVEN 26611           VIRGINIA BEACVA,7-ELEVEN 26611           VIRGINIA BEACVA,Category Pending,-3.32,Posted,misc_expenses,restaraunts,7-ELEVEN 26611           VIRGINIA BEACVA_-3.32_11/29/24,2024-11
+2024-11-29,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-9.99,Posted,fixed_expenses,subscriptions,Apple_-9.99_11/29/24,2024-11
+2024-11-29,Trex Playland,TREX Playland LLC        Norfolk      VA,Entertainment,-112.5,Posted,misc_expenses,entertainment,Trex Playland_-112.5_11/29/24,2024-11
+2024-11-29,HILTON ADVPURCH8002367113MEMPHIS      TN,HILTON ADVPURCH8002367113MEMPHIS      TN,Category Pending,-135.54,Posted,misc_expenses,travel,HILTON ADVPURCH8002367113MEMPHIS      TN_-135.54_11/29/24,2024-11
+2024-11-29,HILTON ADVPURCH8002367113MEMPHIS      TN,HILTON ADVPURCH8002367113MEMPHIS      TN,Category Pending,-140.26,Posted,misc_expenses,travel,HILTON ADVPURCH8002367113MEMPHIS      TN_-140.26_11/29/24,2024-11
+2024-11-28,Hulu,HLU*HULUPLUS             hulu.com/billCA,Television,-23.64,Posted,fixed_expenses,subscriptions,Hulu_-23.64_11/28/24,2024-11
+2024-11-28,Gloss Lauren Httpslaurentava,GLOSS* LAUREN  TAYLOR@   HTTPSLAURENTAVA,Spa & Massage,-30.75,Posted,misc_expenses,personal_care,Gloss Lauren Httpslaurentava_-30.75_11/28/24,2024-11
+2024-11-27,REI,REI #166 VIRGINIA BEAC   VIRGINIABEACHVA,Sporting Goods,135.68,Posted,misc_expenses,clothing,REI_135.68_11/27/24,2024-11
+2024-11-27,Kohls Virginia Beacva,KOHLS #0650              VIRGINIA BEACVA,Shopping,12.71,Posted,misc_expenses,clothing,Kohls Virginia Beacva_12.71_11/27/24,2024-11
+2024-11-27,Kroger,KROGER #532              VIRGINIA BEACVA,Groceries,-16.13,Posted,fixed_expenses,groceries,Kroger_-16.13_11/27/24,2024-11
+2024-11-27,Navy Exchange,NEX FUEL 050039          VIRGINIA BEACVA,Gas,-28.1,Posted,fixed_expenses,transportation,Navy Exchange_-28.1_11/27/24,2024-11
+2024-11-27,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-55.86,Posted,fixed_expenses,groceries,Little Creek Comm Virginia Beacva_-55.86_11/27/24,2024-11
+2024-11-26,H&M,H&M 0081VIRGINIA BEACH   VIRGINIA BEACVA,Clothing,74.18,Posted,misc_expenses,clothing,H&M_74.18_11/26/24,2024-11
+2024-11-26,Taste Bayville Far,TST*TASTE - BAYVILLE FAR 757-464-1566 VA,Restaurants,-25.6,Posted,misc_expenses,restaraunts,Taste Bayville Far_-25.6_11/26/24,2024-11
+2024-11-25,American Eagle,American Eagle 776       Virginia BeacVA,Clothing,0.01,Posted,misc_expenses,clothing,American Eagle_0.01_11/25/24,2024-11
+2024-11-25,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-3.78,Posted,misc_expenses,restaraunts,Chick-fil-A_-3.78_11/25/24,2024-11
+2024-11-25,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-10.74,Posted,misc_expenses,miscellaneous,Apple_-10.74_11/25/24,2024-11
+2024-11-25,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-14.14,Posted,misc_expenses,restaraunts,Chick-fil-A_-14.14_11/25/24,2024-11
+2024-11-25,Old Navy,OLD NAVY US 3983         VIRGINIA BEACVA,Clothing,-14.76,Posted,misc_expenses,clothing,Old Navy_-14.76_11/25/24,2024-11
+2024-11-25,North End Pizza and Ice Cvirginia Beacva,NORTH END PIZZA AND ICE CVIRGINIA BEACVA,Food & Dining,-15.13,Posted,misc_expenses,restaraunts,North End Pizza and Ice Cvirginia Beacva_-15.13_11/25/24,2024-11
+2024-11-25,Kohls Virginia Beacva,KOHLS #0650              VIRGINIA BEACVA,Shopping,-31.73,Posted,misc_expenses,clothing,Kohls Virginia Beacva_-31.73_11/25/24,2024-11
+2024-11-25,Town Center Virginia Beacva,TOWN CENTER CSG          VIRGINIA BEACVA,Doctor,-38,Posted,fixed_expenses,healthcare,Town Center Virginia Beacva_-38_11/25/24,2024-11
+2024-11-25,Target,TARGET        00027706   VIRGINIA BEACVA,Shopping,-57.22,Posted,misc_expenses,clothing,Target_-57.22_11/25/24,2024-11
+2024-11-24,AT&T,ATT* BILL PAYMENT        800-331-0500 TX,Bills & Utilities,-285.55,Posted,fixed_expenses,internet_cellular,AT&T_-285.55_11/24/24,2024-11
+2024-11-22,Food Lion,FOOD LION #0391          VIRGINIABEACHVA,Groceries,-12.29,Posted,fixed_expenses,groceries,Food Lion_-12.29_11/22/24,2024-11
+2024-11-22,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-14.02,Posted,misc_expenses,restaraunts,Shorebreak Pizza Online_-14.02_11/22/24,2024-11
+2024-11-22,Chick-fil-A,CHICK-FIL-A #01081       757-437-8928 VA,Fast Food,-27.98,Posted,misc_expenses,restaraunts,Chick-fil-A_-27.98_11/22/24,2024-11
+2024-11-22,Hairbyraquel,SQ *HAIRBYRAQUEL         VIRGINIA BCH VA,Hair,-51.75,Posted,misc_expenses,personal_care,Hairbyraquel_-51.75_11/22/24,2024-11
+2024-11-22,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-77.47,Posted,fixed_expenses,groceries,Little Creek Comm Virginia Beacva_-77.47_11/22/24,2024-11
+2024-11-22,Care a Lot Va Beach Data Virginia Beacva,CARE A LOT VA BEACH DATA VIRGINIA BEACVA,Pet Food & Supplies,-84.46,Posted,misc_expenses,pet,Care a Lot Va Beach Data Virginia Beacva_-84.46_11/22/24,2024-11
+2024-11-22,Sam's Club,SAMSCLUB.COM             888-746-7726 AR,Shopping,-151.08,Posted,fixed_expenses,groceries,Sam's Club_-151.08_11/22/24,2024-11
+2024-11-22,Beach,IFLY VA BEACH            757-7544359  VA,Entertainment,-217.52,Posted,misc_expenses,entertainment,Beach_-217.52_11/22/24,2024-11
+2024-11-21,Navy Exchange,NAVY EXCHANGE 050180 VIRGINIA BEA CREDIT,Shopping,119.99,Posted,misc_expenses,clothing,Navy Exchange_119.99_11/21/24,2024-11
+2024-11-20,Naval Special Warfarevirginia Beacva,SQ *NAVAL SPECIAL WARFAREVirginia BeacVA,Business Services,-8,Posted,misc_expenses,restaraunts,Naval Special Warfarevirginia Beacva_-8_11/20/24,2024-11
+2024-11-19,Amazon,AMAZON MKTPL*SO6NX9X23   Amzn.com/billWA,Shopping,-42.38,Posted,misc_expenses,miscellaneous,Amazon_-42.38_11/19/24,2024-11
+2024-11-18,Pie O Neer Pizza Virginia Beac,TST*PIE-O-NEER PIZZA     Virginia BeacVA,Food & Dining,-9.92,Posted,misc_expenses,restaraunts,Pie O Neer Pizza Virginia Beac_-9.92_11/18/24,2024-11
+2024-11-18,Navy Exchange,NAVY EXCHANGE 050180     VIRGINIA BEACVA,Shopping,-26.78,Posted,misc_expenses,clothing,Navy Exchange_-26.78_11/18/24,2024-11
+2024-11-18,Navy Exchange,NEX FUEL 050039          VIRGINIA BEACVA,Gas,-45.71,Posted,fixed_expenses,transportation,Navy Exchange_-45.71_11/18/24,2024-11
+2024-11-18,Kroger,KROGER #532              VIRGINIA BEACVA,Groceries,-57.61,Posted,fixed_expenses,groceries,Kroger_-57.61_11/18/24,2024-11
+2024-11-18,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-71.58,Posted,fixed_expenses,groceries,Little Creek Comm Virginia Beacva_-71.58_11/18/24,2024-11
+2024-11-18,Verizon,VERIZON*RECURRING PAY    800-VERIZON  FL,Utilities,-100.59,Posted,fixed_expenses,internet_cellular,Verizon_-100.59_11/18/24,2024-11
+2024-11-16,Med Capital Digestive,MED*CAPITAL DIGESTIVE    240-485-5203 MD,Doctor,-109.37,Posted,fixed_expenses,healthcare,Med Capital Digestive_-109.37_11/16/24,2024-11
+2024-11-15,Chick-fil-A,CHICK-FIL-A #00734       757-318-7641 VA,Fast Food,-10.36,Posted,misc_expenses,restaraunts,Chick-fil-A_-10.36_11/15/24,2024-11
+2024-11-15,Navy Exchange,NEX FUEL 050039          VIRGINIA BEACVA,Gas,-24.87,Posted,fixed_expenses,transportation,Navy Exchange_-24.87_11/15/24,2024-11
+2024-11-15,M Sentara Billing,42013M SENTARA BILLING   757-2334500  VA,Doctor,-38,Posted,fixed_expenses,healthcare,M Sentara Billing_-38_11/15/24,2024-11
+2024-11-15,Walmart,WAL-MART#5922            VIRGINIA BEACVA,Shopping,-239.94,Posted,misc_expenses,groceries,Walmart_-239.94_11/15/24,2024-11
+2024-11-15,Brightwheel,BRGHTWHL* FRANCIS ASBU   WWW.MYBRIGHTWCA,Babysitter & Daycare,-494.33,Posted,fixed_expenses,education,Brightwheel_-494.33_11/15/24,2024-11
 2024-11-14,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Category Pending,-2.6,Posted,misc_expenses,restaraunts,SHOREBREAK PIZZA (ONLINE 757-4819393  VA_-2.6_11/14/24,2024-11
 2024-11-14,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-10.74,Posted,misc_expenses,subscriptions,Apple_-10.74_11/14/24,2024-11
 2024-11-14,Panda Express,PANDA EXPRESS 2949A      VIRGINIA BEACVA,Fast Food,-11.04,Posted,misc_expenses,restaraunts,Panda Express_-11.04_11/14/24,2024-11

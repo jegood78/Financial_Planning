@@ -1,4 +1,14 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type,Transaction Category
+11/29/24,Target,TARGET DEBIT CRD ACH TRAN   ***********0217,Shopping,-40.02,Posted,misc_expenses,clothing
+11/29/24,Target,TARGET DEBIT CRD ACH TRAN   ***********0217,Shopping,-120.06,Posted,misc_expenses,clothing
+11/26/24,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5423.16,Posted,income,jeff_pay
+11/26/24,Midland National Life Insurance,MIDLAND NATIONAL INSURANCE  ***********1874,Life Insurance,-195.8,Posted,fixed_expenses,insurance
+11/26/24,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-324,Posted,fixed_expenses,child_care
+11/25/24,Target,TARGET DEBIT CRD ACH TRAN   ***********1047,Shopping,11.98,Posted,misc_expenses,clothing
+11/25/24,Target,TARGET DEBIT CRD ACH TRAN   ***********1047,Shopping,-38.02,Posted,misc_expenses,clothing
+11/21/24,Chase Credit Card,CHASE CREDIT CRD EPAY       ***********4024,Credit Card Payment,-1032.26,Posted,misc_expenses,chase_credit_card
+11/20/24,Target,TARGET DEBIT CRD ACH TRAN   ***********0199,Shopping,-69.67,Posted,misc_expenses,clothing
+11/18/24,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-333,Posted,fixed_expenses,child_care
 11/15/24,Interest Paid,INTEREST PAID,Interest Income,0.03,Posted,income,miscellaneous
 11/15/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-50,Posted,savings,savings
 11/15/24,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-50,Posted,savings,savings
