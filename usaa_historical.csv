@@ -1,4 +1,62 @@
 Date,Description,Original Description,Category,Amount,Status,Transaction Type,Transaction Category,key,month
+2025-01-16,Interest Paid,INTEREST PAID,Interest Income,0.03,Posted,income,NA,Interest Paid_0.03_1/16/25,2025-01
+2025-01-16,Target,TARGET DEBIT CRD ACH TRAN   ***********1047,Shopping,-65.46,Posted,misc_expenses,NA,Target_-65.46_1/16/25,2025-01
+2025-01-16,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-121.03,Posted,misc_expenses,NA,Target_-121.03_1/16/25,2025-01
+2025-01-16,Dominion Energy,DOMINION ENERGY  BILLPAY    ***********7814,Bills & Utilities,-123.68,Posted,fixed_expenses,NA,Dominion Energy_-123.68_1/16/25,2025-01
+2025-01-15,Target,TARGET DEBIT CRD ACH TRAN   ***********1047,Shopping,-216.3,Posted,misc_expenses,NA,Target_-216.3_1/15/25,2025-01
+2025-01-15,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-342,Posted,fixed_expenses,NA,Zelle Transfer to Amber Carroll_-342_1/15/25,2025-01
+2025-01-15,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,NA,ICPayment_-814.04_1/15/25,2025-01
+2025-01-15,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-3200,Posted,fixed_expenses,NA,USAA Transfer_-3200_1/15/25,2025-01
+2025-01-13,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5710.8,Posted,income,NA,Defense Finance and Accounting Service_5710.8_1/13/25,2025-01
+2025-01-13,Nordstrom,NORDSTROM        TRANS      ***********9965,Shopping,26.46,Posted,misc_expenses,NA,Nordstrom_26.46_1/13/25,2025-01
+2025-01-10,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-117,Posted,fixed_expenses,NA,Zelle Transfer to Amber Carroll_-117_1/10/25,2025-01
+2025-01-09,Target,TARGET DEBIT CRD ACH TRAN   ***********1047,Shopping,-7.04,Posted,misc_expenses,NA,Target_-7.04_1/9/25,2025-01
+2025-01-09,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-215.91,Posted,fixed_expenses,NA,USAA Transfer_-215.91_1/9/25,2025-01
+2025-01-08,Chase Credit Card,CHASE CREDIT CRD EPAY       ***********0894,Credit Card Payment,-681.66,Posted,misc_expenses,NA,Chase Credit Card_-681.66_1/8/25,2025-01
+2025-01-07,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-342,Posted,fixed_expenses,NA,Zelle Transfer to Amber Carroll_-342_1/7/25,2025-01
+2025-01-02,Target,TARGET DEBIT CRD ACH TRAN   ***********1168,Shopping,-18.48,Posted,misc_expenses,NA,Target_-18.48_1/2/25,2025-01
+2024-12-31,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-18,Posted,fixed_expenses,NA,Zelle Transfer to Amber Carroll_-18_12/31/24,2024-12
+2024-12-31,Target,TARGET DEBIT CRD ACH TRAN   ***********0833,Shopping,-71.23,Posted,misc_expenses,NA,Target_-71.23_12/31/24,2024-12
+2024-12-31,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-342,Posted,fixed_expenses,NA,Zelle Transfer to Amber Carroll_-342_12/31/24,2024-12
+2024-12-30,Target,TARGET DEBIT CRD ACH TRAN   ***********0671,Shopping,-15.09,Posted,misc_expenses,NA,Target_-15.09_12/30/24,2024-12
+2024-12-30,Target,TARGET DEBIT CRD ACH TRAN   ***********0671,Shopping,-27.44,Posted,misc_expenses,NA,Target_-27.44_12/30/24,2024-12
+2024-12-27,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5811.73,Posted,income,NA,Defense Finance and Accounting Service_5811.73_12/27/24,2024-12
+2024-12-26,Midland National Life Insurance,MIDLAND NATIONAL INSURANCE  ***********1874,Life Insurance,-195.8,Posted,fixed_expenses,NA,Midland National Life Insurance_-195.8_12/26/24,2024-12
+2024-12-24,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-324,Posted,fixed_expenses,NA,Zelle Transfer to Amber Carroll_-324_12/24/24,2024-12
+2024-12-23,Chase Credit Card,CHASE CREDIT CRD EPAY       ***********5497,Credit Card Payment,-500,Posted,misc_expenses,NA,Chase Credit Card_-500_12/23/24,2024-12
+2024-12-20,Target,TARGET DEBIT CRD ACH TRAN   ***********1047,Shopping,-168.27,Posted,misc_expenses,NA,Target_-168.27_12/20/24,2024-12
+2024-12-18,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-108,Posted,fixed_expenses,NA,Zelle Transfer to Amber Carroll_-108_12/18/24,2024-12
+2024-12-17,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-150,Posted,fixed_expenses,NA,Zelle Transfer to Amber Carroll_-150_12/17/24,2024-12
+2024-12-16,Interest Paid,INTEREST PAID,Interest Income,0.04,Posted,income,NA,Interest Paid_0.04_12/16/24,2024-12
+2024-12-16,Starbucks,STARBUCKS STORE 21598    VIRGINIA BEACVA,Coffee Shops,-32,Posted,misc_expenses,NA,Starbucks_-32_12/16/24,2024-12
+2024-12-16,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-108,Posted,fixed_expenses,NA,Zelle Transfer to Amber Carroll_-108_12/16/24,2024-12
+2024-12-16,Dominion Energy,DOMINION ENERGY  BILLPAY    ***********7814,Bills & Utilities,-127.25,Posted,fixed_expenses,NA,Dominion Energy_-127.25_12/16/24,2024-12
+2024-12-16,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,NA,ICPayment_-814.04_12/16/24,2024-12
+2024-12-16,USAA Transfer,USAA FUNDS TRANSFER DB,Transfer,-3200,Posted,fixed_expenses,NA,USAA Transfer_-3200_12/16/24,2024-12
+2024-12-13,Target,TARGET DEBIT CRD ACH TRAN   ***********0225,Shopping,-13.09,Posted,misc_expenses,NA,Target_-13.09_12/13/24,2024-12
+2024-12-13,Target,TARGET DEBIT CRD ACH TRAN   ***********0221,Shopping,-39.73,Posted,misc_expenses,NA,Target_-39.73_12/13/24,2024-12
+2024-12-12,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,49.82,Posted,misc_expenses,NA,Target_49.82_12/12/24,2024-12
+2024-12-12,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-109.82,Posted,misc_expenses,NA,Target_-109.82_12/12/24,2024-12
+2024-12-11,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5811.66,Posted,income,NA,Defense Finance and Accounting Service_5811.66_12/11/24,2024-12
+2024-12-11,Nordstrom,NORDSTROM        TRANS      ***********0830,Shopping,-68.8,Posted,misc_expenses,NA,Nordstrom_-68.8_12/11/24,2024-12
+2024-12-10,Little Creek Com a Virginia Beacva,LITTLE CREEK COM 1180 A  VIRGINIA BEACVA,Groceries,-40.93,Posted,fixed_expenses,NA,Little Creek Com a Virginia Beacva_-40.93_12/10/24,2024-12
+2024-12-10,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-342,Posted,fixed_expenses,NA,Zelle Transfer to Amber Carroll_-342_12/10/24,2024-12
+2024-12-09,Federal Payment,3801000000000000 FED PAYMNT ***********0000,Income,677,Posted,income,NA,Federal Payment_677_12/9/24,2024-12
+2024-12-09,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,189.53,Posted,misc_expenses,NA,Target_189.53_12/9/24,2024-12
+2024-12-09,Zappos.com,ZAP*ZAPPOS.COM           800-927-7671 NV,Clothing,80.65,Posted,misc_expenses,NA,Zappos.com_80.65_12/9/24,2024-12
+2024-12-09,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,40.01,Posted,misc_expenses,NA,Target_40.01_12/9/24,2024-12
+2024-12-09,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-20.13,Posted,misc_expenses,NA,Target_-20.13_12/9/24,2024-12
+2024-12-09,Target,TARGET DEBIT CRD ACH TRAN   ***********2770,Shopping,-110.2,Posted,misc_expenses,NA,Target_-110.2_12/9/24,2024-12
+2024-12-03,Target,TARGET DEBIT CRD ACH TRAN   ***********0220,Shopping,-18.01,Posted,misc_expenses,NA,Target_-18.01_12/3/24,2024-12
+2024-12-03,Target,TARGET DEBIT CRD ACH TRAN   ***********0220,Shopping,-20.13,Posted,misc_expenses,NA,Target_-20.13_12/3/24,2024-12
+2024-12-03,Zappos.com,ZAP*ZAPPOS.COM           800-927-7671 NV,Clothing,-80.65,Posted,misc_expenses,NA,Zappos.com_-80.65_12/3/24,2024-12
+2024-12-03,USAA Property and Casualty Insurance,USAA P&C         AUTOPAY    ***********3049,Financial,-193.14,Posted,fixed_expenses,NA,USAA Property and Casualty Insurance_-193.14_12/3/24,2024-12
+2024-12-03,Zelle Transfer to Amber Carroll,Zelle: Amber Carroll,Transfer,-342,Posted,fixed_expenses,NA,Zelle Transfer to Amber Carroll_-342_12/3/24,2024-12
+2024-12-02,Kroger,KROGER #533 1800 REPUBL  VIRGINIA BEACVA,Groceries,5.5,Posted,misc_expenses,NA,Kroger_5.5_12/2/24,2024-12
+2024-12-02,7-Eleven,7-ELEVEN                 Virginia BeacVA,Gas,-7.15,Posted,misc_expenses,NA,7-Eleven_-7.15_12/2/24,2024-12
+2024-12-02,Target,TARGET DEBIT CRD ACH TRAN   ***********0219,Shopping,-49.33,Posted,misc_expenses,NA,Target_-49.33_12/2/24,2024-12
+2024-12-02,Trader Joe's,TRADER JOE S #660        VIRGINIA BEACVA,Groceries,-90.91,Posted,fixed_expenses,NA,Trader Joe's_-90.91_12/2/24,2024-12
+2024-12-02,Kroger,KROGER #533              VIRGINIA BEACVA,Groceries,-135.46,Posted,fixed_expenses,NA,Kroger_-135.46_12/2/24,2024-12
 2024-11-29,Target,TARGET DEBIT CRD ACH TRAN   ***********0217,Shopping,-40.02,Posted,misc_expenses,clothing,Target_-40.02_11/29/24,2024-11
 2024-11-29,Target,TARGET DEBIT CRD ACH TRAN   ***********0217,Shopping,-120.06,Posted,misc_expenses,clothing,Target_-120.06_11/29/24,2024-11
 2024-11-26,Defense Finance and Accounting Service,DFAS-CLEVELAND   NAVY ACT   ***********1645,Paycheck,5423.16,Posted,income,jeff_pay,Defense Finance and Accounting Service_5423.16_11/26/24,2024-11
@@ -233,6 +291,18 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,Tr
 2024-01-16,Brightwheel,brightwheel      BRGHTWHL*  ***********G3X5,Babysitter & Daycare,-186.37,Posted,fixed_expenses,education,Brightwheel_-186.37_1/16/24,2024-01
 2024-01-16,ICPayment,ICPAYMENT,Transfer,-814.04,Posted,fixed_expenses,transportation,ICPayment_-814.04_1/16/24,2024-01
 2024-01-16,IRS Tax Payment,IRS              USATAXPYMT ***********4831,Federal Tax,-2000,Posted,fixed_expenses,taxes,IRS Tax Payment_-2000_1/16/24,2024-01
+2025-01-15,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,NA,USAA Transfer_1100_1/15/25,2025-01
+2025-01-09,Mobile Deposit,DEPOSIT@MOBILE,Income,507,Posted,savings,NA,Mobile Deposit_507_1/9/25,2025-01
+2025-01-07,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,NA,Vanguard_-500_1/7/25,2025-01
+2025-01-03,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-114.45,Posted,fixed_expenses,NA,Department of Education_-114.45_1/3/25,2025-01
+2025-01-02,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,NA,USAA Transfer_1100_1/2/25,2025-01
+2024-12-31,Interest Paid,INTEREST PAID,Interest Income,0.33,Posted,savings,NA,Interest Paid_0.33_12/31/24,2024-12
+2024-12-24,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,NA,Vanguard_-500_12/24/24,2024-12
+2024-12-23,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********4186,Paycheck,4345,Posted,income,NA,Adp Workmarket Direct Deposit_4345_12/23/24,2024-12
+2024-12-16,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,NA,USAA Transfer_1100_12/16/24,2024-12
+2024-12-10,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,NA,Vanguard_-500_12/10/24,2024-12
+2024-12-03,Department of Education,DEPT EDUCATION   STUDENT LN ***********0000,Student Loan,-223.93,Posted,fixed_expenses,NA,Department of Education_-223.93_12/3/24,2024-12
+2024-12-02,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,NA,USAA Transfer_1100_12/2/24,2024-12
 2024-11-29,Adp Workmarket Direct Deposit,ADP WORKMARKET   DIRECT DEP ***********3755,Paycheck,4565,Posted,income,elaina_pay,Adp Workmarket Direct Deposit_4565_11/29/24,2024-11
 2024-11-29,Interest Paid,INTEREST PAID,Interest Income,0.27,Posted,income,miscellaneous,Interest Paid_0.27_11/29/24,2024-11
 2024-11-26,Vanguard,VANGUARD BUY     INVESTMENT ***********3619,Buy,-500,Posted,investment,investment,Vanguard_-500_11/26/24,2024-11
@@ -366,6 +436,171 @@ Date,Description,Original Description,Category,Amount,Status,Transaction Type,Tr
 2024-01-19,Transfer to Venmo,VENMO            PAYMENT    ***********4890,Transfer,-45,Posted,misc_expenses,child_care,Transfer to Venmo_-45_1/19/24,2024-01
 2024-01-17,Ohtaxites Ohincometx,8052-1OHTAXITES  OHINCOMETX ***********4805,Taxes,-200,Posted,fixed_expenses,taxes,Ohtaxites Ohincometx_-200_1/17/24,2024-01
 2024-01-16,USAA Transfer,USAA FUNDS TRANSFER CR,Transfer,1100,Posted,savings,savings,USAA Transfer_1100_1/16/24,2024-01
+2025-01-16,Verizon,VERIZON*RECURRING PAY    800-VERIZON  FL,Utilities,-100.59,Posted,fixed_expenses,NA,Verizon_-100.59_1/16/25,2025-01
+2025-01-15,ExxonMobil,EXXON 7-ELEVEN 38161     VIRGINIA BEACVA,Gas,-58.29,Posted,fixed_expenses,NA,ExxonMobil_-58.29_1/15/25,2025-01
+2025-01-15,Brightwheel,BRGHTWHL* FRANCIS ASBU   MYBRIGHTWHEELCA,Babysitter & Daycare,-494.33,Posted,fixed_expenses,NA,Brightwheel_-494.33_1/15/25,2025-01
+2025-01-14,Target,TARGET        00010470   VIRGINIA BEACVA,Shopping,26.5,Posted,misc_expenses,NA,Target_26.5_1/14/25,2025-01
+2025-01-13,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-23.95,Posted,misc_expenses,NA,Shorebreak Pizza Online_-23.95_1/13/25,2025-01
+2025-01-13,Care.com,CARE.COM 737-202-3114    CARE.COM     TX,Babysitter & Daycare,-38.95,Posted,fixed_expenses,NA,Care.com_-38.95_1/13/25,2025-01
+2025-01-11,Taste Bayville Far,TST*TASTE - BAYVILLE FAR 757-464-1566 VA,Restaurants,-10.02,Posted,misc_expenses,NA,Taste Bayville Far_-10.02_1/11/25,2025-01
+2025-01-10,Kohl's,KOHLS #0650              VIRGINIA BEACVA,Shopping,181.4,Posted,misc_expenses,NA,Kohl's_181.4_1/10/25,2025-01
+2025-01-10,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-10.74,Posted,misc_expenses,NA,Apple_-10.74_1/10/25,2025-01
+2025-01-10,Starbucks,STARBUCKS 21598          VIRGINIA BEACVA,Coffee Shops,-11.2,Posted,misc_expenses,NA,Starbucks_-11.2_1/10/25,2025-01
+2025-01-10,Navy Exchange,NEX FUEL 050039          VIRGINIA BEACVA,Gas,-37.89,Posted,fixed_expenses,NA,Navy Exchange_-37.89_1/10/25,2025-01
+2025-01-10,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-101.76,Posted,fixed_expenses,NA,Little Creek Comm Virginia Beacva_-101.76_1/10/25,2025-01
+2025-01-09,Old Navy,OLD NAVY ON-LINE         800-6536289  OH,Clothing,81.11,Posted,misc_expenses,NA,Old Navy_81.11_1/9/25,2025-01
+2025-01-09,Old Navy,OLD NAVY US 3983         VIRGINIA BEACVA,Clothing,59.9,Posted,misc_expenses,NA,Old Navy_59.9_1/9/25,2025-01
+2025-01-09,Bobos Fine Chicken Res,BOBOS FINE CHICKEN RES   757-6351279  VA,Food & Dining,-16.65,Posted,misc_expenses,NA,Bobos Fine Chicken Res_-16.65_1/9/25,2025-01
+2025-01-09,Med Capital Digestive,MED*CAPITAL DIGESTIVE    240-485-5203 MD,Doctor,-62.06,Posted,fixed_expenses,NA,Med Capital Digestive_-62.06_1/9/25,2025-01
+2025-01-08,Shorebreak Pizza & Taphou,SHOREBREAK PIZZA & TAPHOU757-8552071  VA,Food & Dining,-5.18,Posted,misc_expenses,NA,Shorebreak Pizza & Taphou_-5.18_1/8/25,2025-01
+2025-01-08,Kohl's,KOHLS #0650              VIRGINIA BEACVA,Shopping,-12.9,Posted,misc_expenses,NA,Kohl's_-12.9_1/8/25,2025-01
+2025-01-08,Shorebreak Pizza Virginia Beac,Shorebreak Pizza         Virginia BeacVA,Food & Dining,-40.47,Posted,misc_expenses,NA,Shorebreak Pizza Virginia Beac_-40.47_1/8/25,2025-01
+2025-01-07,Hilton Adv,HILTON ADVPURCH8002367113MEMPHIS      TN,Hotel,135.54,Posted,misc_expenses,NA,Hilton Adv_135.54_1/7/25,2025-01
+2025-01-07,Walmart,WM SUPERCENTER #4064     VIRGINIA BEACVA,Shopping,7.39,Posted,misc_expenses,NA,Walmart_7.39_1/7/25,2025-01
+2025-01-07,Chick-fil-A,CHICK-FIL-A #01081       757-437-8928 VA,Fast Food,-27.09,Posted,misc_expenses,NA,Chick-fil-A_-27.09_1/7/25,2025-01
+2025-01-06,Walmart,WAL-MART #4064           VIRGINIA BEACVA,Shopping,37.08,Posted,misc_expenses,NA,Walmart_37.08_1/6/25,2025-01
+2025-01-06,Panda Express,PANDA EXPRESS 2949A      VIRGINIA BEACVA,Fast Food,-12.15,Posted,misc_expenses,NA,Panda Express_-12.15_1/6/25,2025-01
+2025-01-06,Little Caesars,LITTLE CAESARS 0629 0003 757-363-7992 VA,Fast Food,-12.59,Posted,misc_expenses,NA,Little Caesars_-12.59_1/6/25,2025-01
+2025-01-06,Kroger,KROGER #532              VIRGINIA BEACVA,Groceries,-117.28,Posted,misc_expenses,NA,Kroger_-117.28_1/6/25,2025-01
+2025-01-05,Amazon,AMAZON MKTPL*ZP0Y94R40   Amzn.com/billWA,Shopping,-10.59,Posted,misc_expenses,NA,Amazon_-10.59_1/5/25,2025-01
+2025-01-05,E-ZPass,NJ EZPASS                888-288-6865 NJ,Auto & Transport,-25,Posted,fixed_expenses,NA,E-ZPass_-25_1/5/25,2025-01
+2025-01-05,Chipotle,CHIPOTLE 1156            VIRGINIA BEACVA,Fast Food,-31,Posted,misc_expenses,NA,Chipotle_-31_1/5/25,2025-01
+2025-01-05,Walmart,WM SUPERCENTER #4064     VIRGINIA BEACVA,Shopping,-224.26,Posted,misc_expenses,NA,Walmart_-224.26_1/5/25,2025-01
+2025-01-04,Food Lion,FOOD LION #0391          VIRGINIABEACHVA,Groceries,-7.06,Posted,misc_expenses,NA,Food Lion_-7.06_1/4/25,2025-01
+2025-01-04,Sheetz,SHEETZ 0491   00004911   ZION CROSSROAVA,Gas,-16.08,Posted,fixed_expenses,NA,Sheetz_-16.08_1/4/25,2025-01
+2025-01-04,Green Clean Auto Wash Virginia Beacva,GREEN CLEAN AUTO WASH-   VIRGINIA BEACVA,Service & Parts,-22,Posted,misc_expenses,NA,Green Clean Auto Wash Virginia Beacva_-22_1/4/25,2025-01
+2025-01-04,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-23.95,Posted,misc_expenses,NA,Shorebreak Pizza Online_-23.95_1/4/25,2025-01
+2025-01-04,Sheetz,SHEETZ 2491   00024919   ZION CROSSROAVA,Gas,-36.31,Posted,fixed_expenses,NA,Sheetz_-36.31_1/4/25,2025-01
+2025-01-04,Hampton Inn,HAMPTON INN              LEWISBURG    WV,Hotel,-137.03,Posted,misc_expenses,NA,Hampton Inn_-137.03_1/4/25,2025-01
+2025-01-03,ExxonMobil,EXXON MOSSY T + C        SCARBRO      WV,Gas,-2.53,Posted,misc_expenses,NA,ExxonMobil_-2.53_1/3/25,2025-01
+2025-01-03,Fort Findlay Coffee &findlay,SQ *FORT FINDLAY COFFEE &Findlay      OH,Coffee Shops,-23.85,Posted,misc_expenses,NA,Fort Findlay Coffee &findlay_-23.85_1/3/25,2025-01
+2025-01-03,ExxonMobil,EXXON MOSSY T + C        SCARBRO      WV,Gas,-49.59,Posted,fixed_expenses,NA,ExxonMobil_-49.59_1/3/25,2025-01
+2025-01-03,Virginianaturalgasbill,VIRGINIANATURALGASBILL   866-383-1846 GA,Utilities,-175.6,Posted,fixed_expenses,NA,Virginianaturalgasbill_-175.6_1/3/25,2025-01
+2025-01-02,E-ZPass,NJ EZPASS                888-288-6865 NJ,Auto & Transport,-25,Posted,fixed_expenses,NA,E-ZPass_-25_1/2/25,2025-01
+2025-01-02,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-53.74,Posted,misc_expenses,NA,Apple_-53.74_1/2/25,2025-01
+2025-01-01,Dunkin',DUNKIN #363908           HOWE         IN,Coffee Shops,-10.89,Posted,misc_expenses,NA,Dunkin'_-10.89_1/1/25,2025-01
+2025-01-01,Meijer,MEIJER # 051             FINDLAY      OH,Shopping,-14.45,Posted,misc_expenses,NA,Meijer_-14.45_1/1/25,2025-01
+2025-01-01,Michaels,MICHAELS #9490           800-642-4235 TX,Hobbies,-15.86,Posted,misc_expenses,NA,Michaels_-15.86_1/1/25,2025-01
+2025-01-01,Meijer,MEIJER EXPRESS 051       FINDLAY      OH,Gas,-51.8,Posted,fixed_expenses,NA,Meijer_-51.8_1/1/25,2025-01
+2025-01-01,Holiday Inn Express,HOLIDAY INN EXPRESS      8473678031   IL,Hotel,-369.92,Posted,misc_expenses,NA,Holiday Inn Express_-369.92_1/1/25,2025-01
+2024-12-31,Michaels,MICHAELS STORES 5018     VERNON HILLS IL,Hobbies,-3.74,Posted,misc_expenses,NA,Michaels_-3.74_12/31/24,2024-12
+2024-12-31,Maciano's Pizza & Pasta,MACIANO'S PIZZA & PASTA  847-3622424  IL,Food & Dining,-19.47,Posted,misc_expenses,NA,Maciano's Pizza & Pasta_-19.47_12/31/24,2024-12
+2024-12-31,JOANN,JOANN STORES #2057       VERNON HILLS IL,Hobbies,-24.33,Posted,misc_expenses,NA,JOANN_-24.33_12/31/24,2024-12
+2024-12-31,BP Gas,BP#8934507HIGHLAND PK BP HIGHLAND PARKIL,Gas,-52.46,Posted,fixed_expenses,NA,BP Gas_-52.46_12/31/24,2024-12
+2024-12-31,The Original Pancake House,HP-THE ORIGINAL PANCAKE  HIGHLAND PARKIL,Restaurants,-111.6,Posted,misc_expenses,NA,The Original Pancake House_-111.6_12/31/24,2024-12
+2024-12-30,Portillo's,PORTILLOS HOT DOGS #18   VERNON HILLS IL,Fast Food,-3.56,Posted,misc_expenses,NA,Portillo's_-3.56_12/30/24,2024-12
+2024-12-30,Michaels,MICHAELS STORES 5018     VERNON HILLS IL,Hobbies,-19.56,Posted,misc_expenses,NA,Michaels_-19.56_12/30/24,2024-12
+2024-12-30,Portillo's,PORTILLOS HOT DOGS #18   VERNON HILLS IL,Fast Food,-41.7,Posted,misc_expenses,NA,Portillo's_-41.7_12/30/24,2024-12
+2024-12-29,Kum & Go,KUM&GO 2615R GRAND RAP   GRAND RAPIDS MI,Gas,-32.66,Posted,fixed_expenses,NA,Kum & Go_-32.66_12/29/24,2024-12
+2024-12-29,Rare Bird Brew Pub Traverse Citymi,TST* RARE BIRD BREW PUB  TRAVERSE CITYMI,Alcohol & Bars,-53.77,Posted,misc_expenses,NA,Rare Bird Brew Pub Traverse Citymi_-53.77_12/29/24,2024-12
+2024-12-29,Hilton Hotel,HILTON HOTELS            231-4866590  MI,Hotel,-341.48,Posted,misc_expenses,NA,Hilton Hotel_-341.48_12/29/24,2024-12
+2024-12-28,Traverse City Parking Sertraverse Citymi,TRAVERSE CITY PARKING SERTRAVERSE CITYMI,Parking,-2,Posted,misc_expenses,NA,Traverse City Parking Sertraverse Citymi_-2_12/28/24,2024-12
+2024-12-28,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-9.99,Posted,misc_expenses,NA,Apple_-9.99_12/28/24,2024-12
+2024-12-28,Mundos 305,SQ *MUNDOS 305           Traverse CityMI,Fast Food,-21.39,Posted,misc_expenses,NA,Mundos 305_-21.39_12/28/24,2024-12
+2024-12-28,Hulu,HLU*HULUPLUS             hulu.com/billCA,Television,-23.64,Posted,fixed_expenses,NA,Hulu_-23.64_12/28/24,2024-12
+2024-12-28,Brilliant Books Traverse Citymi,BRILLIANT BOOKS          TRAVERSE CITYMI,Books,-44.51,Posted,misc_expenses,NA,Brilliant Books Traverse Citymi_-44.51_12/28/24,2024-12
+2024-12-28,Lostartyarn.com,WWW.LOSTARTYARN.COM      138-54046200 MI,Shopping,-50.88,Posted,misc_expenses,NA,Lostartyarn.com_-50.88_12/28/24,2024-12
+2024-12-28,Speedway,SPEEDWAY 44542           TRAVERSE CITYMI,Gas,-51.23,Posted,fixed_expenses,NA,Speedway_-51.23_12/28/24,2024-12
+2024-12-28,The Filling Station Traverse Citymi,THE FILLING STATION      TRAVERSE CITYMI,Restaurants,-148.79,Posted,misc_expenses,NA,The Filling Station Traverse Citymi_-148.79_12/28/24,2024-12
+2024-12-27,Parking Meter,TC PARKING METER         TRAVERSE CITYMI,Parking,-3,Posted,misc_expenses,NA,Parking Meter_-3_12/27/24,2024-12
+2024-12-26,Racetrac,RACETRAC2652  00026526   FINDLAY      OH,Gas,-2.89,Posted,misc_expenses,NA,Racetrac_-2.89_12/26/24,2024-12
+2024-12-26,Huron Ashley Ann,HURON ASHLEY             ANN ARBOR    MI,Parking,-6,Posted,misc_expenses,NA,Huron Ashley Ann_-6_12/26/24,2024-12
+2024-12-26,Kindle,Kindle Svcs*ZE2M88AX0    888-802-3080 WA,Books,-9.99,Posted,misc_expenses,NA,Kindle_-9.99_12/26/24,2024-12
+2024-12-24,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-10.74,Posted,misc_expenses,NA,Apple_-10.74_12/24/24,2024-12
+2024-12-24,Walmart,WAL-MART #1718           FINDLAY      OH,Shopping,-44.45,Posted,misc_expenses,NA,Walmart_-44.45_12/24/24,2024-12
+2024-12-24,Marathon,MARATHON PETRO249482     FINDLAY      OH,Gas,-50.07,Posted,fixed_expenses,NA,Marathon_-50.07_12/24/24,2024-12
+2024-12-24,AT&T,ATT* BILL PAYMENT        800-331-0500 TX,Bills & Utilities,-210.97,Posted,fixed_expenses,NA,AT&T_-210.97_12/24/24,2024-12
+2024-12-24,Walmart,WM SUPERCENTER #1718     FINDLAY      OH,Shopping,-287.83,Posted,misc_expenses,NA,Walmart_-287.83_12/24/24,2024-12
+2024-12-23,Marathon,MARATHON PETRO273433     BECKLEY      WV,Gas,-35.77,Posted,fixed_expenses,NA,Marathon_-35.77_12/23/24,2024-12
+2024-12-23,JOANN,JOANN STORES #2448       FINDLAY      OH,Hobbies,-36.43,Posted,misc_expenses,NA,JOANN_-36.43_12/23/24,2024-12
+2024-12-23,Pizza Cottage Powell,PIZZA COTTAGE POWELL - OHPOWELL       OH,Food & Dining,-38.13,Posted,misc_expenses,NA,Pizza Cottage Powell_-38.13_12/23/24,2024-12
+2024-12-23,Chick-fil-A,CHICK-FIL-A #03187       434-245-5254 VA,Fast Food,-41.66,Posted,misc_expenses,NA,Chick-fil-A_-41.66_12/23/24,2024-12
+2024-12-23,Hilton Hotel,HILTON HOTELS            681-2545535  WV,Hotel,-50,Posted,misc_expenses,NA,Hilton Hotel_-50_12/23/24,2024-12
+2024-12-23,Bob Evans Restaurant,BOB EVANS REST #0258     BECKLEY      WV,Food & Dining,-50.64,Posted,misc_expenses,NA,Bob Evans Restaurant_-50.64_12/23/24,2024-12
+2024-12-23,Monarch Money App Monarchmoca,MONARCH MONEY APP        WWW.MONARCHMOCA,Shopping,-99.99,Posted,misc_expenses,NA,Monarch Money App Monarchmoca_-99.99_12/23/24,2024-12
+2024-12-21,Love's Travel Stops,LOVE'S #0707 INSIDE      COVINGTON    VA,Gas,-2.66,Posted,fixed_expenses,NA,Love's Travel Stops_-2.66_12/21/24,2024-12
+2024-12-21,BP Gas,BP#8334856VIRGINIA OIL # CHARLOTTESVILVA,Gas,-30.39,Posted,fixed_expenses,NA,BP Gas_-30.39_12/21/24,2024-12
+2024-12-20,Panera Bread,PANERA BREAD #600757 K   VIRGINIA BEACVA,Fast Food,-7.57,Posted,misc_expenses,NA,Panera Bread_-7.57_12/20/24,2024-12
+2024-12-20,Panera Bread,PANERA BREAD #600757 K   VIRGINIA BEACVA,Fast Food,-21.36,Posted,misc_expenses,NA,Panera Bread_-21.36_12/20/24,2024-12
+2024-12-20,Wawa,WAWA 675                 VIRGINIA BEACVA,Gas,-32.33,Posted,fixed_expenses,NA,Wawa_-32.33_12/20/24,2024-12
+2024-12-19,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-14.02,Posted,misc_expenses,NA,Shorebreak Pizza Online_-14.02_12/19/24,2024-12
+2024-12-19,Walmart,WM SUPERCENTER #5922     VIRGINIA BEACVA,Shopping,-28.38,Posted,misc_expenses,NA,Walmart_-28.38_12/19/24,2024-12
+2024-12-19,US Postal Service,USPS PO 5193630455       VIRGINIA BEACVA,Shipping,-62.65,Posted,misc_expenses,NA,US Postal Service_-62.65_12/19/24,2024-12
+2024-12-18,Starbucks,STARBUCKS 800-782-7282   800-782-7282 WA,Coffee Shops,-25,Posted,misc_expenses,NA,Starbucks_-25_12/18/24,2024-12
+2024-12-18,Starbucks,STARBUCKS STORE 21598    VIRGINIA BEACVA,Coffee Shops,-40,Posted,misc_expenses,NA,Starbucks_-40_12/18/24,2024-12
+2024-12-17,American Eagle,American Eagle 776 Virginia Beac  CREDIT,Clothing,128.67,Posted,misc_expenses,NA,American Eagle_128.67_12/17/24,2024-12
+2024-12-17,ParkWhiz,"ParkWhiz, Inc.           Chicago      IL",Parking,-6.6,Posted,misc_expenses,NA,ParkWhiz_-6.6_12/17/24,2024-12
+2024-12-17,Beach,IFLY VA BEACH            757-7544359  VA,Entertainment,-30,Posted,misc_expenses,NA,Beach_-30_12/17/24,2024-12
+2024-12-17,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-35.53,Posted,misc_expenses,NA,Shorebreak Pizza Online_-35.53_12/17/24,2024-12
+2024-12-17,Jose Tequila,JOSE TEQUILA             757-4027241  VA,Restaurants,-63.41,Posted,misc_expenses,NA,Jose Tequila_-63.41_12/17/24,2024-12
+2024-12-17,Beach,IFLY VA BEACH            757-7544359  VA,Entertainment,-209.62,Posted,misc_expenses,NA,Beach_-209.62_12/17/24,2024-12
+2024-12-16,Barnes & Noble,BARNES & NOBLE #2195     VIRGINIA BEACVA,Books,-3.61,Posted,misc_expenses,NA,Barnes & Noble_-3.61_12/16/24,2024-12
+2024-12-16,Auntie Anne's,AUNTIE ANNES 183         VIRGINIA BEACVA,Fast Food,-5.56,Posted,misc_expenses,NA,Auntie Anne's_-5.56_12/16/24,2024-12
+2024-12-16,Old Navy,OLD NAVY ON-LINE         800-6536289  OH,Clothing,-81.11,Posted,misc_expenses,NA,Old Navy_-81.11_12/16/24,2024-12
+2024-12-16,Verizon,VERIZON*RECURRING PAY    800-VERIZON  FL,Utilities,-100.59,Posted,fixed_expenses,NA,Verizon_-100.59_12/16/24,2024-12
+2024-12-16,Nirvana Bodywork & Mob Nirvanavbva,NIRVANA BODYWORK & MOB   WWW.NIRVANAVBVA,Spa & Massage,-200,Posted,misc_expenses,NA,Nirvana Bodywork & Mob Nirvanavbva_-200_12/16/24,2024-12
+2024-12-16,Wss,WSS                      844-746-7977 CA,Clothing,-209.88,Posted,misc_expenses,NA,Wss_-209.88_12/16/24,2024-12
+2024-12-15,Dollar Tree,DOLLAR TREE              VIRGINIA BEACVA,Shopping,-16.91,Posted,misc_expenses,NA,Dollar Tree_-16.91_12/15/24,2024-12
+2024-12-15,Office Max,OFFICEMAX/DEPOT 6231     800-463-3768 VA,Office Supplies,-20.53,Posted,misc_expenses,NA,Office Max_-20.53_12/15/24,2024-12
+2024-12-15,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-83.64,Posted,fixed_expenses,NA,Little Creek Comm Virginia Beacva_-83.64_12/15/24,2024-12
+2024-12-15,Brightwheel,BRGHTWHL* FRANCIS ASBU   WWW.MYBRIGHTWCA,Babysitter & Daycare,-494.33,Posted,fixed_expenses,NA,Brightwheel_-494.33_12/15/24,2024-12
+2024-12-14,Trex Playland,TREX Playland LLC        Norfolk      VA,Entertainment,-6,Posted,misc_expenses,NA,Trex Playland_-6_12/14/24,2024-12
+2024-12-14,Costco Gas,COSTCO GAS #0202         NORFOLK      VA,Gas,-23.84,Posted,fixed_expenses,NA,Costco Gas_-23.84_12/14/24,2024-12
+2024-12-14,Trex Playland,TREX Playland LLC        Norfolk      VA,Entertainment,-48,Posted,misc_expenses,NA,Trex Playland_-48_12/14/24,2024-12
+2024-12-14,Costco,COSTCO WHSE #0202        NORFOLK      VA,Shopping,-55.36,Posted,fixed_expenses,NA,Costco_-55.36_12/14/24,2024-12
+2024-12-13,Chick-fil-A,CHICK-FIL-A #01081       757-437-8928 VA,Fast Food,-2.11,Posted,misc_expenses,NA,Chick-fil-A_-2.11_12/13/24,2024-12
+2024-12-13,Costco,COSTCO WHSE #0202        NORFOLK      VA,Shopping,-30.95,Posted,misc_expenses,NA,Costco_-30.95_12/13/24,2024-12
+2024-12-13,Chick-fil-A,CHICK-FIL-A #01081       757-437-8928 VA,Fast Food,-31.25,Posted,misc_expenses,NA,Chick-fil-A_-31.25_12/13/24,2024-12
+2024-12-13,Medical Aesthetics,MEDICAL AESTHETICS OF VIRNORFOLK      VA,Personal Care,-275,Posted,fixed_expenses,NA,Medical Aesthetics_-275_12/13/24,2024-12
+2024-12-12,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-14.02,Posted,misc_expenses,NA,Shorebreak Pizza Online_-14.02_12/12/24,2024-12
+2024-12-12,Michaels,MICHAELS STORES 1671     VIRGINIA BCH VA,Hobbies,-17.72,Posted,misc_expenses,NA,Michaels_-17.72_12/12/24,2024-12
+2024-12-12,Kroger,KROGER #533              VIRGINIA BEACVA,Groceries,-40.72,Posted,fixed_expenses,NA,Kroger_-40.72_12/12/24,2024-12
+2024-12-12,Navy Exchange,NEX FUEL 050039          VIRGINIA BEACVA,Gas,-43.17,Posted,fixed_expenses,NA,Navy Exchange_-43.17_12/12/24,2024-12
+2024-12-11,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-10.74,Posted,misc_expenses,NA,Apple_-10.74_12/11/24,2024-12
+2024-12-11,Panda Express,PANDA EXPRESS 2949A      VIRGINIA BEACVA,Fast Food,-11.04,Posted,misc_expenses,NA,Panda Express_-11.04_12/11/24,2024-12
+2024-12-11,Dollar Tree,DOLLAR TREE              VIRGINIA BEACVA,Shopping,-14.66,Posted,misc_expenses,NA,Dollar Tree_-14.66_12/11/24,2024-12
+2024-12-10,Paper Culture,PAPER CULTURE            877-7728588  CA,Shopping,-96.03,Posted,misc_expenses,NA,Paper Culture_-96.03_12/10/24,2024-12
+2024-12-09,Kohl's,KOHLS #0650 VIRGINIA BEAC VA      CREDIT,Shopping,111.29,Posted,misc_expenses,NA,Kohl's_111.29_12/9/24,2024-12
+2024-12-09,Kohl's,KOHLS #0650 VIRGINIA BEAC VA      CREDIT,Shopping,59.78,Posted,misc_expenses,NA,Kohl's_59.78_12/9/24,2024-12
+2024-12-09,Green Clean Auto Wash Virginia Beacva,GREEN CLEAN AUTO WASH-   VIRGINIA BEACVA,Service & Parts,-12,Posted,misc_expenses,NA,Green Clean Auto Wash Virginia Beacva_-12_12/9/24,2024-12
+2024-12-09,Navy Exchange,NEX FUEL 050039          VIRGINIA BEACVA,Gas,-52.05,Posted,fixed_expenses,NA,Navy Exchange_-52.05_12/9/24,2024-12
+2024-12-09,Navy Exchange,NAVY EXCHANGE 050180     VIRGINIA BEACVA,Shopping,-82.39,Posted,misc_expenses,NA,Navy Exchange_-82.39_12/9/24,2024-12
+2024-12-09,J Crew,J CREW FACTORY #1019     VIRGINIA BEACVA,Clothing,-193.91,Posted,misc_expenses,NA,J Crew_-193.91_12/9/24,2024-12
+2024-12-08,Walmart,WAL-MART #4064     SE2 VIRGINIA B CREDIT,Shopping,3.96,Posted,misc_expenses,NA,Walmart_3.96_12/8/24,2024-12
+2024-12-08,Virginia Zoo,VIRGINIA ZOO             NORFOLK      VA,Entertainment,-13.46,Posted,misc_expenses,NA,Virginia Zoo_-13.46_12/8/24,2024-12
+2024-12-08,Kohl's,KOHLS #0650              VIRGINIA BEACVA,Shopping,-20.35,Posted,misc_expenses,NA,Kohl's_-20.35_12/8/24,2024-12
+2024-12-08,Virginia Zoo,VIRGINIA ZOO             NORFOLK      VA,Entertainment,-40.93,Posted,misc_expenses,NA,Virginia Zoo_-40.93_12/8/24,2024-12
+2024-12-08,Old Navy,OLD NAVY US 3983         VIRGINIA BEACVA,Clothing,-85.72,Posted,misc_expenses,NA,Old Navy_-85.72_12/8/24,2024-12
+2024-12-07,Kohl's,WWW.KOHLS.COM #0873      866-887-8884 OH,Shopping,-1.61,Posted,misc_expenses,NA,Kohl's_-1.61_12/7/24,2024-12
+2024-12-07,Wegmans,WEGMANS VA BEACH 120     VIRGINIA BEACVA,Groceries,-6.39,Posted,misc_expenses,NA,Wegmans_-6.39_12/7/24,2024-12
+2024-12-07,Wegmans,WEGMANS VA BEACH 120     VIRGINIA BEACVA,Groceries,-25.21,Posted,misc_expenses,NA,Wegmans_-25.21_12/7/24,2024-12
+2024-12-07,iHerb.com,IHERB IHERB.COM Xh9fH    951-6163600  CA,Health & Fitness,-81.94,Posted,misc_expenses,NA,iHerb.com_-81.94_12/7/24,2024-12
+2024-12-07,Walmart,WAL-MART #4064           VIRGINIA BEACVA,Shopping,-160.65,Posted,fixed_expenses,NA,Walmart_-160.65_12/7/24,2024-12
+2024-12-07,Kohl's,WWW.KOHLS.COM #0873      866-887-8884 OH,Shopping,-180.19,Posted,fixed_expenses,NA,Kohl's_-180.19_12/7/24,2024-12
+2024-12-06,UPS,THE UPS STORE 5721       757-6759455  VA,Shipping,-15.1,Posted,misc_expenses,NA,UPS_-15.1_12/6/24,2024-12
+2024-12-06,Panera Bread,PANERA BREAD #601236 P   VIRGINIA BEACVA,Fast Food,-18.35,Posted,misc_expenses,NA,Panera Bread_-18.35_12/6/24,2024-12
+2024-12-06,Amazon,AMAZON MKTPL*ZL24T6K01   Amzn.com/billWA,Shopping,-24.91,Posted,misc_expenses,NA,Amazon_-24.91_12/6/24,2024-12
+2024-12-06,Chipotle,CHIPOTLE 1156            VIRGINIA BEACVA,Fast Food,-25.87,Posted,misc_expenses,NA,Chipotle_-25.87_12/6/24,2024-12
+2024-12-05,Kohl's,WWW.KOHLS.COM #0873      866-887-8884 OH,Shopping,-10.16,Posted,misc_expenses,NA,Kohl's_-10.16_12/5/24,2024-12
+2024-12-05,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-13.21,Posted,misc_expenses,NA,Shorebreak Pizza Online_-13.21_12/5/24,2024-12
+2024-12-05,Dollar Tree,DOLLARTREE               VIRGINIA BEACVA,Shopping,-22.73,Posted,misc_expenses,NA,Dollar Tree_-22.73_12/5/24,2024-12
+2024-12-04,Shorebreak Pizza Online,SHOREBREAK PIZZA (ONLINE 757-4819393  VA,Food & Dining,-14.02,Posted,misc_expenses,NA,Shorebreak Pizza Online_-14.02_12/4/24,2024-12
+2024-12-04,Etsy,Etsy.com - CustomFamilyG 844-6593879  NY,Shopping,-80.56,Posted,misc_expenses,NA,Etsy_-80.56_12/4/24,2024-12
+2024-12-03,Amazon,AMAZON RETA* ZL8EC6VX0   WWW.AMAZON.COWA,Shopping,-8.97,Posted,misc_expenses,NA,Amazon_-8.97_12/3/24,2024-12
+2024-12-03,Navy Exchange,NAVY EXCHANGE 050180     VIRGINIA BEACVA,Shopping,-14.44,Posted,misc_expenses,NA,Navy Exchange_-14.44_12/3/24,2024-12
+2024-12-03,Little Creek Comm Virginia Beacva,LITTLE CREEK COMM        VIRGINIA BEACVA,Groceries,-32.33,Posted,fixed_expenses,NA,Little Creek Comm Virginia Beacva_-32.33_12/3/24,2024-12
+2024-12-03,Virginianaturalgasbill,VIRGINIANATURALGASBILL   866-383-1846 GA,Utilities,-50.29,Posted,fixed_expenses,NA,Virginianaturalgasbill_-50.29_12/3/24,2024-12
+2024-12-02,Kohl's,WWW.KOHLS.COM #0873      866-887-8884 OH,Shopping,-21.2,Posted,misc_expenses,NA,Kohl's_-21.2_12/2/24,2024-12
+2024-12-01,Cavalier Hotel,SQ *CAVALIER HOTEL       Virginia BeacVA,Hotel,-5.49,Posted,misc_expenses,NA,Cavalier Hotel_-5.49_12/1/24,2024-12
+2024-12-01,Marriott Hotel,MARRIOTT PARKING VIRGI   VIRGINIA BEACVA,Hotel,-6,Posted,misc_expenses,NA,Marriott Hotel_-6_12/1/24,2024-12
+2024-12-01,Cavalier Hotel,SQ *CAVALIER HOTEL       Virginia BeacVA,Hotel,-16.48,Posted,misc_expenses,NA,Cavalier Hotel_-16.48_12/1/24,2024-12
+2024-12-01,Kohl's,WWW.KOHLS.COM #0873      866-887-8884 OH,Shopping,-113.53,Posted,misc_expenses,NA,Kohl's_-113.53_12/1/24,2024-12
+2024-11-30,Taco Bell,TACO BELL 15359          VIRGINIA BEACVA,Fast Food,-9.12,Posted,misc_expenses,NA,Taco Bell_-9.12_11/30/24,2024-11
+2024-11-30,Chick-fil-A,CHICK-FIL-A #01081       VA BCH       VA,Fast Food,-21.04,Posted,misc_expenses,NA,Chick-fil-A_-21.04_11/30/24,2024-11
+2024-11-30,Kroger Fuel,KROGER FUEL #3533        VIRGINIA BEACVA,Gas,-34.34,Posted,fixed_expenses,NA,Kroger Fuel_-34.34_11/30/24,2024-11
+2024-11-30,Shorebreak Pizza Virginia Beac,Shorebreak Pizza         Virginia BeacVA,Food & Dining,-42.21,Posted,misc_expenses,NA,Shorebreak Pizza Virginia Beac_-42.21_11/30/24,2024-11
+2024-11-30,Kohl's,WWW.KOHLS.COM #0873      866-887-8884 OH,Shopping,-143.09,Posted,misc_expenses,NA,Kohl's_-143.09_11/30/24,2024-11
+2024-11-30,Reebok,REEBOK ECOMM             186-687-0174 MA,Clothing,-164.25,Posted,misc_expenses,NA,Reebok_-164.25_11/30/24,2024-11
 2024-11-29,7-ELEVEN 26611           VIRGINIA BEACVA,7-ELEVEN 26611           VIRGINIA BEACVA,Category Pending,-3.32,Posted,misc_expenses,restaraunts,7-ELEVEN 26611           VIRGINIA BEACVA_-3.32_11/29/24,2024-11
 2024-11-29,Apple,APPLE.COM/BILL           866-712-7753 CA,Electronics & Software,-9.99,Posted,fixed_expenses,subscriptions,Apple_-9.99_11/29/24,2024-11
 2024-11-29,Trex Playland,TREX Playland LLC        Norfolk      VA,Entertainment,-112.5,Posted,misc_expenses,entertainment,Trex Playland_-112.5_11/29/24,2024-11
