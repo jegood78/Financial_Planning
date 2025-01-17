@@ -176,6 +176,9 @@ required_minimum_distributions <- read_excel("/users/jeffgood/Desktop/R_Studio_P
 #required_minimum_distributions
 
 #load military pay data
+pChart2025 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2025_Officer_Pay.csv")
+#pChart2025
+
 pChart2024 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2024_Officer_Pay.csv")
 #pChart2024
 
@@ -416,6 +419,9 @@ for (i in 1:36) {
   } else if (hist_year[i] >= "2024") {
     temp_val <- pChart2024 %>% filter(YOE == hist_yoe[i]) %>% select(hist_rank[i])
     hist_monthly_pay[i] <- temp_val[[1]]
+  } else if (hist_year[i] >= "2025") {
+    temp_val <- pChart2024 %>% filter(YOE == hist_yoe[i]) %>% select(hist_rank[i])
+    hist_monthly_pay[i] <- temp_val[[1]]
   } else {
     hist_monthly_pay[i] <- "ERROR"
   }
@@ -483,8 +489,11 @@ for (i in 1:36) {
   } else if (est_year[i] == "2023") {
     temp_val <- pChart2023 %>% filter(YOE == est_yoe[i]) %>% select(est_rank[i])
     est_monthly_pay[i] <- temp_val[[1]]
-  } else if (est_year[i] >= "2024") {
+  } else if (est_year[i] == "2024") {
     temp_val <- pChart2024 %>% filter(YOE == est_yoe[i]) %>% select(est_rank[i])
+    est_monthly_pay[i] <- temp_val[[1]]
+  } else if (est_year[i] >= "2025") {
+    temp_val <- pChart2025 %>% filter(YOE == est_yoe[i]) %>% select(est_rank[i])
     est_monthly_pay[i] <- temp_val[[1]]
   } else {
     est_monthly_pay[i] <- "ERROR"
