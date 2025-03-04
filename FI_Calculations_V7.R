@@ -254,7 +254,7 @@ monthly_base <- monthly_base_df[[1]]
 monthly_net <- round(calculate_net_income(monthly_base * 12, std_deduction) / 12)
 
 #bah amount to add back into pay
-bah <- 2928
+bah <- 3192
 
 monthly_base_income_jeff <- monthly_net + bah
 paste0("Average monthly income (Jeff base pay) = ", scales::dollar(monthly_base_income_jeff))
@@ -461,6 +461,9 @@ paste0("Estimated average monthly income ", scales::dollar(average_monthly_incom
 #unique(monarch_raw$category)
 expenses <- monarch_raw %>%
   filter(!category %in% c("credit_card_payment","interest","paychecks","other_income"))
+
+#filter out paying off nissan armada
+expenses <- expenses %>% filter(!amount < -20000)
 
 #summarize monthly.  keep everything after june 2024, round down to nearest $250
 expenses_monthly <- expenses %>%
