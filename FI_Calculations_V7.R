@@ -160,7 +160,7 @@ c_dor <- as.Date(mdy("9-1-2023"))
 est_promotion <- as.Date(mdy("9-1-2029")) 
 
 #estimated retirement date
-est_retire_date <- as.Date(mdy("10-01-2026"))
+est_retire_date <- as.Date(mdy("09-01-2026"))
 
 # create vector of 36 months based on estimated retirement date
 final_36_months <- seq(as.Date(est_retire_date)%m-% months(36),as.Date(est_retire_date)%m-% months(1), by = "month")
