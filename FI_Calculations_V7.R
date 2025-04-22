@@ -484,7 +484,16 @@ paste0("Estimated average monthly expenses ",scales::dollar(average_monthly_expe
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
 #join monthly income and expenses
-monthly_joined <- income_monthly %>% full_join(expenses_monthly, by = "month")
+monthly_joined <- income %>%
+  filter(month %in% rolling_13_months,
+         month > "2024-06") %>%
+  group_by(month) %>%
+  summarise(monthly_income = plyr::round_any(sum(amount),250,f = floor)) %>%
+  full_join(expenses %>%
+              filter(month %in% rolling_13_months,
+                     month > "2024-06") %>%
+              group_by(month) %>%
+              summarise(monthly_expenses = plyr::round_any(sum(amount),250,f = floor)), by = "month")
 
 monthly_joined %>%
   mutate(monthly_expenses = -monthly_expenses) %>%
