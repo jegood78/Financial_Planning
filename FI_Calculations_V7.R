@@ -413,7 +413,8 @@ monarch_raw$category <- tolower(monarch_raw$category)
 
 #create month column
 monarch_raw <- monarch_raw %>%
-  mutate(month = format(date, "%Y-%m"))
+  mutate(month = format(as.Date(monarch_raw$date, format = "%m/%d/%y"),"%Y-%m"))
+  #mutate(month = format(date, "%Y-%m"))
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
