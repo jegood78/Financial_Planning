@@ -531,19 +531,32 @@ monthly_joined %>%
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
-motley_fool <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/sp_500_historicals_motley_fool.xlsx")
+#motley_fool <- read_excel("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/sp_500_historicals_motley_fool.xlsx")
 
 #get rid of spaces in names
-names(motley_fool) <- str_replace_all(names(motley_fool), "[[:punct:]]", "")
-names(motley_fool) <- str_replace_all(names(motley_fool), " ", "_")
+#names(motley_fool) <- str_replace_all(names(motley_fool), "[[:punct:]]", "")
+#names(motley_fool) <- str_replace_all(names(motley_fool), " ", "_")
 
 #change all names to lower
-names(motley_fool) <- tolower(names(motley_fool))
+#names(motley_fool) <- tolower(names(motley_fool))
 
 #calculate average real inflation adjusted returns
-avg_annual_returns <- mean(motley_fool$real_total_return_inflation_adjusted)
+#avg_annual_returns <- mean(motley_fool$real_total_return_inflation_adjusted)
 
-paste0("S&P 500 average annual returns (inflation adjusted) = ", scales::percent(avg_annual_returns))
+#paste0("S&P 500 average annual returns (inflation adjusted) = ", scales::percent(avg_annual_returns))
+
+#from https://www.macrotrends.net/2526/sp-500-historical-annual-returns
+macrotrends <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/sp-500-historical-annual-returns.csv")
+
+#change all names to lower
+names(macrotrends) <- tolower(names(macrotrends))
+
+#change values to a decimal
+macrotrends$value <- macrotrends$value/100
+
+#calculate average return
+avg_annual_retuns <- mean(macrotrends$value)
+paste0("S&P 500 average annual returns = ", scales::percent(avg_annual_returns))
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
