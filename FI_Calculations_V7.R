@@ -398,6 +398,8 @@ ggplot(data = net_worth_merged_long,
 #read in monarch transactions
 monarch_raw <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/monarch_transactions.csv")
 
+monarch_raw <- monarch_raw %>% select(-c(Notes, Tags))
+
 #get rid of spaces in names
 names(monarch_raw) <- sub(" ","_",names(monarch_raw))
 
