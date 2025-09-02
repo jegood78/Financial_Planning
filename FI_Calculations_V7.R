@@ -555,7 +555,7 @@ names(macrotrends) <- tolower(names(macrotrends))
 macrotrends$value <- macrotrends$value/100
 
 #calculate average return
-avg_annual_retuns <- mean(macrotrends$value)
+avg_annual_returns <- mean(macrotrends$value)
 paste0("S&P 500 average annual returns = ", scales::percent(avg_annual_returns))
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
