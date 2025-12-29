@@ -129,6 +129,9 @@ calculate_yoe <- function(x) {
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
 #load military pay data
+pChart2026 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2026_Officer_Pay.csv")
+#pChart2026
+
 pChart2025 <- read_csv("/users/jeffgood/Desktop/R_Studio_Projects/Financial_Planning/2025_Officer_Pay.csv")
 #pChart2025
 
@@ -206,8 +209,11 @@ for (i in 1:36) {
   } else if (est_year[i] == "2024") {
     temp_val <- pChart2024 %>% filter(YOE == est_yoe[i]) %>% select(est_rank[i])
     est_monthly_pay[i] <- temp_val[[1]]
-  } else if (est_year[i] >= "2025") {
+  } else if (est_year[i] == "2025") {
     temp_val <- pChart2025 %>% filter(YOE == est_yoe[i]) %>% select(est_rank[i])
+    est_monthly_pay[i] <- temp_val[[1]]
+  } else if (est_year[i] >= "2026") {
+    temp_val <- pChart2026 %>% filter(YOE == est_yoe[i]) %>% select(est_rank[i])
     est_monthly_pay[i] <- temp_val[[1]]
   } else {
     est_monthly_pay[i] <- "ERROR"
