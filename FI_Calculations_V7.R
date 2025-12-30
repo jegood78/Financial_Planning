@@ -579,6 +579,9 @@ annual_safe_withdrawal <- 0.04
 est_pension_fi <- (estimated_annual_expenses - est_annual_net_pension) * (1 / annual_safe_withdrawal)
 paste0("Estimated FI number based on calculated pension = ", scales::dollar(est_pension_fi))
 
+est_fi_no_pension <- estimated_annual_expenses * (1 / annual_safe_withdrawal)
+paste0("Estimated FI number without pension = ", scales::dollar(est_fi_no_pension))
+
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 # Calculate years to FI only use current net worth and average annual returns
@@ -595,7 +598,7 @@ while (sim_invest_value < est_pension_fi) {
   est_pension_fi_years_no_invest <- est_pension_fi_years_no_invest + 1
 }
 
-paste0(est_pension_fi_years_no_invest, " years to reach FI based on current investments")
+paste0(est_pension_fi_years_no_invest, " years to reach Pension FI based on current investments")
 
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
