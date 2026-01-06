@@ -1,4 +1,47 @@
 Date,Merchant,Category,Account,Original Statement,Notes,Amount,Tags,Owner
+2026-01-05,USAA,Transfer,USAA SECURE MAIN CHECKING (...4156),USAA FUNDS TRANSFER DB,,-5000.00,,Shared
+2026-01-05,US Department of Education,Student Loans,USAA SAVINGS (...4148),DEPT EDUCATION   STUDENT LN ***********0000,,-114.45,,Shared
+2026-01-05,USAA,Credit Card Payment,USAA SAVINGS (...4148),USAA CREDIT CARD PAYMENT,,-5216.80,,Shared
+2026-01-05,USAA,Transfer,USAA SAVINGS (...4148),USAA FUNDS TRANSFER CR,,5000.00,,Shared
+2026-01-04,Apple,Electronics,Signature Visa (...2562),APPLE.COM/US             800-692-7753 CA,,-2097.74,,Shared
+2026-01-03,iHerb.com,Fitness,Signature Visa (...2562),IHERB IHERB.COM 1JmNK    951-6163600  CA,,-120.79,,Shared
+2026-01-02,Good Jeffrey Transfer Frey,Transfer,USAA SAVINGS (...4148),GOOD JEFFREY     TRANSFER   ***********FREY,,-30000.00,,Shared
+2026-01-02,USAA,Transfer,USAA SAVINGS (...4148),USAA FUNDS TRANSFER CR,,1600.00,,Shared
+2026-01-02,Chase,Credit Card Payment,USAA SECURE MAIN CHECKING (...4156),CHASE CREDIT CRD EPAY       ***********6710,,-351.45,,Shared
+2026-01-02,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********4430,,-329.42,,Shared
+2026-01-02,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********5063,,-63.34,,Shared
+2026-01-02,USAA,Transfer,USAA SECURE MAIN CHECKING (...4156),USAA FUNDS TRANSFER DB,,-1600.00,,Shared
+2026-01-02,USAA,Transfer,USAA SECURE MAIN CHECKING (...4156),USAA FUNDS TRANSFER DB,,-50.00,,Shared
+2026-01-02,USAA,Transfer,USAA SECURE MAIN CHECKING (...4156),USAA FUNDS TRANSFER DB,,-50.00,,Shared
+2026-01-02,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********7924,,44.30,,Shared
+2026-01-02,Panera Bread,Restaurants & Bars,Signature Visa (...2562),PANERA BREAD #600757 O   757-417-7009 VA,,-29.70,,Shared
+2026-01-02,Funds Transfer,Transfer,Platinum Savings (...1752),FUNDS TRANSFER|TRANSFER FROM ...,,30000.00,,Shared
+2026-01-01,Walmart,Groceries,Signature Visa (...2562),WM SUPERCENTER #5922     VIRGINIA BEACVA,,-158.16,,Shared
+2026-01-01,Apple,Entertainment & Recreation,Signature Visa (...2562),APPLE.COM/BILL           866-712-7753 CA,,-53.99,,Shared
+2025-12-31,Starbucks,Restaurants & Bars,Signature Visa (...2562),STARBUCKS 21598          VIRGINIA BEACVA,,-12.32,,Shared
+2025-12-31,Interest Paid,Interest,Elaina Pay (...4259),INTEREST PAID,,0.02,,Shared
+2025-12-31,Interest Paid,Interest,USAA SAVINGS (...4148),INTEREST PAID,,0.44,,Shared
+2025-12-30,Dancespace,Entertainment & Recreation,Signature Visa (...2562),DANCESPACE               DANCESPACEVB@VA,,-59.00,,Shared
+2025-12-30,Apple,Entertainment & Recreation,Signature Visa (...2562),APPLE.COM/BILL           866-712-7753 CA,,-9.99,,Shared
+2025-12-30,Venmo,Transfer,Elaina Pay (...4259),VENMO            PAYMENT    ***********5385,,-110.00,,Shared
+2025-12-30,Jane Payments,Paychecks,Elaina Pay (...4259),Jane Payments    Jane Payme ***********L4Z6,,291.20,,Shared
+2025-12-29,Navy Exchange,Shopping,Signature Visa (...2562),NAVY EXCHANGE 050180     VIRGINIA BEACVA,,-13.47,,Shared
+2025-12-29,Jose,Restaurants & Bars,Signature Visa (...2562),JOSE TEQUILA             757-4027241  VA,,-63.18,,Shared
+2025-12-29,Panda Express,Restaurants & Bars,Signature Visa (...2562),PANDA EXPRESS 2949A      VIRGINIA BEACVA,,-11.65,,Shared
+2025-12-29,Amazon,Shopping,Signature Visa (...2562),AMAZON MKTPL*ED6HX4MN3   Amzn.com/billWA,,-78.19,,Shared
+2025-12-29,Verizon,Internet & Cable,USAA SECURE MAIN CHECKING (...4156),VERIZON          PAYMENTREC ***********0001,,-80.59,,Shared
+2025-12-29,Defense Finance and Accounting Service,Paychecks,USAA SECURE MAIN CHECKING (...4156),DFAS-CLEVELAND   NAVY ACT   ***********1645,,6049.55,,Shared
+2025-12-28,Movie Theaters,Entertainment & Recreation,Signature Visa (...2562),CINEMA CAFE - HAMPTON ROAVIRGINIA BEACVA,,-32.28,,Shared
+2025-12-28,Kindle,Entertainment & Recreation,Signature Visa (...2562),Kindle Svcs*3G3JB4E83    888-802-3080 WA,,-11.99,,Shared
+2025-12-28,Hulu,Entertainment & Recreation,Signature Visa (...2562),HLU*HULUPLUS             hulu.com/billCA,,-21.59,,Shared
+2025-12-28,Old Navy,Clothing,Signature Visa (...2562),OLDNAVY.COM              800-427-7895 CA,,-63.56,,Shared
+2025-12-27,Marco's Pizza,Restaurants & Bars,Signature Visa (...2562),MARCOS PIZZA - 2023      757-464-1111 VA,,-16.78,,Shared
+2025-12-27,Old Navy,Clothing,Signature Visa (...2562),OLDNAVY.COM              800-427-7895 CA,,-10.59,,Shared
+2025-12-27,Hampton Roads VA,Entertainment & Recreation,Signature Visa (...2562),CINEMA CAFE HAMPTON ROADS757-7188938  VA,,-34.40,,Shared
+2025-12-26,Kohl's,Clothing,Signature Visa (...2562),WWW.KOHLS.COM #XXXXXXXXXXXXXX OH,,-57.49,,Shared
+2025-12-26,Kroger,Gas,Signature Visa (...2562),KROGER FUEL #3532        VIRGINIA BEACVA,,-40.05,,Shared
+2025-12-26,Kroger,Groceries,Signature Visa (...2562),KROGER #532              VIRGINIA BEACVA,,-21.98,,Shared
+2025-12-26,Kroger,Groceries,Signature Visa (...2562),KROGER #532              VIRGINIA BEACVA,,-7.39,,Shared
 2025-12-26,Midland National Life Insurance,Insurance,USAA SECURE MAIN CHECKING (...4156),MIDLAND NATIONAL INSURANCE  ***********1874,,-195.80,,Shared
 2025-12-24,Dunkin',Restaurants & Bars,Signature Visa (...2562),DUNKIN #306384 Q35       VIRGINIA BCH VA,,-13.50,,Shared
 2025-12-24,AT&T,Phone,Signature Visa (...2562),ATT* BILL PAYMENT        KH4589@ATT.COTX,,-198.27,,Shared
@@ -1537,179 +1580,3 @@ Date,Merchant,Category,Account,Original Statement,Notes,Amount,Tags,Owner
 2025-01-01,Michaels,Shopping,Signature Visa (...2562),MICHAELS #9490           800-642-4235 TX,,-15.86,,Shared
 2025-01-01,Meijer,Groceries,Signature Visa (...2562),MEIJER EXPRESS 051       FINDLAY      OH,,-51.80,,Shared
 2025-01-01,Meijer,Groceries,Signature Visa (...2562),MEIJER # 051             FINDLAY      OH,,-14.45,,Shared
-2024-12-31,Hilton Adv,Travel & Vacation,Signature Visa (...2562),HILTON ADVPURCH8002367113MEMPHIS      TN,,135.54,,Shared
-2024-12-31,The Original Pancake House,Restaurants & Bars,Signature Visa (...2562),HP-THE ORIGINAL PANCAKE  HIGHLAND PARKIL,,-111.60,,Shared
-2024-12-31,Michaels,Shopping,Signature Visa (...2562),MICHAELS STORES 5018     VERNON HILLS IL,,-3.74,,Shared
-2024-12-31,Maciano's Pizza & Pasta,Restaurants & Bars,Signature Visa (...2562),MACIANO'S PIZZA & PASTA  847-3622424  IL,,-19.47,,Shared
-2024-12-31,BP,Gas,Signature Visa (...2562),BP#8934507HIGHLAND PK BP HIGHLAND PARKIL,,-52.46,,Shared
-2024-12-31,JOANN,Shopping,Signature Visa (...2562),JOANN STORES #2057       VERNON HILLS IL,,-24.33,,Shared
-2024-12-31,Interest Paid,Interest,USAA SAVINGS (...4148),INTEREST PAID,,0.33,,Shared
-2024-12-31,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********0833,,-71.23,,Shared
-2024-12-31,Zelle Transfer to Amber Carroll,Child Care,USAA SECURE MAIN CHECKING (...4156),Zelle: Amber Carroll,,-342.00,,Shared
-2024-12-31,Zelle Transfer to Amber Carroll,Child Care,USAA SECURE MAIN CHECKING (...4156),Zelle: Amber Carroll,,-18.00,,Shared
-2024-12-31,Interest Paid,Interest,Elaina Pay (...4259),INTEREST PAID,,0.01,,Shared
-2024-12-30,Portillo's,Restaurants & Bars,Signature Visa (...2562),PORTILLOS HOT DOGS #18   VERNON HILLS IL,,-41.70,,Shared
-2024-12-30,Portillo's,Restaurants & Bars,Signature Visa (...2562),PORTILLOS HOT DOGS #18   VERNON HILLS IL,,-3.56,,Shared
-2024-12-30,Michaels,Shopping,Signature Visa (...2562),MICHAELS STORES 5018     VERNON HILLS IL,,-19.56,,Shared
-2024-12-30,USAA,Credit Card Payment,USAA SAVINGS (...4148),USAA CREDIT CARD PAYMENT,,-5566.40,,Shared
-2024-12-30,USAA,Credit Card Payment,Signature Visa (...2562),USAA CREDIT CARD PAYMENT SAN ANTONIO  TX,,5566.40,,Shared
-2024-12-30,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********0671,,-27.44,,Shared
-2024-12-30,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********0671,,-15.09,,Shared
-2024-12-29,Kum & Go,Gas,Signature Visa (...2562),KUM&GO 2615R GRAND RAP   GRAND RAPIDS MI,,-32.66,,Shared
-2024-12-29,Hilton Hotels,Travel & Vacation,Signature Visa (...2562),HILTON HOTELS            231-4866590  MI,,-341.48,,Shared
-2024-12-29,Rare Bird Brew Pub Traverse Citymi,Restaurants & Bars,Signature Visa (...2562),TST* RARE BIRD BREW PUB  TRAVERSE CITYMI,,-53.77,,Shared
-2024-12-28,Traverse City Parking Sertraverse Citymi,Parking & Tolls,Signature Visa (...2562),TRAVERSE CITY PARKING SERTRAVERSE CITYMI,,-2.00,,Shared
-2024-12-28,The Filling Station Traverse Citymi,Restaurants & Bars,Signature Visa (...2562),THE FILLING STATION      TRAVERSE CITYMI,,-148.79,,Shared
-2024-12-28,Hulu,Entertainment & Recreation,Signature Visa (...2562),HLU*HULUPLUS             hulu.com/billCA,,-23.64,,Shared
-2024-12-28,Apple,Electronics,Signature Visa (...2562),APPLE.COM/BILL           866-712-7753 CA,,-9.99,,Shared
-2024-12-28,Mundos 305,Restaurants & Bars,Signature Visa (...2562),SQ *MUNDOS 305           Traverse CityMI,,-21.39,,Shared
-2024-12-28,Lostartyarn.com,Shopping,Signature Visa (...2562),WWW.LOSTARTYARN.COM      138-54046200 MI,,-50.88,,Shared
-2024-12-28,Speedway,Gas,Signature Visa (...2562),SPEEDWAY 44542           TRAVERSE CITYMI,,-51.23,,Shared
-2024-12-28,Brilliant Books Traverse Citymi,Shopping,Signature Visa (...2562),BRILLIANT BOOKS          TRAVERSE CITYMI,,-44.51,,Shared
-2024-12-27,Parking Meter,Parking & Tolls,Signature Visa (...2562),TC PARKING METER         TRAVERSE CITYMI,,-3.00,,Shared
-2024-12-27,Defense Finance and Accounting Service,Paychecks,USAA SECURE MAIN CHECKING (...4156),DFAS-CLEVELAND   NAVY ACT   ***********1645,,5811.73,,Shared
-2024-12-26,Kindle,Shopping,Signature Visa (...2562),Kindle Svcs*ZE2M88AX0    888-802-3080 WA,,-9.99,,Shared
-2024-12-26,Huron Ashley Ann,Miscellaneous,Signature Visa (...2562),HURON ASHLEY             ANN ARBOR    MI,,-6.00,,Shared
-2024-12-26,RaceTrac,Groceries,Signature Visa (...2562),RACETRAC2652  00026526   FINDLAY      OH,,-2.89,,Shared
-2024-12-26,Midland National Life Insurance,Insurance,USAA SECURE MAIN CHECKING (...4156),MIDLAND NATIONAL INSURANCE  ***********1874,,-195.80,,Shared
-2024-12-24,Vanguard,Investment,USAA SAVINGS (...4148),VANGUARD BUY     INVESTMENT ***********3619,,-500.00,,Shared
-2024-12-24,Marathon,Gas,Signature Visa (...2562),MARATHON PETRO249482     FINDLAY      OH,,-50.07,,Shared
-2024-12-24,Apple,Miscellaneous,Signature Visa (...2562),APPLE.COM/BILL           866-712-7753 CA,,-10.74,,Shared
-2024-12-24,Walmart,Shopping,Signature Visa (...2562),WM SUPERCENTER #1718     FINDLAY      OH,,-287.83,,Shared
-2024-12-24,Walmart,Shopping,Signature Visa (...2562),WAL-MART #1718           FINDLAY      OH,,-44.45,,Shared
-2024-12-24,AT&T,Phone,Signature Visa (...2562),ATT* BILL PAYMENT        800-331-0500 TX,,-210.97,,Shared
-2024-12-24,Zelle Transfer to Amber Carroll,Child Care,USAA SECURE MAIN CHECKING (...4156),Zelle: Amber Carroll,,-324.00,,Shared
-2024-12-23,Jane Payments Payme,Paychecks,Elaina Pay (...4259),Jane Payments    Jane Payme ***********N1O5,,58.04,,Shared
-2024-12-23,Monarch Money App Monarchmoca,Financial & Legal Services,Signature Visa (...2562),MONARCH MONEY APP        WWW.MONARCHMOCA,,-99.99,Subscription,Shared
-2024-12-23,Chase,Credit Card Payment,USAA SECURE MAIN CHECKING (...4156),CHASE CREDIT CRD EPAY       ***********5497,,-500.00,,Shared
-2024-12-23,Adp Workmarket Direct Deposit,Paychecks,USAA SAVINGS (...4148),ADP WORKMARKET   DIRECT DEP ***********4186,,4345.00,,Shared
-2024-12-22,Hilton Hotels,Travel & Vacation,Signature Visa (...2562),HILTON HOTELS            681-2545535  WV,,-50.00,,Shared
-2024-12-22,Pizza Cottage Powell,Restaurants & Bars,Signature Visa (...2562),PIZZA COTTAGE POWELL - OHPOWELL       OH,,-38.13,,Shared
-2024-12-22,JOANN,Shopping,Signature Visa (...2562),JOANN STORES #2448       FINDLAY      OH,,-36.43,,Shared
-2024-12-22,Marathon,Gas,Signature Visa (...2562),MARATHON PETRO273433     BECKLEY      WV,,-35.77,,Shared
-2024-12-21,Bob Evans Restaurant,Restaurants & Bars,Signature Visa (...2562),BOB EVANS REST #0258     BECKLEY      WV,,-50.64,,Shared
-2024-12-21,Chick-fil-A,Restaurants & Bars,Signature Visa (...2562),CHICK-FIL-A #03187       434-245-5254 VA,,-41.66,,Shared
-2024-12-21,Love's Travel Stops,Restaurants & Bars,Signature Visa (...2562),LOVE'S #0707 INSIDE      COVINGTON    VA,,-2.66,,Shared
-2024-12-21,BP,Gas,Signature Visa (...2562),BP#8334856VIRGINIA OIL # CHARLOTTESVILVA,,-30.39,,Shared
-2024-12-20,Panera Bread,Restaurants & Bars,Signature Visa (...2562),PANERA BREAD #600757 K   VIRGINIA BEACVA,,-21.36,,Shared
-2024-12-20,Panera Bread,Restaurants & Bars,Signature Visa (...2562),PANERA BREAD #600757 K   VIRGINIA BEACVA,,-7.57,,Shared
-2024-12-20,Wawa,Gas,Signature Visa (...2562),WAWA 675                 VIRGINIA BEACVA,,-32.33,,Shared
-2024-12-20,Target,Groceries,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********1047,,-18.27,,Shared
-2024-12-20,Target,Personal,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********1047,,-100.00,,Shared
-2024-12-20,Target,Gifts,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********1047,,-50.00,,Shared
-2024-12-19,Shorebreak Pizza Online,Restaurants & Bars,Signature Visa (...2562),SHOREBREAK PIZZA (ONLINE 757-4819393  VA,,-14.02,,Shared
-2024-12-19,Walmart,Personal,Signature Visa (...2562),WM SUPERCENTER #5922     VIRGINIA BEACVA,,-28.38,,Shared
-2024-12-19,US Postal Service,Postage & Shipping,Signature Visa (...2562),USPS PO 5193630455       VIRGINIA BEACVA,,-62.65,,Shared
-2024-12-18,Starbucks,Gifts,Signature Visa (...2562),STARBUCKS STORE 21598    VIRGINIA BEACVA,,-40.00,,Shared
-2024-12-18,Starbucks,Restaurants & Bars,Signature Visa (...2562),STARBUCKS 800-782-7282   800-782-7282 WA,,-25.00,,Shared
-2024-12-18,Zelle Transfer to Amber Carroll,Child Care,USAA SECURE MAIN CHECKING (...4156),Zelle: Amber Carroll,,-108.00,,Shared
-2024-12-17,Beach,Entertainment & Recreation,Signature Visa (...2562),IFLY VA BEACH            757-7544359  VA,,-30.00,,Shared
-2024-12-17,Beach,Entertainment & Recreation,Signature Visa (...2562),IFLY VA BEACH            757-7544359  VA,,-209.62,,Shared
-2024-12-17,Shorebreak Pizza Online,Restaurants & Bars,Signature Visa (...2562),SHOREBREAK PIZZA (ONLINE 757-4819393  VA,,-35.53,,Shared
-2024-12-17,Jose Tequila,Restaurants & Bars,Signature Visa (...2562),JOSE TEQUILA             757-4027241  VA,,-63.41,,Shared
-2024-12-17,ParkWhiz,Parking & Tolls,Signature Visa (...2562),"ParkWhiz, Inc.           Chicago      IL",,-6.60,,Shared
-2024-12-17,Zelle Transfer to Amber Carroll,Child Care,USAA SECURE MAIN CHECKING (...4156),Zelle: Amber Carroll,,-150.00,,Shared
-2024-12-16,USAA,Transfer,USAA SAVINGS (...4148),USAA FUNDS TRANSFER CR,,1100.00,,Shared
-2024-12-16,Auntie Anne's,Restaurants & Bars,Signature Visa (...2562),AUNTIE ANNES 183         VIRGINIA BEACVA,,-5.56,,Shared
-2024-12-16,Barnes & Noble,Shopping,Signature Visa (...2562),BARNES & NOBLE #2195     VIRGINIA BEACVA,,-3.61,,Shared
-2024-12-16,American Eagle,Clothing,Signature Visa (...2562),American Eagle 776       Virginia BeacVA,,128.67,,Shared
-2024-12-16,Old Navy,Clothing,Signature Visa (...2562),OLD NAVY ON-LINE         800-6536289  OH,,-81.11,,Shared
-2024-12-16,Verizon,Internet & Cable,Signature Visa (...2562),VERIZON*RECURRING PAY    800-VERIZON  FL,,-100.59,,Shared
-2024-12-16,Wss,Entertainment & Recreation,Signature Visa (...2562),WSS                      844-746-7977 CA,,-209.88,,Shared
-2024-12-16,Nirvana Bodywork & Mob Nirvanavbva,Personal,Signature Visa (...2562),NIRVANA BODYWORK & MOB   WWW.NIRVANAVBVA,,-200.00,,Shared
-2024-12-16,Interest Paid,Interest,USAA SECURE MAIN CHECKING (...4156),INTEREST PAID,,0.04,,Shared
-2024-12-16,ICPayment,Auto Payment,USAA SECURE MAIN CHECKING (...4156),ICPAYMENT,,-814.04,,Shared
-2024-12-16,Dominion Energy,Gas & Electric,USAA SECURE MAIN CHECKING (...4156),DOMINION ENERGY  BILLPAY    ***********7814,,-127.25,,Shared
-2024-12-16,USAA,Rent,USAA SECURE MAIN CHECKING (...4156),USAA FUNDS TRANSFER DB,,-3200.00,,Shared
-2024-12-16,USAA,Transfer,USAA SECURE MAIN CHECKING (...4156),USAA FUNDS TRANSFER DB,,-1100.00,,Shared
-2024-12-16,Zelle Transfer to Amber Carroll,Child Care,USAA SECURE MAIN CHECKING (...4156),Zelle: Amber Carroll,,-108.00,,Shared
-2024-12-16,USAA,Transfer,USAA SECURE MAIN CHECKING (...4156),USAA FUNDS TRANSFER DB,,-50.00,,Shared
-2024-12-16,USAA,Transfer,USAA SECURE MAIN CHECKING (...4156),USAA FUNDS TRANSFER DB,,-50.00,,Shared
-2024-12-16,Starbucks,Restaurants & Bars,USAA SECURE MAIN CHECKING (...4156),STARBUCKS STORE 21598    VIRGINIA BEACVA,,-32.00,,Shared
-2024-12-16,Jane Payments Payme,Paychecks,Elaina Pay (...4259),Jane Payments    Jane Payme ***********V0Q9,,290.95,,Shared
-2024-12-16,Jane Payments Payme,Paychecks,Elaina Pay (...4259),Jane Payments    Jane Payme ***********E7I9,,194.05,,Shared
-2024-12-15,Office Depot,Gifts,Signature Visa (...2562),OFFICEMAX/DEPOT 6231     800-463-3768 VA,,-20.53,,Shared
-2024-12-15,Brightwheel,Education,Signature Visa (...2562),BRGHTWHL* FRANCIS ASBU   WWW.MYBRIGHTWCA,,-494.33,,Shared
-2024-12-15,Dollar Tree,Shopping,Signature Visa (...2562),DOLLAR TREE              VIRGINIA BEACVA,,-16.91,,Shared
-2024-12-15,Little Creek Comm Virginia Beacva,Groceries,Signature Visa (...2562),LITTLE CREEK COMM        VIRGINIA BEACVA,,-83.64,,Shared
-2024-12-14,Costco,Gas,Signature Visa (...2562),COSTCO GAS #0202         NORFOLK      VA,,-23.84,,Shared
-2024-12-14,Costco,Groceries,Signature Visa (...2562),COSTCO WHSE #0202        NORFOLK      VA,,-55.36,,Shared
-2024-12-14,Trex Playland,Entertainment & Recreation,Signature Visa (...2562),TREX Playland LLC        Norfolk      VA,,-48.00,,Shared
-2024-12-14,Trex Playland,Entertainment & Recreation,Signature Visa (...2562),TREX Playland LLC        Norfolk      VA,,-6.00,,Shared
-2024-12-13,Costco,Groceries,Signature Visa (...2562),COSTCO WHSE #0202        NORFOLK      VA,,-30.95,,Shared
-2024-12-13,Chick-fil-A,Restaurants & Bars,Signature Visa (...2562),CHICK-FIL-A #XXXXXXXXXXXXXXX VA,,-31.25,,Shared
-2024-12-13,Chick-fil-A,Restaurants & Bars,Signature Visa (...2562),CHICK-FIL-A #XXXXXXXXXXXXXXX VA,,-2.11,,Shared
-2024-12-13,Aesthetics,Personal,Signature Visa (...2562),<> AESTHETICS OF VIRNORFOLK      VA,,-275.00,,Shared
-2024-12-13,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********0221,,-39.73,,Shared
-2024-12-13,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********0225,,-13.09,,Shared
-2024-12-12,Michaels,Shopping,Signature Visa (...2562),MICHAELS STORES 1671     VIRGINIA BCH VA,,-17.72,,Shared
-2024-12-12,Navy Exchange,Gas,Signature Visa (...2562),NEX FUEL 050039          VIRGINIA BEACVA,,-43.17,,Shared
-2024-12-12,Shorebreak Pizza Online,Restaurants & Bars,Signature Visa (...2562),SHOREBREAK PIZZA (ONLINE 757-4819393  VA,,-14.02,,Shared
-2024-12-12,Kroger,Groceries,Signature Visa (...2562),KROGER #533              VIRGINIA BEACVA,,-40.72,,Shared
-2024-12-12,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********2770,,-109.82,,Shared
-2024-12-12,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********2770,,49.82,,Shared
-2024-12-11,Apple,Miscellaneous,Signature Visa (...2562),APPLE.COM/BILL           866-712-7753 CA,,-10.74,,Shared
-2024-12-11,Dollar Tree,Shopping,Signature Visa (...2562),DOLLAR TREE              VIRGINIA BEACVA,,-14.66,,Shared
-2024-12-11,Panda Express,Restaurants & Bars,Signature Visa (...2562),PANDA EXPRESS 2949A      VIRGINIA BEACVA,,-11.04,,Shared
-2024-12-11,Nordstrom,Clothing,USAA SECURE MAIN CHECKING (...4156),NORDSTROM        TRANS      ***********0830,,-68.80,,Shared
-2024-12-11,Defense Finance and Accounting Service,Paychecks,USAA SECURE MAIN CHECKING (...4156),DFAS-CLEVELAND   NAVY ACT   ***********1645,,5811.66,,Shared
-2024-12-10,Paper Culture,Gifts,Signature Visa (...2562),PAPER CULTURE            877-7728588  CA,,-96.03,,Shared
-2024-12-10,Zelle Transfer to Amber Carroll,Child Care,USAA SECURE MAIN CHECKING (...4156),Zelle: Amber Carroll,,-342.00,,Shared
-2024-12-10,Little Creek Com a Virginia Beacva,Groceries,USAA SECURE MAIN CHECKING (...4156),LITTLE CREEK COM 1180 A  VIRGINIA BEACVA,,-40.93,,Shared
-2024-12-10,Vanguard,Investment,USAA SAVINGS (...4148),VANGUARD BUY     INVESTMENT ***********3619,,-500.00,,Shared
-2024-12-09,J Crew,Clothing,Signature Visa (...2562),J CREW FACTORY #1019     VIRGINIA BEACVA,,-193.91,,Shared
-2024-12-09,Navy Exchange,Gas,Signature Visa (...2562),NEX FUEL 050039          VIRGINIA BEACVA,,-52.05,,Shared
-2024-12-09,Navy Exchange,Shopping,Signature Visa (...2562),NAVY EXCHANGE 050180     VIRGINIA BEACVA,,-82.39,,Shared
-2024-12-09,Green Clean Auto Wash Virginia Beacva,Auto Maintenance,Signature Visa (...2562),GREEN CLEAN AUTO WASH-   VIRGINIA BEACVA,,-12.00,,Shared
-2024-12-09,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********2770,,-110.20,,Shared
-2024-12-09,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********2770,,-20.13,,Shared
-2024-12-09,Federal Payment,Other Income,USAA SECURE MAIN CHECKING (...4156),3801000000000000 FED PAYMNT ***********0000,,677.00,,Shared
-2024-12-09,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********2770,,189.53,,Shared
-2024-12-09,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********2770,,40.01,,Shared
-2024-12-08,Old Navy,Clothing,Signature Visa (...2562),OLD NAVY US 3983         VIRGINIA BEACVA,,-85.72,,Shared
-2024-12-08,Kohl's,Clothing,Signature Visa (...2562),KOHLS #0650              VIRGINIA BEACVA,,-20.35,,Shared
-2024-12-08,Virginia Zoo,Shopping,Signature Visa (...2562),VIRGINIA ZOO             NORFOLK      VA,,-40.93,,Shared
-2024-12-08,Virginia Zoo,Shopping,Signature Visa (...2562),VIRGINIA ZOO             NORFOLK      VA,,-13.46,,Shared
-2024-12-07,Kohl's,Clothing,Signature Visa (...2562),KOHLS #0650              VIRGINIA BEACVA,,111.29,,Shared
-2024-12-07,Kohl's,Clothing,Signature Visa (...2562),KOHLS #0650              VIRGINIA BEACVA,,59.78,,Shared
-2024-12-07,Walmart,Shopping,Signature Visa (...2562),WAL-MART #4064     SE2   VIRGINIA BEACVA,,3.96,,Shared
-2024-12-07,Walmart,Shopping,Signature Visa (...2562),WAL-MART #4064           VIRGINIA BEACVA,,-160.65,,Shared
-2024-12-07,Kohl's,Clothing,Signature Visa (...2562),WWW.KOHLS.COM #XXXXXXXXXXXXXX OH,,-1.61,,Shared
-2024-12-07,Kohl's,Clothing,Signature Visa (...2562),WWW.KOHLS.COM #XXXXXXXXXXXXXX OH,,-180.19,,Shared
-2024-12-07,iHerb.com,Fitness,Signature Visa (...2562),IHERB IHERB.COM Xh9fH    951-6163600  CA,,-81.94,,Shared
-2024-12-07,Wegmans,Restaurants & Bars,Signature Visa (...2562),WEGMANS VA BEACH 120     VIRGINIA BEACVA,,-6.39,,Shared
-2024-12-07,Wegmans,Restaurants & Bars,Signature Visa (...2562),WEGMANS VA BEACH 120     VIRGINIA BEACVA,,-25.21,,Shared
-2024-12-07,Zappos.com,Clothing,USAA SECURE MAIN CHECKING (...4156),ZAP*ZAPPOS.COM           800-927-7671 NV,,80.65,,Shared
-2024-12-06,Panera Bread,Restaurants & Bars,Signature Visa (...2562),PANERA BREAD #601236 P   VIRGINIA BEACVA,,-18.35,,Shared
-2024-12-06,Amazon,Shopping,Signature Visa (...2562),AMAZON MKTPL*ZL24T6K01   Amzn.com/billWA,,-24.91,,Shared
-2024-12-06,Chipotle,Restaurants & Bars,Signature Visa (...2562),CHIPOTLE 1156            VIRGINIA BEACVA,,-25.87,,Shared
-2024-12-06,UPS,Postage & Shipping,Signature Visa (...2562),THE UPS STORE 5721       757-6759455  VA,,-15.10,,Shared
-2024-12-05,Dollar Tree,Shopping,Signature Visa (...2562),DOLLARTREE               VIRGINIA BEACVA,,-22.73,,Shared
-2024-12-05,Kohl's,Clothing,Signature Visa (...2562),WWW.KOHLS.COM #XXXXXXXXXXXXXX OH,,-10.16,,Shared
-2024-12-05,Shorebreak Pizza Online,Restaurants & Bars,Signature Visa (...2562),SHOREBREAK PIZZA (ONLINE 757-4819393  VA,,-13.21,,Shared
-2024-12-04,Etsy,Shopping,Signature Visa (...2562),Etsy.com - CustomFamilyG 844-6593879  NY,,-80.56,,Shared
-2024-12-04,Shorebreak Pizza Online,Restaurants & Bars,Signature Visa (...2562),SHOREBREAK PIZZA (ONLINE 757-4819393  VA,,-14.02,,Shared
-2024-12-04,Jane Payments Payme,Paychecks,Elaina Pay (...4259),Jane Payments    Jane Payme ***********J7Y0,,194.05,,Shared
-2024-12-03,Virginianaturalgasbill,Gas & Electric,Signature Visa (...2562),VIRGINIANATURALGASBILL   866-383-1846 GA,,-50.29,,Shared
-2024-12-03,Little Creek Comm Virginia Beacva,Groceries,Signature Visa (...2562),LITTLE CREEK COMM        VIRGINIA BEACVA,,-32.33,,Shared
-2024-12-03,Navy Exchange,Shopping,Signature Visa (...2562),NAVY EXCHANGE 050180     VIRGINIA BEACVA,,-14.44,,Shared
-2024-12-03,Amazon,Shopping,Signature Visa (...2562),AMAZON RETA* ZL8EC6VX0   WWW.AMAZON.COWA,,-8.97,,Shared
-2024-12-03,USAA,Insurance,USAA SECURE MAIN CHECKING (...4156),USAA P&C         AUTOPAY    ***********3049,,-193.14,,Shared
-2024-12-03,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********0220,,-20.13,,Shared
-2024-12-03,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********0220,,-18.01,,Shared
-2024-12-03,Zelle Transfer to Amber Carroll,Child Care,USAA SECURE MAIN CHECKING (...4156),Zelle: Amber Carroll,,-342.00,,Shared
-2024-12-03,Zappos.com,Clothing,USAA SECURE MAIN CHECKING (...4156),ZAP*ZAPPOS.COM           800-927-7671 NV,,-80.65,,Shared
-2024-12-03,US Department of Education,Student Loans,USAA SAVINGS (...4148),DEPT EDUCATION   STUDENT LN ***********0000,,-223.93,,Shared
-2024-12-02,USAA,Credit Card Payment,Signature Visa (...2562),USAA CREDIT CARD PAYMENT SAN ANTONIO  TX,,3952.82,,Shared
-2024-12-02,Kohl's,Clothing,Signature Visa (...2562),WWW.KOHLS.COM #XXXXXXXXXXXXXX OH,,-21.20,,Shared
-2024-12-02,Target,Shopping,USAA SECURE MAIN CHECKING (...4156),TARGET DEBIT CRD ACH TRAN   ***********0219,,-49.33,,Shared
-2024-12-02,USAA,Credit Card Payment,USAA SECURE MAIN CHECKING (...4156),USAA CREDIT CARD PAYMENT,,-3952.82,,Shared
-2024-12-02,USAA,Transfer,USAA SECURE MAIN CHECKING (...4156),USAA FUNDS TRANSFER DB,,-1100.00,,Shared
-2024-12-02,USAA,Transfer,USAA SECURE MAIN CHECKING (...4156),USAA FUNDS TRANSFER DB,,-50.00,,Shared
-2024-12-02,USAA,Transfer,USAA SECURE MAIN CHECKING (...4156),USAA FUNDS TRANSFER DB,,-50.00,,Shared
-2024-12-02,USAA,Transfer,USAA SAVINGS (...4148),USAA FUNDS TRANSFER CR,,1100.00,,Shared
-2024-12-01,Marriott,Parking & Tolls,Signature Visa (...2562),MARRIOTT PARKING VIRGI   VIRGINIA BEACVA,,-6.00,,Shared
-2024-12-01,Cavalier Hotel,Entertainment & Recreation,Signature Visa (...2562),SQ *CAVALIER HOTEL       Virginia BeacVA,,-5.49,,Shared
-2024-12-01,Cavalier Hotel,Entertainment & Recreation,Signature Visa (...2562),SQ *CAVALIER HOTEL       Virginia BeacVA,,-16.48,,Shared
-2024-12-01,Kohl's,Clothing,Signature Visa (...2562),WWW.KOHLS.COM #XXXXXXXXXXXXXX OH,,-113.53,,Shared
-2024-12-01,Trader Joe's,Groceries,USAA SECURE MAIN CHECKING (...4156),TRADER JOE S #660        VIRGINIA BEACVA,,-90.91,,Shared
