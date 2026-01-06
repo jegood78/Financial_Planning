@@ -17,54 +17,54 @@ library(writexl)
 #~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~#~
 
 #standard deduction married filing jointly
-std_deduction <- 30000
+std_deduction <- 32200
 
 #function to calculate federal taxes based on 2025 married filing jointly tax brackets
 calculate_net_income <- function(gross_income, std_deduction){
   
   x <- gross_income - std_deduction #standard deduction
   
-  if (x <= 23850) {
+  if (x <= 24800) {
     net_pay <- x*(1-0.10)
   } 
-  else if (x > 23850 & x <= 96950) {
-    net_pay <- 23850*(1-0.10) + 
-      (x-23850)*(1-0.12) 
+  else if (x > 24800 & x <= 100800) {
+    net_pay <- 24800*(1-0.10) + 
+      (x-24800)*(1-0.12) 
   } 
-  else if (x > 96950 & x <= 206700) {
-    net_pay <- 23850*(1-0.10) + 
-      (96950-23850)*(1-0.12) + 
-      (x-96950)*(1-0.22)
+  else if (x > 100800 & x <= 211400) {
+    net_pay <- 24800*(1-0.10) + 
+      (100800-24800)*(1-0.12) + 
+      (x-100800)*(1-0.22)
   } 
-  else if (x > 206700 & x <= 394600) {
-    net_pay <- 23850*(1-0.10) + 
-      (96950-23850)*(1-0.12) + 
-      (201050-96950)*(1-0.22) + 
-      (x-206700)*(1-0.24)
+  else if (x > 206700 & x <= 403550) {
+    net_pay <- 24800*(1-0.10) + 
+      (100800-24800)*(1-0.12) + 
+      (211400-100800)*(1-0.22) + 
+      (x-211400)*(1-0.24)
   }
-  else if (x > 394600 & x <= 501050) {
-    net_pay <- 23850*(1-0.10) + 
-      (96950-23850)*(1-0.12) + 
-      (206700-96950)*(1-0.22) + 
-      (394600-206700)*(1-0.24) +
-      (x-394600) * (1-0.32)
+  else if (x > 394600 & x <= 512450) {
+    net_pay <- 24800*(1-0.10) + 
+      (100800-24800)*(1-0.12) + 
+      (211400-100800)*(1-0.22) + 
+      (403550-211400)*(1-0.24) +
+      (x-403550) * (1-0.32)
   }
-  else if (x > 501050 & x <= 751600) {
-    net_pay <- 23850*(1-0.10) + 
-      (96950-23850)*(1-0.12) + 
-      (206700-96950)*(1-0.22) + 
-      (394600-206700)*(1-0.24) +
-      (487450-394600) * (1-0.32) +
-      (x-501050) * (1-0.35)
+  else if (x > 501050 & x <= 768700) {
+    net_pay <- 24800*(1-0.10) + 
+      (100800-24800)*(1-0.12) + 
+      (211400-100800)*(1-0.22) + 
+      (403550-211400)*(1-0.24) +
+      (512450-403550) * (1-0.32) +
+      (x-512450) * (1-0.35)
   }
-  else if (x > 751600) {
-    net_pay <- 23850*(1-0.10) + 
-      (96950-23850)*(1-0.12) + 
-      (206700-96950)*(1-0.22) + 
-      (394600-206700)*(1-0.24) +
-      (501050-394600) * (1-0.32) +
-      (751600-501050) * (1-0.35) +
-      (x-751600) * (1-0.37)
+  else if (x > 768700) {
+    net_pay <- 24800*(1-0.10) + 
+      (100800-24800)*(1-0.12) + 
+      (211400-100800)*(1-0.22) + 
+      (403550-211400)*(1-0.24) +
+      (512450-403550) * (1-0.32) +
+      (768700-512450) * (1-0.35) +
+      (x-768700) * (1-0.37)
   }
   
   net_pay_final <- net_pay + std_deduction
@@ -292,6 +292,7 @@ retirement_funds <- net_worth_redux %>% select(date,
 
 non_retirement_funds <- net_worth_redux %>% select(date,
                                                    vanguard_brokerage,
+                                                   cit_bank_savings,
                                                    usaa_savings,
                                                    usaa_checking)
 
@@ -311,7 +312,7 @@ paste0("Current retirement fund amount = ", scales::dollar(c_retirement_total))
 c_tsp_amount <- retirement_funds[retirement_funds$date == max(retirement_funds$date),]$tsp
 
 non_retirement_funds <- non_retirement_funds %>%
-  mutate(non_retirement_total = vanguard_brokerage + usaa_savings + usaa_checking)
+  mutate(non_retirement_total = vanguard_brokerage + cit_bank_savings + usaa_savings + usaa_checking)
 
 c_non_retirement_total <- non_retirement_funds[non_retirement_funds$date == max(non_retirement_funds$date),]$non_retirement_total
 paste0("Current non-retirement fund amount = ", scales::dollar(c_non_retirement_total))
@@ -474,10 +475,13 @@ expenses <- monarch_raw %>%
 #filter out paying off nissan armada
 expenses <- expenses %>% filter(!amount < -20000)
 
+expenses %>% filter(month == "2026-01")
+
 #summarize monthly.  keep everything after june 2024, round down to nearest $250
 expenses_monthly <- expenses %>%
   filter(month %in% rolling_12_months,
-         month > "2024-06") %>%
+         month > "2024-06",
+         amount < 30000) %>%
   group_by(month) %>%
   summarise(monthly_expenses = plyr::round_any(sum(amount),250,f = floor))
 
@@ -500,7 +504,8 @@ monthly_joined <- income %>%
   summarise(monthly_income = plyr::round_any(sum(amount),250,f = floor)) %>%
   full_join(expenses %>%
               filter(month %in% rolling_13_months,
-                     month > "2024-06") %>%
+                     month > "2024-06",
+                     amount < 30000) %>%
               group_by(month) %>%
               summarise(monthly_expenses = plyr::round_any(sum(amount),250,f = floor)), by = "month")
 
